@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدة 2 — Hobbys &amp; Berufe</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+.hero-pill.uv{background:rgba(56,224,168,.08);border:1px solid rgba(56,224,168,.18);color:var(--mint)}
+.hero-pill.uv b{background:var(--mint)}
+.hero h1 em.uv{background:linear-gradient(135deg,var(--mint),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sep.uv{background:linear-gradient(90deg,var(--mint),var(--teal))}
+.vc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:14px}
+.vc{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:14px 16px;transition:all .3s ease;display:flex;flex-direction:column;gap:4px;position:relative;overflow:hidden}
+.vc:hover{border-color:var(--bdr-h);transform:translateY(-2px);background:var(--card-h);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.vc::before{content:'';position:absolute;top:0;right:0;width:3px;height:100%;background:currentColor;opacity:.5}
+.vc .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;text-align:right;line-height:1.5;color:var(--txt-b)}
+.vc .ar{font-size:13px;color:var(--txt-d);font-family:'Noto Naskh Arabic',serif;line-height:1.6}
+.vc .conj{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);direction:ltr;text-align:right;background:rgba(255,255,255,.02);padding:3px 8px;border-radius:6px;margin-top:4px;display:inline-block;font-style:italic;align-self:flex-start}
+.vc .art{font-weight:700;margin-left:4px}
+.art-der{color:var(--sky)}.art-die{color:var(--rose)}.art-das{color:var(--green)}
+.vc-phrase{grid-column:span 2}@media(max-width:640px){.vc-phrase{grid-column:span 1}}
+.num-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-top:14px}
+.num-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px;text-align:center;transition:all .3s ease}
+.num-card:hover{border-color:var(--mint);transform:translateY(-2px);background:var(--card-h)}
+.num-card .digit{font-family:'Instrument Serif',serif;font-size:28px;font-weight:700;color:var(--mint);line-height:1}
+.num-card .word{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--txt-b);margin-top:6px;direction:ltr}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{background:var(--card);border:1px solid var(--bdr);border-radius:100px;padding:8px 16px;display:inline-flex;align-items:center;gap:8px;transition:all .25s ease;font-size:13px}
+.chip:hover{transform:translateY(-2px);background:var(--card-h)}
+.chip .de{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--txt-b);direction:ltr}
+.chip .sep{color:var(--txt-d);opacity:.4}.chip .ar{color:var(--txt-d)}
+.note-box{border-radius:16px;padding:18px 20px;margin-bottom:10px;display:flex;gap:14px;align-items:flex-start}
+.note-box .nb-icon{font-size:22px;flex-shrink:0;margin-top:2px}.note-box .nb-content{flex:1}
+.note-box h5{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:800;margin-bottom:6px}
+.note-box p{font-size:13.5px;line-height:1.9;color:var(--txt)}
+.sub-mini{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:700;color:var(--txt-d);margin:18px 0 8px;display:flex;align-items:center;gap:8px}
+.sub-mini::before{content:'';width:3px;height:14px;background:currentColor;border-radius:2px}
+.art-legend{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;background:rgba(255,255,255,.02);border:1px solid var(--bdr);border-radius:12px;padding:12px 16px;margin-bottom:16px}
+.art-legend-item{display:flex;align-items:center;gap:8px;font-size:12.5px}
+.art-legend-item .lab{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px}
+.art-legend-item .ar{color:var(--txt-d)}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tag-row .tag{font-family:'Noto Kufi Arabic',sans-serif;font-size:10px;font-weight:700;padding:3px 9px;border-radius:6px;background:rgba(56,224,168,.08);color:var(--mint);border:1px solid rgba(56,224,168,.15)}
+.tag-row .tag.pl{background:rgba(232,104,168,.08);color:var(--rose);border-color:rgba(232,104,168,.15)}
+.tag-row .tag.sg{background:rgba(64,200,112,.08);color:var(--green);border-color:rgba(64,200,112,.15)}
+</style>
+</head>
+<body>
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#38e0a8">الوحدة 2 — Hobbys &amp; Berufe</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill uv"><b></b> Einheit 2 — الوحدة الثانية</div>
+  <h1>الهوايات <em class="uv">والمهن</em></h1>
+  <p class="hero-sub">الأفعال اليومية، أيام الأسبوع، الأشخاص والوظائف، أماكن الترفيه والبيانات الشخصية</p>
+  <div class="hero-sep uv"></div>
+</div>
+
+<div class="art-legend">
+  <div class="art-legend-item"><span class="lab art-der">der</span><span class="ar">— مذكر</span></div>
+  <div class="art-legend-item"><span class="lab art-die">die</span><span class="ar">— مؤنث / جمع</span></div>
+  <div class="art-legend-item"><span class="lab art-das">das</span><span class="ar">— محايد</span></div>
+  <div class="art-legend-item"><span class="lab" style="color:var(--rose)">PL</span><span class="ar">— جمع فقط</span></div>
+  <div class="art-legend-item"><span class="lab" style="color:var(--green)">SG</span><span class="ar">— مفرد فقط</span></div>
+</div>
+
+<!-- ═══ 1: VERBS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--mint),#20b888)">١</div>
+    <div><div class="sec-t">الأفعال</div><div class="sec-td">Verben</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--mint)">أفعال يومية وهوايات</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--mint)"><div class="de">fotografieren</div><div class="ar">يصوّر</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">singen</div><div class="ar">يغنّي</div><div class="conj">er singt · hat gesungen</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">tanzen</div><div class="ar">يرقص</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">kochen</div><div class="ar">يطبخ</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">reisen</div><div class="ar">يسافر</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">schwimmen</div><div class="ar">يسبح</div><div class="conj">er schwimmt · ist geschwommen</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">lesen</div><div class="ar">يقرأ</div><div class="conj">er liest</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">lieben</div><div class="ar">يحب</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">joggen</div><div class="ar">يركض / Jogging</div><div class="conj">ihr joggt</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">spielen</div><div class="ar">يلعب</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">fahren</div><div class="ar">يقود / يسافر بوسيلة</div><div class="conj">er fährt · ist gefahren</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">gehen</div><div class="ar">يذهب</div><div class="conj">er geht · ist gegangen</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--mint)">أفعال العمل والدراسة</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--mint)"><div class="de">arbeiten</div><div class="ar">يعمل</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">studieren</div><div class="ar">يدرس (في الجامعة)</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">präsentieren</div><div class="ar">يقدّم / يعرض</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">berichten</div><div class="ar">يُبلِّغ / يخبر</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">wählen</div><div class="ar">يختار</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">tauschen</div><div class="ar">يتبادل</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">vergleichen</div><div class="ar">يقارن</div><div class="conj">er vergleicht · hat verglichen</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">passen</div><div class="ar">يناسب / يلائم</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">suchen</div><div class="ar">يبحث عن</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">warten</div><div class="ar">ينتظر</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">stehen</div><div class="ar">يقف / يوجد (للمكان)</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">haben</div><div class="ar">يملك</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--mint)">أفعال داخل الفصل</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--mint)"><div class="de">ankreuzen</div><div class="ar">يضع علامة (✗)</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">antworten</div><div class="ar">يجيب</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">notieren</div><div class="ar">يدوّن</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">unterstreichen</div><div class="ar">يضع خطاً تحت الكلمة</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">nennen</div><div class="ar">يسمّي / يذكر</div><div class="conj">er nennt · hat genannt</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">nachsprechen</div><div class="ar">يردّد خلف شخص</div><div class="conj">er spricht nach · hat nachgesprochen</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">geben (es gibt)</div><div class="ar">يعطي / يوجد</div></div>
+    <div class="vc" style="color:var(--mint)"><div class="de">merken</div><div class="ar">يحفظ / يتذكر</div></div>
+  </div>
+</div>
+
+<!-- ═══ 2: PEOPLE & RELATIONS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#c84028)">٢</div>
+    <div><div class="sec-t">الأشخاص والعلاقات</div><div class="sec-td">Leute &amp; Beziehungen</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc vc-phrase" style="color:var(--coral)"><div class="de"><span class="art art-die">die</span>Leute</div><div class="ar">الناس</div><div class="tag-row"><span class="tag pl">PL</span></div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Freund / Freunde</div><div class="ar">الصديق / الأصدقاء</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-die">die</span>Freundin / -nen</div><div class="ar">الصديقة / الصديقات</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Kollege / -n</div><div class="ar">الزميل / الزملاء</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-die">die</span>Kollegin / -nen</div><div class="ar">الزميلة / الزميلات</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Student / -en</div><div class="ar">الطالب / الطلاب</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Patient / -en</div><div class="ar">المريض</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-die">die</span>Patientin / -nen</div><div class="ar">المريضة</div></div>
+  </div>
+</div>
+
+<!-- ═══ 3: PROFESSIONS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#2870c8)">٣</div>
+    <div><div class="sec-t">الوظائف والمهن</div><div class="sec-td">Berufe</div></div>
+  </div>
+
+  <div class="note-box" style="background:rgba(72,152,240,.04);border:1px solid rgba(72,152,240,.15);margin-bottom:14px">
+    <div class="nb-icon">💡</div>
+    <div class="nb-content">
+      <h5 style="color:var(--sky)">قاعدة المهن المؤنثة</h5>
+      <p>المهنة المذكرة تأخذ <strong class="art-der">der</strong>، والمؤنثة تأخذ <strong class="art-die">die</strong>، وغالباً تنتهي المؤنثة بالمقطع <strong style="color:var(--sky);font-family:'JetBrains Mono',monospace">‑in</strong>.</p>
+    </div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--sky)"><div class="de"><span class="art art-der">der</span>Beruf / Berufe</div><div class="ar">المهنة / المهن</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Arzt · Ärztin</div><div class="ar">طبيب · طبيبة</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Kellner · Kellnerin</div><div class="ar">نادل · نادلة</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Taxifahrer · -in</div><div class="ar">سائق / سائقة تاكسي</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Krankenpfleger · -in</div><div class="ar">ممرض / ممرضة</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Frisör · Frisörin</div><div class="ar">حلاق / حلاقة</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Lehrer · Lehrerin</div><div class="ar">معلم / معلمة</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Verkäufer · -in</div><div class="ar">بائع / بائعة</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Informatiker</div><div class="ar">مختص حاسوب</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Ingenieur</div><div class="ar">مهندس</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Elektriker</div><div class="ar">كهربائي</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Handwerker</div><div class="ar">عامل يدوي</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Mechaniker</div><div class="ar">ميكانيكي</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Polizist</div><div class="ar">شرطي</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Journalist</div><div class="ar">صحفي</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="de">Jurist</div><div class="ar">حقوقي</div></div>
+  </div>
+</div>
+
+<!-- ═══ 4: PLACES & LEISURE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">٤</div>
+    <div><div class="sec-t">الأماكن والترفيه</div><div class="sec-td">Orte &amp; Freizeit</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-das">das</span>Kino / Kinos</div><div class="ar">السينما</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-das">das</span>Café / Cafés</div><div class="ar">المقهى</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-das">das</span>Restaurant / -s</div><div class="ar">المطعم</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-das">das</span>Theater</div><div class="ar">المسرح</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-das">das</span>Museum / Museen</div><div class="ar">المتحف</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-das">das</span>Stadion / Stadien</div><div class="ar">الملعب / الستاد</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-das">das</span>Schwimmbad / -bäder</div><div class="ar">المسبح</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-das">das</span>Krankenhaus / -häuser</div><div class="ar">المستشفى</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-die">die</span>Universität / -en</div><div class="ar">الجامعة</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-der">der</span>Kursraum / -räume</div><div class="ar">قاعة الدرس</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-der">der</span>Sportclub</div><div class="ar">نادٍ رياضي</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-das">das</span>Buch / Bücher</div><div class="ar">الكتاب</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-der">der</span>Fußball</div><div class="ar">كرة القدم</div></div>
+  </div>
+</div>
+
+<!-- ═══ 5: TIME & WEEKDAYS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#b88820)">٥</div>
+    <div><div class="sec-t">الوقت وأيام الأسبوع</div><div class="sec-td">Zeit &amp; Wochentage</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--gold)">أيام الأسبوع</div>
+  <div class="chips">
+    <div class="chip"><span class="de">Montag</span><span class="sep">·</span><span class="ar">الاثنين</span></div>
+    <div class="chip"><span class="de">Dienstag</span><span class="sep">·</span><span class="ar">الثلاثاء</span></div>
+    <div class="chip"><span class="de">Mittwoch</span><span class="sep">·</span><span class="ar">الأربعاء</span></div>
+    <div class="chip"><span class="de">Donnerstag</span><span class="sep">·</span><span class="ar">الخميس</span></div>
+    <div class="chip"><span class="de">Freitag</span><span class="sep">·</span><span class="ar">الجمعة</span></div>
+    <div class="chip"><span class="de">Samstag</span><span class="sep">·</span><span class="ar">السبت</span></div>
+    <div class="chip"><span class="de">Sonntag</span><span class="sep">·</span><span class="ar">الأحد</span></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--gold)">أوقات اليوم والوحدات الزمنية</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--gold)"><div class="de"><span class="art art-der">der</span>Morgen</div><div class="ar">الصباح</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="de"><span class="art art-der">der</span>Nachmittag</div><div class="ar">بعد الظهر</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="de"><span class="art art-der">der</span>Abend / Abende</div><div class="ar">المساء</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="de"><span class="art art-die">die</span>Nacht</div><div class="ar">الليل</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="de"><span class="art art-der">der</span>Tag / Tage</div><div class="ar">اليوم</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="de"><span class="art art-die">die</span>Woche / -n</div><div class="ar">الأسبوع</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="de"><span class="art art-der">der</span>Wochentag / -e</div><div class="ar">يوم من أيام الأسبوع</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="de"><span class="art art-das">das</span>Wochenende / -n</div><div class="ar">عطلة نهاية الأسبوع</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="de"><span class="art art-die">die</span>Stunde / -n</div><div class="ar">الساعة</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="de"><span class="art art-das">das</span>Jahr / Jahre</div><div class="ar">السنة</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">im Moment</div><div class="ar">الآن / في هذه اللحظة</div></div>
+  </div>
+</div>
+
+<!-- ═══ 6: PERSONAL DATA ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#b83880)">٦</div>
+    <div><div class="sec-t">البيانات الشخصية والاستمارات</div><div class="sec-td">Persönliche Angaben</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-die">die</span>Adresse / -n</div><div class="ar">العنوان</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-der">der</span>Familienname</div><div class="ar">اسم العائلة</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-das">das</span>Geburtsdatum</div><div class="ar">تاريخ الميلاد</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-der">der</span>Geburtsort</div><div class="ar">مكان الميلاد</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-der">der</span>Wohnort</div><div class="ar">مكان السكن</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-die">die</span>Hausnummer</div><div class="ar">رقم المنزل</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-die">die</span>Postleitzahl</div><div class="ar">الرمز البريدي</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-das">das</span>Formular / -e</div><div class="ar">الاستمارة</div></div>
+  </div>
+</div>
+
+<!-- ═══ 7: MISC NOUNS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#18a888)">٧</div>
+    <div><div class="sec-t">كلمات متنوعة</div><div class="sec-td">Verschiedene Wörter</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-die">die</span>Musik</div><div class="ar">الموسيقى</div><div class="tag-row"><span class="tag sg">SG</span></div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-die">die</span>Spaghetti</div><div class="ar">المعكرونة سباغيتي</div><div class="tag-row"><span class="tag pl">PL</span></div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-das">das</span>Foto / Fotos</div><div class="ar">الصورة</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-das">das</span>Auto / Autos</div><div class="ar">السيارة</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-der">der</span>Computer</div><div class="ar">الحاسوب</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-das">das</span>Geld</div><div class="ar">المال</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-das">das</span>Glas / Gläser</div><div class="ar">الكأس</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-das">das</span>Medikament / -e</div><div class="ar">الدواء</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-die">die</span>Tablette / -n</div><div class="ar">الحبوب الدوائية</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-die">die</span>Spritze / -n</div><div class="ar">الحقنة</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-der">der</span>Schlüssel</div><div class="ar">المفتاح</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-der">der</span>Stift / Stifte</div><div class="ar">القلم</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-die">die</span>Straße / -n</div><div class="ar">الشارع</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-das">das</span>Zimmer</div><div class="ar">الغرفة</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-der">der</span>Kilometer</div><div class="ar">الكيلومتر</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de"><span class="art art-das">das</span>Wörterbuch</div><div class="ar">القاموس</div></div>
+  </div>
+</div>
+
+<!-- ═══ 8: NUMBERS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--peach),#c87838)">٨</div>
+    <div><div class="sec-t">الأرقام الكبيرة</div><div class="sec-td">Große Zahlen</div></div>
+  </div>
+
+  <p style="color:var(--txt-d);font-size:13.5px;margin-bottom:8px">من الـ 20 وما فوق وصولاً إلى الملايين والمليارات.</p>
+
+  <div class="num-grid">
+    <div class="num-card"><div class="digit" style="color:var(--peach)">20</div><div class="word">zwanzig</div></div>
+    <div class="num-card"><div class="digit" style="color:var(--peach)">30</div><div class="word">dreißig</div></div>
+    <div class="num-card"><div class="digit" style="color:var(--peach)">50</div><div class="word">fünfzig</div></div>
+    <div class="num-card"><div class="digit" style="color:var(--peach)">70</div><div class="word">siebzig</div></div>
+    <div class="num-card"><div class="digit" style="color:var(--peach)">80</div><div class="word">achtzig</div></div>
+    <div class="num-card"><div class="digit" style="color:var(--peach)">90</div><div class="word">neunzig</div></div>
+    <div class="num-card"><div class="digit" style="color:var(--peach)">100</div><div class="word">hundert</div></div>
+    <div class="num-card"><div class="digit" style="color:var(--peach);font-size:20px">10⁶</div><div class="word">Million</div></div>
+    <div class="num-card"><div class="digit" style="color:var(--peach);font-size:20px">10⁹</div><div class="word">Milliarde</div></div>
+  </div>
+</div>
+
+<!-- ═══ 9: ADJECTIVES & ADVERBS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--cyan),#1898a8)">٩</div>
+    <div><div class="sec-t">الصفات والظروف</div><div class="sec-td">Adjektive &amp; Adverbien</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--cyan)"><div class="de">super / toll</div><div class="ar">رائع / ممتاز</div></div>
+    <div class="vc" style="color:var(--cyan)"><div class="de">lustig</div><div class="ar">مضحك / لطيف</div></div>
+    <div class="vc" style="color:var(--cyan)"><div class="de">leider</div><div class="ar">للأسف</div></div>
+    <div class="vc" style="color:var(--cyan)"><div class="de">oft</div><div class="ar">غالباً</div></div>
+    <div class="vc" style="color:var(--cyan)"><div class="de">bestimmt</div><div class="ar">بالتأكيد / محدد</div></div>
+    <div class="vc" style="color:var(--cyan)"><div class="de">viele</div><div class="ar">كثير</div></div>
+    <div class="vc" style="color:var(--cyan)"><div class="de">alt</div><div class="ar">قديم / كبير في السن</div></div>
+    <div class="vc" style="color:var(--cyan)"><div class="de">groß</div><div class="ar">كبير</div></div>
+    <div class="vc" style="color:var(--cyan)"><div class="de">fertig</div><div class="ar">جاهز / انتهى</div></div>
+    <div class="vc" style="color:var(--cyan)"><div class="de">männlich · weiblich</div><div class="ar">ذكر · أنثى</div></div>
+  </div>
+</div>
+
+<!-- ═══ 10: KEY SENTENCES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),var(--coral))">★</div>
+    <div><div class="sec-t">جمل هامة للتدريب</div><div class="sec-td">Wichtige Sätze</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Gehst du gern ins Kino?</div><div class="ar">هل تحب الذهاب إلى السينما؟</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Hörst du gern Musik?</div><div class="ar">هل تحب سماع الموسيقى؟</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">— Es geht so.</div><div class="ar">ليس تماماً / نُص نُص</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Liest du gern?</div><div class="ar">هل تحب القراءة؟</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Ja, sehr gern. / Nein, nicht so gern.</div><div class="ar">نعم جداً / لا، ليس كثيراً</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Was arbeitest du?</div><div class="ar">ماذا تعمل؟</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Was sind Sie von Beruf?</div><div class="ar">ما مهنتك؟</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Wir kochen am Wochenende Spaghetti.</div><div class="ar">نطبخ سباغيتي في عطلة نهاية الأسبوع</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Spielen Sie wirklich Fußball?</div><div class="ar">هل تلعب كرة القدم حقاً؟</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Nein, das geht leider nicht.</div><div class="ar">لا، للأسف لا يمكن</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Achten Sie auf die Satzmelodie.</div><div class="ar">انتبه لنغمة الجملة</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Ich bin 22 Jahre alt.</div><div class="ar">عمري 22 عاماً</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Ich arbeite bei Taxizentrale.</div><div class="ar">أعمل لدى مركز التاكسي</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Ich arbeite von 6 bis 15 Uhr.</div><div class="ar">أعمل من السادسة حتى الثالثة عصراً</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Machen Sie persönliche Angaben.</div><div class="ar">قدّم معلوماتك الشخصية</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Arbeiten Sie zu zweit.</div><div class="ar">اعملوا في ثنائيات</div></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدة 4 — Guten Appetit</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+.hero-pill.uv{background:rgba(240,160,80,.08);border:1px solid rgba(240,160,80,.18);color:var(--peach)}
+.hero-pill.uv b{background:var(--peach)}
+.hero h1 em.uv{background:linear-gradient(135deg,var(--peach),var(--coral));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sep.uv{background:linear-gradient(90deg,var(--peach),var(--coral))}
+.vc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:14px}
+.vc{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:14px 16px;transition:all .3s ease;display:flex;flex-direction:column;gap:4px;position:relative;overflow:hidden}
+.vc:hover{border-color:var(--bdr-h);transform:translateY(-2px);background:var(--card-h);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.vc::before{content:'';position:absolute;top:0;right:0;width:3px;height:100%;background:currentColor;opacity:.5}
+.vc .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;text-align:right;line-height:1.5;color:var(--txt-b)}
+.vc .ar{font-size:13px;color:var(--txt-d);font-family:'Noto Naskh Arabic',serif;line-height:1.6}
+.vc .conj{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);direction:ltr;text-align:right;background:rgba(255,255,255,.02);padding:3px 8px;border-radius:6px;margin-top:4px;display:inline-block;font-style:italic;align-self:flex-start}
+.vc .art{font-weight:700;margin-left:4px}
+.vc .emoji{position:absolute;top:10px;left:12px;font-size:18px;opacity:.6}
+.art-der{color:var(--sky)}.art-die{color:var(--rose)}.art-das{color:var(--green)}
+.vc-phrase{grid-column:span 2}@media(max-width:640px){.vc-phrase{grid-column:span 1}}
+.note-box{border-radius:16px;padding:18px 20px;margin-bottom:10px;display:flex;gap:14px;align-items:flex-start}
+.note-box .nb-icon{font-size:22px;flex-shrink:0;margin-top:2px}.note-box .nb-content{flex:1}
+.note-box h5{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:800;margin-bottom:6px}
+.note-box p{font-size:13.5px;line-height:1.9;color:var(--txt)}
+.sub-mini{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:700;color:var(--txt-d);margin:18px 0 8px;display:flex;align-items:center;gap:8px}
+.sub-mini::before{content:'';width:3px;height:14px;background:currentColor;border-radius:2px}
+.art-legend{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;background:rgba(255,255,255,.02);border:1px solid var(--bdr);border-radius:12px;padding:12px 16px;margin-bottom:16px}
+.art-legend-item{display:flex;align-items:center;gap:8px;font-size:12.5px}
+.art-legend-item .lab{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px}
+.art-legend-item .ar{color:var(--txt-d)}
+</style>
+</head>
+<body>
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#f0a050">الوحدة 4 — Guten Appetit</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill uv"><b></b> Einheit 4 — الوحدة الرابعة</div>
+  <h1>بالهناء <em class="uv">والشفاء</em></h1>
+  <p class="hero-sub">المأكولات والمشروبات، الوجبات، التسوق والمقادير، أفعال المطبخ، وتعابير المطعم</p>
+  <div class="hero-sep uv"></div>
+</div>
+
+<div class="art-legend">
+  <div class="art-legend-item"><span class="lab art-der">der</span><span class="ar">— مذكر</span></div>
+  <div class="art-legend-item"><span class="lab art-die">die</span><span class="ar">— مؤنث / جمع</span></div>
+  <div class="art-legend-item"><span class="lab art-das">das</span><span class="ar">— محايد</span></div>
+</div>
+
+<!-- ═══ 1: FOOD ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--peach),#c87838)">١</div>
+    <div><div class="sec-t">المأكولات والمواد الغذائية</div><div class="sec-td">Lebensmittel</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--peach)">🍞 المخبوزات والألبان</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍞</div><div class="de"><span class="art art-das">das</span>Brot</div><div class="ar">الخبز</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🥖</div><div class="de"><span class="art art-das">das</span>Brötchen</div><div class="ar">خبز صغير</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🧈</div><div class="de"><span class="art art-die">die</span>Butter</div><div class="ar">الزبدة</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🥛</div><div class="de"><span class="art art-der">der</span>Joghurt</div><div class="ar">الزبادي</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🧀</div><div class="de"><span class="art art-der">der</span>Käse</div><div class="ar">الجبن</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🥥</div><div class="de"><span class="art art-die">die</span>Sahne</div><div class="ar">الكريمة</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🥚</div><div class="de"><span class="art art-das">das</span>Ei / Eier</div><div class="ar">البيض</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🥣</div><div class="de"><span class="art art-das">das</span>Müsli</div><div class="ar">رقائق الشوفان</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍓</div><div class="de"><span class="art art-die">die</span>Marmelade</div><div class="ar">المربى</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--peach)">🥩 اللحوم والأسماك</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🥩</div><div class="de"><span class="art art-das">das</span>Fleisch</div><div class="ar">اللحم</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🐟</div><div class="de"><span class="art art-der">der</span>Fisch</div><div class="ar">السمك</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍗</div><div class="de"><span class="art art-das">das</span>Hähnchen</div><div class="ar">الدجاج</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🥓</div><div class="de"><span class="art art-der">der</span>Schinken</div><div class="ar">اللحم المقدد (لانشون)</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🌭</div><div class="de"><span class="art art-die">die</span>Wurst</div><div class="ar">النقانق / السجق</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--peach)">🥗 الخضروات والفواكه</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🥬</div><div class="de"><span class="art art-das">das</span>Gemüse</div><div class="ar">الخضروات</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🥗</div><div class="de"><span class="art art-der">der</span>Salat</div><div class="ar">السلطة</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍅</div><div class="de"><span class="art art-die">die</span>Tomate</div><div class="ar">الطماطم</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🥒</div><div class="de"><span class="art art-die">die</span>Gurke</div><div class="ar">الخيار</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🫒</div><div class="de"><span class="art art-die">die</span>Olive</div><div class="ar">الزيتون</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🥔</div><div class="de"><span class="art art-die">die</span>Kartoffel / -n</div><div class="ar">البطاطس</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍟</div><div class="de"><span class="art art-die">die</span>Pommes frites</div><div class="ar">البطاطس المقلية</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍎</div><div class="de"><span class="art art-der">der</span>Apfel / Äpfel</div><div class="ar">التفاح</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍐</div><div class="de"><span class="art art-die">die</span>Birne</div><div class="ar">الكمثرى</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍌</div><div class="de"><span class="art art-die">die</span>Banane</div><div class="ar">الموز</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍇</div><div class="de"><span class="art art-das">das</span>Obst</div><div class="ar">الفاكهة</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--peach)">🍝 الأطباق والمأكولات الجاهزة</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍚</div><div class="de"><span class="art art-der">der</span>Reis</div><div class="ar">الأرز</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍕</div><div class="de"><span class="art art-die">die</span>Pizza / Pizzen</div><div class="ar">البيتزا</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍣</div><div class="de"><span class="art art-das">das</span>Sushi</div><div class="ar">سوشي</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍲</div><div class="de"><span class="art art-die">die</span>Suppe</div><div class="ar">الحساء / الشوربة</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍰</div><div class="de"><span class="art art-der">der</span>Kuchen</div><div class="ar">الكيك / الكعك</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍪</div><div class="de"><span class="art art-der">der</span>Keks</div><div class="ar">البسكويت</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍫</div><div class="de"><span class="art art-die">die</span>Schokolade</div><div class="ar">الشوكولاتة</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--peach)">🧂 التوابل والمضافات</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🧂</div><div class="de"><span class="art art-das">das</span>Salz</div><div class="ar">الملح</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🌶️</div><div class="de"><span class="art art-der">der</span>Pfeffer</div><div class="ar">الفلفل</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍯</div><div class="de"><span class="art art-der">der</span>Zucker</div><div class="ar">السكر</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🫗</div><div class="de"><span class="art art-das">das</span>Öl</div><div class="ar">الزيت</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🧈</div><div class="de"><span class="art art-das">das</span>Fett</div><div class="ar">الدهون</div></div>
+  </div>
+</div>
+
+<!-- ═══ 2: DRINKS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#2870c8)">٢</div>
+    <div><div class="sec-t">المشروبات</div><div class="sec-td">Getränke</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--sky)"><div class="emoji">💧</div><div class="de"><span class="art art-das">das</span>Wasser</div><div class="ar">الماء</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🥛</div><div class="de"><span class="art art-die">die</span>Milch</div><div class="ar">الحليب</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">☕</div><div class="de"><span class="art art-der">der</span>Kaffee</div><div class="ar">القهوة</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🍵</div><div class="de"><span class="art art-der">der</span>Tee</div><div class="ar">الشاي</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🥤</div><div class="de"><span class="art art-die">die</span>Cola</div><div class="ar">كولا</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🍹</div><div class="de"><span class="art art-die">die</span>Limonade</div><div class="ar">الليموناضة</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🧃</div><div class="de"><span class="art art-der">der</span>Saft</div><div class="ar">العصير</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🍎</div><div class="de"><span class="art art-der">der</span>Apfelsaft</div><div class="ar">عصير التفاح</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🍊</div><div class="de"><span class="art art-der">der</span>Orangensaft</div><div class="ar">عصير البرتقال</div></div>
+  </div>
+</div>
+
+<!-- ═══ 3: MEALS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#b88820)">٣</div>
+    <div><div class="sec-t">الوجبات</div><div class="sec-td">Mahlzeiten</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--gold)"><div class="emoji">🌅</div><div class="de"><span class="art art-das">das</span>Frühstück</div><div class="ar">الإفطار</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="emoji">🍽️</div><div class="de"><span class="art art-das">das</span>Mittagessen</div><div class="ar">الغداء</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="emoji">🌙</div><div class="de"><span class="art art-das">das</span>Abendessen</div><div class="ar">العشاء</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="emoji">🥄</div><div class="de"><span class="art art-die">die</span>Mahlzeit</div><div class="ar">الوجبة</div></div>
+  </div>
+</div>
+
+<!-- ═══ 4: SHOPPING ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#c84028)">٤</div>
+    <div><div class="sec-t">التسوق والمقادير</div><div class="sec-td">Einkaufen &amp; Mengen</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--coral)">المحلات والتسوق</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-die">die</span>Bäckerei</div><div class="ar">المخبز</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-die">die</span>Metzgerei</div><div class="ar">الملحمة</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Supermarkt</div><div class="ar">السوبر ماركت</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-das">das</span>Geschäft</div><div class="ar">المحل / المتجر</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Einkauf</div><div class="ar">التسوق</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Einkaufszettel</div><div class="ar">قائمة التسوق</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Einkaufswagen</div><div class="ar">عربة التسوق</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Kassenzettel</div><div class="ar">إيصال الاستلام</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Preis</div><div class="ar">السعر</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Cent</div><div class="ar">سنت (عملة)</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--coral)">المقادير والوحدات</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-das">das</span>Gramm</div><div class="ar">جرام</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-das">das</span>Pfund</div><div class="ar">نصف كيلو (500g)</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-das">das</span>Kilo / Kilogramm</div><div class="ar">كيلوغرام</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Liter</div><div class="ar">لتر</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-das">das</span>Stück</div><div class="ar">قطعة</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-die">die</span>Tüte</div><div class="ar">كيس</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-die">die</span>Dose</div><div class="ar">علبة صفيح</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-die">die</span>Packung</div><div class="ar">عبوة</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-die">die</span>Verpackung</div><div class="ar">تغليف</div></div>
+  </div>
+</div>
+
+<!-- ═══ 5: VERBS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#18a888)">٥</div>
+    <div><div class="sec-t">الأفعال</div><div class="sec-td">Verben</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--teal)">الأكل والشرب</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--teal)"><div class="de">essen</div><div class="ar">يأكل</div><div class="conj">isst · hat gegessen</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">trinken</div><div class="ar">يشرب</div><div class="conj">trinkt · hat getrunken</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">schmecken</div><div class="ar">يتذوق / مذاقه</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">probieren</div><div class="ar">يجرب (طعام)</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">grillen</div><div class="ar">يشوي</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">möchten</div><div class="ar">يرغب</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">nehmen</div><div class="ar">يأخذ</div><div class="conj">nimmt · hat genommen</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--teal)">التحضير والطبخ</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--teal)"><div class="de">zubereiten</div><div class="ar">يجهّز / يحضّر</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">schneiden</div><div class="ar">يقطّع</div><div class="conj">schneidet · hat geschnitten</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">schälen</div><div class="ar">يقشّر</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">waschen</div><div class="ar">يغسل</div><div class="conj">wäscht · hat gewaschen</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--teal)">التسوق والتعامل</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--teal)"><div class="de">einkaufen</div><div class="ar">يتسوق</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">brauchen</div><div class="ar">يحتاج</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">kosten</div><div class="ar">يكلّف (السعر)</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">wechseln</div><div class="ar">يغيّر / يصرف</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">planen</div><div class="ar">يخطط</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">verbinden</div><div class="ar">يربط</div><div class="conj">verbindet · hat verbunden</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--teal)">أفعال عامة</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--teal)"><div class="de">kommen</div><div class="ar">يأتي</div><div class="conj">kommt · ist gekommen</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">schreiben</div><div class="ar">يكتب</div><div class="conj">schreibt · hat geschrieben</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">finden</div><div class="ar">يجد / يعتقد</div><div class="conj">findet · hat gefunden</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">machen</div><div class="ar">يفعل / يعمل</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">helfen</div><div class="ar">يساعد</div><div class="conj">hilft · hat geholfen</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">erzählen</div><div class="ar">يحكي</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">beantworten</div><div class="ar">يجيب على</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">recherchieren</div><div class="ar">يبحث (research)</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">schlafen</div><div class="ar">ينام</div><div class="conj">schläft · hat geschlafen</div></div>
+  </div>
+</div>
+
+<!-- ═══ 6: PROFESSIONS & WORK ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">٦</div>
+    <div><div class="sec-t">العمل والمهن</div><div class="sec-td">Arbeit &amp; Berufe</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc vc-phrase" style="color:var(--violet)"><div class="de">Koch · Köchin</div><div class="ar">طبّاخ · طبّاخة</div></div>
+    <div class="vc vc-phrase" style="color:var(--violet)"><div class="de">Chef · Chefin</div><div class="ar">مدير · مديرة</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-die">die</span>Arbeitszeit</div><div class="ar">وقت العمل</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-das">das</span>Team</div><div class="ar">الفريق</div></div>
+  </div>
+</div>
+
+<!-- ═══ 7: ADJECTIVES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#b83880)">٧</div>
+    <div><div class="sec-t">الصفات والظروف</div><div class="sec-td">Adjektive &amp; Adverbien</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--rose)"><div class="de">fertig</div><div class="ar">جاهز</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">gleich</div><div class="ar">حالاً</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">vielleicht</div><div class="ar">ربما</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">teuer</div><div class="ar">غالٍ</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">süß</div><div class="ar">حلو</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">zusammen</div><div class="ar">معاً</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">lecker</div><div class="ar">لذيذ</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">satt</div><div class="ar">شبعان</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">gesund</div><div class="ar">صحي</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">früh</div><div class="ar">مبكراً</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">manchmal</div><div class="ar">أحياناً</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">wenig</div><div class="ar">قليل</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">stressig</div><div class="ar">مُجهِد</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">frisch</div><div class="ar">طازج</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">wichtig</div><div class="ar">مهم</div></div>
+  </div>
+</div>
+
+<!-- ═══ 8: KEY SENTENCES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),var(--coral))">★</div>
+    <div><div class="sec-t">جمل وتعابير المطعم والوجبات</div><div class="sec-td">Wichtige Ausdrücke</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--gold)">عبارات على المائدة</div>
+  <div class="vc-grid">
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Guten Appetit!</div><div class="ar">بالهناء والشفاء</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Mahlzeit!</div><div class="ar">وجبة شهية (وقت الغداء)</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Prost! / Zum Wohl!</div><div class="ar">في صحتك (عند الشرب)</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="de">Gleichfalls.</div><div class="ar">وبالمثل / ولك أيضاً</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Zahlen bitte!</div><div class="ar">الحساب لو سمحت</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Das macht 12 Euro.</div><div class="ar">الحساب 12 يورو</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Ich nehme ein Brötchen.</div><div class="ar">سآخذ خبزة صغيرة</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--gold)">عبارات يومية</div>
+  <div class="vc-grid">
+    <div class="vc vc-phrase" style="color:var(--peach)"><div class="de">Das Essen ist gleich fertig.</div><div class="ar">الطعام سيجهز حالاً</div></div>
+    <div class="vc vc-phrase" style="color:var(--peach)"><div class="de">Sie schreibt Paul eine Nachricht.</div><div class="ar">هي تكتب لباول رسالة</div></div>
+    <div class="vc vc-phrase" style="color:var(--peach)"><div class="de">Wir grillen heute Abend bei uns.</div><div class="ar">سنقوم بالشواء عندنا الليلة</div></div>
+    <div class="vc vc-phrase" style="color:var(--peach)"><div class="de">Wir haben morgen keine Zeit.</div><div class="ar">ليس لدينا وقت غداً</div></div>
+    <div class="vc vc-phrase" style="color:var(--peach)"><div class="de">Wir haben keinen Käse mehr.</div><div class="ar">لم يعد لدينا جبن</div></div>
+    <div class="vc vc-phrase" style="color:var(--peach)"><div class="de">Oliven sind oft teuer.</div><div class="ar">الزيتون غالباً ما يكون غالياً</div></div>
+    <div class="vc vc-phrase" style="color:var(--peach)"><div class="de">Schokolade schmeckt süß.</div><div class="ar">الشوكولاتة مذاقها حلو</div></div>
+    <div class="vc vc-phrase" style="color:var(--peach)"><div class="de">Ich trinke gerne Saft.</div><div class="ar">أحب شرب العصير</div></div>
+    <div class="vc vc-phrase" style="color:var(--peach)"><div class="de">Ich frühstücke um 7:30 Uhr.</div><div class="ar">أتناول الإفطار في 7:30</div></div>
+    <div class="vc vc-phrase" style="color:var(--peach)"><div class="de">Kochen macht Spaß.</div><div class="ar">الطبخ ممتع</div></div>
+  </div>
+</div>
+
+<!-- ═══ 9: GRAMMAR NOTES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),var(--rose))">★</div>
+    <div><div class="sec-t">ملاحظات قواعدية</div><div class="sec-td">Grammatikhinweise</div></div>
+  </div>
+
+  <div class="note-box" style="background:rgba(72,152,240,.04);border:1px solid rgba(72,152,240,.15)">
+    <div class="nb-icon">⚖️</div>
+    <div class="nb-content">
+      <h5 style="color:var(--sky)">Nominativ مقابل Akkusativ</h5>
+      <p>هذه الوحدة تتطرق للفرق بين <strong style="color:var(--sky)">حالة الرفع (Nominativ)</strong> و<strong style="color:var(--rose)">حالة النصب (Akkusativ)</strong>. مهم جداً معرفة نوع الكلمة (اسم، فعل، صفة) لتسهيل حفظ القاموس.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

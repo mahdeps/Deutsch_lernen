@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدة 6 — Zeit mit Freunden</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+.hero-pill.uv{background:rgba(64,200,112,.08);border:1px solid rgba(64,200,112,.18);color:var(--green)}
+.hero-pill.uv b{background:var(--green)}
+.hero h1 em.uv{background:linear-gradient(135deg,var(--green),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sep.uv{background:linear-gradient(90deg,var(--green),var(--teal))}
+.vc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:14px}
+.vc{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:14px 16px;transition:all .3s ease;display:flex;flex-direction:column;gap:4px;position:relative;overflow:hidden}
+.vc:hover{border-color:var(--bdr-h);transform:translateY(-2px);background:var(--card-h);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.vc::before{content:'';position:absolute;top:0;right:0;width:3px;height:100%;background:currentColor;opacity:.5}
+.vc .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;text-align:right;line-height:1.5;color:var(--txt-b)}
+.vc .ar{font-size:13px;color:var(--txt-d);font-family:'Noto Naskh Arabic',serif;line-height:1.6}
+.vc .conj{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);direction:ltr;text-align:right;background:rgba(255,255,255,.02);padding:3px 8px;border-radius:6px;margin-top:4px;display:inline-block;font-style:italic;align-self:flex-start}
+.vc .ex{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--txt-d);direction:ltr;text-align:right;background:rgba(255,255,255,.025);padding:6px 9px;border-radius:6px;margin-top:5px;line-height:1.6;border-right:2px solid currentColor;opacity:.85}
+.vc .art{font-weight:700;margin-left:4px}
+.vc .emoji{position:absolute;top:10px;left:12px;font-size:18px;opacity:.6}
+.art-der{color:var(--sky)}.art-die{color:var(--rose)}.art-das{color:var(--green)}
+.vc-phrase{grid-column:span 2}@media(max-width:640px){.vc-phrase{grid-column:span 1}}
+.note-box{border-radius:16px;padding:18px 20px;margin-bottom:10px;display:flex;gap:14px;align-items:flex-start}
+.note-box .nb-icon{font-size:22px;flex-shrink:0;margin-top:2px}.note-box .nb-content{flex:1}
+.note-box h5{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:800;margin-bottom:6px}
+.note-box p{font-size:13.5px;line-height:1.9;color:var(--txt)}
+.sub-mini{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:700;color:var(--txt-d);margin:18px 0 8px;display:flex;align-items:center;gap:8px}
+.sub-mini::before{content:'';width:3px;height:14px;background:currentColor;border-radius:2px}
+.art-legend{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;background:rgba(255,255,255,.02);border:1px solid var(--bdr);border-radius:12px;padding:12px 16px;margin-bottom:16px}
+.art-legend-item{display:flex;align-items:center;gap:8px;font-size:12.5px}
+.art-legend-item .lab{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px}
+.art-legend-item .ar{color:var(--txt-d)}
+
+/* PRONOUN TABLE */
+.pron-table{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:14px}
+.pron-cell{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px;text-align:center;transition:all .3s ease}
+.pron-cell:hover{border-color:var(--violet);transform:translateY(-2px);background:var(--card-h)}
+.pron-cell .nom{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--txt-d);direction:ltr}
+.pron-cell .arrow{font-size:14px;color:var(--violet);margin:4px 0}
+.pron-cell .akk{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--violet);direction:ltr}
+.pron-cell .ar{font-size:11.5px;color:var(--txt-d);margin-top:4px}
+
+/* DIALOG MINI */
+.dialog-mini{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 18px;margin-top:10px}
+.dl-row{display:flex;gap:10px;padding:6px 0;align-items:flex-start}
+.dl-tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:6px;flex-shrink:0;font-family:'Noto Kufi Arabic',sans-serif;margin-top:4px;min-width:46px;text-align:center}
+.dl-content{flex:1}
+.dl-de{font-family:'JetBrains Mono',monospace;font-size:13.5px;direction:ltr;text-align:right;line-height:1.6}
+.dl-ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+</style>
+</head>
+<body>
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#40c870">الوحدة 6 — Zeit mit Freunden</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill uv"><b></b> Einheit 6 — الوحدة السادسة</div>
+  <h1>وقت <em class="uv">مع الأصدقاء</em></h1>
+  <p class="hero-sub">أنشطة وقت الفراغ، التحضير لمفاجأة عيد ميلاد، الطعام والمطعم، أماكن الخروج، والأفعال المنفصلة وضمائر النصب</p>
+  <div class="hero-sep uv"></div>
+</div>
+
+<div class="art-legend">
+  <div class="art-legend-item"><span class="lab art-der">der</span><span class="ar">— مذكر</span></div>
+  <div class="art-legend-item"><span class="lab art-die">die</span><span class="ar">— مؤنث / جمع</span></div>
+  <div class="art-legend-item"><span class="lab art-das">das</span><span class="ar">— محايد</span></div>
+</div>
+
+<!-- ═══ 1: FREIZEIT ACTIVITIES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--green),#20a050)">١</div>
+    <div><div class="sec-t">الأنشطة وأوقات الفراغ</div><div class="sec-td">Freizeitaktivitäten</div></div>
+  </div>
+
+  <p style="color:var(--txt-d);font-size:13.5px;margin-bottom:8px">ما يفعله الأصدقاء معاً من نشاطات في الهواء الطلق وفي الرياضة.</p>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--green)"><div class="emoji">🎯</div><div class="de"><span class="art art-die">die</span>Aktivität</div><div class="ar">النشاط</div></div>
+    <div class="vc vc-phrase" style="color:var(--green)"><div class="emoji">🌳</div><div class="de"><span class="art art-die">die</span>Freizeitaktivität</div><div class="ar">نشاط وقت الفراغ</div></div>
+    <div class="vc" style="color:var(--green)"><div class="emoji">🧗</div><div class="de">klettern</div><div class="ar">يتسلق</div><div class="ex">Ich glaube, der Mann klettert. — أعتقد أن الرجل يتسلق</div></div>
+    <div class="vc" style="color:var(--green)"><div class="emoji">🥾</div><div class="de">wandern</div><div class="ar">يتنزّه مشياً (في الطبيعة)</div></div>
+    <div class="vc" style="color:var(--green)"><div class="emoji">⛷️</div><div class="de"><span class="art art-der">der</span>Ski</div><div class="ar">التزلج (Ski fahren = يتزلج)</div></div>
+    <div class="vc vc-phrase" style="color:var(--green)"><div class="emoji">🚲</div><div class="de"><span class="art art-die">die</span>Fahrradtour</div><div class="ar">جولة بالدراجة</div><div class="ex">Machen wir eine Fahrradtour? — هل نقوم بجولة بالدراجة؟</div></div>
+    <div class="vc" style="color:var(--green)"><div class="emoji">🧺</div><div class="de"><span class="art art-das">das</span>Picknick</div><div class="ar">نزهة (بيكنك)</div></div>
+    <div class="vc" style="color:var(--green)"><div class="emoji">🏃</div><div class="de">laufen</div><div class="ar">يجري / يركض</div><div class="conj">er läuft · ist gelaufen</div></div>
+    <div class="vc" style="color:var(--green)"><div class="emoji">⚽</div><div class="de"><span class="art art-das">das</span>Fußballspiel</div><div class="ar">مباراة كرة القدم</div></div>
+    <div class="vc vc-phrase" style="color:var(--green)"><div class="emoji">💭</div><div class="de"><span class="art art-die">die</span>Lust</div><div class="ar">الرغبة</div><div class="ex">Kommst du mit? — Nein, ich habe keine Lust. — هل ستأتي معي؟ لا، ليس لدي رغبة</div></div>
+  </div>
+</div>
+
+<!-- ═══ 2: BIRTHDAY & SURPRISE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#b83880)">٢</div>
+    <div><div class="sec-t">المفاجأة وعيد الميلاد</div><div class="sec-td">Überraschung &amp; Geburtstag</div></div>
+  </div>
+
+  <p style="color:var(--txt-d);font-size:13.5px;margin-bottom:8px">كلمات للدعوات والمناسبات والتنسيق بين الأصدقاء.</p>
+
+  <div class="sub-mini" style="color:var(--rose)">🎉 المناسبة والمفاجأة</div>
+  <div class="vc-grid">
+    <div class="vc vc-phrase" style="color:var(--rose)"><div class="emoji">🎁</div><div class="de"><span class="art art-die">die</span>Überraschung</div><div class="ar">المفاجأة</div><div class="ex">Eine Überraschung für Sofia — مفاجأة لصوفيا</div></div>
+    <div class="vc vc-phrase" style="color:var(--rose)"><div class="emoji">😲</div><div class="de">echt?</div><div class="ar">حقاً؟</div><div class="ex">Sofia hat morgen Geburtstag. — Echt? — صوفيا لديها عيد ميلاد غداً. حقاً؟</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="emoji">🎂</div><div class="de"><span class="art art-das">das</span>Geschenk</div><div class="ar">الهدية</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="emoji">🎀</div><div class="de">schenken</div><div class="ar">يهدي</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="emoji">📅</div><div class="de"><span class="art art-das">das</span>Datum / Daten</div><div class="ar">التاريخ / تواريخ</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="emoji">1️⃣</div><div class="de"><span class="art art-die">die</span>Ordinalzahl</div><div class="ar">العدد الترتيبي</div></div>
+    <div class="vc vc-phrase" style="color:var(--rose)"><div class="emoji">⭐</div><div class="de">besonders</div><div class="ar">خاص / مميز</div><div class="ex">Was ist am Geburtstag besonders? — ما المميز في عيد الميلاد؟</div></div>
+    <div class="vc vc-phrase" style="color:var(--rose)"><div class="emoji">🎈</div><div class="de">werden</div><div class="ar">يصبح</div><div class="ex">Sofia wird am Samstag 30. — صوفيا ستصبح بعمر 30 يوم السبت</div></div>
+    <div class="vc vc-phrase" style="color:var(--rose)"><div class="emoji">⚠️</div><div class="de">Achtung!</div><div class="ar">انتباه!</div><div class="ex">Achtung, Sofia weiß nichts. — انتباه، صوفيا لا تعرف شيئاً</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--rose)">📧 الدعوة والمراسلة</div>
+  <div class="vc-grid">
+    <div class="vc vc-phrase" style="color:var(--rose)"><div class="emoji">✉️</div><div class="de"><span class="art art-die">die</span>Einladungsmail</div><div class="ar">إيميل الدعوة</div></div>
+    <div class="vc vc-phrase" style="color:var(--rose)"><div class="emoji">💌</div><div class="de">Herzliche Grüße</div><div class="ar">تحياتي القلبية (في نهاية الإيميل)</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--rose)">⚙️ الأفعال المنفصلة للتنظيم</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--rose)"><div class="de">einladen</div><div class="ar">يدعو</div><div class="conj">er lädt ein · hat eingeladen</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">abholen</div><div class="ar">يحضر / يأخذ شخصاً أو شيئاً</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">anfangen</div><div class="ar">يبدأ</div><div class="conj">er fängt an · hat angefangen</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">anrufen</div><div class="ar">يتصل هاتفياً</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">einsammeln</div><div class="ar">يجمع</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">mitbringen</div><div class="ar">يحضر معه</div><div class="conj">er bringt mit · hat mitgebracht</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">mitkommen</div><div class="ar">يأتي مع</div><div class="conj">er kommt mit · ist mitgekommen</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">mitmachen</div><div class="ar">يشارك</div></div>
+  </div>
+</div>
+
+<!-- ═══ 3: AT THE RESTAURANT — FOOD ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--peach),#c87838)">٣</div>
+    <div><div class="sec-t">في المطعم — الطعام والشراب</div><div class="sec-td">Im Restaurant — Speisen</div></div>
+  </div>
+
+  <p style="color:var(--txt-d);font-size:13.5px;margin-bottom:8px">ما تطلبه عند الجلوس على الطاولة.</p>
+
+  <div class="sub-mini" style="color:var(--peach)">📋 الطلب</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--peach)"><div class="emoji">📖</div><div class="de"><span class="art art-die">die</span>Speisekarte</div><div class="ar">قائمة الطعام</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🛎️</div><div class="de">bestellen</div><div class="ar">يطلب</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">📝</div><div class="de"><span class="art art-die">die</span>Bestellung</div><div class="ar">الطلب</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🤲</div><div class="de">bringen</div><div class="ar">يحضر</div><div class="conj">er bringt · hat gebracht</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--peach)">🍽️ أصناف الطعام</div>
+  <div class="vc-grid">
+    <div class="vc vc-phrase" style="color:var(--peach)"><div class="emoji">🍎</div><div class="de"><span class="art art-die">die</span>Apfelsaftschorle</div><div class="ar">عصير تفاح فوار (مع ماء غازي)</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍦</div><div class="de"><span class="art art-das">das</span>Eis</div><div class="ar">آيس كريم</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍟</div><div class="de"><span class="art art-die">die</span>Pommes</div><div class="ar">بطاطس مقلية</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🥓</div><div class="de"><span class="art art-die">die</span>Salami</div><div class="ar">سلامي (نقانق)</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍖</div><div class="de"><span class="art art-das">das</span>Schnitzel</div><div class="ar">شنيتزل (شريحة لحم مقلية)</div></div>
+    <div class="vc" style="color:var(--peach)"><div class="emoji">🍅</div><div class="de"><span class="art art-die">die</span>Tomatensuppe</div><div class="ar">شوربة طماطم</div></div>
+  </div>
+</div>
+
+<!-- ═══ 4: TABLEWARE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#b88820)">٤</div>
+    <div><div class="sec-t">أدوات المائدة</div><div class="sec-td">Geschirr &amp; Besteck</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--gold)"><div class="emoji">🍴</div><div class="de"><span class="art art-die">die</span>Gabel</div><div class="ar">الشوكة</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="emoji">🥄</div><div class="de"><span class="art art-der">der</span>Löffel</div><div class="ar">الملعقة</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="emoji">🔪</div><div class="de"><span class="art art-das">das</span>Messer</div><div class="ar">السكين</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="emoji">🧻</div><div class="de"><span class="art art-die">die</span>Serviette</div><div class="ar">المنديل</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="emoji">☕</div><div class="de"><span class="art art-die">die</span>Tasse</div><div class="ar">الفنجان</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="emoji">🍽️</div><div class="de"><span class="art art-der">der</span>Teller</div><div class="ar">الطبق</div></div>
+  </div>
+</div>
+
+<!-- ═══ 5: PAYING ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#c84028)">٥</div>
+    <div><div class="sec-t">الدفع والخدمة</div><div class="sec-td">Bezahlen &amp; Service</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--coral)"><div class="emoji">💶</div><div class="de">bezahlen</div><div class="ar">يدفع</div></div>
+    <div class="vc vc-phrase" style="color:var(--coral)"><div class="emoji">↔️</div><div class="de">getrennt</div><div class="ar">منفصل (كل واحد يدفع لنفسه)</div><div class="ex">Zahlen bitte. Getrennt oder zusammen? — الحساب لو سمحت. منفصل أم معاً؟</div></div>
+    <div class="vc vc-phrase" style="color:var(--coral)"><div class="emoji">✅</div><div class="de">stimmen / Stimmt so!</div><div class="ar">صحيح / الباقي لك ("خلّه معك")</div><div class="ex">Das macht 13,80. Hier sind 15 Euro. Stimmt so. — الحساب 13.80. تفضل 15 يورو. الباقي لك</div></div>
+    <div class="vc vc-phrase" style="color:var(--coral)"><div class="emoji">💵</div><div class="de"><span class="art art-das">das</span>Trinkgeld</div><div class="ar">الإكرامية (البقشيش)</div><div class="ex">Sie gibt dem Kellner Trinkgeld. — هي تعطي النادل إكرامية</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="emoji">💧</div><div class="de"><span class="art art-der">der</span>Durst</div><div class="ar">العطش</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="emoji">🍴</div><div class="de"><span class="art art-der">der</span>Hunger</div><div class="ar">الجوع</div></div>
+  </div>
+
+  <!-- Mini dialog -->
+  <div class="dialog-mini">
+    <div style="font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:700;color:var(--coral);margin-bottom:8px">💬 محادثة الدفع</div>
+    <div class="dl-row">
+      <div class="dl-tag" style="background:rgba(240,104,72,.1);color:var(--coral);border:1px solid rgba(240,104,72,.15)">زبون</div>
+      <div class="dl-content"><div class="dl-de" style="color:var(--coral)">Zahlen bitte!</div><div class="dl-ar">الحساب لو سمحت!</div></div>
+    </div>
+    <div class="dl-row">
+      <div class="dl-tag" style="background:rgba(72,152,240,.1);color:var(--sky);border:1px solid rgba(72,152,240,.15)">نادل</div>
+      <div class="dl-content"><div class="dl-de" style="color:var(--sky)">Getrennt oder zusammen?</div><div class="dl-ar">منفصل أم معاً؟</div></div>
+    </div>
+    <div class="dl-row">
+      <div class="dl-tag" style="background:rgba(240,104,72,.1);color:var(--coral);border:1px solid rgba(240,104,72,.15)">زبون</div>
+      <div class="dl-content"><div class="dl-de" style="color:var(--coral)">Zusammen, bitte. Hier sind 15 Euro. Stimmt so!</div><div class="dl-ar">معاً من فضلك. تفضل 15 يورو. الباقي لك!</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 6: PLACES & EVENTS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#2070c8)">٦</div>
+    <div><div class="sec-t">أماكن الخروج والفعاليات</div><div class="sec-td">Orte &amp; Events</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--sky)">🏞️ أماكن الجلوس والخروج</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🚶</div><div class="de"><span class="art art-der">der</span>Ausflug</div><div class="ar">نزهة / رحلة قصيرة</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">☀️</div><div class="de">draußen</div><div class="ar">في الخارج</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🟢</div><div class="de">geöffnet</div><div class="ar">مفتوح</div></div>
+    <div class="vc vc-phrase" style="color:var(--sky)"><div class="emoji">🍺</div><div class="de"><span class="art art-der">der</span>Biergarten</div><div class="ar">حديقة الجعة (مكان جلوس خارجي)</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🍻</div><div class="de"><span class="art art-die">die</span>Kneipe</div><div class="ar">حانة</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🏠</div><div class="de"><span class="art art-das">das</span>Lokal</div><div class="ar">محل (مطعم أو مقهى)</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">☕</div><div class="de"><span class="art art-das">das</span>Kaffeehaus</div><div class="ar">المقهى</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🛝</div><div class="de"><span class="art art-der">der</span>Spielplatz</div><div class="ar">ملعب الأطفال</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🏖️</div><div class="de"><span class="art art-die">die</span>Strandbar</div><div class="ar">بار على الشاطئ</div></div>
+    <div class="vc vc-phrase" style="color:var(--sky)"><div class="emoji">👥</div><div class="de">voll</div><div class="ar">ممتلئ</div><div class="ex">Die Kneipe ist am Abend voll. — الحانة ممتلئة في المساء</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🌤️</div><div class="de"><span class="art art-das">das</span>Wetter</div><div class="ar">الطقس</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--sky)">🎟️ الفعاليات والتذاكر</div>
+  <div class="vc-grid">
+    <div class="vc vc-phrase" style="color:var(--sky)"><div class="emoji">📝</div><div class="de"><span class="art art-die">die</span>Anmeldung</div><div class="ar">التسجيل</div><div class="ex">Anmeldung zum Marathon — التسجيل للماراثون</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🎫</div><div class="de"><span class="art art-der">der</span>Eintritt</div><div class="ar">الدخول (تذكرة الدخول)</div></div>
+    <div class="vc vc-phrase" style="color:var(--sky)"><div class="emoji">🎟️</div><div class="de"><span class="art art-die">die</span>Karte / Konzertkarten</div><div class="ar">التذكرة / تذاكر الحفلة</div><div class="ex">Die Karten für das Konzert kosten 49 Euro. — تذاكر الحفلة بـ 49 يورو</div></div>
+    <div class="vc vc-phrase" style="color:var(--sky)"><div class="emoji">🎭</div><div class="de"><span class="art art-die">die</span>Kulturnacht</div><div class="ar">ليلة الثقافة</div></div>
+    <div class="vc vc-phrase" style="color:var(--sky)"><div class="emoji">🏛️</div><div class="de"><span class="art art-die">die</span>Museumsnacht</div><div class="ar">ليلة المتاحف</div></div>
+    <div class="vc vc-phrase" style="color:var(--sky)"><div class="emoji">🎬</div><div class="de"><span class="art art-das">das</span>Open-Air-Kino</div><div class="ar">سينما في الهواء الطلق</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">📅</div><div class="de"><span class="art art-das">das</span>Programm</div><div class="ar">البرنامج</div></div>
+  </div>
+</div>
+
+<!-- ═══ 7: VERBS & EXPRESSIONS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#18a888)">٧</div>
+    <div><div class="sec-t">أفعال وتعابير مهمة</div><div class="sec-td">Verben &amp; Ausdrücke</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--teal)"><div class="de">wissen</div><div class="ar">يعرف</div><div class="conj">er weiß · hat gewusst</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">passieren</div><div class="ar">يحدث</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">verboten</div><div class="ar">ممنوع</div></div>
+    <div class="vc vc-phrase" style="color:var(--teal)"><div class="de">klingen</div><div class="ar">يبدو / يرنّ</div><div class="ex">Klingt gut! — يبدو جيداً!</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">glauben</div><div class="ar">يعتقد</div></div>
+    <div class="vc vc-phrase" style="color:var(--teal)"><div class="de">Was ist los?</div><div class="ar">ماذا يحدث؟ / ما الخطب؟</div></div>
+  </div>
+</div>
+
+<!-- ═══ 8: GRAMMAR — Akkusativ Pronouns ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">٨</div>
+    <div><div class="sec-t">ضمائر النصب (المفعول به)</div><div class="sec-td">Akkusativpronomen</div></div>
+  </div>
+
+  <p style="color:var(--txt-d);font-size:13.5px;margin-bottom:8px">عندما يصبح الضمير مفعولاً به، يتغيّر شكله:</p>
+
+  <div class="pron-table">
+    <div class="pron-cell"><div class="nom">ich</div><div class="arrow">↓</div><div class="akk">mich</div><div class="ar">إيّاي</div></div>
+    <div class="pron-cell"><div class="nom">du</div><div class="arrow">↓</div><div class="akk">dich</div><div class="ar">إيّاك</div></div>
+    <div class="pron-cell"><div class="nom">er</div><div class="arrow">↓</div><div class="akk">ihn</div><div class="ar">إيّاه</div></div>
+    <div class="pron-cell"><div class="nom">sie / es</div><div class="arrow">↓</div><div class="akk">sie / es</div><div class="ar">إيّاها / إيّاه</div></div>
+    <div class="pron-cell"><div class="nom">wir</div><div class="arrow">↓</div><div class="akk">uns</div><div class="ar">إيّانا</div></div>
+    <div class="pron-cell"><div class="nom">ihr</div><div class="arrow">↓</div><div class="akk">euch</div><div class="ar">إيّاكم</div></div>
+    <div class="pron-cell"><div class="nom">sie / Sie</div><div class="arrow">↓</div><div class="akk">sie / Sie</div><div class="ar">إيّاهم / حضرتك</div></div>
+  </div>
+</div>
+
+<!-- ═══ 9: GRAMMAR NOTES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),var(--rose))">★</div>
+    <div><div class="sec-t">ملاحظات قواعدية</div><div class="sec-td">Grammatikhinweise</div></div>
+  </div>
+
+  <div class="note-box" style="background:rgba(48,208,176,.04);border:1px solid rgba(48,208,176,.15)">
+    <div class="nb-icon">🔗</div>
+    <div class="nb-content">
+      <h5 style="color:var(--teal)">الأفعال المنفصلة (Trennbare Verben)</h5>
+      <p>أفعال من جزأين: <strong style="font-family:'JetBrains Mono',monospace;color:var(--teal)">سابقة (Prefix) + فعل أصلي</strong>. في الجملة العادية تنفصل السابقة وتذهب لآخر الجملة. أمثلة من الوحدة: <span style="font-family:'JetBrains Mono',monospace;color:var(--txt-b)">einladen, abholen, anrufen, mitbringen, mitkommen, anfangen</span>.</p>
+    </div>
+  </div>
+
+  <div class="note-box" style="background:rgba(160,104,240,.04);border:1px solid rgba(160,104,240,.15)">
+    <div class="nb-icon">⏳</div>
+    <div class="nb-content">
+      <h5 style="color:var(--violet)">الماضي البسيط (Präteritum)</h5>
+      <p>زمن الماضي البسيط يُستخدم خاصة مع <strong style="font-family:'JetBrains Mono',monospace;color:var(--violet)">haben</strong> و<strong style="font-family:'JetBrains Mono',monospace;color:var(--violet)">sein</strong> في المحادثة، ومع باقي الأفعال في الكتابة الرسمية والقصص.</p>
+    </div>
+  </div>
+
+  <div class="note-box" style="background:rgba(232,104,168,.04);border:1px solid rgba(232,104,168,.15)">
+    <div class="nb-icon">✏️</div>
+    <div class="nb-content">
+      <h5 style="color:var(--rose)">نصيحة للحفظ</h5>
+      <p>استخدم ألواناً مختلفة للأدوات في دفترك: <strong class="art-der">der</strong> أزرق، <strong class="art-die">die</strong> أحمر، <strong class="art-das">das</strong> أخضر. واكتب الجملة بجانب الكلمة لتفهم سياق استخدامها.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

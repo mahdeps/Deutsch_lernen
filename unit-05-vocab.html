@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدة 5 — Familie &amp; Termine</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+.hero-pill.uv{background:rgba(160,104,240,.08);border:1px solid rgba(160,104,240,.18);color:var(--violet)}
+.hero-pill.uv b{background:var(--violet)}
+.hero h1 em.uv{background:linear-gradient(135deg,var(--violet),var(--rose));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sep.uv{background:linear-gradient(90deg,var(--violet),var(--rose))}
+.vc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:14px}
+.vc{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:14px 16px;transition:all .3s ease;display:flex;flex-direction:column;gap:4px;position:relative;overflow:hidden}
+.vc:hover{border-color:var(--bdr-h);transform:translateY(-2px);background:var(--card-h);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.vc::before{content:'';position:absolute;top:0;right:0;width:3px;height:100%;background:currentColor;opacity:.5}
+.vc .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;text-align:right;line-height:1.5;color:var(--txt-b)}
+.vc .ar{font-size:13px;color:var(--txt-d);font-family:'Noto Naskh Arabic',serif;line-height:1.6}
+.vc .conj{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);direction:ltr;text-align:right;background:rgba(255,255,255,.02);padding:3px 8px;border-radius:6px;margin-top:4px;display:inline-block;font-style:italic;align-self:flex-start}
+.vc .art{font-weight:700;margin-left:4px}
+.vc .emoji{position:absolute;top:10px;left:12px;font-size:18px;opacity:.6}
+.art-der{color:var(--sky)}.art-die{color:var(--rose)}.art-das{color:var(--green)}
+.vc-phrase{grid-column:span 2}@media(max-width:640px){.vc-phrase{grid-column:span 1}}
+.note-box{border-radius:16px;padding:18px 20px;margin-bottom:10px;display:flex;gap:14px;align-items:flex-start}
+.note-box .nb-icon{font-size:22px;flex-shrink:0;margin-top:2px}.note-box .nb-content{flex:1}
+.note-box h5{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:800;margin-bottom:6px}
+.note-box p{font-size:13.5px;line-height:1.9;color:var(--txt)}
+.sub-mini{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:700;color:var(--txt-d);margin:18px 0 8px;display:flex;align-items:center;gap:8px}
+.sub-mini::before{content:'';width:3px;height:14px;background:currentColor;border-radius:2px}
+.art-legend{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;background:rgba(255,255,255,.02);border:1px solid var(--bdr);border-radius:12px;padding:12px 16px;margin-bottom:16px}
+.art-legend-item{display:flex;align-items:center;gap:8px;font-size:12.5px}
+.art-legend-item .lab{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px}
+.art-legend-item .ar{color:var(--txt-d)}
+
+/* CLOCK CARDS */
+.clock-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:14px}
+.clock-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:18px;text-align:center;transition:all .3s ease}
+.clock-card:hover{border-color:var(--violet);transform:translateY(-2px)}
+.clock-card .time{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:var(--violet);direction:ltr}
+.clock-card .reading{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--txt-b);margin-top:8px;direction:ltr}
+.clock-card .ar{font-size:12px;color:var(--txt-d);margin-top:4px}
+
+/* FAMILY TREE */
+.fam-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+@media(max-width:640px){.fam-row{grid-template-columns:1fr}}
+.fam-pair{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px;display:flex;align-items:center;justify-content:center;gap:12px;transition:all .3s ease}
+.fam-pair:hover{border-color:var(--bdr-h);background:var(--card-h)}
+.fam-side{flex:1;text-align:center}
+.fam-side .ic{font-size:24px;margin-bottom:4px}
+.fam-side .de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--txt-b);direction:ltr}
+.fam-side .ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+.fam-divider{font-size:18px;color:var(--txt-d);opacity:.4}
+</style>
+</head>
+<body>
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#a068f0">الوحدة 5 — Familie &amp; Termine</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill uv"><b></b> Einheit 5 — الوحدة الخامسة</div>
+  <h1>العائلة <em class="uv">والمواعيد</em></h1>
+  <p class="hero-sub">التوقيت والساعة، أفراد العائلة، الأنشطة اليومية، والمحادثات الرسمية في العيادة</p>
+  <div class="hero-sep uv"></div>
+</div>
+
+<div class="art-legend">
+  <div class="art-legend-item"><span class="lab art-der">der</span><span class="ar">— مذكر</span></div>
+  <div class="art-legend-item"><span class="lab art-die">die</span><span class="ar">— مؤنث / جمع</span></div>
+  <div class="art-legend-item"><span class="lab art-das">das</span><span class="ar">— محايد</span></div>
+</div>
+
+<!-- ═══ 1: TIME ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">١</div>
+    <div><div class="sec-t">التوقيت والساعة</div><div class="sec-td">Uhrzeit</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--violet)">السؤال عن الوقت</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--violet)"><div class="de">Wie spät ist es?</div><div class="ar">كم الساعة الآن؟</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de">Wie viel Uhr ist es?</div><div class="ar">كم الساعة؟</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--violet)">مفردات الوقت</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-die">die</span>Zeit</div><div class="ar">الوقت</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de">vor</div><div class="ar">قبل (تعني "إلا" في الساعة)</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de">nach</div><div class="ar">بعد (تعني "و" في الساعة)</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-das">das</span>Viertel</div><div class="ar">الربع</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de">spät</div><div class="ar">متأخر</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de">offiziell</div><div class="ar">رسمي (للتوقيت)</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-die">die</span>Minute</div><div class="ar">الدقيقة</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-die">die</span>Sekunde</div><div class="ar">الثانية</div></div>
+    <div class="vc vc-phrase" style="color:var(--violet)"><div class="de">die halbe Stunde</div><div class="ar">نصف الساعة</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de">pünktlich</div><div class="ar">في الموعد / منضبط</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-die">die</span>Pünktlichkeit</div><div class="ar">الانضباط في المواعيد</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-die">die</span>Verspätung</div><div class="ar">التأخير</div></div>
+    <div class="vc" style="color:var(--violet)"><div class="de"><span class="art art-die">die</span>Zeitangabe</div><div class="ar">تحديد الوقت</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--violet)">أمثلة على الساعة</div>
+  <div class="clock-grid">
+    <div class="clock-card"><div class="time">1:55</div><div class="reading">Es ist 5 vor 2</div><div class="ar">الثانية إلا خمس دقائق</div></div>
+    <div class="clock-card"><div class="time">6:15</div><div class="reading">viertel nach 6</div><div class="ar">السادسة والربع</div></div>
+    <div class="clock-card" style="border-color:rgba(240,72,88,.25)"><div class="time" style="color:var(--red)">⚠️</div><div class="reading">Er kommt zu spät</div><div class="ar">سيأتي متأخراً</div></div>
+  </div>
+</div>
+
+<!-- ═══ 2: FAMILY ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#b83880)">٢</div>
+    <div><div class="sec-t">أفراد العائلة</div><div class="sec-td">Familie</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--rose)">الوالدان والأجداد</div>
+  <div class="fam-row">
+    <div class="fam-pair">
+      <div class="fam-side"><div class="ic">👨</div><div class="de" style="color:var(--sky)">der Vater</div><div class="ar">الأب</div></div>
+      <div class="fam-divider">·</div>
+      <div class="fam-side"><div class="ic">👩</div><div class="de" style="color:var(--rose)">die Mutter</div><div class="ar">الأم</div></div>
+    </div>
+    <div class="fam-pair">
+      <div class="fam-side"><div class="ic">👴</div><div class="de" style="color:var(--sky)">der Großvater</div><div class="ar">الجد (Opa)</div></div>
+      <div class="fam-divider">·</div>
+      <div class="fam-side"><div class="ic">👵</div><div class="de" style="color:var(--rose)">die Großmutter</div><div class="ar">الجدة (Oma)</div></div>
+    </div>
+  </div>
+
+  <div class="vc-grid" style="margin-top:10px">
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-die">die</span>Eltern</div><div class="ar">الوالدان</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-die">die</span>Großeltern</div><div class="ar">الأجداد</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--rose)">الأبناء والإخوة</div>
+  <div class="fam-row">
+    <div class="fam-pair">
+      <div class="fam-side"><div class="ic">👦</div><div class="de" style="color:var(--sky)">der Sohn</div><div class="ar">الابن</div></div>
+      <div class="fam-divider">·</div>
+      <div class="fam-side"><div class="ic">👧</div><div class="de" style="color:var(--rose)">die Tochter</div><div class="ar">الابنة</div></div>
+    </div>
+    <div class="fam-pair">
+      <div class="fam-side"><div class="ic">🧑</div><div class="de" style="color:var(--sky)">der Bruder</div><div class="ar">الأخ</div></div>
+      <div class="fam-divider">·</div>
+      <div class="fam-side"><div class="ic">👩</div><div class="de" style="color:var(--rose)">die Schwester</div><div class="ar">الأخت</div></div>
+    </div>
+  </div>
+
+  <div class="vc-grid" style="margin-top:10px">
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-die">die</span>Geschwister</div><div class="ar">الإخوة (أشقاء)</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-das">das</span>Kind / Kinder</div><div class="ar">الطفل / الأطفال</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-der">der</span>Junge</div><div class="ar">الولد</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-das">das</span>Mädchen</div><div class="ar">البنت</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-das">das</span>Baby</div><div class="ar">الرضيع</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de"><span class="art art-der">der</span>Onkel</div><div class="ar">الخال / العم</div></div>
+    <div class="vc vc-phrase" style="color:var(--rose)"><div class="de">der/die Verwandte</div><div class="ar">القريب / القريبة</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--rose)">الحالة الاجتماعية</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--rose)"><div class="de">ledig</div><div class="ar">أعزب / عزباء</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">verheiratet</div><div class="ar">متزوج / متزوجة</div></div>
+  </div>
+</div>
+
+<!-- ═══ 3: APPOINTMENTS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#b88820)">٣</div>
+    <div><div class="sec-t">المواعيد والأنشطة</div><div class="sec-td">Termine &amp; Aktivitäten</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--gold)"><div class="emoji">🎂</div><div class="de"><span class="art art-der">der</span>Geburtstag</div><div class="ar">عيد الميلاد</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="emoji">📅</div><div class="de"><span class="art art-der">der</span>Kalender</div><div class="ar">التقويم / النتيجة</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="emoji">🏃</div><div class="de"><span class="art art-das">das</span>Training</div><div class="ar">التدريب</div></div>
+    <div class="vc" style="color:var(--gold)"><div class="emoji">⚽</div><div class="de"><span class="art art-das">das</span>Spiel</div><div class="ar">اللعبة / المباراة</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="emoji">📝</div><div class="de"><span class="art art-der">der</span>Englischtest</div><div class="ar">اختبار اللغة الإنجليزية</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="emoji">🔢</div><div class="de"><span class="art art-der">der</span>Matetest</div><div class="ar">اختبار الرياضيات</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="emoji">🎻</div><div class="de"><span class="art art-der">der</span>Geigenunterricht</div><div class="ar">درس الكمان</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="emoji">🎺</div><div class="de"><span class="art art-der">der</span>Trompetenunterricht</div><div class="ar">درس الترومبيت</div></div>
+  </div>
+</div>
+
+<!-- ═══ 4: VERBS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#18a888)">٤</div>
+    <div><div class="sec-t">الأفعال</div><div class="sec-td">Verben</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--teal)">أفعال أساسية</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--teal)"><div class="de">treffen</div><div class="ar">يقابل</div><div class="conj">trifft · hat getroffen</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">bleiben</div><div class="ar">يبقى</div><div class="conj">bleibt · ist geblieben</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">telefonieren</div><div class="ar">يتصل هاتفياً</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">beschreiben</div><div class="ar">يصف</div><div class="conj">beschreibt · hat beschrieben</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">gehen</div><div class="ar">يذهب</div><div class="conj">geht · ist gegangen</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">ziehen</div><div class="ar">يسحب</div><div class="conj">zieht · hat gezogen</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">tun</div><div class="ar">يفعل</div><div class="conj">tut · hat getan</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">sitzen</div><div class="ar">يجلس</div><div class="conj">sitzt · hat gesessen</div></div>
+    <div class="vc" style="color:var(--teal)"><div class="de">haben</div><div class="ar">يملك</div><div class="conj">hat · hat gehabt</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--red)">الأفعال المساعدة (Modalverben)</div>
+  <div class="note-box" style="background:rgba(240,72,88,.04);border:1px solid rgba(240,72,88,.15);margin-bottom:10px">
+    <div class="nb-icon">⚡</div>
+    <div class="nb-content">
+      <h5 style="color:var(--red)">قاعدة الأفعال المساعدة</h5>
+      <p>تأتي مع فعل آخر في صيغة المصدر في آخر الجملة. مثال: <span style="font-family:'JetBrains Mono',monospace;color:var(--txt-b)">Ich kann <strong>schwimmen</strong>.</span></p>
+    </div>
+  </div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--red)"><div class="de">können</div><div class="ar">يستطيع</div><div class="conj">kann · hat gekonnt</div></div>
+    <div class="vc" style="color:var(--red)"><div class="de">müssen</div><div class="ar">يجب</div><div class="conj">muss · hat gemusst</div></div>
+    <div class="vc" style="color:var(--red)"><div class="de">wollen</div><div class="ar">يريد</div><div class="conj">will · hat gewollt</div></div>
+  </div>
+</div>
+
+<!-- ═══ 5: PRACTICE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#c84028)">٥</div>
+    <div><div class="sec-t">في العيادة والمواعيد الرسمية</div><div class="sec-td">In der Praxis</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--coral)">المفردات</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-die">die</span>Praxis</div><div class="ar">عيادة الطبيب</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Termin</div><div class="ar">الموعد</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de">frei</div><div class="ar">فارغ / متاح</div></div>
+    <div class="vc" style="color:var(--coral)"><div class="de"><span class="art art-der">der</span>Sprachkurs</div><div class="ar">دورة اللغة</div></div>
+    <div class="vc vc-phrase" style="color:var(--coral)"><div class="de"><span class="art art-das">das</span>Telefongespräch</div><div class="ar">مكالمة هاتفية</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--coral)">جمل المحادثة</div>
+  <div class="vc-grid">
+    <div class="vc vc-phrase" style="color:var(--coral)"><div class="de">Kann ich einen Termin haben?</div><div class="ar">هل يمكنني الحصول على موعد؟</div></div>
+    <div class="vc vc-phrase" style="color:var(--coral)"><div class="de">Ich hätte gern einen Termin.</div><div class="ar">أود الحصول على موعد</div></div>
+    <div class="vc vc-phrase" style="color:var(--coral)"><div class="de">Wie war noch mal Ihr Name?</div><div class="ar">ماذا كان اسم حضرتك مرة أخرى؟</div></div>
+    <div class="vc vc-phrase" style="color:var(--coral)"><div class="de">Leider ist am Montag kein Termin frei.</div><div class="ar">للأسف لا يوجد موعد متاح يوم الاثنين</div></div>
+    <div class="vc vc-phrase" style="color:var(--coral)"><div class="de">Was kann ich für Sie tun?</div><div class="ar">ماذا يمكنني أن أفعل لحضرتك؟</div></div>
+    <div class="vc vc-phrase" style="color:var(--coral)"><div class="de">Ab 16 Uhr bin ich beim Friseur.</div><div class="ar">بدءاً من الرابعة سأكون عند الحلاق</div></div>
+  </div>
+</div>
+
+<!-- ═══ 6: ANIMALS & MUSIC ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#2870c8)">٦</div>
+    <div><div class="sec-t">حيوانات وآلات موسيقية</div><div class="sec-td">Tiere &amp; Musikinstrumente</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--sky)">🐾 الحيوانات</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🐶</div><div class="de"><span class="art art-der">der</span>Hund</div><div class="ar">الكلب</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🐹</div><div class="de"><span class="art art-der">der</span>Hamster</div><div class="ar">الهامستر</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🐭</div><div class="de"><span class="art art-die">die</span>Maus</div><div class="ar">الفأر</div></div>
+  </div>
+
+  <div class="sub-mini" style="color:var(--sky)">🎵 الآلات الموسيقية</div>
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🎻</div><div class="de"><span class="art art-die">die</span>Geige</div><div class="ar">الكمان</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🎺</div><div class="de"><span class="art art-die">die</span>Trompete</div><div class="ar">الترومبيت</div></div>
+    <div class="vc" style="color:var(--sky)"><div class="emoji">🎷</div><div class="de"><span class="art art-das">das</span>Saxofon</div><div class="ar">الساكسفون</div></div>
+  </div>
+</div>
+
+<!-- ═══ 7: POLITENESS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#b83880)">٧</div>
+    <div><div class="sec-t">التعامل بتهذيب</div><div class="sec-td">Höflichkeit</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc" style="color:var(--rose)"><div class="de">höflich · unhöflich</div><div class="ar">مهذب · غير مهذب</div></div>
+    <div class="vc vc-phrase" style="color:var(--rose)"><div class="de">Entschuldigen Sie bitte.</div><div class="ar">معذرة من فضلك</div></div>
+    <div class="vc vc-phrase" style="color:var(--rose)"><div class="de">Ich bitte um Entschuldigung.</div><div class="ar">أرجو المعذرة</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">Macht nichts.</div><div class="ar">لا بأس / لا يهم</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">Schon gut.</div><div class="ar">حسناً / لا بأس</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">Tut mir leid.</div><div class="ar">أنا آسف</div></div>
+    <div class="vc" style="color:var(--rose)"><div class="de">Schade.</div><div class="ar">خسارة / للأسف</div></div>
+  </div>
+</div>
+
+<!-- ═══ 8: KEY SENTENCES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),var(--coral))">★</div>
+    <div><div class="sec-t">جمل عائلية وتعابير</div><div class="sec-td">Wichtige Sätze</div></div>
+  </div>
+
+  <div class="vc-grid">
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Florian hat am Sonntag ein Spiel.</div><div class="ar">فلوريان لديه مباراة يوم الأحد</div></div>
+    <div class="vc vc-phrase" style="color:var(--gold)"><div class="de">Meine Kinder gehen in Frankfurt in die Schule.</div><div class="ar">أطفالي يذهبون للمدرسة في فرانكفورت</div></div>
+  </div>
+</div>
+
+<!-- ═══ 9: GRAMMAR NOTES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),var(--rose))">★</div>
+    <div><div class="sec-t">ملاحظات قواعدية</div><div class="sec-td">Grammatikhinweise</div></div>
+  </div>
+
+  <div class="note-box" style="background:rgba(160,104,240,.04);border:1px solid rgba(160,104,240,.15)">
+    <div class="nb-icon">👥</div>
+    <div class="nb-content">
+      <h5 style="color:var(--violet)">ضمائر الملكية</h5>
+      <p><strong style="font-family:'JetBrains Mono',monospace;color:var(--violet)">unser / unsere</strong> = لنا، و<strong style="font-family:'JetBrains Mono',monospace;color:var(--violet)">euer / eure</strong> = لكم.</p>
+    </div>
+  </div>
+
+  <div class="note-box" style="background:rgba(232,104,168,.04);border:1px solid rgba(232,104,168,.15)">
+    <div class="nb-icon">📚</div>
+    <div class="nb-content">
+      <h5 style="color:var(--rose)">قاعدة الجمع المؤنث</h5>
+      <p>الكلمات المنتهية بـ <strong style="font-family:'JetBrains Mono',monospace;color:var(--rose)">‑in</strong> يُضاف لها <strong style="font-family:'JetBrains Mono',monospace;color:var(--rose)">‑nen</strong> في الجمع. مثال: <span style="font-family:'JetBrains Mono',monospace;color:var(--txt-b)">die Technikerin → die Technikerinnen</span>.</p>
+    </div>
+  </div>
+
+  <div class="note-box" style="background:rgba(72,152,240,.04);border:1px solid rgba(72,152,240,.15)">
+    <div class="nb-icon">✏️</div>
+    <div class="nb-content">
+      <h5 style="color:var(--sky)">نصيحة للكتابة</h5>
+      <p>تأكد من كتابة الأداة (<strong class="art-der">der</strong> / <strong class="art-die">die</strong> / <strong class="art-das">das</strong>) مع كل اسم، فهي أساسية في الألمانية.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
