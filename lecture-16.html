@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 16 — التكنولوجيا، الرسالة، والصحة</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Dativ review table ─── */
+.dv2-table{width:100%;border-collapse:collapse;margin-top:14px}
+.dv2-table th,.dv2-table td{padding:11px 14px;border:1px solid var(--bdr);text-align:center;font-size:14px}
+.dv2-table th{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:700;background:rgba(255,255,255,.02);color:var(--txt-d)}
+.dv2-table .gen{font-size:13px;color:var(--txt-d);font-family:'Noto Naskh Arabic',serif}
+.dv2-table .nom{color:var(--txt-b);font-family:'JetBrains Mono',monospace;font-weight:600}
+.dv2-table .dat{color:var(--violet);font-family:'JetBrains Mono',monospace;font-weight:700;background:rgba(154,133,184,.06)}
+.dv2-table .dat-pl{color:var(--rose);font-family:'JetBrains Mono',monospace;font-weight:700;background:rgba(200,152,168,.06)}
+
+/* ─── Tech problem cards ─── */
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:14px}
+.tech-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;transition:border-color .25s,transform .25s}
+.tech-card:hover{border-color:rgba(112,149,192,.35);transform:translateY(-2px)}
+.tech-ic{font-size:26px;flex-shrink:0;margin-top:2px;line-height:1}
+.tech-de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;direction:ltr;text-align:right;margin-bottom:5px}
+.tech-ar{font-size:13px;color:var(--txt-d)}
+
+/* ─── Computer verbs grid ─── */
+.verb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:14px}
+.verb-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;transition:border-color .25s,transform .25s}
+.verb-card:hover{border-color:rgba(111,164,148,.35);transform:translateY(-2px)}
+.verb-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;direction:ltr;margin-bottom:4px}
+.verb-ar{font-size:13px;color:var(--txt-d);margin-bottom:6px}
+.verb-note{font-size:11px;font-family:'JetBrains Mono',monospace;color:var(--txt-d);border-top:1px solid var(--bdr);padding-top:6px;direction:ltr}
+.sep-badge{display:inline-block;font-family:'Noto Kufi Arabic',sans-serif;font-size:10px;font-weight:700;padding:2px 8px;border-radius:100px;margin-bottom:6px}
+
+/* ─── Sentence blocks (connectors) ─── */
+.sb{display:flex;gap:0;margin:8px 0;border-radius:12px;overflow:hidden;border:1px solid var(--bdr)}
+.sb-block{flex:1;padding:10px 12px;text-align:center;border-right:1px solid var(--bdr)}
+.sb-block:last-child{border-right:none}
+.sb-pos{font-family:'Noto Kufi Arabic',sans-serif;font-size:10px;font-weight:700;color:var(--txt-d);margin-bottom:4px}
+.sb-val{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600}
+.sb-lbl{font-size:11px;color:var(--txt-d);margin-top:3px}
+
+/* ─── Letter components ─── */
+.letter-wrap{background:var(--card);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:14px}
+.letter-head{padding:16px 20px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:12px}
+.letter-icon{font-size:22px}
+.letter-title{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:700;color:var(--txt-b)}
+.letter-subtitle{font-size:12px;color:var(--txt-d)}
+.letter-parts{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0}
+.lp{display:flex;gap:12px;align-items:flex-start;padding:14px 18px;border-bottom:1px solid var(--bdr);border-left:1px solid var(--bdr)}
+.lp:nth-last-child(-n+2){border-bottom:none}
+.lp-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;flex-shrink:0;color:#0a0b10;margin-top:2px}
+.lp-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;direction:ltr;margin-bottom:3px}
+.lp-ar{font-size:13px;color:var(--txt-d)}
+.lp-note{font-size:11px;color:var(--txt-d);margin-top:4px;font-style:italic}
+
+/* ─── Health vocab ─── */
+.time-grid{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.time-pill{background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:10px 16px;text-align:center;min-width:130px}
+.time-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;direction:ltr;margin-bottom:4px}
+.time-ar{font-size:12px;color:var(--txt-d)}
+
+.habit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:14px}
+.habit-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;transition:border-color .25s}
+.habit-card:hover{border-color:rgba(124,168,120,.35)}
+.habit-ic{font-size:22px;flex-shrink:0;margin-top:2px}
+.habit-ar{font-size:13px;color:var(--txt-d)}
+
+/* ─── Voice messages ─── */
+.msg-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.msg{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 18px;display:flex;gap:14px}
+.msg-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;flex-shrink:0;color:#0a0b10;margin-top:2px}
+.msg-sender{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:700;margin-bottom:5px}
+.msg-text{font-size:13px;color:var(--txt-d);line-height:1.85}
+
+/* ─── Homework ─── */
+.hw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:14px}
+.hw-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:20px}
+.hw-page{font-family:'Space Mono',monospace;font-size:26px;font-weight:700;color:var(--gold);margin-bottom:8px;line-height:1}
+.hw-title{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:700;color:var(--txt-b);margin-bottom:6px}
+.hw-desc{font-size:13px;color:var(--txt-d);line-height:1.9}
+.hw-tag{display:inline-flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 10px;border-radius:100px;margin-top:10px;font-weight:600}
+
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.rv.v{opacity:1;transform:none}
+
+@media(max-width:600px){
+  .sb{flex-direction:column}
+  .sb-block{border-right:none;border-bottom:1px solid var(--bdr)}
+  .sb-block:last-child{border-bottom:none}
+  .letter-parts{grid-template-columns:1fr}
+  .lp:nth-last-child(-n+2){border-bottom:1px solid var(--bdr)}
+  .lp:last-child{border-bottom:none}
+  .dv2-table th,.dv2-table td{padding:8px 8px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#5cc890">المحاضرة 16 — Technologie, Brief &amp; Gesundheit</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 16 — المحاضرة السادسة عشرة · A1.2</div>
+  <h1>التكنولوجيا، الرسالة <em>والصحة</em></h1>
+  <p class="hero-sub">مراجعة الداتيف مع النكرة، أفعال الكمبيوتر المنفصلة، أجزاء الرسالة الرسمية، والحياة الصحية</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: DATIV REVIEW ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">١</div>
+    <div>
+      <div class="sec-t">مراجعة: الداتيف مع حرف الجر "mit"</div>
+      <div class="sec-td">Dativ mit "mit" — أداة النكرة</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.15)">
+    <h4 style="color:var(--violet)">🔁 مراجعة الواجبات — الصفحات 82–85</h4>
+    <p>حرف الجر <span style="font-family:'JetBrains Mono',monospace;color:var(--violet);font-weight:700">mit</span> يفرض الداتيف <strong style="color:var(--violet)">دائماً</strong> — وهذا ينطبق على أدوات التعريف <strong>والنكرة</strong> معاً.</p>
+  </div>
+
+  <div class="sub">أداة النكرة في الداتيف</div>
+  <div class="tb-wrap">
+    <table class="dv2-table">
+      <thead>
+        <tr>
+          <th>الجنس</th>
+          <th style="color:var(--txt-b)">الرفع — Nominativ</th>
+          <th style="color:var(--violet)">الجر — Dativ (mit)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="gen">مذكر</td>
+          <td class="nom">ein Kollege</td>
+          <td class="dat">mit einem Kollegen</td>
+        </tr>
+        <tr>
+          <td class="gen">مؤنث</td>
+          <td class="nom">eine Kollegin</td>
+          <td class="dat">mit einer Kollegin</td>
+        </tr>
+        <tr>
+          <td class="gen">محايد</td>
+          <td class="nom">ein Kind</td>
+          <td class="dat">mit einem Kind</td>
+        </tr>
+        <tr>
+          <td class="gen">جمع</td>
+          <td class="nom">Freunde</td>
+          <td class="dat-pl">zu Freunden (+n)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.14);margin-top:12px">
+    <div class="ni">💡</div>
+    <div>
+      <p>في الداتيف: <span style="font-family:'JetBrains Mono',monospace;color:var(--violet);font-weight:700">ein → einem</span> (مذكر/محايد) و <span style="font-family:'JetBrains Mono',monospace;color:var(--violet);font-weight:700">eine → einer</span> (مؤنث).<br>
+      كذلك <span style="font-family:'JetBrains Mono',monospace;color:var(--rose)">kein → keinem / keiner</span> بنفس المنطق.</p>
+    </div>
+  </div>
+
+  <div class="sub">✏️ أمثلة</div>
+  <div class="ex">
+    <div class="icon">👔</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--violet)">Ich arbeite <strong>mit einem Kollegen</strong>.</div>
+      <div class="ar">أعمل مع زميل — ein Kollege → mit einem Kollegen</div>
+    </div>
+  </div>
+  <div class="ex">
+    <div class="icon">👫</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--violet)">Ich gehe <strong>zu Freunden</strong>.</div>
+      <div class="ar">أذهب إلى أصدقاء — جمع في الداتيف: Freunde + n = Freunden</div>
+    </div>
+  </div>
+  <div class="ex">
+    <div class="icon">🚌</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--violet)">Ich fahre <strong>mit einer Kollegin</strong>.</div>
+      <div class="ar">أسافر مع زميلة — eine Kollegin → mit einer Kollegin</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: TECHNOLOGIE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3878c0)">٢</div>
+    <div>
+      <div class="sec-t">مشاكل التكنولوجيا والوسائط</div>
+      <div class="sec-td">Technologie &amp; Medienprobleme</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.15)">
+    <h4 style="color:var(--sky)">📱 جمل جاهزة للاستخدام</h4>
+    <p>تعابير شائعة تُستخدم للتعبير عن مشاكل تقنية في الحياة اليومية.</p>
+  </div>
+
+  <div class="tech-grid">
+    <div class="tech-card">
+      <div class="tech-ic">📶</div>
+      <div>
+        <div class="tech-de" style="color:var(--sky)">Ich habe kein Netz.</div>
+        <div class="tech-ar">ليس لدي تغطية / شبكة</div>
+      </div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-ic">🐌</div>
+      <div>
+        <div class="tech-de" style="color:var(--sky)">Das WLAN ist zu langsam.</div>
+        <div class="tech-ar">شبكة الواي فاي بطيئة جداً</div>
+      </div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-ic">🔌</div>
+      <div>
+        <div class="tech-de" style="color:var(--sky)">Ich bin seit Tagen offline.</div>
+        <div class="tech-ar">أنا غير متصل منذ أيام</div>
+      </div>
+    </div>
+    <div class="tech-card">
+      <div class="tech-ic">🪫</div>
+      <div>
+        <div class="tech-de" style="color:var(--sky)">Mein Akku ist leer.</div>
+        <div class="tech-ar">بطاريتي فارغة</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: COMPUTER VERBS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#18a888)">٣</div>
+    <div>
+      <div class="sec-t">أفعال الكمبيوتر المنفصلة</div>
+      <div class="sec-td">Computerverben — Trennbare Verben</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.15)">
+    <h4 style="color:var(--teal)">⚡ تذكير: الأفعال المنفصلة</h4>
+    <p>السابقة (Prefix) <strong style="color:var(--rose)">تُرمى في آخر الجملة</strong> دائماً، والفعل الأصلي يبقى في الموقع الثاني مصرّفاً.</p>
+  </div>
+
+  <div class="verb-grid">
+    <div class="verb-card" style="border-color:rgba(111,164,148,.2)">
+      <span class="sep-badge" style="background:rgba(200,152,168,.15);color:var(--rose)">منفصل</span>
+      <div class="verb-de" style="color:var(--teal)"><strong style="color:var(--rose)">hoch</strong>fahren</div>
+      <div class="verb-ar">يشغّل الكمبيوتر / يُقلّع</div>
+      <div class="verb-note">Ich fahre den Computer hoch.</div>
+    </div>
+    <div class="verb-card" style="border-color:rgba(111,164,148,.2)">
+      <span class="sep-badge" style="background:rgba(200,152,168,.15);color:var(--rose)">منفصل</span>
+      <div class="verb-de" style="color:var(--teal)"><strong style="color:var(--rose)">an</strong>machen</div>
+      <div class="verb-ar">يشغّل (جهاز بشكل عام)</div>
+      <div class="verb-note">Ich mache das Gerät an.</div>
+    </div>
+    <div class="verb-card" style="border-color:rgba(111,164,148,.2)">
+      <span class="sep-badge" style="background:rgba(200,152,168,.15);color:var(--rose)">منفصل</span>
+      <div class="verb-de" style="color:var(--teal)"><strong style="color:var(--rose)">aus</strong>machen</div>
+      <div class="verb-ar">يطفئ</div>
+      <div class="verb-note">Ich mache das Licht aus.</div>
+    </div>
+    <div class="verb-card" style="border-color:rgba(111,164,148,.2)">
+      <span class="sep-badge" style="background:rgba(200,152,168,.15);color:var(--rose)">منفصل</span>
+      <div class="verb-de" style="color:var(--teal)"><strong style="color:var(--rose)">ein</strong>geben</div>
+      <div class="verb-ar">يُدخل (الرقم السري)</div>
+      <div class="verb-note">Ich gebe das Passwort ein.</div>
+    </div>
+    <div class="verb-card" style="border-color:rgba(124,168,120,.2)">
+      <span class="sep-badge" style="background:rgba(124,168,120,.15);color:var(--green)">عادي</span>
+      <div class="verb-de" style="color:var(--green)">speichern</div>
+      <div class="verb-ar">يحفظ / يخزّن (الملفات)</div>
+      <div class="verb-note">Ich speichere die Datei.</div>
+    </div>
+    <div class="verb-card" style="border-color:rgba(124,168,120,.2)">
+      <span class="sep-badge" style="background:rgba(124,168,120,.15);color:var(--green)">عادي</span>
+      <div class="verb-de" style="color:var(--green)">drucken</div>
+      <div class="verb-ar">يطبع (النص)</div>
+      <div class="verb-note">Ich drucke den Text.</div>
+    </div>
+    <div class="verb-card" style="border-color:rgba(124,168,120,.2)">
+      <span class="sep-badge" style="background:rgba(124,168,120,.15);color:var(--green)">عادي</span>
+      <div class="verb-de" style="color:var(--green)">öffnen</div>
+      <div class="verb-ar">يفتح (الملفات)</div>
+      <div class="verb-note">Ich öffne die Datei.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 4: CONNECTORS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--amber),#c88810)">٤</div>
+    <div>
+      <div class="sec-t">أدوات الترتيب الزمني</div>
+      <div class="sec-td">Zuerst &amp; Dann — Reihenfolge</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--amber-d);border:1px solid rgba(200,152,88,.15)">
+    <h4 style="color:var(--amber)">⚡ القاعدة</h4>
+    <p>عند وضع <strong style="color:var(--amber)">zuerst</strong> أو <strong style="color:var(--amber)">dann</strong> في بداية الجملة — الفعل يأتي <strong style="color:var(--amber)">مباشرةً</strong> في الموقع الثاني.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px">
+    <div style="background:rgba(200,152,88,.06);border:1px solid rgba(200,152,88,.18);border-radius:12px;padding:14px 16px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--amber);direction:ltr;margin-bottom:5px">Zuerst</div>
+      <div style="font-size:13px;color:var(--txt-d)">في البداية / أولاً</div>
+    </div>
+    <div style="background:rgba(111,164,148,.06);border:1px solid rgba(111,164,148,.18);border-radius:12px;padding:14px 16px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--teal);direction:ltr;margin-bottom:5px">Dann</div>
+      <div style="font-size:13px;color:var(--txt-d)">ثم / بعدها</div>
+    </div>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:13px;color:var(--txt-d);text-align:center;margin:18px 0 8px">مثال: تشغيل الكمبيوتر خطوةً بخطوة</div>
+  <div class="sb">
+    <div class="sb-block" style="background:rgba(200,152,88,.08);border-color:var(--amber)">
+      <div class="sb-pos" style="color:var(--amber)">موقع ①</div>
+      <div class="sb-val" style="color:var(--amber)">Zuerst</div>
+      <div class="sb-lbl">أداة الترتيب</div>
+    </div>
+    <div class="sb-block" style="background:rgba(111,164,148,.08);border-color:var(--teal)">
+      <div class="sb-pos" style="color:var(--teal)">موقع ②</div>
+      <div class="sb-val" style="color:var(--teal)">fahre</div>
+      <div class="sb-lbl">الفعل مصرّف ⭐</div>
+    </div>
+    <div class="sb-block">
+      <div class="sb-pos">موقع ③</div>
+      <div class="sb-val" style="color:var(--txt-b)">ich den Computer</div>
+      <div class="sb-lbl">الفاعل + المفعول</div>
+    </div>
+    <div class="sb-block" style="background:rgba(200,152,168,.07);border-color:var(--rose)">
+      <div class="sb-pos" style="color:var(--rose)">آخر الجملة</div>
+      <div class="sb-val" style="color:var(--rose)">hoch.</div>
+      <div class="sb-lbl">السابقة 🔚</div>
+    </div>
+  </div>
+
+  <div class="ex" style="margin-top:14px">
+    <div class="icon">💻</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--amber)">Zuerst <strong style="color:var(--teal)">fahre</strong> ich den Computer <strong style="color:var(--rose)">hoch</strong>.</div>
+      <div class="ar">أولاً أشغّل الكمبيوتر</div>
+    </div>
+  </div>
+  <div class="ex">
+    <div class="icon">🔑</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--amber)">Dann <strong style="color:var(--teal)">gebe</strong> ich das Passwort <strong style="color:var(--rose)">ein</strong>.</div>
+      <div class="ar">ثم أدخل الرقم السري</div>
+    </div>
+  </div>
+  <div class="ex">
+    <div class="icon">💾</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--amber)">Dann <strong style="color:var(--teal)">speichere</strong> ich die Datei.</div>
+      <div class="ar">ثم أحفظ الملف</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: DER BRIEF ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#a07828)">٥</div>
+    <div>
+      <div class="sec-t">مقوّمات كتابة الرسالة</div>
+      <div class="sec-td">Der Brief — الصفحة 86</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--gold-d);border:1px solid rgba(201,161,84,.15)">
+    <h4 style="color:var(--gold)">✉️ الرسالة الألمانية الرسمية</h4>
+    <p>تتكون الرسالة الرسمية (Brief) من <strong style="color:var(--gold)">8 أجزاء أساسية</strong> يجب توافرها كلها في الكتابة الصحيحة.</p>
+  </div>
+
+  <div class="letter-wrap">
+    <div class="letter-head">
+      <div class="letter-icon">📝</div>
+      <div>
+        <div class="letter-title">Brief — الرسالة</div>
+        <div class="letter-subtitle">ترتيب العناصر كما تظهر في الرسالة</div>
+      </div>
+    </div>
+    <div class="letter-parts">
+      <div class="lp">
+        <div class="lp-num" style="background:linear-gradient(135deg,var(--gold),#c8a030)">1</div>
+        <div>
+          <div class="lp-de" style="color:var(--gold)">Absender</div>
+          <div class="lp-ar">المرسِل</div>
+          <div class="lp-note">الاسم والعنوان الكامل</div>
+        </div>
+      </div>
+      <div class="lp">
+        <div class="lp-num" style="background:linear-gradient(135deg,var(--teal),#18a888)">2</div>
+        <div>
+          <div class="lp-de" style="color:var(--teal)">Empfänger</div>
+          <div class="lp-ar">المُستقبِل</div>
+          <div class="lp-note">اسم من تُرسل إليه</div>
+        </div>
+      </div>
+      <div class="lp">
+        <div class="lp-num" style="background:linear-gradient(135deg,var(--sky),#3878c0)">3</div>
+        <div>
+          <div class="lp-de" style="color:var(--sky)">Adresse</div>
+          <div class="lp-ar">العنوان</div>
+          <div class="lp-note">Straße · Nummer · PLZ · Stadt</div>
+        </div>
+      </div>
+      <div class="lp">
+        <div class="lp-num" style="background:linear-gradient(135deg,var(--violet),#7040c0)">4</div>
+        <div>
+          <div class="lp-de" style="color:var(--violet)">Datum</div>
+          <div class="lp-ar">التاريخ</div>
+          <div class="lp-note">يكتب في الجانب الأيسر</div>
+        </div>
+      </div>
+      <div class="lp">
+        <div class="lp-num" style="background:linear-gradient(135deg,var(--amber),#c88810)">5</div>
+        <div>
+          <div class="lp-de" style="color:var(--amber)">Betreff</div>
+          <div class="lp-ar">موضوع الرسالة</div>
+          <div class="lp-note">ملخص قصير للمحتوى</div>
+        </div>
+      </div>
+      <div class="lp">
+        <div class="lp-num" style="background:linear-gradient(135deg,var(--rose),#c04878)">6</div>
+        <div>
+          <div class="lp-de" style="color:var(--rose)">Anrede</div>
+          <div class="lp-ar">التحية الافتتاحية</div>
+          <div class="lp-note">Liebe Frau… / Sehr geehrte…</div>
+        </div>
+      </div>
+      <div class="lp">
+        <div class="lp-num" style="background:linear-gradient(135deg,var(--green),#489840)">7</div>
+        <div>
+          <div class="lp-de" style="color:var(--green)">Gruß</div>
+          <div class="lp-ar">التحية الختامية</div>
+          <div class="lp-note">Viele Grüße / Mit freundlichen Grüßen</div>
+        </div>
+      </div>
+      <div class="lp">
+        <div class="lp-num" style="background:linear-gradient(135deg,var(--coral),#a84828)">8</div>
+        <div>
+          <div class="lp-de" style="color:var(--coral)">Unterschrift</div>
+          <div class="lp-ar">التوقيع</div>
+          <div class="lp-note">الاسم الكامل بالكتابة</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(200,152,88,.13);margin-top:14px">
+    <div class="ni">📌</div>
+    <div>
+      <p><strong style="color:var(--amber)">Betreff</strong> مثال: دعوة — <span style="font-family:'JetBrains Mono',monospace;color:var(--amber)">Einladung zum Geburtstag</span>.<br>
+      <strong style="color:var(--teal)">Anrede</strong> رسمية: <span style="font-family:'JetBrains Mono',monospace;color:var(--teal)">Sehr geehrte Frau …</span> — غير رسمية: <span style="font-family:'JetBrains Mono',monospace;color:var(--teal)">Liebe Anna,</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 6: FIT UND GESUND ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--green),#489840)">٦</div>
+    <div>
+      <div class="sec-t">النشاط والصحة</div>
+      <div class="sec-td">Fit und Gesund — الصفحات 90–91</div>
+    </div>
+  </div>
+
+  <div class="sub">الكلمات الزمنية</div>
+  <div class="time-grid">
+    <div class="time-pill" style="border-color:rgba(124,168,120,.22)">
+      <div class="time-de" style="color:var(--green)">täglich</div>
+      <div class="time-ar">يومياً</div>
+    </div>
+    <div class="time-pill" style="border-color:rgba(124,168,120,.22)">
+      <div class="time-de" style="color:var(--green)">monatlich</div>
+      <div class="time-ar">شهرياً</div>
+    </div>
+    <div class="time-pill" style="border-color:rgba(124,168,120,.22)">
+      <div class="time-de" style="color:var(--green)">jährlich</div>
+      <div class="time-ar">سنوياً / كل عام</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">عادات الحياة الصحية</div>
+  <div class="habit-grid">
+    <div class="habit-card" style="border-color:rgba(124,168,120,.2)">
+      <div class="habit-ic">🧘</div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--green);direction:ltr;margin-bottom:4px">Yoga / Fitness Studio</div>
+        <div class="habit-ar">ممارسة الرياضة — اليوغا أو النادي الرياضي</div>
+      </div>
+    </div>
+    <div class="habit-card" style="border-color:rgba(124,168,120,.2)">
+      <div class="habit-ic">🥗</div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--green);direction:ltr;margin-bottom:4px">gesund essen</div>
+        <div class="habit-ar">تناول الطعام الصحي — سلطة ظهراً، شوربة مساءً، فواكه</div>
+      </div>
+    </div>
+    <div class="habit-card" style="border-color:rgba(176,104,112,.2)">
+      <div class="habit-ic">🍫</div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--red);direction:ltr;margin-bottom:4px">kein Süßes / keine Schokolade</div>
+        <div class="habit-ar">تجنّب الحلويات والشوكولاتة</div>
+      </div>
+    </div>
+    <div class="habit-card" style="border-color:rgba(124,168,120,.2)">
+      <div class="habit-ic">🌅</div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--green);direction:ltr;margin-bottom:4px">früh schlafen &amp; aufstehen</div>
+        <div class="habit-ar">النوم مبكراً والاستيقاظ مبكراً</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">🎧 تدريب الاستماع — ثلاث رسائل صوتية</div>
+  <div class="msg-list">
+    <div class="msg" style="border-color:rgba(200,152,88,.2)">
+      <div class="msg-num" style="background:linear-gradient(135deg,var(--amber),#c88810)">1</div>
+      <div>
+        <div class="msg-sender" style="color:var(--amber)">👦 صديق</div>
+        <div class="msg-text">يرى أن تجربة الحياة الصحية جيدة، لكنه يعتب على صديقه لأن <strong>نومه المبكر</strong> جعله ينسى أصدقاءه ولا يخرج معهم.</div>
+      </div>
+    </div>
+    <div class="msg" style="border-color:rgba(124,168,120,.2)">
+      <div class="msg-num" style="background:linear-gradient(135deg,var(--green),#489840)">2</div>
+      <div>
+        <div class="msg-sender" style="color:var(--green)">👧 صديقة</div>
+        <div class="msg-text">تُشجّع على التجربة وتريد ممارسة الرياضة (<strong>السباحة</strong>) معاً — لأن الرياضة <strong>وحيداً</strong> مملة ولا تُحفّز.</div>
+      </div>
+    </div>
+    <div class="msg" style="border-color:rgba(200,152,168,.2)">
+      <div class="msg-num" style="background:linear-gradient(135deg,var(--rose),#c04878)">3</div>
+      <div>
+        <div class="msg-sender" style="color:var(--rose)">👩 أم قلقة</div>
+        <div class="msg-text">قلقة على ابنتها لأنها <strong>تأكل قليلاً جداً</strong> وتمارس الرياضة بكثرة — وتدعوها لتناول طعامها المفضل.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 7: HAUSAUFGABEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#a84828)">٧</div>
+    <div>
+      <div class="sec-t">الواجبات المطلوبة</div>
+      <div class="sec-td">Hausaufgaben</div>
+    </div>
+  </div>
+
+  <div class="hw-grid">
+    <div class="hw-card" style="border-color:rgba(201,161,84,.22)">
+      <div class="hw-page">✉️</div>
+      <div class="hw-title">كتابة رسالة كاملة</div>
+      <div class="hw-desc">كتابة Brief مع الالتزام بجميع <strong style="color:var(--gold)">العناصر الثمانية</strong> الذي شرحها الدرس.</div>
+      <span class="hw-tag" style="background:rgba(201,161,84,.1);color:var(--gold);border:1px solid rgba(201,161,84,.22)">كتابة</span>
+    </div>
+
+    <div class="hw-card" style="border-color:rgba(112,149,192,.22)">
+      <div class="hw-page">ص 87</div>
+      <div class="hw-title">Small Talk — قراءة</div>
+      <div class="hw-desc">قراءة النص واستخراج المواضيع <strong style="color:var(--green)">المناسبة</strong> وغير <strong style="color:var(--red)">المناسبة</strong> للدردشة (الطقس، العائلة، الرياضة...).</div>
+      <span class="hw-tag" style="background:rgba(112,149,192,.1);color:var(--sky);border:1px solid rgba(112,149,192,.22)">قراءة + تحليل</span>
+    </div>
+
+    <div class="hw-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="hw-page">📖</div>
+      <div class="hw-title">تحليل النصوص</div>
+      <div class="hw-desc">تحليل النصوص قواعدياً واستخراج الكلمات الجديدة لتعزيز المخزون اللغوي.</div>
+      <span class="hw-tag" style="background:rgba(154,133,184,.1);color:var(--violet);border:1px solid rgba(154,133,184,.22)">تحليل</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
