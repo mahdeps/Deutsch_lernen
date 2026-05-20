@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 15 — روتين العمل والداتيف</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Activities Grid ─── */
+.act-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:14px}
+.act-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;transition:border-color .25s,transform .25s}
+.act-card:hover{border-color:rgba(111,164,148,.35);transform:translateY(-2px)}
+.act-ic{font-size:28px;line-height:1;flex-shrink:0;margin-top:2px}
+.act-de{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--teal);font-weight:600;direction:ltr;text-align:right;margin-bottom:5px}
+.act-ar{font-size:13px;color:var(--txt-d)}
+
+/* ─── Expressions ─── */
+.expr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:14px}
+.expr-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:20px 18px;transition:border-color .25s}
+.expr-word{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;direction:ltr;margin-bottom:6px}
+.expr-mean{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:700;margin-bottom:10px}
+.expr-eg{border-top:1px solid var(--bdr);padding-top:10px;margin-top:4px}
+.expr-eg .de{font-family:'JetBrains Mono',monospace;font-size:12px;direction:ltr;text-align:right;color:var(--txt-d)}
+
+/* ─── Sentence Structure Blocks ─── */
+.sb{display:flex;gap:0;margin:8px 0;border-radius:12px;overflow:hidden;border:1px solid var(--bdr)}
+.sb-block{flex:1;padding:10px 12px;text-align:center;border-right:1px solid var(--bdr)}
+.sb-block:last-child{border-right:none}
+.sb-pos{font-family:'Noto Kufi Arabic',sans-serif;font-size:10px;font-weight:700;color:var(--txt-d);margin-bottom:4px}
+.sb-val{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600}
+.sb-lbl{font-size:11px;color:var(--txt-d);margin-top:3px}
+
+/* ─── Connectors Pills ─── */
+.conn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:10px}
+.conn-pill{border-radius:12px;padding:14px 16px}
+.conn-de{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;direction:ltr;margin-bottom:5px}
+.conn-ar{font-size:13px;color:var(--txt-d)}
+
+/* ─── Dativ Table ─── */
+.dv-table{width:100%;border-collapse:collapse;margin-top:14px}
+.dv-table th,.dv-table td{padding:11px 14px;border:1px solid var(--bdr);text-align:center;font-size:14px}
+.dv-table th{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:700;background:rgba(255,255,255,.02);color:var(--txt-d)}
+.dv-table .gen{font-size:13px;color:var(--txt-d);font-family:'Noto Naskh Arabic',serif}
+.dv-table .nom{color:var(--txt-b);font-family:'JetBrains Mono',monospace;font-weight:600}
+.dv-table .akk{color:var(--violet);font-family:'JetBrains Mono',monospace;font-weight:600}
+.dv-table .dat{color:var(--sky);font-family:'JetBrains Mono',monospace;font-weight:700;background:rgba(112,149,192,.06)}
+.dv-table .dat-pl{color:var(--rose);font-family:'JetBrains Mono',monospace;font-weight:700;background:rgba(200,152,168,.06)}
+
+/* ─── Prepositions Grid ─── */
+.prep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px;margin-top:14px}
+.prep-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:16px 18px;transition:border-color .25s,transform .25s}
+.prep-card:hover{transform:translateY(-2px)}
+.prep-word{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;direction:ltr;margin-bottom:4px}
+.prep-ar{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:700;color:var(--txt-d);margin-bottom:10px}
+.prep-eg{font-size:12px;border-top:1px solid var(--bdr);padding-top:8px;font-family:'JetBrains Mono',monospace;direction:ltr}
+.prep-eg .ar{font-family:'Noto Naskh Arabic',serif;direction:rtl;font-size:11px;color:var(--txt-d);margin-top:3px}
+
+/* ─── Contractions Grid ─── */
+.contr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:14px}
+.contr{background:rgba(112,149,192,.05);border:1px solid rgba(112,149,192,.18);border-radius:12px;padding:14px 16px;text-align:center}
+.contr-eq{display:flex;align-items:center;justify-content:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;margin-bottom:6px}
+.contr-part{color:var(--txt-d)}
+.contr-sep{color:var(--txt-d);font-size:11px}
+.contr-result{color:var(--sky);font-weight:700;font-size:18px}
+.contr-ar{font-size:11px;color:var(--txt-d);font-family:'Noto Naskh Arabic',serif}
+
+/* ─── Homework Cards ─── */
+.hw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:14px}
+.hw-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:20px}
+.hw-page{font-family:'Space Mono',monospace;font-size:26px;font-weight:700;color:var(--gold);margin-bottom:8px;line-height:1}
+.hw-title{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:700;color:var(--txt-b);margin-bottom:6px}
+.hw-desc{font-size:13px;color:var(--txt-d);line-height:1.9}
+.hw-note{font-size:13px;color:var(--txt-d);margin-top:10px;padding-top:10px;border-top:1px solid var(--bdr)}
+.hw-tag{display:inline-flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 10px;border-radius:100px;margin-top:10px;font-weight:600}
+
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.rv.v{opacity:1;transform:none}
+
+@media(max-width:600px){
+  .sb{flex-direction:column}
+  .sb-block{border-right:none;border-bottom:1px solid var(--bdr)}
+  .sb-block:last-child{border-bottom:none}
+  .dv-table th,.dv-table td{padding:8px 8px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#5cb4f0">المحاضرة 15 — Arbeitsalltag &amp; Dativ</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 15 — المحاضرة الخامسة عشرة · A1.2</div>
+  <h1>روتين العمل <em>والداتيف</em></h1>
+  <p class="hero-sub">الأنشطة اليومية في العمل، الروابط الزمنية، وقاعدة حالة الجر (Dativ) مع حروف الجرّ واختصاراتها</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: ARBEITSALLTAG ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#18a888)">١</div>
+    <div>
+      <div class="sec-t">روتين العمل اليومي</div>
+      <div class="sec-td">Arbeitsalltag — الصفحة 80</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.15)">
+    <h4 style="color:var(--teal)">📋 الأنشطة اليومية</h4>
+    <p>أفعال مرتبطة بروتين العمل — تُستخدم مع <strong style="color:var(--teal)">ضمائر الملكية (Possessivartikel)</strong> والأفعال الانفصالية.</p>
+  </div>
+
+  <div class="act-grid">
+    <div class="act-card">
+      <div class="act-ic">👶</div>
+      <div>
+        <div class="act-de">Kind in den Kindergarten bringen</div>
+        <div class="act-ar">إحضار الطفل إلى الروضة</div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-ic">📦</div>
+      <div>
+        <div class="act-de">Paket annehmen</div>
+        <div class="act-ar">استلام طرد</div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-ic">🎫</div>
+      <div>
+        <div class="act-de">Hilfe beim Fahrkartenkauf</div>
+        <div class="act-ar">المساعدة عند شراء التذاكر</div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-ic">☕</div>
+      <div>
+        <div class="act-de">Kaffee zum Mitnehmen</div>
+        <div class="act-ar">أخذ القهوة للخارج (تيك أوي)</div>
+      </div>
+    </div>
+    <div class="act-card">
+      <div class="act-ic">🤝</div>
+      <div>
+        <div class="act-de">Eine Kollegin begrüßen</div>
+        <div class="act-ar">تحية الزميلة</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub">✏️ ملاحظات قواعدية</div>
+  <div class="ex">
+    <div class="icon">👤</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--teal)">Adnan begrüßt <strong style="color:var(--rose)">seine</strong> Kollegin.</div>
+      <div class="ar">عدنان يحيي زميلته — <strong>seine</strong> ضمير ملكية يعود على المذكر (Adnan)</div>
+    </div>
+  </div>
+  <div class="ex">
+    <div class="icon">☕</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--teal)">Nimmst du einen Kaffee?</div>
+      <div class="ar">الفعل الصحيح <strong style="color:var(--rose)">nimmst</strong> من nehmen — وليس neymen</div>
+      <div class="nt">nehmen: ich nehme · du nimmst · er nimmt (تغيّر الجذر في du و er)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: WICHTIGE AUSDRÜCKE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--amber),#c88810)">٢</div>
+    <div>
+      <div class="sec-t">مصطلحات وتعبيرات هامة</div>
+      <div class="sec-td">Wichtige Ausdrücke</div>
+    </div>
+  </div>
+
+  <div class="expr-grid">
+    <div class="expr-card" style="border-color:rgba(200,152,88,.22)">
+      <div class="expr-word" style="color:var(--amber)">doch</div>
+      <div class="expr-mean" style="color:var(--amber)">بلى ✓</div>
+      <p style="font-size:13px;color:var(--txt);margin-bottom:10px">تُستخدم للإجابة <strong>بالإيجاب</strong> على سؤال <strong>منفي</strong> — تعادل "بالعكس / بلى"</p>
+      <div class="expr-eg">
+        <div class="de">— Haben Sie keinen Zucker?</div>
+        <div style="font-size:12px;color:var(--txt-d);margin-bottom:8px">أليس عندك سكر؟</div>
+        <div class="de" style="color:var(--amber)">— Doch! Ich habe Zucker.</div>
+        <div style="font-size:12px;color:var(--txt-d)">بلى! عندي سكر.</div>
+      </div>
+    </div>
+
+    <div class="expr-card" style="border-color:rgba(111,164,148,.22)">
+      <div class="expr-word" style="color:var(--teal)">mitnehmen</div>
+      <div class="expr-mean" style="color:var(--teal)">للخارج / Takeaway</div>
+      <p style="font-size:13px;color:var(--txt);margin-bottom:10px">فعل انفصالي يعني "أخذ معك" — يُستخدم عند طلب الطعام أو الشراب للمغادرة</p>
+      <div class="expr-eg">
+        <div class="de" style="color:var(--teal)">Kaffee zum Mitnehmen, bitte.</div>
+        <div style="font-size:12px;color:var(--txt-d)">قهوة للخارج من فضلك</div>
+      </div>
+    </div>
+
+    <div class="expr-card" style="border-color:rgba(124,168,120,.22)">
+      <div class="expr-word" style="color:var(--green)">Alles klar!</div>
+      <div class="expr-mean" style="color:var(--green)">كل شيء تمام / مفهوم</div>
+      <p style="font-size:13px;color:var(--txt);margin-bottom:10px">تعبير شائع جداً في المحادثة اليومية — للتأكيد على الفهم أو الموافقة</p>
+      <div class="expr-eg">
+        <div class="de" style="color:var(--txt-d)">— Wir treffen uns um 9 Uhr.</div>
+        <div class="de" style="color:var(--green)">— Alles klar!</div>
+        <div style="font-size:12px;color:var(--txt-d)">نلتقي الساعة 9 — تمام!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: SATZSTRUKTUR ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">٣</div>
+    <div>
+      <div class="sec-t">بناء الجملة والروابط الزمنية</div>
+      <div class="sec-td">Satzstruktur &amp; Konnektoren</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.15)">
+    <h4 style="color:var(--violet)">⚡ القاعدة الذهبية</h4>
+    <p>الفعل <strong style="color:var(--violet)">دائماً في الموقع الثاني</strong> — حتى عندما يبدأ الرابط الزمني الجملة، يتحرك الفاعل للموقع الثالث.</p>
+  </div>
+
+  <div style="font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;font-size:13px;color:var(--txt-d);text-align:center;margin:16px 0 8px">مثال: Am Morgen — الرابط في البداية</div>
+  <div class="sb">
+    <div class="sb-block" style="background:rgba(154,133,184,.08);border-color:var(--violet)">
+      <div class="sb-pos" style="color:var(--violet)">موقع ①</div>
+      <div class="sb-val" style="color:var(--violet)">Am Morgen</div>
+      <div class="sb-lbl">رابط زمني</div>
+    </div>
+    <div class="sb-block" style="background:rgba(111,164,148,.08);border-color:var(--teal)">
+      <div class="sb-pos" style="color:var(--teal)">موقع ②</div>
+      <div class="sb-val" style="color:var(--teal)">bringt</div>
+      <div class="sb-lbl">الفعل مصرّف ⭐</div>
+    </div>
+    <div class="sb-block">
+      <div class="sb-pos">موقع ③</div>
+      <div class="sb-val" style="color:var(--txt-b)">er das Kind</div>
+      <div class="sb-lbl">الفاعل + المفعول</div>
+    </div>
+    <div class="sb-block" style="background:rgba(200,152,168,.07);border-color:var(--rose)">
+      <div class="sb-pos" style="color:var(--rose)">آخر الجملة</div>
+      <div class="sb-val" style="color:var(--rose)">hin.</div>
+      <div class="sb-lbl">السابقة 🔚</div>
+    </div>
+  </div>
+
+  <div class="sub">الروابط الزمنية الثلاثة</div>
+  <div class="conn-grid">
+    <div class="conn-pill" style="background:rgba(154,133,184,.06);border:1px solid rgba(154,133,184,.18)">
+      <div class="conn-de" style="color:var(--violet)">Am Morgen</div>
+      <div class="conn-ar">في الصباح</div>
+    </div>
+    <div class="conn-pill" style="background:rgba(200,152,88,.06);border:1px solid rgba(200,152,88,.18)">
+      <div class="conn-de" style="color:var(--amber)">Manchmal</div>
+      <div class="conn-ar">أحياناً</div>
+    </div>
+    <div class="conn-pill" style="background:rgba(111,164,148,.06);border:1px solid rgba(111,164,148,.18)">
+      <div class="conn-de" style="color:var(--teal)">Dann</div>
+      <div class="conn-ar">ثم / بعدها</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(200,152,88,.13);margin-top:14px">
+    <div class="ni">💡</div>
+    <div>
+      <p>مع <span style="font-family:'JetBrains Mono',monospace;color:var(--amber);font-weight:700">dann</span> يُمكن <strong>حذف الفاعل</strong> من الجملة التالية إذا كان قد ذُكر — لتجنّب التكرار.</p>
+      <p style="margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--teal);direction:ltr;text-align:right">Am Morgen bringt <u>er</u> das Kind. Dann ∅ nimmt er den Bus.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 4: DATIV ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3878c0)">٤</div>
+    <div>
+      <div class="sec-t">حالة الجر — الداتيف</div>
+      <div class="sec-td">Der Dativ</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.15)">
+    <h4 style="color:var(--sky)">📖 ما هو الداتيف؟</h4>
+    <p>حالة إعرابية تُعبّر عن <strong style="color:var(--sky)">المفعول غير المباشر</strong> (لمن؟ مع من؟) وتُفرضها بعض حروف الجر. تتغير فيها أدوات التعريف عن النصب والرفع.</p>
+  </div>
+
+  <div class="sub">جدول الحالات الإعرابية الثلاث</div>
+  <div class="tb-wrap">
+    <table class="dv-table">
+      <thead>
+        <tr>
+          <th>الجنس</th>
+          <th style="color:var(--txt-b)">الرفع — Nominativ</th>
+          <th style="color:var(--violet)">النصب — Akkusativ</th>
+          <th style="color:var(--sky)">الجر — Dativ ⭐</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="gen">مذكر</td>
+          <td class="nom">der</td>
+          <td class="akk">den</td>
+          <td class="dat">dem</td>
+        </tr>
+        <tr>
+          <td class="gen">مؤنث</td>
+          <td class="nom">die</td>
+          <td class="akk">die</td>
+          <td class="dat">der</td>
+        </tr>
+        <tr>
+          <td class="gen">محايد</td>
+          <td class="nom">das</td>
+          <td class="akk">das</td>
+          <td class="dat">dem</td>
+        </tr>
+        <tr>
+          <td class="gen">جمع</td>
+          <td class="nom">die</td>
+          <td class="akk">die</td>
+          <td class="dat-pl">den + n ⚠️</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note" style="background:var(--red-d);border:1px solid rgba(176,104,112,.14);margin-top:12px">
+    <div class="ni">⚠️</div>
+    <div>
+      <p><strong style="color:var(--red)">قاعدة الجمع في الداتيف:</strong> يُضاف <span style="font-family:'JetBrains Mono',monospace;color:var(--red);font-weight:700">n</span> لنهاية الاسم — إلا إذا كان الجمع ينتهي أصلاً بـ <strong>n</strong> أو <strong>s</strong>.</p>
+      <p style="margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--red);direction:ltr;text-align:right">
+        mit den Kinder<strong>n</strong> · mit den Läde<strong>n</strong><br>
+        <span style="color:var(--txt-d)">mit den Autos (لا تغيير — ينتهي بـ s)</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.14);margin-top:10px">
+    <div class="ni">❓</div>
+    <div>
+      <p>أداة السؤال تتغير مع الحالة الإعرابية:</p>
+      <p style="margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:14px">
+        <span style="color:var(--txt-b)">Wer</span>
+        <span style="color:var(--txt-d);margin:0 8px">→</span>
+        <span style="color:var(--violet)">Wen</span>
+        <span style="color:var(--txt-d);margin:0 8px">→</span>
+        <span style="color:var(--sky)">Wem</span>
+      </p>
+      <p style="margin-top:4px;font-size:12px;color:var(--txt-d)">رفع → نصب → جر</p>
+    </div>
+  </div>
+
+  <div class="sub">حروف الجر التي تفرض الداتيف دائماً</div>
+  <div class="prep-grid">
+    <div class="prep-card" style="border-color:rgba(112,149,192,.22)">
+      <div class="prep-word" style="color:var(--sky)">mit</div>
+      <div class="prep-ar">مع — بـ (وسائل نقل)</div>
+      <div class="prep-eg" style="color:var(--sky)">
+        mit dem Auto
+        <div class="ar">بالسيارة</div>
+      </div>
+    </div>
+    <div class="prep-card" style="border-color:rgba(111,164,148,.22)">
+      <div class="prep-word" style="color:var(--teal)">zu</div>
+      <div class="prep-ar">إلى (أشخاص وأماكن)</div>
+      <div class="prep-eg" style="color:var(--teal)">
+        zu dem Arzt
+        <div class="ar">إلى الطبيب</div>
+      </div>
+    </div>
+    <div class="prep-card" style="border-color:rgba(200,152,88,.22)">
+      <div class="prep-word" style="color:var(--amber)">bei</div>
+      <div class="prep-ar">عند — لدى</div>
+      <div class="prep-eg" style="color:var(--amber)">
+        bei dem Arzt
+        <div class="ar">عند الطبيب</div>
+      </div>
+    </div>
+    <div class="prep-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="prep-word" style="color:var(--violet)">aus</div>
+      <div class="prep-ar">من (بلدان ومبانٍ)</div>
+      <div class="prep-eg" style="color:var(--violet)">
+        aus der Bank
+        <div class="ar">من البنك</div>
+      </div>
+    </div>
+    <div class="prep-card" style="border-color:rgba(124,168,120,.22)">
+      <div class="prep-word" style="color:var(--green)">von</div>
+      <div class="prep-ar">من (أشخاص)</div>
+      <div class="prep-eg" style="color:var(--green)">
+        von meiner Freundin
+        <div class="ar">من صديقتي</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub">اختصارات حروف الجر (Kontraktionen)</div>
+  <div class="contr-grid">
+    <div class="contr">
+      <div class="contr-eq">
+        <span class="contr-part">zu</span>
+        <span class="contr-sep">+</span>
+        <span class="contr-part">dem</span>
+        <span class="contr-sep">=</span>
+        <span class="contr-result">zum</span>
+      </div>
+      <div class="contr-ar">إلى الـ (مذكر / محايد)</div>
+    </div>
+    <div class="contr">
+      <div class="contr-eq">
+        <span class="contr-part">zu</span>
+        <span class="contr-sep">+</span>
+        <span class="contr-part">der</span>
+        <span class="contr-sep">=</span>
+        <span class="contr-result">zur</span>
+      </div>
+      <div class="contr-ar">إلى الـ (مؤنث)</div>
+    </div>
+    <div class="contr">
+      <div class="contr-eq">
+        <span class="contr-part">bei</span>
+        <span class="contr-sep">+</span>
+        <span class="contr-part">dem</span>
+        <span class="contr-sep">=</span>
+        <span class="contr-result">beim</span>
+      </div>
+      <div class="contr-ar">عند الـ (مذكر / محايد)</div>
+    </div>
+    <div class="contr">
+      <div class="contr-eq">
+        <span class="contr-part">von</span>
+        <span class="contr-sep">+</span>
+        <span class="contr-part">dem</span>
+        <span class="contr-sep">=</span>
+        <span class="contr-result">vom</span>
+      </div>
+      <div class="contr-ar">من الـ (مذكر / محايد)</div>
+    </div>
+    <div class="contr">
+      <div class="contr-eq">
+        <span class="contr-part">an</span>
+        <span class="contr-sep">+</span>
+        <span class="contr-part">dem</span>
+        <span class="contr-sep">=</span>
+        <span class="contr-result">am</span>
+      </div>
+      <div class="contr-ar">في / عند الـ</div>
+    </div>
+  </div>
+
+  <div class="sub">✏️ أمثلة تطبيقية</div>
+  <div class="ex">
+    <div class="icon">🚗</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--sky)">Ich fahre <strong>mit dem</strong> Auto.</div>
+      <div class="ar">أسافر بالسيارة — mit + das Auto → mit dem Auto</div>
+    </div>
+  </div>
+  <div class="ex">
+    <div class="icon">🏥</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--sky)">Er geht <strong>zum</strong> Arzt.</div>
+      <div class="ar">يذهب إلى الطبيب — zu + dem = zum (اختصار)</div>
+    </div>
+  </div>
+  <div class="ex">
+    <div class="icon">🎓</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--sky)">Sie geht <strong>zur</strong> Uni.</div>
+      <div class="ar">تذهب إلى الجامعة — zu + der = zur (اختصار)</div>
+    </div>
+  </div>
+  <div class="ex">
+    <div class="icon">🏦</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--sky)">Er kommt <strong>aus der</strong> Bank.</div>
+      <div class="ar">هو قادم من البنك — die Bank → aus der Bank</div>
+    </div>
+  </div>
+  <div class="ex">
+    <div class="icon">🚌</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--sky)">Sie fährt <strong>mit dem</strong> Bus.</div>
+      <div class="ar">هي تسافر بالحافلة — der Bus → mit dem Bus</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: HAUSAUFGABEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#a07828)">٥</div>
+    <div>
+      <div class="sec-t">الواجبات المطلوبة</div>
+      <div class="sec-td">Hausaufgaben</div>
+    </div>
+  </div>
+
+  <div class="hw-grid">
+    <div class="hw-card" style="border-color:rgba(201,161,84,.22)">
+      <div class="hw-page">ص 82</div>
+      <div class="hw-title">نص "Lauras Praktikum"</div>
+      <div class="hw-desc">قراءة النص والتدرب عليه جيداً — القراءة ستكون <strong>عشوائية</strong> في المحاضرة القادمة.</div>
+      <div class="hw-note">📌 استخرج الأنشطة التي <strong style="color:var(--green)">تحبها لورا</strong> والتي <strong style="color:var(--red)">لا تحبها</strong></div>
+      <span class="hw-tag" style="background:rgba(201,161,84,.1);color:var(--gold);border:1px solid rgba(201,161,84,.22)">قراءة</span>
+    </div>
+
+    <div class="hw-card" style="border-color:rgba(112,149,192,.22)">
+      <div class="hw-page">ص 83</div>
+      <div class="hw-title">التمرين D</div>
+      <div class="hw-desc">حل التمرين المتعلق باستخدام حرف الجر <strong style="color:var(--sky)">mit</strong> وتأثيره على الأدوات في الداتيف.</div>
+      <span class="hw-tag" style="background:rgba(112,149,192,.1);color:var(--sky);border:1px solid rgba(112,149,192,.22)">mit + Dativ</span>
+    </div>
+
+    <div class="hw-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="hw-page">ص 85</div>
+      <div class="hw-title">التمرين A</div>
+      <div class="hw-desc">تركيب جمل كاملة مع صياغة الأفعال واستخدام حالة الداتيف الصحيحة.</div>
+      <span class="hw-tag" style="background:rgba(154,133,184,.1);color:var(--violet);border:1px solid rgba(154,133,184,.22)">تركيب جمل</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
