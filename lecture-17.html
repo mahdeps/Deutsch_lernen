@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 17 — الأمر، الجسم، والأفعال الناقصة</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Smalltalk split ─── */
+.talk-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.talk-box{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:18px}
+.talk-head{display:flex;align-items:center;gap:8px;margin-bottom:12px;font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:800}
+.talk-item{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid var(--bdr);font-size:13px;color:var(--txt-d)}
+.talk-item:last-child{border-bottom:none}
+.talk-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:6px}
+
+/* ─── Imperativ table ─── */
+.imp-table{width:100%;border-collapse:collapse;margin-top:14px}
+.imp-table th,.imp-table td{padding:12px 14px;border:1px solid var(--bdr);font-size:13px}
+.imp-table th{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:700;background:rgba(255,255,255,.02);text-align:center}
+.imp-pro{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;text-align:center}
+.imp-rule{font-size:12px;color:var(--txt-d);text-align:center;line-height:1.7}
+.imp-ex{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;text-align:center}
+.imp-ar{font-size:11px;color:var(--txt-d);text-align:center;margin-top:3px}
+
+/* ─── Personal info cards ─── */
+.pinfo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:14px}
+.pinfo-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:18px 16px;text-align:center}
+.pinfo-ic{font-size:30px;margin-bottom:10px}
+.pinfo-q{font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--bdr)}
+.pinfo-a{font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;font-weight:600;margin-bottom:6px}
+.pinfo-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── Body parts grid ─── */
+.body-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:14px}
+.body-card{background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:12px 14px;display:flex;align-items:center;gap:10px;transition:border-color .2s}
+.body-art{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;width:26px;text-align:center;flex-shrink:0}
+.body-de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600}
+.body-ar{font-size:12px;color:var(--txt-d);margin-top:2px}
+
+/* ─── Medical vocab ─── */
+.med-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:14px}
+.med-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;transition:border-color .25s}
+.med-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;direction:ltr;margin-bottom:4px}
+.med-ar{font-size:13px;color:var(--txt-d);margin-bottom:4px}
+.med-eg{font-size:12px;color:var(--txt-d);border-top:1px solid var(--bdr);padding-top:6px;margin-top:4px;font-family:'JetBrains Mono',monospace;direction:ltr}
+
+/* ─── Modal verbs conjugation ─── */
+.modal-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.modal-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;overflow:hidden}
+.modal-head{padding:14px 16px;border-bottom:1px solid var(--bdr)}
+.modal-verb{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;direction:ltr;margin-bottom:3px}
+.modal-mean{font-size:12px;color:var(--txt-d)}
+.modal-conj{padding:12px 16px;display:flex;flex-direction:column;gap:6px}
+.mc-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.mc-row:last-child{border-bottom:none}
+.mc-pr{color:var(--txt-d);font-family:'JetBrains Mono',monospace;font-size:12px}
+.mc-form{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px}
+
+/* ─── Erlaubt / Verboten ─── */
+.ev-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.ev-box{border-radius:14px;padding:16px 18px}
+.ev-head{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.ev-item{font-family:'JetBrains Mono',monospace;font-size:12px;direction:ltr;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.05);color:var(--txt-d)}
+.ev-item:last-child{border-bottom:none}
+
+/* ─── Komposita visual ─── */
+.komp-rule{display:flex;align-items:center;justify-content:center;gap:0;margin:14px 0;border-radius:14px;overflow:hidden;border:1px solid var(--bdr)}
+.komp-part{flex:1;padding:16px 14px;text-align:center}
+.komp-part-de{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;direction:ltr;margin-bottom:4px}
+.komp-part-art{font-size:11px;font-family:'JetBrains Mono',monospace;margin-bottom:2px}
+.komp-part-ar{font-size:11px;color:var(--txt-d)}
+.komp-plus{padding:0 10px;font-size:24px;color:var(--txt-d);display:flex;align-items:center;border-right:1px solid var(--bdr);border-left:1px solid var(--bdr)}
+.komp-result{background:rgba(255,255,255,.02);padding:16px 18px;border-right:1px solid var(--bdr);flex:1.2}
+.komp-result-de{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;direction:ltr;margin-bottom:4px}
+.komp-result-art{font-size:11px;font-family:'JetBrains Mono',monospace;margin-bottom:2px}
+.komp-result-ar{font-size:11px;color:var(--txt-d)}
+.komp-arrow{padding:0 12px;font-size:20px;color:var(--txt-d);display:flex;align-items:center}
+
+.komp-examples{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.komp-ex{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:12px 16px;flex-wrap:wrap}
+.komp-p1,.komp-p2{font-family:'JetBrains Mono',monospace;font-size:13px;padding:3px 8px;border-radius:6px}
+.komp-op{color:var(--txt-d);font-size:14px}
+.komp-res{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700}
+.komp-res-ar{font-size:12px;color:var(--txt-d);margin-right:auto}
+
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.rv.v{opacity:1;transform:none}
+
+@media(max-width:600px){
+  .talk-duo,.modal-duo,.ev-duo{grid-template-columns:1fr}
+  .imp-table{font-size:11px}
+  .imp-table th,.imp-table td{padding:8px 8px}
+  .komp-rule{flex-direction:column}
+  .komp-plus,.komp-arrow{transform:rotate(90deg)}
+  .komp-result{border-right:none;border-top:1px solid var(--bdr)}
+  .komp-ex{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#e07858">المحاضرة 17 — Imperativ, Körper &amp; Modalverben</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 17 — المحاضرة السابعة عشرة · A1.2</div>
+  <h1>فعل الأمر، الجسم <em>والأفعال الناقصة</em></h1>
+  <p class="hero-sub">الـ Smalltalk، صيغ الأمر الثلاث، أعضاء الجسم، مصطلحات طبية، وقاعدة الأسماء المركبة</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: SMALLTALK ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--amber),#c88810)">١</div>
+    <div>
+      <div class="sec-t">مواضيع المحادثة القصيرة</div>
+      <div class="sec-td">Smalltalk — Was ist angemessen?</div>
+    </div>
+  </div>
+
+  <div class="talk-duo">
+    <div class="talk-box" style="border-color:rgba(124,168,120,.22)">
+      <div class="talk-head" style="color:var(--green)">
+        <span>✅</span> مواضيع مناسبة
+      </div>
+      <div class="talk-item"><div class="talk-dot" style="background:var(--green)"></div><span>العمل والمهنة</span></div>
+      <div class="talk-item"><div class="talk-dot" style="background:var(--green)"></div><span>الرياضة</span></div>
+      <div class="talk-item"><div class="talk-dot" style="background:var(--green)"></div><span>الأفلام والمسلسلات</span></div>
+      <div class="talk-item"><div class="talk-dot" style="background:var(--green)"></div><span>الطقس</span></div>
+      <div class="talk-item"><div class="talk-dot" style="background:var(--green)"></div><span>عطلة نهاية الأسبوع</span></div>
+    </div>
+    <div class="talk-box" style="border-color:rgba(176,104,112,.22)">
+      <div class="talk-head" style="color:var(--red)">
+        <span>❌</span> مواضيع غير مناسبة
+      </div>
+      <div class="talk-item"><div class="talk-dot" style="background:var(--red)"></div><span>أسئلة شخصية عميقة</span></div>
+      <div class="talk-item"><div class="talk-dot" style="background:var(--red)"></div><span>السياسة</span></div>
+      <div class="talk-item"><div class="talk-dot" style="background:var(--red)"></div><span>الدين</span></div>
+      <div class="talk-item"><div class="talk-dot" style="background:var(--red)"></div><span>المال والراتب</span></div>
+      <div class="talk-item"><div class="talk-dot" style="background:var(--red)"></div><span>الأمراض والصحة</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: IMPERATIV ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#a84828)">٢</div>
+    <div>
+      <div class="sec-t">فعل الأمر</div>
+      <div class="sec-td">Der Imperativ</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--coral-d);border:1px solid rgba(196,122,90,.15)">
+    <h4 style="color:var(--coral)">📖 ما هو فعل الأمر؟</h4>
+    <p>يُستخدم لمخاطبة شخص <strong style="color:var(--coral)">موجود أمامك</strong>. يأتي <strong style="color:var(--coral)">دائماً في بداية الجملة</strong>، ويُعرف في الكتابة بـ <strong style="color:var(--coral)">!</strong> وفي الكلام بنبرة الصوت الحادة.</p>
+  </div>
+
+  <div class="tb-wrap" style="margin-top:14px">
+    <table class="imp-table">
+      <thead>
+        <tr>
+          <th style="color:var(--txt-d)">الضمير</th>
+          <th style="color:var(--sky)">Sie (رسمي)</th>
+          <th style="color:var(--violet)">ihr (جمع)</th>
+          <th style="color:var(--coral)">du (مفرد)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;color:var(--txt-d);text-align:center">القاعدة</td>
+          <td class="imp-rule">مصدر الفعل<br>+ Sie</td>
+          <td class="imp-rule">تصريف ihr<br>بدون الضمير</td>
+          <td class="imp-rule">تصريف du<br>بدون الضمير وبدون st-</td>
+        </tr>
+        <tr>
+          <td style="font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;color:var(--txt-d);text-align:center">gehen</td>
+          <td><div class="imp-ex" style="color:var(--sky)">Gehen Sie!</div><div class="imp-ar">اذهب حضرتك</div></td>
+          <td><div class="imp-ex" style="color:var(--violet)">Geht!</div><div class="imp-ar">اذهبوا</div></td>
+          <td><div class="imp-ex" style="color:var(--coral)">Geh!</div><div class="imp-ar">اذهب</div></td>
+        </tr>
+        <tr>
+          <td style="font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;color:var(--txt-d);text-align:center">sein</td>
+          <td><div class="imp-ex" style="color:var(--sky)">Seien Sie!</div><div class="imp-ar">كن حضرتك</div></td>
+          <td><div class="imp-ex" style="color:var(--violet)">Seid!</div><div class="imp-ar">كونوا</div></td>
+          <td><div class="imp-ex" style="color:var(--coral)">Sei!</div><div class="imp-ar">كن</div></td>
+        </tr>
+        <tr>
+          <td style="font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;color:var(--txt-d);text-align:center">aufmachen</td>
+          <td><div class="imp-ex" style="color:var(--sky)">Machen Sie <span style="color:var(--rose)">auf</span>!</div><div class="imp-ar">افتح حضرتك</div></td>
+          <td><div class="imp-ex" style="color:var(--violet)">Macht <span style="color:var(--rose)">auf</span>!</div><div class="imp-ar">افتحوا</div></td>
+          <td><div class="imp-ex" style="color:var(--coral)">Mach <span style="color:var(--rose)">auf</span>!</div><div class="imp-ar">افتح</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note" style="background:var(--rose-d);border:1px solid rgba(200,152,168,.14);margin-top:12px">
+    <div class="ni">🔚</div>
+    <div>
+      <p>في الأفعال المنفصلة (مثل <span style="font-family:'JetBrains Mono',monospace;color:var(--rose)">aufmachen</span>): <strong style="color:var(--rose)">السابقة تُرمى في آخر الجملة</strong> كما في الأفعال الاعتيادية.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: PERSÖNLICHE INFOS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3878c0)">٣</div>
+    <div>
+      <div class="sec-t">المعلومات الشخصية</div>
+      <div class="sec-td">Alter, Größe &amp; Gewicht</div>
+    </div>
+  </div>
+
+  <div class="pinfo-grid">
+    <div class="pinfo-card" style="border-color:rgba(112,149,192,.22)">
+      <div class="pinfo-ic">🎂</div>
+      <div class="pinfo-q" style="color:var(--sky)">Wie alt bist du?</div>
+      <div style="font-size:12px;color:var(--txt-d);margin-bottom:10px">كم عمرك؟</div>
+      <div class="pinfo-a" style="color:var(--teal)">Ich bin 25 Jahre alt.</div>
+      <div class="pinfo-ar">عمري 25 سنة</div>
+    </div>
+    <div class="pinfo-card" style="border-color:rgba(111,164,148,.22)">
+      <div class="pinfo-ic">📏</div>
+      <div class="pinfo-q" style="color:var(--teal)">Wie groß bist du?</div>
+      <div style="font-size:12px;color:var(--txt-d);margin-bottom:10px">كم طولك؟</div>
+      <div class="pinfo-a" style="color:var(--teal)">Ich bin 1 m 75.</div>
+      <div class="pinfo-ar">طولي متر و75</div>
+    </div>
+    <div class="pinfo-card" style="border-color:rgba(200,152,88,.22)">
+      <div class="pinfo-ic">⚖️</div>
+      <div class="pinfo-q" style="color:var(--amber)">Wie viel wiegst du?</div>
+      <div style="font-size:12px;color:var(--txt-d);margin-bottom:10px">كم وزنك؟</div>
+      <div class="pinfo-a" style="color:var(--amber)">Ich wiege 70 kg.</div>
+      <div class="pinfo-ar">وزني 70 كغ</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 4: DER KÖRPER ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#18a888)">٤</div>
+    <div>
+      <div class="sec-t">أعضاء الجسم والمصطلحات الطبية</div>
+      <div class="sec-td">Der Körper &amp; Medizin</div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px">
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px"><span style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--sky)">der</span><span style="color:var(--txt-d)">مذكر</span></div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px"><span style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--green)">das</span><span style="color:var(--txt-d)">محايد</span></div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px"><span style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--rose)">die</span><span style="color:var(--txt-d)">مؤنث</span></div>
+  </div>
+
+  <div class="body-grid">
+    <div class="body-card" style="border-color:rgba(112,149,192,.18)">
+      <div class="body-art" style="color:var(--sky)">der</div>
+      <div><div class="body-de" style="color:var(--sky)">Kopf</div><div class="body-ar">الرأس</div></div>
+    </div>
+    <div class="body-card" style="border-color:rgba(112,149,192,.18)">
+      <div class="body-art" style="color:var(--sky)">der</div>
+      <div><div class="body-de" style="color:var(--sky)">Rücken</div><div class="body-ar">الظهر</div></div>
+    </div>
+    <div class="body-card" style="border-color:rgba(112,149,192,.18)">
+      <div class="body-art" style="color:var(--sky)">der</div>
+      <div><div class="body-de" style="color:var(--sky)">Bauch</div><div class="body-ar">البطن</div></div>
+    </div>
+    <div class="body-card" style="border-color:rgba(112,149,192,.18)">
+      <div class="body-art" style="color:var(--sky)">der</div>
+      <div><div class="body-de" style="color:var(--sky)">Arm</div><div class="body-ar">الذراع</div></div>
+    </div>
+    <div class="body-card" style="border-color:rgba(112,149,192,.18)">
+      <div class="body-art" style="color:var(--sky)">der</div>
+      <div><div class="body-de" style="color:var(--sky)">Finger</div><div class="body-ar">الإصبع</div></div>
+    </div>
+    <div class="body-card" style="border-color:rgba(112,149,192,.18)">
+      <div class="body-art" style="color:var(--sky)">der</div>
+      <div><div class="body-de" style="color:var(--sky)">Fuß</div><div class="body-ar">القدم</div></div>
+    </div>
+    <div class="body-card" style="border-color:rgba(112,149,192,.18)">
+      <div class="body-art" style="color:var(--sky)">der</div>
+      <div><div class="body-de" style="color:var(--sky)">Hals</div><div class="body-ar">الرقبة / الحلق</div></div>
+    </div>
+    <div class="body-card" style="border-color:rgba(124,168,120,.18)">
+      <div class="body-art" style="color:var(--green)">das</div>
+      <div><div class="body-de" style="color:var(--green)">Bein</div><div class="body-ar">الساق</div></div>
+    </div>
+    <div class="body-card" style="border-color:rgba(124,168,120,.18)">
+      <div class="body-art" style="color:var(--green)">das</div>
+      <div><div class="body-de" style="color:var(--green)">Knie</div><div class="body-ar">الركبة</div></div>
+    </div>
+    <div class="body-card" style="border-color:rgba(200,152,168,.18)">
+      <div class="body-art" style="color:var(--rose)">die</div>
+      <div><div class="body-de" style="color:var(--rose)">Hand</div><div class="body-ar">اليد</div></div>
+    </div>
+    <div class="body-card" style="border-color:rgba(200,152,168,.18)">
+      <div class="body-art" style="color:var(--rose)">die</div>
+      <div><div class="body-de" style="color:var(--rose)">Schulter</div><div class="body-ar">الكتف</div></div>
+    </div>
+    <div class="body-card" style="border-color:rgba(200,152,168,.18)">
+      <div class="body-art" style="color:var(--rose)">die</div>
+      <div><div class="body-de" style="color:var(--rose)">Nase</div><div class="body-ar">الأنف</div></div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">🏥 المصطلحات الطبية</div>
+  <div class="med-grid">
+    <div class="med-card" style="border-color:rgba(176,104,112,.2)">
+      <div class="med-de" style="color:var(--red)">weh tun</div>
+      <div class="med-ar">يؤلم — فعل منفصل</div>
+      <div class="med-eg" style="color:var(--red)">
+        Mein Knie tut weh.
+        <div style="font-family:'Noto Naskh Arabic',serif;direction:rtl;color:var(--txt-d);font-size:11px;margin-top:3px">ركبتي تؤلمني</div>
+      </div>
+    </div>
+    <div class="med-card" style="border-color:rgba(176,104,112,.2)">
+      <div class="med-de" style="color:var(--red)">der Unfall</div>
+      <div class="med-ar">الحادث</div>
+      <div class="med-eg" style="color:var(--txt-d)">
+        Ich hatte einen Unfall.
+        <div style="font-family:'Noto Naskh Arabic',serif;direction:rtl;color:var(--txt-d);font-size:11px;margin-top:3px">كان معي حادث</div>
+      </div>
+    </div>
+    <div class="med-card" style="border-color:rgba(112,149,192,.2)">
+      <div class="med-de" style="color:var(--sky)">der Verband</div>
+      <div class="med-ar">الضمادة / الشاش</div>
+      <div class="med-eg" style="color:var(--txt-d)">Ich brauche einen Verband.</div>
+    </div>
+    <div class="med-card" style="border-color:rgba(112,149,192,.2)">
+      <div class="med-de" style="color:var(--sky)">das Rezept</div>
+      <div class="med-ar">الوصفة الطبية (الروشتة)</div>
+      <div class="med-eg" style="color:var(--txt-d)">Das Rezept vom Arzt.</div>
+    </div>
+    <div class="med-card" style="border-color:rgba(111,164,148,.2)">
+      <div class="med-de" style="color:var(--teal)">die Salbe</div>
+      <div class="med-ar">المرهم</div>
+      <div class="med-eg" style="color:var(--txt-d)">Die Salbe hilft gegen Schmerzen.</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.14);margin-top:12px">
+    <div class="ni">💡</div>
+    <div>
+      <p><strong style="color:var(--teal)">weh tun</strong> فعل منفصل: <span style="font-family:'JetBrains Mono',monospace;color:var(--teal)">tun</span> يصرَّف في المركز الثاني، و <span style="font-family:'JetBrains Mono',monospace;color:var(--rose)">weh</span> تُرمى آخر الجملة.<br>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--teal)">Mein Bauch tut <strong style="color:var(--rose)">weh</strong>. · Meine Augen tun <strong style="color:var(--rose)">weh</strong>.</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: MODALVERBEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#7040c0)">٥</div>
+    <div>
+      <div class="sec-t">الأفعال الناقصة الجديدة</div>
+      <div class="sec-td">dürfen &amp; sollen</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.15)">
+    <h4 style="color:var(--violet)">📖 تذكير: قاعدة الأفعال الناقصة</h4>
+    <p>الفعل الناقص يُصرَّف في <strong style="color:var(--violet)">الموقع الثاني</strong>، ويأتي الفعل الثاني في <strong style="color:var(--violet)">آخر الجملة بصيغة المصدر</strong>. <span style="font-family:'JetBrains Mono',monospace;color:var(--violet)">ich = er/sie/es</span> دائماً.</p>
+  </div>
+
+  <div class="modal-duo">
+    <div class="modal-card" style="border-color:rgba(124,168,120,.2)">
+      <div class="modal-head" style="background:rgba(124,168,120,.04)">
+        <div class="modal-verb" style="color:var(--green)">dürfen</div>
+        <div class="modal-mean">مسموح له / يُجاز له (Permission)</div>
+      </div>
+      <div class="modal-conj">
+        <div class="mc-row"><span class="mc-pr">ich</span><span class="mc-form" style="color:var(--green)">darf</span></div>
+        <div class="mc-row"><span class="mc-pr">du</span><span class="mc-form" style="color:var(--green)">darfst</span></div>
+        <div class="mc-row"><span class="mc-pr">er/sie/es</span><span class="mc-form" style="color:var(--green)">darf</span></div>
+        <div class="mc-row"><span class="mc-pr">wir</span><span class="mc-form" style="color:var(--green)">dürfen</span></div>
+        <div class="mc-row"><span class="mc-pr">ihr</span><span class="mc-form" style="color:var(--green)">dürft</span></div>
+        <div class="mc-row"><span class="mc-pr">sie/Sie</span><span class="mc-form" style="color:var(--green)">dürfen</span></div>
+      </div>
+    </div>
+    <div class="modal-card" style="border-color:rgba(200,152,88,.2)">
+      <div class="modal-head" style="background:rgba(200,152,88,.04)">
+        <div class="modal-verb" style="color:var(--amber)">sollen</div>
+        <div class="modal-mean">ينبغي / من المفترض (Advice/Duty)</div>
+      </div>
+      <div class="modal-conj">
+        <div class="mc-row"><span class="mc-pr">ich</span><span class="mc-form" style="color:var(--amber)">soll</span></div>
+        <div class="mc-row"><span class="mc-pr">du</span><span class="mc-form" style="color:var(--amber)">sollst</span></div>
+        <div class="mc-row"><span class="mc-pr">er/sie/es</span><span class="mc-form" style="color:var(--amber)">soll</span></div>
+        <div class="mc-row"><span class="mc-pr">wir</span><span class="mc-form" style="color:var(--amber)">sollen</span></div>
+        <div class="mc-row"><span class="mc-pr">ihr</span><span class="mc-form" style="color:var(--amber)">sollt</span></div>
+        <div class="mc-row"><span class="mc-pr">sie/Sie</span><span class="mc-form" style="color:var(--amber)">sollen</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ev-duo" style="margin-top:14px">
+    <div class="ev-box" style="background:rgba(124,168,120,.05);border:1px solid rgba(124,168,120,.2)">
+      <div class="ev-head" style="color:var(--green)">✅ Erlaubt — مسموح</div>
+      <div class="ev-item" style="color:var(--green)">Hier darf man parken.</div>
+      <div style="font-size:11px;color:var(--txt-d);margin-bottom:8px;font-family:'Noto Naskh Arabic',serif">يُسمح هنا بالوقوف</div>
+      <div class="ev-item" style="color:var(--green)">Du darfst rausgehen.</div>
+      <div style="font-size:11px;color:var(--txt-d);font-family:'Noto Naskh Arabic',serif">يسمح لك بالخروج</div>
+    </div>
+    <div class="ev-box" style="background:rgba(176,104,112,.05);border:1px solid rgba(176,104,112,.2)">
+      <div class="ev-head" style="color:var(--red)">🚫 Verboten — ممنوع</div>
+      <div class="ev-item" style="color:var(--red)">Hier darf man nicht parken.</div>
+      <div style="font-size:11px;color:var(--txt-d);margin-bottom:8px;font-family:'Noto Naskh Arabic',serif">يُمنع الوقوف هنا</div>
+      <div class="ev-item" style="color:var(--red)">Du darfst das nicht essen.</div>
+      <div style="font-size:11px;color:var(--txt-d);font-family:'Noto Naskh Arabic',serif">ممنوع عليك أكل هذا</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:18px">✏️ أمثلة على sollen</div>
+  <div class="ex">
+    <div class="icon">🏥</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--amber)">Du <strong>sollst</strong> mehr Wasser trinken.</div>
+      <div class="ar">ينبغي أن تشرب ماءً أكثر — نصيحة الطبيب</div>
+    </div>
+  </div>
+  <div class="ex">
+    <div class="icon">💊</div>
+    <div style="flex:1">
+      <div class="de" style="color:var(--amber)">Er <strong>soll</strong> die Salbe benutzen.</div>
+      <div class="ar">من المفترض أن يستخدم المرهم</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 6: KOMPOSITA ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#a07828)">٦</div>
+    <div>
+      <div class="sec-t">قاعدة الأسماء المركبة</div>
+      <div class="sec-td">Komposita — Zusammengesetzte Nomen</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--gold-d);border:1px solid rgba(201,161,84,.15)">
+    <h4 style="color:var(--gold)">⭐ القاعدة الذهبية</h4>
+    <p>عند تكوين كلمة مركبة من جزأين أو أكثر، <strong style="color:var(--gold)">الجزء الأخير</strong> هو الذي يُحدّد أداة التعريف للكلمة بالكامل.</p>
+  </div>
+
+  <div class="sub">أمثلة تطبيقية</div>
+  <div class="komp-examples">
+    <div class="komp-ex">
+      <span class="komp-p1" style="background:rgba(112,149,192,.08);color:var(--sky)">der Zahn</span>
+      <span class="komp-op">+</span>
+      <span class="komp-p2" style="background:rgba(200,152,168,.08);color:var(--rose)">die Ärztin</span>
+      <span class="komp-op">=</span>
+      <span class="komp-res" style="color:var(--rose)">die Zahnärztin</span>
+      <span class="komp-res-ar">طبيبة الأسنان — أداة الجزء الثاني (die)</span>
+    </div>
+    <div class="komp-ex">
+      <span class="komp-p1" style="background:rgba(112,149,192,.08);color:var(--sky)">der Bauch</span>
+      <span class="komp-op">+</span>
+      <span class="komp-p2" style="background:rgba(200,152,168,.08);color:var(--rose)">die Schmerzen</span>
+      <span class="komp-op">=</span>
+      <span class="komp-res" style="color:var(--rose)">die Bauchschmerzen</span>
+      <span class="komp-res-ar">آلام البطن — أداة الجزء الثاني (die)</span>
+    </div>
+    <div class="komp-ex">
+      <span class="komp-p1" style="background:rgba(112,149,192,.08);color:var(--sky)">der Kopf</span>
+      <span class="komp-op">+</span>
+      <span class="komp-p2" style="background:rgba(200,152,168,.08);color:var(--rose)">die Schmerzen</span>
+      <span class="komp-op">=</span>
+      <span class="komp-res" style="color:var(--rose)">die Kopfschmerzen</span>
+      <span class="komp-res-ar">صداع الرأس — أداة الجزء الثاني (die)</span>
+    </div>
+    <div class="komp-ex">
+      <span class="komp-p1" style="background:rgba(124,168,120,.08);color:var(--green)">das Krank</span>
+      <span class="komp-op">+</span>
+      <span class="komp-p2" style="background:rgba(124,168,120,.08);color:var(--green)">das Haus</span>
+      <span class="komp-op">=</span>
+      <span class="komp-res" style="color:var(--green)">das Krankenhaus</span>
+      <span class="komp-res-ar">المستشفى — أداة الجزء الثاني (das)</span>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--gold-d);border:1px solid rgba(201,161,84,.14);margin-top:14px">
+    <div class="ni">💡</div>
+    <div>
+      <p>لا تنظر لأداة الجزء <strong>الأول</strong> — انظر دائماً لأداة <strong style="color:var(--gold)">الجزء الأخير</strong>. هذه القاعدة لا استثناء فيها.</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('v')})},{threshold:.07,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
