@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 18 — السكن والأثاث وحروف الجر المكانية</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── Vocab sub-header ─── */
+.v-head{display:flex;align-items:center;gap:10px;margin:22px 0 10px}
+.v-head-ic{font-size:18px}
+.v-head-title{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:800}
+.v-head-de{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d);margin-right:6px}
+
+/* ─── Word cards ─── */
+.wrd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:9px}
+.wrd{
+  background:var(--card);
+  border:1px solid var(--bdr);
+  border-radius:11px;
+  padding:11px 13px 11px 10px;
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  transition:transform .2s,border-color .2s,box-shadow .2s;
+  position:relative;
+  overflow:hidden
+}
+.wrd::before{
+  content:'';
+  position:absolute;
+  right:0;top:0;bottom:0;
+  width:3px;
+  border-radius:0 11px 11px 0
+}
+.wrd.der::before{background:var(--sky)}
+.wrd.die::before{background:var(--rose)}
+.wrd.das::before{background:var(--green)}
+.wrd:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.wrd-art{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;flex-shrink:0;padding-top:2px;letter-spacing:.4px}
+.wrd-de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;margin-bottom:3px}
+.wrd-ar{font-size:12px;color:var(--txt-d);line-height:1.5}
+
+/* ─── Lieblings- cards ─── */
+.lieblings-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:14px}
+.lieb-card{
+  background:var(--card);
+  border:1px solid var(--bdr);
+  border-radius:12px;
+  padding:14px 16px;
+  transition:border-color .2s,transform .2s;
+  position:relative;
+  overflow:hidden
+}
+.lieb-card::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:2px;
+  background:linear-gradient(90deg,#a878d8,#7848b0)
+}
+.lieb-card:hover{transform:translateY(-2px);border-color:rgba(168,120,216,.3)}
+.lieb-prefix{font-family:'JetBrains Mono',monospace;font-size:13px;color:#a878d8;font-weight:600;direction:ltr}
+.lieb-stem{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;margin-bottom:6px}
+.lieb-ar{font-size:12px;color:var(--txt-d);margin-bottom:4px}
+.lieb-art{font-family:'JetBrains Mono',monospace;font-size:11px;background:rgba(168,120,216,.1);color:#a878d8;display:inline-block;padding:2px 8px;border-radius:20px}
+
+/* ─── Adjective pairs ─── */
+.adj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-top:14px}
+.adj-pair{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;transition:border-color .2s,transform .2s}
+.adj-pair:hover{transform:translateY(-2px)}
+.adj-top{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.adj-pos{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;flex:1}
+.adj-vs{font-size:11px;color:var(--txt-d);flex-shrink:0;padding:0 4px;letter-spacing:.5px}
+.adj-neg{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;flex:1;text-align:left;color:var(--txt-d)}
+.adj-ar-row{display:flex;justify-content:space-between;font-size:12px;color:var(--txt-d);padding-top:8px;border-top:1px solid var(--bdr)}
+.adj-ar-pos{font-weight:600}
+
+/* ─── 9 prepositions chips ─── */
+.prep9-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;justify-content:center}
+.prep9-chip{
+  font-family:'JetBrains Mono',monospace;
+  font-size:15px;
+  font-weight:700;
+  padding:9px 18px;
+  border-radius:10px;
+  border:2px solid rgba(112,149,192,.35);
+  background:rgba(112,149,192,.06);
+  color:var(--sky);
+  direction:ltr;
+  transition:background .2s,transform .15s,border-color .2s;
+  cursor:default
+}
+.prep9-chip:hover{background:rgba(112,149,192,.14);border-color:rgba(112,149,192,.6);transform:translateY(-2px)}
+
+/* ─── Wo / Wohin boxes ─── */
+.wowo-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.wowo-box{border-radius:16px;padding:20px 18px;position:relative;overflow:hidden}
+.wowo-box::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:3px
+}
+.wowo-teal::before{background:linear-gradient(90deg,var(--teal),#3a8a78)}
+.wowo-amber::before{background:linear-gradient(90deg,var(--amber),#a07020)}
+.wowo-q{
+  font-family:'JetBrains Mono',monospace;
+  font-size:28px;
+  font-weight:800;
+  direction:ltr;
+  margin-bottom:4px
+}
+.wowo-case{
+  font-family:'Noto Kufi Arabic',sans-serif;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:3px
+}
+.wowo-verb{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  color:var(--txt-d);
+  direction:ltr;
+  margin-bottom:16px;
+  padding:5px 8px;
+  border-radius:6px;
+  background:rgba(255,255,255,.03)
+}
+.wowo-ex{
+  font-family:'JetBrains Mono',monospace;
+  font-size:13px;
+  font-weight:600;
+  direction:ltr;
+  padding:9px 12px;
+  border-radius:8px;
+  margin-bottom:4px
+}
+.wowo-ex-ar{font-size:12px;color:var(--txt-d);margin-bottom:10px;padding:0 2px}
+
+/* ─── stellen vs stehen ─── */
+.vs-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.vs-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;transition:transform .2s}
+.vs-card:hover{transform:translateY(-2px)}
+.vs-head{padding:14px 16px;border-bottom:1px solid var(--bdr)}
+.vs-verb{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:800;direction:ltr;margin-bottom:3px}
+.vs-mean{font-size:12px;color:var(--txt-d)}
+.vs-body{padding:14px 16px}
+.vs-rule{
+  font-size:12px;
+  font-family:'Noto Kufi Arabic',sans-serif;
+  font-weight:700;
+  padding:4px 12px;
+  border-radius:100px;
+  display:inline-block;
+  margin-bottom:12px
+}
+.vs-eg{font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;padding:9px 12px;border-radius:8px;line-height:1.6}
+.vs-eg-ar{font-size:11px;color:var(--txt-d);margin-top:5px}
+
+/* ─── Contractions ─── */
+.contr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:8px;margin-top:12px}
+.contr{background:var(--card);border:1px solid var(--bdr);border-radius:11px;padding:14px;text-align:center;transition:border-color .2s,transform .2s}
+.contr:hover{transform:translateY(-2px)}
+.contr-eq{display:flex;align-items:center;justify-content:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;margin-bottom:6px}
+.contr-part{color:var(--txt-d)}
+.contr-op{font-size:10px;color:var(--txt-d)}
+.contr-result{font-weight:800;font-size:20px}
+.contr-ar{font-size:11px;color:var(--txt-d)}
+
+/* ─── Anzeigen ─── */
+.anz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:14px}
+.anz-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;transition:transform .2s}
+.anz-card:hover{transform:translateY(-2px)}
+.anz-head{padding:13px 16px;border-bottom:1px solid var(--bdr);font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:800;display:flex;align-items:center;gap:8px}
+.anz-body{padding:4px 16px 10px}
+.anz-item{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid var(--bdr)}
+.anz-item:last-child{border-bottom:none}
+.anz-key{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;flex-shrink:0;min-width:85px}
+.anz-val{color:var(--txt-d);font-size:12px;line-height:1.6}
+
+/* ─── Pronunciation ─── */
+.pron-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.pron-item{
+  background:var(--card);
+  border:1px solid var(--bdr);
+  border-radius:12px;
+  padding:14px 16px;
+  display:flex;
+  gap:14px;
+  transition:border-color .2s,transform .2s
+}
+.pron-item:hover{transform:translateX(-2px)}
+.pron-ic{font-size:22px;flex-shrink:0;padding-top:1px}
+.pron-rule{font-size:13px;line-height:1.85}
+.pron-eg{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;
+  direction:ltr;
+  margin-top:7px;
+  padding:6px 10px;
+  border-radius:7px;
+  background:rgba(255,255,255,.03)
+}
+
+@media(max-width:640px){
+  .wowo-duo,.vs-duo{grid-template-columns:1fr}
+  .adj-grid{grid-template-columns:1fr}
+  .lieblings-grid{grid-template-columns:1fr 1fr}
+  .prep9-chip{font-size:13px;padding:7px 14px}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#a878d8">المحاضرة 18 — Wohnen, Möbel &amp; Wechselpräpositionen</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 18 — المحاضرة الثامنة عشرة · A1.2</div>
+  <h1>السكن والأثاث <em>وحروف الجر المكانية</em></h1>
+  <p class="hero-sub">مفردات المنزل والغرف، وصف الشقق بالصفات، وقاعدة Wechselpräpositionen — Wo أم Wohin؟</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: MÖBEL UND WOHNUNG ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#a878d8,#7040b0)">١</div>
+    <div>
+      <div class="sec-t">مفردات السكن والأثاث</div>
+      <div class="sec-td">Möbel, Geräte &amp; Zimmer</div>
+    </div>
+  </div>
+
+  <!-- Geräte -->
+  <div class="v-head">
+    <span class="v-head-ic">🔌</span>
+    <span class="v-head-title" style="color:var(--sky)">الأجهزة المنزلية</span>
+    <span class="v-head-de">Geräte</span>
+  </div>
+  <div class="wrd-grid">
+    <div class="wrd der">
+      <div class="wrd-art" style="color:var(--sky)">der</div>
+      <div><div class="wrd-de" style="color:var(--sky)">Fernseher</div><div class="wrd-ar">التلفاز</div></div>
+    </div>
+    <div class="wrd der">
+      <div class="wrd-art" style="color:var(--sky)">der</div>
+      <div><div class="wrd-de" style="color:var(--sky)">Kühlschrank</div><div class="wrd-ar">الثلاجة</div></div>
+    </div>
+    <div class="wrd der">
+      <div class="wrd-art" style="color:var(--sky)">der</div>
+      <div><div class="wrd-de" style="color:var(--sky)">Herd</div><div class="wrd-ar">البوتاجاز / الموقد</div></div>
+    </div>
+    <div class="wrd die">
+      <div class="wrd-art" style="color:var(--rose)">die</div>
+      <div><div class="wrd-de" style="color:var(--rose)">Spülmaschine</div><div class="wrd-ar">غسالة الأطباق</div></div>
+    </div>
+    <div class="wrd die">
+      <div class="wrd-art" style="color:var(--rose)">die</div>
+      <div><div class="wrd-de" style="color:var(--rose)">Waschmaschine</div><div class="wrd-ar">الغسالة</div></div>
+    </div>
+    <div class="wrd die">
+      <div class="wrd-art" style="color:var(--rose)">die</div>
+      <div><div class="wrd-de" style="color:var(--rose)">Kaffeemaschine</div><div class="wrd-ar">ماكينة القهوة</div></div>
+    </div>
+    <div class="wrd die">
+      <div class="wrd-art" style="color:var(--rose)">die</div>
+      <div><div class="wrd-de" style="color:var(--rose)">Lampe</div><div class="wrd-ar">المصباح</div></div>
+    </div>
+    <div class="wrd das">
+      <div class="wrd-art" style="color:var(--green)">das</div>
+      <div><div class="wrd-de" style="color:var(--green)">Bild</div><div class="wrd-ar">اللوحة / الصورة</div></div>
+    </div>
+  </div>
+
+  <!-- Möbel -->
+  <div class="v-head">
+    <span class="v-head-ic">🪑</span>
+    <span class="v-head-title" style="color:var(--amber)">الأثاث</span>
+    <span class="v-head-de">Möbel</span>
+  </div>
+  <div class="wrd-grid">
+    <div class="wrd der">
+      <div class="wrd-art" style="color:var(--sky)">der</div>
+      <div><div class="wrd-de" style="color:var(--sky)">Sessel</div><div class="wrd-ar">الكرسي المريح</div></div>
+    </div>
+    <div class="wrd der">
+      <div class="wrd-art" style="color:var(--sky)">der</div>
+      <div><div class="wrd-de" style="color:var(--sky)">Tisch</div><div class="wrd-ar">الطاولة</div></div>
+    </div>
+    <div class="wrd der">
+      <div class="wrd-art" style="color:var(--sky)">der</div>
+      <div><div class="wrd-de" style="color:var(--sky)">Teppich</div><div class="wrd-ar">السجادة</div></div>
+    </div>
+    <div class="wrd der">
+      <div class="wrd-art" style="color:var(--sky)">der</div>
+      <div><div class="wrd-de" style="color:var(--sky)">Schrank</div><div class="wrd-ar">الخزانة</div></div>
+    </div>
+    <div class="wrd der">
+      <div class="wrd-art" style="color:var(--sky)">der</div>
+      <div><div class="wrd-de" style="color:var(--sky)">Schreibtisch</div><div class="wrd-ar">طاولة الكتابة</div></div>
+    </div>
+    <div class="wrd das">
+      <div class="wrd-art" style="color:var(--green)">das</div>
+      <div><div class="wrd-de" style="color:var(--green)">Sofa</div><div class="wrd-ar">الأريكة</div></div>
+    </div>
+    <div class="wrd das">
+      <div class="wrd-art" style="color:var(--green)">das</div>
+      <div><div class="wrd-de" style="color:var(--green)">Regal</div><div class="wrd-ar">الرف</div></div>
+    </div>
+    <div class="wrd das">
+      <div class="wrd-art" style="color:var(--green)">das</div>
+      <div><div class="wrd-de" style="color:var(--green)">Bett</div><div class="wrd-ar">السرير</div></div>
+    </div>
+  </div>
+
+  <!-- Zimmer -->
+  <div class="v-head">
+    <span class="v-head-ic">🏠</span>
+    <span class="v-head-title" style="color:var(--teal)">الغرف وأجزاء المنزل</span>
+    <span class="v-head-de">Zimmer &amp; Räume</span>
+  </div>
+  <div class="wrd-grid">
+    <div class="wrd das">
+      <div class="wrd-art" style="color:var(--green)">das</div>
+      <div><div class="wrd-de" style="color:var(--green)">Wohnzimmer</div><div class="wrd-ar">غرفة المعيشة</div></div>
+    </div>
+    <div class="wrd das">
+      <div class="wrd-art" style="color:var(--green)">das</div>
+      <div><div class="wrd-de" style="color:var(--green)">Schlafzimmer</div><div class="wrd-ar">غرفة النوم</div></div>
+    </div>
+    <div class="wrd das">
+      <div class="wrd-art" style="color:var(--green)">das</div>
+      <div><div class="wrd-de" style="color:var(--green)">Kinderzimmer</div><div class="wrd-ar">غرفة الأطفال</div></div>
+    </div>
+    <div class="wrd das">
+      <div class="wrd-art" style="color:var(--green)">das</div>
+      <div><div class="wrd-de" style="color:var(--green)">Arbeitszimmer</div><div class="wrd-ar">غرفة العمل / المكتب</div></div>
+    </div>
+    <div class="wrd das">
+      <div class="wrd-art" style="color:var(--green)">das</div>
+      <div><div class="wrd-de" style="color:var(--green)">Bad</div><div class="wrd-ar">الحمام</div></div>
+    </div>
+    <div class="wrd der">
+      <div class="wrd-art" style="color:var(--sky)">der</div>
+      <div><div class="wrd-de" style="color:var(--sky)">Flur</div><div class="wrd-ar">الممر / الموزع</div></div>
+    </div>
+    <div class="wrd der">
+      <div class="wrd-art" style="color:var(--sky)">der</div>
+      <div><div class="wrd-de" style="color:var(--sky)">Balkon</div><div class="wrd-ar">الشرفة</div></div>
+    </div>
+    <div class="wrd die">
+      <div class="wrd-art" style="color:var(--rose)">die</div>
+      <div><div class="wrd-de" style="color:var(--rose)">Toilette</div><div class="wrd-ar">دورة المياه</div></div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.18);margin-top:18px">
+    <div class="ni">💡</div>
+    <div><p><strong style="color:var(--teal)">قاعدة التمييز بالأداة:</strong> جميع الغرف تنتهي بـ <span style="font-family:'JetBrains Mono',monospace;color:var(--teal)">-zimmer</span> وهي دائماً <strong style="color:var(--teal)">das</strong> لأن الكلمة الأخيرة تحدد الجنس.<br>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d)">das Schlaf<strong style="color:var(--teal)">zimmer</strong> · das Kinder<strong style="color:var(--teal)">zimmer</strong> · das Wohn<strong style="color:var(--teal)">zimmer</strong></span></p></div>
+  </div>
+</div>
+
+<!-- ═══ 2: LIEBLINGS- & ADJEKTIVE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6a40a0)">٢</div>
+    <div>
+      <div class="sec-t">مفاهيم لغوية وصفات السكن</div>
+      <div class="sec-td">Lieblings- &amp; Adjektive</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(168,120,216,.06);border:1px solid rgba(168,120,216,.18)">
+    <h4 style="color:#a878d8">⭐ البادئة Lieblings-</h4>
+    <p>تُضاف في بداية أي اسم لتعني <strong style="color:#a878d8">"المفضّل"</strong> — أداة التعريف تتبع الكلمة الأخيرة (قاعدة الأسماء المركبة).</p>
+  </div>
+
+  <div class="lieblings-grid">
+    <div class="lieb-card">
+      <div class="lieb-prefix">Lieblings</div>
+      <div class="lieb-stem">zimmer</div>
+      <div class="lieb-ar">الغرفة المفضلة</div>
+      <div class="lieb-art">das</div>
+    </div>
+    <div class="lieb-card">
+      <div class="lieb-prefix">Lieblings</div>
+      <div class="lieb-stem">farbe</div>
+      <div class="lieb-ar">اللون المفضل</div>
+      <div class="lieb-art">die</div>
+    </div>
+    <div class="lieb-card">
+      <div class="lieb-prefix">Lieblings</div>
+      <div class="lieb-stem">auto</div>
+      <div class="lieb-ar">السيارة المفضلة</div>
+      <div class="lieb-art">das</div>
+    </div>
+    <div class="lieb-card">
+      <div class="lieb-prefix">Lieblings</div>
+      <div class="lieb-stem">restaurant</div>
+      <div class="lieb-ar">المطعم المفضل</div>
+      <div class="lieb-art">das</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(200,152,88,.18);margin-top:14px">
+    <div class="ni">📌</div>
+    <div><p>
+      <strong style="color:var(--amber)">لماذا meine Wohnung؟</strong><br>
+      لأن <span style="font-family:'JetBrains Mono',monospace;color:var(--amber)">Wohnung</span> مؤنثة (die) — ضمير الملكية يصبح <strong style="color:var(--amber)">meine</strong> وليس mein.<br>
+      <span style="font-family:'JetBrains Mono',monospace;color:var(--teal)">besonders</span> = بشكل خاص / بالأخص.
+    </p></div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">الصفات وعكسها — وصف الشقة</div>
+  <div class="adj-grid">
+    <div class="adj-pair" style="border-color:rgba(200,152,88,.22)">
+      <div class="adj-top">
+        <div class="adj-pos" style="color:var(--amber)">hell</div>
+        <div class="adj-vs">×</div>
+        <div class="adj-neg">dunkel</div>
+      </div>
+      <div class="adj-ar-row">
+        <span class="adj-ar-pos" style="color:var(--amber)">مشرق / منير</span>
+        <span>معتم / مظلم</span>
+      </div>
+    </div>
+    <div class="adj-pair" style="border-color:rgba(124,168,120,.22)">
+      <div class="adj-top">
+        <div class="adj-pos" style="color:var(--green)">ruhig</div>
+        <div class="adj-vs">×</div>
+        <div class="adj-neg">laut</div>
+      </div>
+      <div class="adj-ar-row">
+        <span class="adj-ar-pos" style="color:var(--green)">هادئ</span>
+        <span>صاخب</span>
+      </div>
+    </div>
+    <div class="adj-pair" style="border-color:rgba(176,104,112,.22)">
+      <div class="adj-top">
+        <div class="adj-pos" style="color:var(--red)">teuer</div>
+        <div class="adj-vs">×</div>
+        <div class="adj-neg">günstig / billig</div>
+      </div>
+      <div class="adj-ar-row">
+        <span class="adj-ar-pos" style="color:var(--red)">غالي</span>
+        <span>مناسب / رخيص</span>
+      </div>
+    </div>
+    <div class="adj-pair" style="border-color:rgba(112,149,192,.22)">
+      <div class="adj-top">
+        <div class="adj-pos" style="color:var(--sky)">groß</div>
+        <div class="adj-vs">×</div>
+        <div class="adj-neg">klein</div>
+      </div>
+      <div class="adj-ar-row">
+        <span class="adj-ar-pos" style="color:var(--sky)">كبير</span>
+        <span>صغير</span>
+      </div>
+    </div>
+    <div class="adj-pair" style="border-color:rgba(201,161,84,.22)">
+      <div class="adj-top">
+        <div class="adj-pos" style="color:var(--gold)">zentral</div>
+        <div class="adj-vs"></div>
+        <div class="adj-neg"></div>
+      </div>
+      <div class="adj-ar-row">
+        <span class="adj-ar-pos" style="color:var(--gold)">في وسط المدينة / السنتر</span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: WECHSELPRÄPOSITIONEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#2a7060)">٣</div>
+    <div>
+      <div class="sec-t">حروف الجر المكانية المتغيّرة</div>
+      <div class="sec-td">Wechselpräpositionen ⭐ الجزء الأهم</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.18)">
+    <h4 style="color:var(--sky)">📖 القاعدة الأساسية</h4>
+    <p>9 حروف جر تتغير الحالة الإعرابية بعدها بحسب نوع الفعل — <strong style="color:var(--teal)">ثبات (Wo?) أم حركة (Wohin?)</strong></p>
+  </div>
+
+  <div class="sub">الحروف التسعة</div>
+  <div class="prep9-grid">
+    <div class="prep9-chip">an</div>
+    <div class="prep9-chip">auf</div>
+    <div class="prep9-chip">hinter</div>
+    <div class="prep9-chip">in</div>
+    <div class="prep9-chip">neben</div>
+    <div class="prep9-chip">über</div>
+    <div class="prep9-chip">unter</div>
+    <div class="prep9-chip">vor</div>
+    <div class="prep9-chip">zwischen</div>
+  </div>
+
+  <div class="sub" style="margin-top:22px">Wo? أم Wohin? — القاعدة</div>
+  <div class="wowo-duo">
+    <div class="wowo-box wowo-teal" style="background:rgba(111,164,148,.07);border:1px solid rgba(111,164,148,.25)">
+      <div class="wowo-q" style="color:var(--teal)">Wo?</div>
+      <div class="wowo-case" style="color:var(--teal)">📍 الثبات → Dativ</div>
+      <div class="wowo-verb">sein · stehen · liegen · hängen</div>
+      <div class="wowo-ex" style="background:rgba(111,164,148,.1);color:var(--teal)">Ich bin <strong>im</strong> Kino.</div>
+      <div class="wowo-ex-ar">أنا في السينما — <strong style="color:var(--teal)">im = in + dem</strong></div>
+      <div class="wowo-ex" style="background:rgba(111,164,148,.1);color:var(--teal)">Das Buch liegt <strong>auf dem</strong> Tisch.</div>
+      <div class="wowo-ex-ar">الكتاب على الطاولة</div>
+    </div>
+    <div class="wowo-box wowo-amber" style="background:rgba(200,152,88,.07);border:1px solid rgba(200,152,88,.25)">
+      <div class="wowo-q" style="color:var(--amber)">Wohin?</div>
+      <div class="wowo-case" style="color:var(--amber)">🏃 الحركة → Akkusativ</div>
+      <div class="wowo-verb">gehen · stellen · legen · hängen</div>
+      <div class="wowo-ex" style="background:rgba(200,152,88,.1);color:var(--amber)">Ich gehe <strong>ins</strong> Kino.</div>
+      <div class="wowo-ex-ar">أنا ذاهب إلى السينما — <strong style="color:var(--amber)">ins = in + das</strong></div>
+      <div class="wowo-ex" style="background:rgba(200,152,88,.1);color:var(--amber)">Ich lege das Buch <strong>auf den</strong> Tisch.</div>
+      <div class="wowo-ex-ar">أضع الكتاب على الطاولة</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:22px">stellen مقابل stehen — مثال تطبيقي</div>
+  <div class="vs-duo">
+    <div class="vs-card" style="border-color:rgba(200,152,88,.25)">
+      <div class="vs-head" style="background:rgba(200,152,88,.07);border-color:rgba(200,152,88,.2)">
+        <div class="vs-verb" style="color:var(--amber)">stellen</div>
+        <div class="vs-mean">يضع (واضعاً بشكل عمودي) — فعل حركة</div>
+      </div>
+      <div class="vs-body">
+        <div class="vs-rule" style="background:rgba(200,152,88,.12);color:var(--amber)">→ Akkusativ</div>
+        <div class="vs-eg" style="background:rgba(200,152,88,.06);color:var(--amber)">Ich stelle die Vase <strong>auf den</strong> Tisch.</div>
+        <div class="vs-eg-ar">أضع المزهرية على الطاولة</div>
+      </div>
+    </div>
+    <div class="vs-card" style="border-color:rgba(111,164,148,.25)">
+      <div class="vs-head" style="background:rgba(111,164,148,.07);border-color:rgba(111,164,148,.2)">
+        <div class="vs-verb" style="color:var(--teal)">stehen / sein</div>
+        <div class="vs-mean">يقف / يكون — فعل ثبات</div>
+      </div>
+      <div class="vs-body">
+        <div class="vs-rule" style="background:rgba(111,164,148,.12);color:var(--teal)">→ Dativ</div>
+        <div class="vs-eg" style="background:rgba(111,164,148,.06);color:var(--teal)">Die Vase steht <strong>auf dem</strong> Tisch.</div>
+        <div class="vs-eg-ar">المزهرية على الطاولة (ثابتة)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:22px">الاختصارات الشائعة</div>
+  <div class="contr-grid">
+    <div class="contr" style="border-color:rgba(111,164,148,.22)">
+      <div class="contr-eq">
+        <span class="contr-part">in</span>
+        <span class="contr-op">+</span>
+        <span class="contr-part">dem</span>
+        <span class="contr-op">=</span>
+        <span class="contr-result" style="color:var(--teal)">im</span>
+      </div>
+      <div class="contr-ar">داتيف · ثبات</div>
+    </div>
+    <div class="contr" style="border-color:rgba(200,152,88,.22)">
+      <div class="contr-eq">
+        <span class="contr-part">in</span>
+        <span class="contr-op">+</span>
+        <span class="contr-part">das</span>
+        <span class="contr-op">=</span>
+        <span class="contr-result" style="color:var(--amber)">ins</span>
+      </div>
+      <div class="contr-ar">أكوزاتيف · حركة</div>
+    </div>
+    <div class="contr" style="border-color:rgba(111,164,148,.22)">
+      <div class="contr-eq">
+        <span class="contr-part">an</span>
+        <span class="contr-op">+</span>
+        <span class="contr-part">dem</span>
+        <span class="contr-op">=</span>
+        <span class="contr-result" style="color:var(--teal)">am</span>
+      </div>
+      <div class="contr-ar">داتيف · ثبات</div>
+    </div>
+    <div class="contr" style="border-color:rgba(200,152,88,.22)">
+      <div class="contr-eq">
+        <span class="contr-part">an</span>
+        <span class="contr-op">+</span>
+        <span class="contr-part">das</span>
+        <span class="contr-op">=</span>
+        <span class="contr-result" style="color:var(--amber)">ans</span>
+      </div>
+      <div class="contr-ar">أكوزاتيف · حركة</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--red-d);border:1px solid rgba(176,104,112,.18);margin-top:14px">
+    <div class="ni">⚠️</div>
+    <div>
+      <p><strong style="color:var(--red)">الفعل hängen استثنائي:</strong> يُستخدم في الحالتين — يأخذ <span style="font-family:'JetBrains Mono',monospace;color:var(--red)">Akkusativ</span> عند الحركة (أعلّق الصورة) و<span style="font-family:'JetBrains Mono',monospace;color:var(--teal)">Dativ</span> عند الثبات (الصورة معلّقة).</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 4: ANZEIGEN & EINLADUNG ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#906820)">٤</div>
+    <div>
+      <div class="sec-t">قراءة الإعلانات والدعوات</div>
+      <div class="sec-td">Anzeigen &amp; Einladung lesen</div>
+    </div>
+  </div>
+
+  <div class="anz-grid">
+    <div class="anz-card" style="border-color:rgba(201,161,84,.25)">
+      <div class="anz-head" style="color:var(--gold);background:rgba(201,161,84,.06);border-color:rgba(201,161,84,.2)">
+        <span>🏢</span> إعلانات الشقق — Anzeigen
+      </div>
+      <div class="anz-body">
+        <div class="anz-item">
+          <div class="anz-key" style="color:var(--gold)">Größe</div>
+          <div class="anz-val">مساحة الشقة بالمتر المربع</div>
+        </div>
+        <div class="anz-item">
+          <div class="anz-key" style="color:var(--gold)">Miete</div>
+          <div class="anz-val">قيمة الإيجار الشهري</div>
+        </div>
+        <div class="anz-item">
+          <div class="anz-key" style="color:var(--gold)">maximal</div>
+          <div class="anz-val">الحد الأقصى للسعر أو المساحة</div>
+        </div>
+        <div class="anz-item">
+          <div class="anz-key" style="color:var(--gold)">Zimmer</div>
+          <div class="anz-val">عدد الغرف في الشقة</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="anz-card" style="border-color:rgba(200,152,168,.25)">
+      <div class="anz-head" style="color:var(--rose);background:rgba(200,152,168,.06);border-color:rgba(200,152,168,.2)">
+        <span>🎉</span> دعوة حفلة — Einladung
+      </div>
+      <div class="anz-body">
+        <div class="anz-item">
+          <div class="anz-key" style="color:var(--rose)">Datum</div>
+          <div class="anz-val">تاريخ الحفلة (يوم / شهر / سنة)</div>
+        </div>
+        <div class="anz-item">
+          <div class="anz-key" style="color:var(--rose)">Uhrzeit</div>
+          <div class="anz-val">وقت بدء الحفلة</div>
+        </div>
+        <div class="anz-item">
+          <div class="anz-key" style="color:var(--rose)">Ort</div>
+          <div class="anz-val">مكان انعقاد الحفلة</div>
+        </div>
+        <div class="anz-item">
+          <div class="anz-key" style="color:var(--rose)">Anlass</div>
+          <div class="anz-val">سبب الدعوة / المناسبة</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: AUSSPRACHE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٥</div>
+    <div>
+      <div class="sec-t">ملاحظات النطق</div>
+      <div class="sec-td">Aussprache-Hinweise</div>
+    </div>
+  </div>
+
+  <div class="pron-list">
+    <div class="pron-item" style="border-color:rgba(196,122,90,.22)">
+      <div class="pron-ic">🔇</div>
+      <div>
+        <div class="pron-rule"><strong style="color:var(--coral)">الـ h الصامتة</strong> — حرف h لا يُنطق إذا جاء بعد حرف علة (a · e · i · o · u)</div>
+        <div class="pron-eg" style="color:var(--coral)">wohnen → <strong>wo</strong>-nen &nbsp;·&nbsp; gehen → <strong>ge</strong>-en &nbsp;·&nbsp; sehen → <strong>se</strong>-en</div>
+      </div>
+    </div>
+    <div class="pron-item" style="border-color:rgba(196,122,90,.22)">
+      <div class="pron-ic">✂️</div>
+      <div>
+        <div class="pron-rule"><strong style="color:var(--coral)">الكلمات المركبة الطويلة</strong> — انطقها مقطعاً مقطعاً في البداية حتى تتقنها</div>
+        <div class="pron-eg" style="color:var(--coral)">Spül-ma-schi-ne &nbsp;·&nbsp; Wasch-ma-schi-ne &nbsp;·&nbsp; Kühl-schrank</div>
+      </div>
+    </div>
+    <div class="pron-item" style="border-color:rgba(196,122,90,.22)">
+      <div class="pron-ic">🎯</div>
+      <div>
+        <div class="pron-rule"><strong style="color:var(--coral)">نبرة الكلمات المركبة</strong> — النبرة دائماً على الجزء <strong>الأول</strong></div>
+        <div class="pron-eg" style="color:var(--coral)"><strong>WOHN</strong>zimmer &nbsp;·&nbsp; <strong>SCHLAF</strong>zimmer &nbsp;·&nbsp; <strong>KÜHL</strong>schrank &nbsp;·&nbsp; <strong>SCHREIB</strong>tisch</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.07, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
