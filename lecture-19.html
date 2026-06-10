@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 19 — الوصف والألوان والمهن</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── Homework example blocks ─── */
+.hw-eg-grid{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.hw-eg{
+  background:var(--card);
+  border:1px solid var(--bdr);
+  border-radius:12px;
+  padding:14px 18px;
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  transition:transform .2s,border-color .2s
+}
+.hw-eg:hover{transform:translateX(-2px)}
+.hw-badge{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;
+  font-weight:800;
+  padding:4px 10px;
+  border-radius:100px;
+  flex-shrink:0;
+  margin-top:3px;
+  white-space:nowrap
+}
+.hw-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;margin-bottom:4px;line-height:1.6}
+.hw-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── Reply cards (Einladung) ─── */
+.reply-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.reply-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;transition:transform .2s,border-color .2s}
+.reply-card:hover{transform:translateY(-2px)}
+.reply-ic{font-size:20px;margin-bottom:8px}
+.reply-de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;direction:ltr;margin-bottom:5px;line-height:1.6}
+.reply-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── aussehen separable verb ─── */
+.sep-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;margin-top:14px;transition:transform .2s}
+.sep-card:hover{transform:translateY(-2px)}
+.sep-head{padding:14px 16px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.sep-main{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;direction:ltr}
+.sep-mean{font-size:13px;color:var(--txt-d)}
+.sep-split{padding:16px;display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.sep-piece{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;padding:7px 14px;border-radius:9px}
+.sep-op{font-size:13px;color:var(--txt-d)}
+.sep-arr{color:var(--txt-d);padding:0 4px}
+.sep-result{font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;padding:8px 14px;border-radius:9px;font-weight:700}
+.sep-eg{padding:0 16px 16px;font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;line-height:1.7;color:var(--txt-d)}
+.sep-eg strong{color:var(--sky)}
+
+/* ─── Adjective pairs ─── */
+.adj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:10px;margin-top:14px}
+.adj-pair{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;transition:border-color .2s,transform .2s}
+.adj-pair:hover{transform:translateY(-2px)}
+.adj-top{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.adj-pos{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;flex:1}
+.adj-vs{font-size:12px;color:var(--txt-d);flex-shrink:0;padding:0 2px}
+.adj-neg{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;flex:1;text-align:left;color:var(--txt-d)}
+.adj-ar-row{display:flex;justify-content:space-between;font-size:12px;color:var(--txt-d);padding-top:8px;border-top:1px solid var(--bdr)}
+
+/* ─── Enthusiasm phrases ─── */
+.enthus-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.enthus-pill{
+  font-family:'JetBrains Mono',monospace;
+  font-size:13px;
+  font-weight:700;
+  padding:8px 16px;
+  border-radius:100px;
+  border:1px solid rgba(90,184,168,.3);
+  background:rgba(90,184,168,.07);
+  color:#72b8a8;
+  direction:ltr;
+  transition:background .2s,transform .15s;
+  cursor:default
+}
+.enthus-pill:hover{background:rgba(90,184,168,.15);transform:scale(1.04)}
+.enthus-pill span{font-family:'Noto Naskh Arabic',serif;font-size:12px;color:var(--txt-d);direction:rtl;margin-right:8px}
+
+/* ─── Farben / Colors ─── */
+.farbe-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;margin-top:14px}
+.farbe-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.farbe-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.farbe-swatch{height:52px;width:100%}
+.farbe-body{padding:10px 12px}
+.farbe-de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;direction:ltr;margin-bottom:3px}
+.farbe-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── Phonetik boxes ─── */
+.phon-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.phon-box{border-radius:14px;padding:18px;position:relative;overflow:hidden}
+.phon-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.phon-lang::before{background:linear-gradient(90deg,var(--sky),#3060b0)}
+.phon-kurz::before{background:linear-gradient(90deg,var(--rose),#b04870)}
+.phon-label{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:800;direction:ltr;margin-bottom:4px}
+.phon-ar{font-size:12px;color:var(--txt-d);margin-bottom:10px}
+.phon-rule{font-size:12px;line-height:1.85;margin-bottom:12px}
+.phon-words{display:flex;flex-wrap:wrap;gap:6px}
+.phon-word{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;padding:5px 11px;border-radius:8px}
+
+/* ─── Wohnung type vocabulary ─── */
+.wotn-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:14px}
+.wotn-card{
+  background:var(--card);
+  border:1px solid var(--bdr);
+  border-radius:12px;
+  padding:14px 16px;
+  transition:border-color .2s,transform .2s;
+  position:relative;
+  overflow:hidden
+}
+.wotn-card::before{content:'';position:absolute;right:0;top:0;bottom:0;width:3px;border-radius:0 12px 12px 0}
+.wotn-card.der::before{background:var(--sky)}
+.wotn-card.die::before{background:var(--rose)}
+.wotn-card.das::before{background:var(--green)}
+.wotn-card.adj::before{background:var(--violet)}
+.wotn-card:hover{transform:translateY(-2px)}
+.wotn-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;direction:ltr;margin-bottom:4px}
+.wotn-art{font-size:10px;font-family:'JetBrains Mono',monospace;font-weight:700;margin-bottom:6px}
+.wotn-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── Beruf verb list ─── */
+.verb-strip{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.verb-chip{background:var(--card);border:1px solid var(--bdr);border-radius:9px;padding:8px 14px;transition:border-color .2s,transform .15s}
+.verb-chip:hover{transform:translateY(-2px)}
+.verb-chip-de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;direction:ltr}
+.verb-chip-ar{font-size:11px;color:var(--txt-d);margin-top:2px}
+
+/* ─── Profession cards ─── */
+.beruf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px;margin-top:16px}
+.beruf-card{
+  background:var(--card);
+  border:1px solid var(--bdr);
+  border-radius:14px;
+  overflow:hidden;
+  transition:transform .2s,box-shadow .2s
+}
+.beruf-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.beruf-head{
+  padding:14px 16px;
+  border-bottom:1px solid var(--bdr);
+  display:flex;
+  align-items:center;
+  gap:12px
+}
+.beruf-ic{font-size:26px;flex-shrink:0}
+.beruf-title{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;direction:ltr;margin-bottom:3px}
+.beruf-person{font-size:12px;color:var(--txt-d)}
+.beruf-vn{display:grid;grid-template-columns:1fr 1fr}
+.beruf-v{padding:12px 14px;border-left:1px solid var(--bdr)}
+.beruf-n{padding:12px 14px}
+.beruf-vn-label{
+  font-family:'Noto Kufi Arabic',sans-serif;
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:7px;
+  display:flex;
+  align-items:center;
+  gap:5px
+}
+.beruf-item{font-size:12px;color:var(--txt-d);line-height:1.9}
+
+/* ─── sein / haben preview ─── */
+.conj-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.conj-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;transition:transform .2s}
+.conj-card:hover{transform:translateY(-2px)}
+.conj-head{padding:14px 16px;border-bottom:1px solid var(--bdr)}
+.conj-verb{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:800;direction:ltr;margin-bottom:3px}
+.conj-ar{font-size:12px;color:var(--txt-d)}
+.conj-body{padding:6px 8px 8px}
+.conj-row{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:8px}
+.conj-row:nth-child(odd){background:rgba(255,255,255,.025)}
+.conj-pr{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d);width:65px;flex-shrink:0;direction:ltr}
+.conj-form{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;flex:1;direction:ltr}
+.conj-tr{font-size:11px;color:var(--txt-d);text-align:left}
+
+@media(max-width:640px){
+  .phon-duo,.conj-duo,.reply-grid{grid-template-columns:1fr}
+  .beruf-vn{grid-template-columns:1fr}
+  .beruf-v{border-left:none;border-bottom:1px solid var(--bdr)}
+  .enthus-pill{font-size:12px}
+  .farbe-grid{grid-template-columns:repeat(auto-fill,minmax(100px,1fr))}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#72b8a8">المحاضرة 19 — الوصف والألوان والمهن</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 19 — المحاضرة التاسعة عشرة · A1.2</div>
+  <h1>وصف المنزل، الألوان <em>والمهن</em></h1>
+  <p class="hero-sub">aussehen، صفات الشقة، الألوان العشرة، Phonetik، أنواع السكن، ومهن مع مميزاتها وعيوبها</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: HAUSAUFGABEN REVIEW ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#72b8a8,#2a8878)">١</div>
+    <div>
+      <div class="sec-t">مراجعة الواجبات</div>
+      <div class="sec-td">Hausaufgaben — Dativ &amp; Akkusativ Review</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(90,184,168,.06);border:1px solid rgba(90,184,168,.18)">
+    <h4 style="color:#72b8a8">🔁 مراجعة سريعة</h4>
+    <p>طُبّقت قاعدة Wechselpräpositionen على جمل حقيقية — <strong style="color:var(--teal)">Wo? (أين؟) = Dativ</strong> و<strong style="color:var(--amber)">Wohin? (إلى أين؟) = Akkusativ</strong></p>
+  </div>
+
+  <div class="sub" style="margin-top:18px">أمثلة من الواجب — أماكن الأشياء</div>
+  <div class="hw-eg-grid">
+    <div class="hw-eg" style="border-color:rgba(111,164,148,.22)">
+      <div class="hw-badge" style="background:rgba(111,164,148,.12);color:var(--teal)">Wo? · Dativ</div>
+      <div>
+        <div class="hw-de">Das Kind ist <strong style="color:var(--teal)">hinter dem</strong> Sofa.</div>
+        <div class="hw-ar">الطفل خلف الأريكة — hinter + dem (Dativ)</div>
+      </div>
+    </div>
+    <div class="hw-eg" style="border-color:rgba(111,164,148,.22)">
+      <div class="hw-badge" style="background:rgba(111,164,148,.12);color:var(--teal)">Wo? · Dativ</div>
+      <div>
+        <div class="hw-de">Die Lampe ist <strong style="color:var(--teal)">im</strong> Schlafzimmer.</div>
+        <div class="hw-ar">المصباح في غرفة النوم — im = in + dem (Dativ)</div>
+      </div>
+    </div>
+    <div class="hw-eg" style="border-color:rgba(200,152,88,.22)">
+      <div class="hw-badge" style="background:rgba(200,152,88,.12);color:var(--amber)">Wohin? · Akkusativ</div>
+      <div>
+        <div class="hw-de">Ich stelle den Sessel <strong style="color:var(--amber)">neben das</strong> Schlafzimmer.</div>
+        <div class="hw-ar">أضع الكرسي بجانب غرفة النوم — neben + das (Akkusativ، حركة)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">الرد على الدعوات — Einladung annehmen oder ablehnen</div>
+  <div class="reply-grid">
+    <div class="reply-card" style="border-color:rgba(124,168,120,.25)">
+      <div class="reply-ic">✅</div>
+      <div class="reply-de"><strong style="color:var(--green)">Ich bringe</strong> einen Salat <strong style="color:var(--green)">mit.</strong></div>
+      <div class="reply-ar">سأحضر معي سلطة — mitnehmen (Akkusativ: einen Salat)</div>
+    </div>
+    <div class="reply-card" style="border-color:rgba(176,104,112,.25)">
+      <div class="reply-ic">❌</div>
+      <div class="reply-de"><strong style="color:var(--red)">Ich kann leider nicht kommen.</strong></div>
+      <div class="reply-ar">للأسف لا أستطيع المجيء — leider = للأسف</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: DIE WOHNUNG BESCHREIBEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3060b0)">٢</div>
+    <div>
+      <div class="sec-t">وصف الشقة</div>
+      <div class="sec-td">Die Wohnung beschreiben</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.18)">
+    <h4 style="color:var(--sky)">💬 محادثة: كارلا وضيوفها (فانيسا وفليب)</h4>
+    <p>كارلا تُريهم شقتها وتصفها — تعلّمنا كيف نصف المنزل ونُعبّر عن الإعجاب.</p>
+  </div>
+
+  <!-- aussehen -->
+  <div class="sub" style="margin-top:18px">الفعل aussehen — يبدو</div>
+  <div class="sep-card" style="border-color:rgba(112,149,192,.25)">
+    <div class="sep-head" style="background:rgba(112,149,192,.06)">
+      <div>
+        <div class="sep-main" style="color:var(--sky)">aussehen</div>
+        <div class="sep-mean">يبدو · يظهر — فعل منفصل</div>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d);direction:ltr">trennbares Verb</div>
+    </div>
+    <div class="sep-split">
+      <div class="sep-piece" style="background:rgba(112,149,192,.1);color:var(--sky)">aus</div>
+      <div class="sep-op">+</div>
+      <div class="sep-piece" style="background:rgba(255,255,255,.04);color:var(--txt)">sehen</div>
+      <div class="sep-arr">→</div>
+      <div style="font-size:12px;color:var(--txt-d)">الجذر في المنتصف + aus في النهاية</div>
+    </div>
+    <div class="sep-eg">
+      <div>Das Bild <strong>sieht</strong> schön <strong>aus.</strong> &nbsp;—&nbsp; <span style="color:var(--txt-d)">اللوحة تبدو جميلة</span></div>
+      <div style="margin-top:4px">Die Wohnung <strong>sieht</strong> gemütlich <strong>aus.</strong> &nbsp;—&nbsp; <span style="color:var(--txt-d)">الشقة تبدو مريحة</span></div>
+    </div>
+  </div>
+
+  <!-- adjectives -->
+  <div class="sub" style="margin-top:20px">الصفات المستخدمة في وصف الشقة</div>
+  <div class="adj-grid">
+    <div class="adj-pair" style="border-color:rgba(90,184,168,.22)">
+      <div class="adj-top">
+        <div class="adj-pos" style="color:#72b8a8">hell</div>
+        <div class="adj-vs">×</div>
+        <div class="adj-neg">dunkel</div>
+      </div>
+      <div class="adj-ar-row">
+        <span style="color:#72b8a8;font-weight:600">مضيء</span><span>معتم</span>
+      </div>
+    </div>
+    <div class="adj-pair" style="border-color:rgba(90,184,168,.22)">
+      <div class="adj-top">
+        <div class="adj-pos" style="color:#72b8a8">schön</div>
+        <div class="adj-vs">×</div>
+        <div class="adj-neg">hässlich</div>
+      </div>
+      <div class="adj-ar-row">
+        <span style="color:#72b8a8;font-weight:600">جميل</span><span>قبيح</span>
+      </div>
+    </div>
+    <div class="adj-pair" style="border-color:rgba(90,184,168,.22)">
+      <div class="adj-top">
+        <div class="adj-pos" style="color:#72b8a8">groß</div>
+        <div class="adj-vs">×</div>
+        <div class="adj-neg">klein</div>
+      </div>
+      <div class="adj-ar-row">
+        <span style="color:#72b8a8;font-weight:600">كبير</span><span>صغير</span>
+      </div>
+    </div>
+    <div class="adj-pair" style="border-color:rgba(201,161,84,.22)">
+      <div class="adj-top">
+        <div class="adj-pos" style="color:var(--gold)">gemütlich</div>
+        <div class="adj-vs"></div>
+        <div class="adj-neg"></div>
+      </div>
+      <div class="adj-ar-row">
+        <span style="color:var(--gold);font-weight:600">مريح / دافيء / مُريح للروح</span>
+      </div>
+    </div>
+    <div class="adj-pair" style="border-color:rgba(154,133,184,.22)">
+      <div class="adj-top">
+        <div class="adj-pos" style="color:var(--violet)">lustig</div>
+        <div class="adj-vs">×</div>
+        <div class="adj-neg">langweilig</div>
+      </div>
+      <div class="adj-ar-row">
+        <span style="color:var(--violet);font-weight:600">مضحك / ممتع</span><span>ممل</span>
+      </div>
+    </div>
+    <div class="adj-pair" style="border-color:rgba(200,152,88,.22)">
+      <div class="adj-top">
+        <div class="adj-pos" style="color:var(--amber)">teuer</div>
+        <div class="adj-vs">×</div>
+        <div class="adj-neg">günstig</div>
+      </div>
+      <div class="adj-ar-row">
+        <span style="color:var(--amber);font-weight:600">غالٍ</span><span>مناسب</span>
+      </div>
+    </div>
+    <div class="adj-pair" style="border-color:rgba(176,104,112,.22)">
+      <div class="adj-top">
+        <div class="adj-pos" style="color:var(--red)">kaputt</div>
+        <div class="adj-vs"></div>
+        <div class="adj-neg"></div>
+      </div>
+      <div class="adj-ar-row">
+        <span style="color:var(--red);font-weight:600">مكسور / خرب</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- enthusiasm -->
+  <div class="sub" style="margin-top:20px">عبارات الإعجاب والتحمس</div>
+  <div class="enthus-grid">
+    <div class="enthus-pill">Das ist ja super!<span>هذا رائع جداً!</span></div>
+    <div class="enthus-pill">Toll!<span>رائع!</span></div>
+    <div class="enthus-pill">Wirklich schön!<span>جميل حقاً!</span></div>
+    <div class="enthus-pill">Das gefällt mir!<span>يعجبني هذا!</span></div>
+  </div>
+
+  <div class="note" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.18);margin-top:16px">
+    <div class="ni">🌅</div>
+    <div><p><strong style="color:var(--sky)">الشرفة (Terrasse):</strong> تطل على <span style="font-family:'JetBrains Mono',monospace;color:var(--sky)">Südwesten</span> (الجنوب الغربي) — تصلها الشمس من الساعة الثانية ظهراً حتى المساء. <br>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d)">Die Terrasse liegt im Südwesten — ab 14 Uhr Sonne.</span></p></div>
+  </div>
+</div>
+
+<!-- ═══ 3: FARBEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#906820)">٣</div>
+    <div>
+      <div class="sec-t">الألوان</div>
+      <div class="sec-td">Farben</div>
+    </div>
+  </div>
+
+  <div class="farbe-grid">
+    <div class="farbe-card">
+      <div class="farbe-swatch" style="background:#1c1e22;border-bottom:1px solid var(--bdr)"></div>
+      <div class="farbe-body">
+        <div class="farbe-de">schwarz</div>
+        <div class="farbe-ar">أسود</div>
+      </div>
+    </div>
+    <div class="farbe-card">
+      <div class="farbe-swatch" style="background:#7a4a28"></div>
+      <div class="farbe-body">
+        <div class="farbe-de">braun</div>
+        <div class="farbe-ar">بني</div>
+      </div>
+    </div>
+    <div class="farbe-card">
+      <div class="farbe-swatch" style="background:#747474"></div>
+      <div class="farbe-body">
+        <div class="farbe-de">grau</div>
+        <div class="farbe-ar">رمادي</div>
+      </div>
+    </div>
+    <div class="farbe-card">
+      <div class="farbe-swatch" style="background:#c03838"></div>
+      <div class="farbe-body">
+        <div class="farbe-de">rot</div>
+        <div class="farbe-ar">أحمر</div>
+      </div>
+    </div>
+    <div class="farbe-card">
+      <div class="farbe-swatch" style="background:#d07820"></div>
+      <div class="farbe-body">
+        <div class="farbe-de">orange</div>
+        <div class="farbe-ar">برتقالي</div>
+      </div>
+    </div>
+    <div class="farbe-card">
+      <div class="farbe-swatch" style="background:#c8b020"></div>
+      <div class="farbe-body">
+        <div class="farbe-de">gelb</div>
+        <div class="farbe-ar">أصفر</div>
+      </div>
+    </div>
+    <div class="farbe-card">
+      <div class="farbe-swatch" style="background:#2c68b0"></div>
+      <div class="farbe-body">
+        <div class="farbe-de">blau</div>
+        <div class="farbe-ar">أزرق</div>
+      </div>
+    </div>
+    <div class="farbe-card">
+      <div class="farbe-swatch" style="background:#2e8844"></div>
+      <div class="farbe-body">
+        <div class="farbe-de">grün</div>
+        <div class="farbe-ar">أخضر</div>
+      </div>
+    </div>
+    <div class="farbe-card">
+      <div class="farbe-swatch" style="background:#8040a8"></div>
+      <div class="farbe-body">
+        <div class="farbe-de">lila</div>
+        <div class="farbe-ar">بنفسجي</div>
+      </div>
+    </div>
+    <div class="farbe-card">
+      <div class="farbe-swatch" style="background:#e0dcd4;border-bottom:1px solid var(--bdr)"></div>
+      <div class="farbe-body">
+        <div class="farbe-de">weiß</div>
+        <div class="farbe-ar">أبيض</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(200,152,88,.18);margin-top:14px">
+    <div class="ni">💡</div>
+    <div><p><strong style="color:var(--amber)">الألوان في الألمانية صفات</strong> — لا تأخذ أداة تعريف وتأتي قبل الاسم أو بعده مباشرة:<br>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d)">Das ist ein <strong style="color:var(--amber)">blaues</strong> Sofa. &nbsp;·&nbsp; Die Wand ist <strong style="color:var(--amber)">weiß</strong>.</span></p></div>
+  </div>
+</div>
+
+<!-- ═══ 4: WOHNUNGSTYPEN & PHONETIK ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6040a0)">٤</div>
+    <div>
+      <div class="sec-t">أنواع السكن والنطق</div>
+      <div class="sec-td">Wohnungstypen &amp; Phonetik — das E</div>
+    </div>
+  </div>
+
+  <!-- Wohnungstypen vocab -->
+  <div class="sub">مفردات أنواع السكن</div>
+  <div class="wotn-grid">
+    <div class="wotn-card das">
+      <div class="wotn-art" style="color:var(--green)">das</div>
+      <div class="wotn-de" style="color:var(--green)">Hochhaus</div>
+      <div class="wotn-ar">برج سكني عالي</div>
+    </div>
+    <div class="wotn-card das">
+      <div class="wotn-art" style="color:var(--green)">das</div>
+      <div class="wotn-de" style="color:var(--green)">Reihenhaus</div>
+      <div class="wotn-ar">بيوت متشابهة على صف واحد</div>
+    </div>
+    <div class="wotn-card die">
+      <div class="wotn-art" style="color:var(--rose)">die</div>
+      <div class="wotn-de" style="color:var(--rose)">Wohnung</div>
+      <div class="wotn-ar">الشقة</div>
+    </div>
+    <div class="wotn-card die">
+      <div class="wotn-art" style="color:var(--rose)">die</div>
+      <div class="wotn-de" style="color:var(--rose)">Bäume</div>
+      <div class="wotn-ar">الأشجار (Jm.) — تطل عليها الشرفة</div>
+    </div>
+    <div class="wotn-card adj">
+      <div class="wotn-art" style="color:var(--violet)">Adj.</div>
+      <div class="wotn-de" style="color:var(--violet)">zentral</div>
+      <div class="wotn-ar">في مركز المدينة</div>
+    </div>
+    <div class="wotn-card adj">
+      <div class="wotn-art" style="color:var(--violet)">Adj.</div>
+      <div class="wotn-de" style="color:var(--violet)">ruhig</div>
+      <div class="wotn-ar">هادئ</div>
+    </div>
+    <div class="wotn-card adj">
+      <div class="wotn-art" style="color:var(--violet)">Adj.</div>
+      <div class="wotn-de" style="color:var(--violet)">zufrieden</div>
+      <div class="wotn-ar">راضٍ / مبسوط</div>
+    </div>
+  </div>
+
+  <!-- Phonetik -->
+  <div class="sub" style="margin-top:22px">النطق — حرف E الطويل والقصير</div>
+  <div class="phon-duo">
+    <div class="phon-box phon-lang" style="background:rgba(112,149,192,.07);border:1px solid rgba(112,149,192,.22)">
+      <div class="phon-label" style="color:var(--sky)">Langes E</div>
+      <div class="phon-ar">الـ e الطويل — نُطق ممتد</div>
+      <div class="phon-rule">
+        يأتي عادةً قبل حرف <strong style="color:var(--sky)">h</strong> صامت، أو في نهاية بعض الكلمات. يُنطق مثل "إيـ" ممتد.
+      </div>
+      <div class="phon-words">
+        <div class="phon-word" style="background:rgba(112,149,192,.1);color:var(--sky)">sehr</div>
+        <div class="phon-word" style="background:rgba(112,149,192,.1);color:var(--sky)">gehen</div>
+        <div class="phon-word" style="background:rgba(112,149,192,.1);color:var(--sky)">sehen</div>
+        <div class="phon-word" style="background:rgba(112,149,192,.1);color:var(--sky)">lesen</div>
+      </div>
+    </div>
+    <div class="phon-box phon-kurz" style="background:rgba(200,152,168,.07);border:1px solid rgba(200,152,168,.22)">
+      <div class="phon-label" style="color:var(--rose)">Kurzes E</div>
+      <div class="phon-ar">الـ e القصير — نُطق مضغوط</div>
+      <div class="phon-rule">
+        يأتي عادةً قبل حرفين ساكنين أو حرف مضاعف. يُنطق مثل "إـ" قصير مضغوط.
+      </div>
+      <div class="phon-words">
+        <div class="phon-word" style="background:rgba(200,152,168,.1);color:var(--rose)">Bett</div>
+        <div class="phon-word" style="background:rgba(200,152,168,.1);color:var(--rose)">rennen</div>
+        <div class="phon-word" style="background:rgba(200,152,168,.1);color:var(--rose)">kennen</div>
+        <div class="phon-word" style="background:rgba(200,152,168,.1);color:var(--rose)">Wetter</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: STUDIUM UND BERUF ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--green),#207840)">٥</div>
+    <div>
+      <div class="sec-t">الدراسة والمهنة</div>
+      <div class="sec-td">Studium und Beruf — Vorteile &amp; Nachteile</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--green-d);border:1px solid rgba(124,168,120,.18)">
+    <h4 style="color:var(--green)">🏢 وحدة جديدة</h4>
+    <p>ندرس المهن المختلفة ونتحدث عن مزاياها وعيوبها — <strong style="color:var(--green)">Vorteile (مزايا)</strong> و<strong style="color:var(--red)">Nachteile (عيوب)</strong>.</p>
+  </div>
+
+  <div class="sub" style="margin-top:18px">أفعال مرتبطة بالمهن</div>
+  <div class="verb-strip">
+    <div class="verb-chip" style="border-color:rgba(124,168,120,.22)">
+      <div class="verb-chip-de" style="color:var(--green)">malen</div>
+      <div class="verb-chip-ar">يرسم / يلوّن</div>
+    </div>
+    <div class="verb-chip" style="border-color:rgba(124,168,120,.22)">
+      <div class="verb-chip-de" style="color:var(--green)">betreuen</div>
+      <div class="verb-chip-ar">يرعى / يعتني بـ</div>
+    </div>
+    <div class="verb-chip" style="border-color:rgba(124,168,120,.22)">
+      <div class="verb-chip-de" style="color:var(--green)">lernen</div>
+      <div class="verb-chip-ar">يتعلم / يدرس</div>
+    </div>
+    <div class="verb-chip" style="border-color:rgba(124,168,120,.22)">
+      <div class="verb-chip-de" style="color:var(--green)">segeln</div>
+      <div class="verb-chip-ar">يبحر (بالشراع)</div>
+    </div>
+    <div class="verb-chip" style="border-color:rgba(124,168,120,.22)">
+      <div class="verb-chip-de" style="color:var(--green)">verdienen</div>
+      <div class="verb-chip-ar">يكسب (مالاً)</div>
+    </div>
+    <div class="verb-chip" style="border-color:rgba(124,168,120,.22)">
+      <div class="verb-chip-de" style="color:var(--green)">reisen</div>
+      <div class="verb-chip-ar">يسافر</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">المهن — المزايا والعيوب</div>
+  <div class="beruf-grid">
+
+    <!-- Julia -->
+    <div class="beruf-card" style="border-color:rgba(112,149,192,.22)">
+      <div class="beruf-head" style="background:rgba(112,149,192,.06)">
+        <div class="beruf-ic">⛵</div>
+        <div>
+          <div class="beruf-title" style="color:var(--sky)">Segeltrainerin</div>
+          <div class="beruf-person">Julia — مدرّبة الإبحار</div>
+        </div>
+      </div>
+      <div class="beruf-vn">
+        <div class="beruf-v">
+          <div class="beruf-vn-label" style="color:var(--green)"><span>✅</span> Vorteil</div>
+          <div class="beruf-item">تعمل في الهواء الطلق<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px">draußen arbeiten</span></div>
+        </div>
+        <div class="beruf-n">
+          <div class="beruf-vn-label" style="color:var(--red)"><span>❌</span> Nachteil</div>
+          <div class="beruf-item">في الشتاء لا يمكنها الإبحار — تعمل كـ <span style="font-family:'JetBrains Mono',monospace;font-size:11px">Kellnerin</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Miriam -->
+    <div class="beruf-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="beruf-head" style="background:rgba(154,133,184,.06)">
+        <div class="beruf-ic">📚</div>
+        <div>
+          <div class="beruf-title" style="color:var(--violet)">Studentin</div>
+          <div class="beruf-person">Miriam — طالبة جامعية</div>
+        </div>
+      </div>
+      <div class="beruf-vn">
+        <div class="beruf-v">
+          <div class="beruf-vn-label" style="color:var(--green)"><span>✅</span> Vorteil</div>
+          <div class="beruf-item">تتعلم ما تريد وفي أي مكان</div>
+        </div>
+        <div class="beruf-n">
+          <div class="beruf-vn-label" style="color:var(--red)"><span>❌</span> Nachteil</div>
+          <div class="beruf-item">لا تكسب مالاً بعد<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px">verdiene noch kein Geld</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Beatrix -->
+    <div class="beruf-card" style="border-color:rgba(201,161,84,.22)">
+      <div class="beruf-head" style="background:rgba(201,161,84,.06)">
+        <div class="beruf-ic">🏛️</div>
+        <div>
+          <div class="beruf-title" style="color:var(--gold)">Architektin</div>
+          <div class="beruf-person">Beatrix — مهندسة معمارية</div>
+        </div>
+      </div>
+      <div class="beruf-vn">
+        <div class="beruf-v">
+          <div class="beruf-vn-label" style="color:var(--green)"><span>✅</span> Vorteil</div>
+          <div class="beruf-item">فريق عمل رائع<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px">super Team</span></div>
+        </div>
+        <div class="beruf-n">
+          <div class="beruf-vn-label" style="color:var(--red)"><span>❌</span> Nachteil</div>
+          <div class="beruf-item">ضغط عالٍ<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px">viel Stress</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stefan -->
+    <div class="beruf-card" style="border-color:rgba(90,184,168,.22)">
+      <div class="beruf-head" style="background:rgba(90,184,168,.06)">
+        <div class="beruf-ic">🗺️</div>
+        <div>
+          <div class="beruf-title" style="color:#72b8a8">Stadtführer</div>
+          <div class="beruf-person">Stefan — دليل سياحي</div>
+        </div>
+      </div>
+      <div class="beruf-vn">
+        <div class="beruf-v">
+          <div class="beruf-vn-label" style="color:var(--green)"><span>✅</span> Vorteil</div>
+          <div class="beruf-item">يحب السفر ورؤية المدن</div>
+        </div>
+        <div class="beruf-n">
+          <div class="beruf-vn-label" style="color:var(--red)"><span>❌</span> Nachteil</div>
+          <div class="beruf-item">نادراً ما يكون في البيت<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px">selten zu Hause</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sven -->
+    <div class="beruf-card" style="border-color:rgba(200,152,168,.22)">
+      <div class="beruf-head" style="background:rgba(200,152,168,.06)">
+        <div class="beruf-ic">🧒</div>
+        <div>
+          <div class="beruf-title" style="color:var(--rose)">Erzieher (Kita)</div>
+          <div class="beruf-person">Sven — مربي في روضة أطفال</div>
+        </div>
+      </div>
+      <div class="beruf-vn">
+        <div class="beruf-v">
+          <div class="beruf-vn-label" style="color:var(--green)"><span>✅</span> Vorteil</div>
+          <div class="beruf-item">يحب الأطفال، عمله مهم ومؤثر</div>
+        </div>
+        <div class="beruf-n">
+          <div class="beruf-vn-label" style="color:var(--red)"><span>❌</span> Nachteil</div>
+          <div class="beruf-item">الراتب ليس جيداً<br><span style="font-family:'JetBrains Mono',monospace;font-size:11px">kein gutes Gehalt</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══ 6: VORSCHAU — SEIN & HABEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٦</div>
+    <div>
+      <div class="sec-t">تمهيد للحصة القادمة — الماضي</div>
+      <div class="sec-td">Vorschau: haben &amp; sein — Vergangenheit</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--coral-d);border:1px solid rgba(196,122,90,.18)">
+    <h4 style="color:var(--coral)">⏭️ الحصة القادمة: الزمن الماضي</h4>
+    <p>لدخول موضوع الماضي (Perfekt) يجب إتقان تصريف <strong style="color:var(--coral)">sein</strong> و<strong style="color:var(--coral)">haben</strong> عن ظهر قلب — وكذلك مراجعة أفعال الحركة والثبات مع حروف الجر.</p>
+  </div>
+
+  <div class="conj-duo">
+    <div class="conj-card" style="border-color:rgba(111,164,148,.25)">
+      <div class="conj-head" style="background:rgba(111,164,148,.07);border-bottom:1px solid rgba(111,164,148,.2)">
+        <div class="conj-verb" style="color:var(--teal)">sein</div>
+        <div class="conj-ar">يكون / هو — فعل الكينونة</div>
+      </div>
+      <div class="conj-body">
+        <div class="conj-row">
+          <div class="conj-pr">ich</div>
+          <div class="conj-form" style="color:var(--teal)">bin</div>
+          <div class="conj-tr">أنا</div>
+        </div>
+        <div class="conj-row">
+          <div class="conj-pr">du</div>
+          <div class="conj-form" style="color:var(--teal)">bist</div>
+          <div class="conj-tr">أنت</div>
+        </div>
+        <div class="conj-row">
+          <div class="conj-pr">er/sie/es</div>
+          <div class="conj-form" style="color:var(--teal)">ist</div>
+          <div class="conj-tr">هو/هي</div>
+        </div>
+        <div class="conj-row">
+          <div class="conj-pr">wir</div>
+          <div class="conj-form" style="color:var(--teal)">sind</div>
+          <div class="conj-tr">نحن</div>
+        </div>
+        <div class="conj-row">
+          <div class="conj-pr">ihr</div>
+          <div class="conj-form" style="color:var(--teal)">seid</div>
+          <div class="conj-tr">أنتم</div>
+        </div>
+        <div class="conj-row">
+          <div class="conj-pr">sie/Sie</div>
+          <div class="conj-form" style="color:var(--teal)">sind</div>
+          <div class="conj-tr">هم/حضرتك</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="conj-card" style="border-color:rgba(200,152,88,.25)">
+      <div class="conj-head" style="background:rgba(200,152,88,.07);border-bottom:1px solid rgba(200,152,88,.2)">
+        <div class="conj-verb" style="color:var(--amber)">haben</div>
+        <div class="conj-ar">يملك / يكون لديه — فعل الملكية</div>
+      </div>
+      <div class="conj-body">
+        <div class="conj-row">
+          <div class="conj-pr">ich</div>
+          <div class="conj-form" style="color:var(--amber)">habe</div>
+          <div class="conj-tr">أنا</div>
+        </div>
+        <div class="conj-row">
+          <div class="conj-pr">du</div>
+          <div class="conj-form" style="color:var(--amber)">hast</div>
+          <div class="conj-tr">أنت</div>
+        </div>
+        <div class="conj-row">
+          <div class="conj-pr">er/sie/es</div>
+          <div class="conj-form" style="color:var(--amber)">hat</div>
+          <div class="conj-tr">هو/هي</div>
+        </div>
+        <div class="conj-row">
+          <div class="conj-pr">wir</div>
+          <div class="conj-form" style="color:var(--amber)">haben</div>
+          <div class="conj-tr">نحن</div>
+        </div>
+        <div class="conj-row">
+          <div class="conj-pr">ihr</div>
+          <div class="conj-form" style="color:var(--amber)">habt</div>
+          <div class="conj-tr">أنتم</div>
+        </div>
+        <div class="conj-row">
+          <div class="conj-pr">sie/Sie</div>
+          <div class="conj-form" style="color:var(--amber)">haben</div>
+          <div class="conj-tr">هم/حضرتك</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--coral-d);border:1px solid rgba(196,122,90,.18);margin-top:14px">
+    <div class="ni">📝</div>
+    <div><p><strong style="color:var(--coral)">للحصة القادمة:</strong> احفظ تصريفَي sein وhaben عن ظهر قلب، وراجع أفعال الحركة (stellen / gehen / legen) مقابل أفعال الثبات (stehen / sein / liegen) مع حروف الجر المكانية التسعة.</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
