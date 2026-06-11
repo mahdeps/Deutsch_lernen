@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 20 — الماضي التام Perfekt</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── Tense comparison (Präteritum vs Perfekt) ─── */
+.tense-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.tense-box{border-radius:16px;padding:20px 18px;position:relative;overflow:hidden;transition:transform .2s}
+.tense-box:hover{transform:translateY(-3px)}
+.tense-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.tense-prat::before{background:linear-gradient(90deg,var(--violet),#6040a0)}
+.tense-perf::before{background:linear-gradient(90deg,#d9a85a,#a87828)}
+.tense-name{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;direction:ltr;margin-bottom:4px}
+.tense-ar{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:800;margin-bottom:10px}
+.tense-use{font-size:12.5px;line-height:1.9;color:var(--txt-d);margin-bottom:12px}
+.tense-eg{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;direction:ltr;padding:9px 12px;border-radius:8px;margin-bottom:4px}
+.tense-eg-ar{font-size:11.5px;color:var(--txt-d)}
+.tense-tag{position:absolute;top:14px;left:14px;font-size:10px;font-family:'Noto Kufi Arabic',sans-serif;font-weight:700;padding:3px 10px;border-radius:100px}
+
+/* ─── Sentence anatomy (الهيكل) ─── */
+.anatomy{display:flex;align-items:stretch;gap:0;margin-top:16px;border:1px solid var(--bdr);border-radius:16px;overflow:hidden;direction:ltr}
+.anat-slot{flex:1;padding:16px 12px;text-align:center;position:relative}
+.anat-slot + .anat-slot{border-left:1px dashed var(--bdr)}
+.anat-pos{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--txt-d);margin-bottom:8px;text-transform:uppercase}
+.anat-word{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;margin-bottom:6px}
+.anat-role{font-size:11px;color:var(--txt-d);font-family:'Noto Kufi Arabic',sans-serif;font-weight:600;direction:rtl}
+.anat-hilfs{background:rgba(217,168,90,.08)}
+.anat-part{background:rgba(111,164,148,.08)}
+
+/* sentence examples with colored parts */
+.sent-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.sent{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px;transition:transform .2s,border-color .2s}
+.sent:hover{transform:translateX(-3px)}
+.sent-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;direction:ltr;line-height:1.9;margin-bottom:5px}
+.sent-de .hv{color:#d9a85a;font-weight:800;background:rgba(217,168,90,.1);padding:2px 7px;border-radius:6px}
+.sent-de .pz{color:var(--teal);font-weight:800;background:rgba(111,164,148,.1);padding:2px 7px;border-radius:6px}
+.sent-de .sv{color:var(--sky);font-weight:800;background:rgba(112,149,192,.1);padding:2px 7px;border-radius:6px}
+.sent-ar{font-size:12.5px;color:var(--txt-d)}
+.sent-note{font-size:11.5px;color:var(--txt-d);margin-top:6px;padding-top:6px;border-top:1px dashed var(--bdr)}
+.sent-note b{color:#d9a85a}
+
+/* ─── haben / sein split ─── */
+.hs-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.hs-box{border-radius:16px;padding:20px 18px;position:relative;overflow:hidden;transition:transform .2s}
+.hs-box:hover{transform:translateY(-3px)}
+.hs-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.hs-haben::before{background:linear-gradient(90deg,#d9a85a,#a87828)}
+.hs-sein::before{background:linear-gradient(90deg,var(--sky),#3060b0)}
+.hs-verb{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:800;direction:ltr;margin-bottom:4px}
+.hs-when{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:800;margin-bottom:12px}
+.hs-desc{font-size:12.5px;line-height:1.9;color:var(--txt-d);margin-bottom:14px}
+.hs-verbs{display:flex;flex-wrap:wrap;gap:7px}
+.hs-chip{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;padding:6px 12px;border-radius:8px;direction:ltr;transition:transform .15s}
+.hs-chip:hover{transform:scale(1.06)}
+.hs-chip span{font-family:'Noto Naskh Arabic',serif;font-size:11px;opacity:.75;margin-left:5px}
+
+/* ─── Partizip II rule cards ─── */
+.pz-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:14px;transition:transform .2s,box-shadow .2s}
+.pz-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.3)}
+.pz-head{padding:14px 18px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.pz-num{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:800;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pz-title{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:800}
+.pz-formula{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;direction:ltr;margin-right:auto;padding:5px 12px;border-radius:8px;background:rgba(255,255,255,.03)}
+.pz-body{padding:14px 18px}
+.pz-desc{font-size:13px;line-height:1.95;color:var(--txt);margin-bottom:12px}
+.pz-trans{display:flex;flex-wrap:wrap;gap:8px}
+.pz-t{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.025);border:1px solid var(--bdr);border-radius:10px;padding:8px 13px;direction:ltr;transition:border-color .2s,transform .15s}
+.pz-t:hover{transform:translateY(-2px)}
+.pz-from{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--txt-d)}
+.pz-arr{color:var(--txt-d);font-size:12px}
+.pz-to{font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:800}
+.pz-to .gx{color:#d9a85a}
+.pz-t-ar{font-family:'Noto Naskh Arabic',serif;font-size:11px;color:var(--txt-d);direction:rtl;border-left:1px solid var(--bdr);padding-left:9px;margin-left:2px}
+
+/* ─── Time expressions timeline ─── */
+.time-line{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+.time-item{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px 16px;transition:transform .2s,border-color .2s}
+.time-item:hover{transform:translateX(-3px);border-color:rgba(217,168,90,.35)}
+.time-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;box-shadow:0 0 10px rgba(217,168,90,.4)}
+.time-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;direction:ltr;min-width:150px;color:#d9a85a}
+.time-ar{font-size:13px;color:var(--txt);flex:1}
+.time-eg{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--txt-d);direction:ltr;text-align:left}
+
+/* ─── Question formation ─── */
+.q-swap{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.q-row{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 18px;transition:transform .2s}
+.q-row:hover{transform:translateY(-2px)}
+.q-label{font-family:'Noto Kufi Arabic',sans-serif;font-size:11.5px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.q-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;direction:ltr;line-height:1.9;margin-bottom:4px}
+.q-de .hv{color:#d9a85a;font-weight:800;background:rgba(217,168,90,.1);padding:2px 7px;border-radius:6px}
+.q-de .pz{color:var(--teal);font-weight:800;background:rgba(111,164,148,.1);padding:2px 7px;border-radius:6px}
+.q-ar{font-size:12.5px;color:var(--txt-d)}
+
+@media(max-width:640px){
+  .tense-duo,.hs-duo{grid-template-columns:1fr}
+  .anatomy{flex-direction:column;direction:rtl}
+  .anat-slot + .anat-slot{border-left:none;border-top:1px dashed var(--bdr)}
+  .pz-formula{margin-right:0;width:100%}
+  .time-item{flex-wrap:wrap}
+  .time-eg{width:100%}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#d9a85a">المحاضرة 20 — Das Perfekt الماضي التام</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 20 — المحاضرة العشرون · A1.2</div>
+  <h1>الماضي التام <em>Das Perfekt</em></h1>
+  <p class="hero-sub">القاعدة الأهم في A1.2 — كيف تحكي عن الماضي في المحادثة اليومية: haben/sein + Partizip II بكل تفاصيلها وأمثلتها</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: أنواع الماضي ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#d9a85a,#a87828)">١</div>
+    <div>
+      <div class="sec-t">أنواع الماضي في الألمانية</div>
+      <div class="sec-td">Präteritum vs. Perfekt</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(217,168,90,.06);border:1px solid rgba(217,168,90,.2)">
+    <h4 style="color:#d9a85a">📖 الفكرة الأساسية</h4>
+    <p>للحديث عن الماضي في الألمانية صيغتان — لكن لكل صيغة <strong style="color:#d9a85a">مكان استخدام مختلف</strong>. في مستوى A1 نركّز على الـ Perfekt لأنه لغة الحياة اليومية.</p>
+  </div>
+
+  <div class="tense-duo">
+    <div class="tense-box tense-prat" style="background:rgba(154,133,184,.07);border:1px solid rgba(154,133,184,.25)">
+      <div class="tense-tag" style="background:rgba(154,133,184,.15);color:var(--violet)">للكتابة الأدبية</div>
+      <div class="tense-name" style="color:var(--violet)">Präteritum</div>
+      <div class="tense-ar" style="color:var(--violet)">الماضي البسيط</div>
+      <div class="tense-use">يُستخدم في <strong>القصص والروايات</strong> والأخبار المكتوبة. في مستوانا نحتاج منه فعلين فقط: war وhatte.</div>
+      <div class="tense-eg" style="background:rgba(154,133,184,.1);color:var(--violet)">Ich <strong>war</strong> gestern müde.</div>
+      <div class="tense-eg-ar">كنتُ متعباً البارحة — war = كان</div>
+      <div class="tense-eg" style="background:rgba(154,133,184,.1);color:var(--violet);margin-top:8px">Ich <strong>hatte</strong> keine Zeit.</div>
+      <div class="tense-eg-ar">لم يكن لديّ وقت — hatte = كان يملك</div>
+    </div>
+    <div class="tense-box tense-perf" style="background:rgba(217,168,90,.07);border:1px solid rgba(217,168,90,.25)">
+      <div class="tense-tag" style="background:rgba(217,168,90,.15);color:#d9a85a">⭐ موضوع درسنا</div>
+      <div class="tense-name" style="color:#d9a85a">Perfekt</div>
+      <div class="tense-ar" style="color:#d9a85a">الماضي التام</div>
+      <div class="tense-use">لغة <strong>المحادثة اليومية</strong> ورسائل الـ E-Mail. هذا ما تستخدمه عندما تحكي لصديقك ماذا فعلت أمس.</div>
+      <div class="tense-eg" style="background:rgba(217,168,90,.1);color:#d9a85a">Ich <strong>habe</strong> Fußball <strong>gespielt</strong>.</div>
+      <div class="tense-eg-ar">لعبتُ كرة القدم</div>
+      <div class="tense-eg" style="background:rgba(217,168,90,.1);color:#d9a85a;margin-top:8px">Ich <strong>bin</strong> nach Berlin <strong>gefahren</strong>.</div>
+      <div class="tense-eg-ar">سافرتُ إلى برلين</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: تركيب الجملة ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#2a7060)">٢</div>
+    <div>
+      <div class="sec-t">تركيب جملة الـ Perfekt</div>
+      <div class="sec-td">Satzbau — Hilfsverb + Partizip II</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.2)">
+    <h4 style="color:var(--teal)">🧩 الركنان الأساسيان</h4>
+    <p>جملة الـ Perfekt قوسٌ يفتح ويغلق: <strong style="color:#d9a85a">الفعل المساعد (haben/sein)</strong> في الموقع الثاني دائماً ويُصرّف حسب الفاعل — و<strong style="color:var(--teal)">اسم المفعول (Partizip II)</strong> في نهاية الجملة دائماً ولا يتغيّر أبداً.</p>
+  </div>
+
+  <div class="sub" style="margin-top:18px">خريطة الجملة</div>
+  <div class="anatomy" style="background:var(--card)">
+    <div class="anat-slot">
+      <div class="anat-pos">Position 1</div>
+      <div class="anat-word" style="color:var(--txt)">Ich</div>
+      <div class="anat-role">الفاعل</div>
+    </div>
+    <div class="anat-slot anat-hilfs">
+      <div class="anat-pos" style="color:#d9a85a">Position 2 🔒</div>
+      <div class="anat-word" style="color:#d9a85a">habe</div>
+      <div class="anat-role">الفعل المساعد — مُصرّف</div>
+    </div>
+    <div class="anat-slot">
+      <div class="anat-pos">Mitte</div>
+      <div class="anat-word" style="color:var(--txt-d)">gestern Fußball</div>
+      <div class="anat-role">باقي الجملة</div>
+    </div>
+    <div class="anat-slot anat-part">
+      <div class="anat-pos" style="color:var(--teal)">Ende 🔒</div>
+      <div class="anat-word" style="color:var(--teal)">gespielt</div>
+      <div class="anat-role">Partizip II — ثابت</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(200,152,88,.18);margin-top:16px">
+    <div class="ni">⚠️</div>
+    <div><p><strong style="color:var(--amber)">ملحوظة مهمة جداً:</strong> haben وsein هنا <strong style="color:var(--amber)">لا تعني "يملك" أو "يكون"</strong> — فقدا معناهما الأصلي وأصبحا مجرد أداة تربط الجملة بالماضي. المعنى الحقيقي كله في الفعل الأخير (Partizip II).</p></div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">أمثلة محلولة — لاحظ القوس الذهبي/الأخضر</div>
+  <div class="sent-list">
+    <div class="sent" style="border-color:rgba(217,168,90,.25)">
+      <div class="sent-de">Ich <span class="hv">habe</span> eine Pizza <span class="pz">gemacht</span>.</div>
+      <div class="sent-ar">حضّرتُ بيتزا</div>
+      <div class="sent-note">الفعل الأصلي: machen → <b>ge</b>mach<b>t</b> · فعل ثابت لا حركة فيه → haben</div>
+    </div>
+    <div class="sent" style="border-color:rgba(217,168,90,.25)">
+      <div class="sent-de">Wir <span class="hv">haben</span> gestern Deutsch <span class="pz">gelernt</span>.</div>
+      <div class="sent-ar">تعلّمنا الألمانية البارحة</div>
+      <div class="sent-note">lernen → <b>ge</b>lern<b>t</b> · لاحظ: haben تُصرّف مع wir → haben</div>
+    </div>
+    <div class="sent" style="border-color:rgba(112,149,192,.25)">
+      <div class="sent-de">Er <span class="sv">ist</span> nach Hause <span class="pz">gegangen</span>.</div>
+      <div class="sent-ar">ذهب إلى البيت</div>
+      <div class="sent-note">gehen فعل <b>حركة</b> → الفعل المساعد sein (هنا: ist مع er)</div>
+    </div>
+    <div class="sent" style="border-color:rgba(112,149,192,.25)">
+      <div class="sent-de">Sie <span class="sv">ist</span> mit dem Auto <span class="pz">gefahren</span>.</div>
+      <div class="sent-ar">سافرت بالسيارة</div>
+      <div class="sent-note">fahren فعل حركة → sein · ولاحظ: mit + dem (الداتيف لم يتغيّر في الماضي!)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: haben أم sein ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3060b0)">٣</div>
+    <div>
+      <div class="sec-t">متى haben ومتى sein؟</div>
+      <div class="sec-td">Hilfsverb wählen — haben oder sein?</div>
+    </div>
+  </div>
+
+  <div class="hs-duo">
+    <div class="hs-box hs-haben" style="background:rgba(217,168,90,.07);border:1px solid rgba(217,168,90,.25)">
+      <div class="hs-verb" style="color:#d9a85a">haben</div>
+      <div class="hs-when" style="color:#d9a85a">🪨 الأفعال الثابتة — الأغلبية الساحقة</div>
+      <div class="hs-desc">كل فعل <strong>لا يعبّر عن انتقال من مكان لمكان</strong> يأخذ haben. هذه القاعدة تغطي معظم أفعال اللغة — إذا شككت، فالاحتمال الأكبر haben.</div>
+      <div class="hs-verbs">
+        <div class="hs-chip" style="background:rgba(217,168,90,.1);color:#d9a85a">machen<span>يفعل</span></div>
+        <div class="hs-chip" style="background:rgba(217,168,90,.1);color:#d9a85a">spielen<span>يلعب</span></div>
+        <div class="hs-chip" style="background:rgba(217,168,90,.1);color:#d9a85a">essen<span>يأكل</span></div>
+        <div class="hs-chip" style="background:rgba(217,168,90,.1);color:#d9a85a">trinken<span>يشرب</span></div>
+        <div class="hs-chip" style="background:rgba(217,168,90,.1);color:#d9a85a">kaufen<span>يشتري</span></div>
+        <div class="hs-chip" style="background:rgba(217,168,90,.1);color:#d9a85a">lernen<span>يتعلم</span></div>
+        <div class="hs-chip" style="background:rgba(217,168,90,.1);color:#d9a85a">sehen<span>يشاهد</span></div>
+        <div class="hs-chip" style="background:rgba(217,168,90,.1);color:#d9a85a">finden<span>يجد</span></div>
+      </div>
+    </div>
+    <div class="hs-box hs-sein" style="background:rgba(112,149,192,.07);border:1px solid rgba(112,149,192,.25)">
+      <div class="hs-verb" style="color:var(--sky)">sein</div>
+      <div class="hs-when" style="color:var(--sky)">🏃 أفعال الحركة وتغيّر الحالة</div>
+      <div class="hs-desc">الأفعال التي فيها <strong>انتقال من نقطة A إلى نقطة B</strong>، أو تعبّر عن <strong>تغيّر في الحالة</strong> (مثل passieren = يحدث).</div>
+      <div class="hs-verbs">
+        <div class="hs-chip" style="background:rgba(112,149,192,.1);color:var(--sky)">gehen<span>يذهب</span></div>
+        <div class="hs-chip" style="background:rgba(112,149,192,.1);color:var(--sky)">fahren<span>يقود/يسافر</span></div>
+        <div class="hs-chip" style="background:rgba(112,149,192,.1);color:var(--sky)">kommen<span>يأتي</span></div>
+        <div class="hs-chip" style="background:rgba(112,149,192,.1);color:var(--sky)">fliegen<span>يطير</span></div>
+        <div class="hs-chip" style="background:rgba(112,149,192,.1);color:var(--sky)">laufen<span>يركض</span></div>
+        <div class="hs-chip" style="background:rgba(112,149,192,.1);color:var(--sky)">passieren<span>يحدث</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--red-d);border:1px solid rgba(176,104,112,.2);margin-top:14px">
+    <div class="ni">🚨</div>
+    <div><p><strong style="color:var(--red)">الحالة الشاذة الوحيدة — bleiben (يبقى):</strong> رغم أنه فعل ثبات تماماً (لا حركة فيه)، يأخذ <strong style="color:var(--sky)">sein</strong>! احفظها كاستثناء:<br>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;display:inline-block;margin-top:4px;color:var(--sky)">Ich <strong>bin</strong> gestern zu Hause <strong>geblieben</strong>.</span> &nbsp;<span style="font-size:12px;color:var(--txt-d)">— بقيتُ في البيت البارحة</span></p></div>
+  </div>
+</div>
+
+<!-- ═══ 4: Partizip II ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6040a0)">٤</div>
+    <div>
+      <div class="sec-t">صياغة اسم المفعول — 5 قواعد</div>
+      <div class="sec-td">Partizip II bilden</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.2)">
+    <h4 style="color:var(--violet)">🔑 السؤال الذهبي</h4>
+    <p>شكل الفعل في نهاية الجملة يعتمد على نوعه — خمس حالات فقط تغطي كل الأفعال. لاحظ أين تذهب <strong style="color:#d9a85a">ge</strong> في كل حالة.</p>
+  </div>
+
+  <!-- 1: regular -->
+  <div class="pz-card" style="border-color:rgba(124,168,120,.25)">
+    <div class="pz-head" style="background:rgba(124,168,120,.05)">
+      <div class="pz-num" style="background:rgba(124,168,120,.15);color:var(--green)">1</div>
+      <div class="pz-title" style="color:var(--green)">الأفعال المنتظمة</div>
+      <div class="pz-formula" style="color:var(--green)">ge + جذر + t</div>
+    </div>
+    <div class="pz-body">
+      <div class="pz-desc">القاعدة الأساسية: نضيف <strong style="color:#d9a85a">ge</strong> في البداية و<strong style="color:var(--green)">t</strong> في النهاية، والجذر لا يتغيّر.</div>
+      <div class="pz-trans">
+        <div class="pz-t"><span class="pz-from">machen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--green)"><span class="gx">ge</span>mach<span class="gx">t</span></span><span class="pz-t-ar">فعل / صنع</span></div>
+        <div class="pz-t"><span class="pz-from">spielen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--green)"><span class="gx">ge</span>spiel<span class="gx">t</span></span><span class="pz-t-ar">لعب</span></div>
+        <div class="pz-t"><span class="pz-from">kaufen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--green)"><span class="gx">ge</span>kauf<span class="gx">t</span></span><span class="pz-t-ar">اشترى</span></div>
+        <div class="pz-t"><span class="pz-from">lernen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--green)"><span class="gx">ge</span>lern<span class="gx">t</span></span><span class="pz-t-ar">تعلّم</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2: irregular -->
+  <div class="pz-card" style="border-color:rgba(112,149,192,.25)">
+    <div class="pz-head" style="background:rgba(112,149,192,.05)">
+      <div class="pz-num" style="background:rgba(112,149,192,.15);color:var(--sky)">2</div>
+      <div class="pz-title" style="color:var(--sky)">الأفعال غير المنتظمة</div>
+      <div class="pz-formula" style="color:var(--sky)">ge + جذر متغيّر + en</div>
+    </div>
+    <div class="pz-body">
+      <div class="pz-desc">تبدأ بـ <strong style="color:#d9a85a">ge</strong> وتنتهي بـ <strong style="color:var(--sky)">en</strong> — وكثيراً ما <strong>تتغيّر حروف العلة في الداخل</strong>. هذه تُحفظ حفظاً ولا قاعدة لها.</div>
+      <div class="pz-trans">
+        <div class="pz-t"><span class="pz-from">gehen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--sky)"><span class="gx">ge</span>g<strong>a</strong>ng<span class="gx">en</span></span><span class="pz-t-ar">ذهب</span></div>
+        <div class="pz-t"><span class="pz-from">finden</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--sky)"><span class="gx">ge</span>f<strong>u</strong>nd<span class="gx">en</span></span><span class="pz-t-ar">وجد</span></div>
+        <div class="pz-t"><span class="pz-from">essen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--sky)"><span class="gx">ge</span>g<strong>e</strong>ss<span class="gx">en</span></span><span class="pz-t-ar">أكل</span></div>
+        <div class="pz-t"><span class="pz-from">fahren</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--sky)"><span class="gx">ge</span>fahr<span class="gx">en</span></span><span class="pz-t-ar">قاد / سافر</span></div>
+        <div class="pz-t"><span class="pz-from">sehen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--sky)"><span class="gx">ge</span>seh<span class="gx">en</span></span><span class="pz-t-ar">شاهد</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3: -ieren -->
+  <div class="pz-card" style="border-color:rgba(217,168,90,.25)">
+    <div class="pz-head" style="background:rgba(217,168,90,.05)">
+      <div class="pz-num" style="background:rgba(217,168,90,.15);color:#d9a85a">3</div>
+      <div class="pz-title" style="color:#d9a85a">أفعال -ieren</div>
+      <div class="pz-formula" style="color:#d9a85a">بدون ge + t</div>
+    </div>
+    <div class="pz-body">
+      <div class="pz-desc">الأفعال المنتهية بـ <strong style="color:#d9a85a">-ieren</strong> (وأغلبها مستعارة من لغات أخرى) <strong>لا تأخذ ge أبداً</strong> — فقط نستبدل en الأخيرة بـ t.</div>
+      <div class="pz-trans">
+        <div class="pz-t"><span class="pz-from">studieren</span><span class="pz-arr">→</span><span class="pz-to" style="color:#d9a85a">studier<span class="gx">t</span></span><span class="pz-t-ar">درس (جامعياً)</span></div>
+        <div class="pz-t"><span class="pz-from">telefonieren</span><span class="pz-arr">→</span><span class="pz-to" style="color:#d9a85a">telefonier<span class="gx">t</span></span><span class="pz-t-ar">تحدث هاتفياً</span></div>
+        <div class="pz-t"><span class="pz-from">fotografieren</span><span class="pz-arr">→</span><span class="pz-to" style="color:#d9a85a">fotografier<span class="gx">t</span></span><span class="pz-t-ar">صوّر</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4: inseparable prefixes -->
+  <div class="pz-card" style="border-color:rgba(176,104,112,.25)">
+    <div class="pz-head" style="background:rgba(176,104,112,.05)">
+      <div class="pz-num" style="background:rgba(176,104,112,.15);color:var(--red)">4</div>
+      <div class="pz-title" style="color:var(--red)">البادئات غير المنفصلة</div>
+      <div class="pz-formula" style="color:var(--red)">بدون ge — البادئة تبقى</div>
+    </div>
+    <div class="pz-body">
+      <div class="pz-desc">الأفعال التي تبدأ بـ <strong style="color:var(--red)">be- · er- · ver- · ent- · ge- · emp- · zer-</strong> لا تأخذ ge إضافية — البادئة الأصلية تحجز مكانها.</div>
+      <div class="pz-trans">
+        <div class="pz-t"><span class="pz-from">bestellen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--red)">bestell<span class="gx">t</span></span><span class="pz-t-ar">طلب (في مطعم)</span></div>
+        <div class="pz-t"><span class="pz-from">besuchen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--red)">besuch<span class="gx">t</span></span><span class="pz-t-ar">زار</span></div>
+        <div class="pz-t"><span class="pz-from">verkaufen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--red)">verkauf<span class="gx">t</span></span><span class="pz-t-ar">باع</span></div>
+        <div class="pz-t"><span class="pz-from">erzählen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--red)">erzähl<span class="gx">t</span></span><span class="pz-t-ar">حكى / روى</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5: separable -->
+  <div class="pz-card" style="border-color:rgba(154,133,184,.25)">
+    <div class="pz-head" style="background:rgba(154,133,184,.05)">
+      <div class="pz-num" style="background:rgba(154,133,184,.15);color:var(--violet)">5</div>
+      <div class="pz-title" style="color:var(--violet)">الأفعال المنفصلة</div>
+      <div class="pz-formula" style="color:var(--violet)">بادئة + ge + الجذر</div>
+    </div>
+    <div class="pz-body">
+      <div class="pz-desc">الأفعال المنفصلة (an- · auf- · ein- · mit- · fern-...) تأخذ <strong style="color:#d9a85a">ge في المنتصف</strong> — تُحشر بين البادئة والجذر.</div>
+      <div class="pz-trans">
+        <div class="pz-t"><span class="pz-from">anrufen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--violet)">an<span class="gx">ge</span>rufen</span><span class="pz-t-ar">اتصل هاتفياً</span></div>
+        <div class="pz-t"><span class="pz-from">einkaufen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--violet)">ein<span class="gx">ge</span>kauft</span><span class="pz-t-ar">تسوّق</span></div>
+        <div class="pz-t"><span class="pz-from">aufstehen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--violet)">auf<span class="gx">ge</span>standen</span><span class="pz-t-ar">استيقظ / نهض</span></div>
+        <div class="pz-t"><span class="pz-from">fernsehen</span><span class="pz-arr">→</span><span class="pz-to" style="color:var(--violet)">fern<span class="gx">ge</span>sehen</span><span class="pz-t-ar">شاهد التلفاز</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: تعبيرات زمنية ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--green),#207840)">٥</div>
+    <div>
+      <div class="sec-t">تعبيرات زمنية تدل على الماضي</div>
+      <div class="sec-td">Temporalangaben</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--green-d);border:1px solid rgba(124,168,120,.2)">
+    <h4 style="color:var(--green)">⏰ إشارات الماضي</h4>
+    <p>هذه الكلمات تخبر السامع فوراً أن الجملة في الماضي — احفظها مرتّبة من الأقرب للأبعد.</p>
+  </div>
+
+  <div class="time-line">
+    <div class="time-item">
+      <div class="time-dot" style="background:#d9a85a"></div>
+      <div class="time-de">heute Morgen</div>
+      <div class="time-ar">اليوم صباحاً</div>
+      <div class="time-eg">Ich habe heute Morgen Kaffee getrunken.</div>
+    </div>
+    <div class="time-item">
+      <div class="time-dot" style="background:#cf9a4e"></div>
+      <div class="time-de">gestern</div>
+      <div class="time-ar">البارحة / أمس</div>
+      <div class="time-eg">Was hast du gestern gemacht?</div>
+    </div>
+    <div class="time-item">
+      <div class="time-dot" style="background:#c48c42"></div>
+      <div class="time-de">vorgestern</div>
+      <div class="time-ar">أول أمس (قبل البارحة)</div>
+      <div class="time-eg">Vorgestern bin ich zu Hause geblieben.</div>
+    </div>
+    <div class="time-item">
+      <div class="time-dot" style="background:#b97e38"></div>
+      <div class="time-de">vor drei Tagen</div>
+      <div class="time-ar">قبل ثلاثة أيام — vor + Dativ</div>
+      <div class="time-eg">Vor drei Tagen habe ich Pizza gegessen.</div>
+    </div>
+    <div class="time-item">
+      <div class="time-dot" style="background:#ad702e"></div>
+      <div class="time-de">letzte Woche</div>
+      <div class="time-ar">الأسبوع الماضي</div>
+      <div class="time-eg">Letzte Woche habe ich meine Oma besucht.</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:rgba(217,168,90,.06);border:1px solid rgba(217,168,90,.2);margin-top:14px">
+    <div class="ni">💡</div>
+    <div><p><strong style="color:#d9a85a">لاحظ في الأمثلة:</strong> إذا بدأت الجملة بالتعبير الزمني (مثل Vorgestern)، يبقى الفعل المساعد في <strong style="color:#d9a85a">الموقع الثاني</strong> ويأتي الفاعل بعده مباشرة — قاعدة الموقع الثاني مقدّسة لا تنكسر.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 6: ملاحظات هامة ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٦</div>
+    <div>
+      <div class="sec-t">ملاحظات إضافية هامة</div>
+      <div class="sec-td">Fragen im Perfekt &amp; Kasus</div>
+    </div>
+  </div>
+
+  <div class="sub">السؤال في الماضي — الفعل المساعد يقفز للموقع الأول</div>
+  <div class="q-swap">
+    <div class="q-row" style="border-color:rgba(217,168,90,.25)">
+      <div class="q-label" style="color:var(--txt-d)"><span>💬</span> جملة خبرية</div>
+      <div class="q-de">Du <span class="hv">hast</span> gestern Fußball <span class="pz">gespielt</span>.</div>
+      <div class="q-ar">أنت لعبت كرة القدم البارحة</div>
+    </div>
+    <div class="q-row" style="border-color:rgba(196,122,90,.3)">
+      <div class="q-label" style="color:var(--coral)"><span>❓</span> سؤال نعم/لا — الفعل المساعد أولاً</div>
+      <div class="q-de"><span class="hv">Hast</span> du gestern Fußball <span class="pz">gespielt</span>?</div>
+      <div class="q-ar">هل لعبت كرة القدم البارحة؟ — الـ Partizip II بقي في النهاية</div>
+    </div>
+    <div class="q-row" style="border-color:rgba(196,122,90,.3)">
+      <div class="q-label" style="color:var(--coral)"><span>❓</span> سؤال بأداة استفهام — الأداة أولاً ثم الفعل المساعد</div>
+      <div class="q-de">Was <span class="hv">hast</span> du gestern <span class="pz">gemacht</span>?</div>
+      <div class="q-ar">ماذا فعلت البارحة؟</div>
+    </div>
+    <div class="q-row" style="border-color:rgba(112,149,192,.3)">
+      <div class="q-label" style="color:var(--sky)"><span>❓</span> ومع sein بنفس الطريقة</div>
+      <div class="q-de"><span class="sv">Bist</span> du nach Berlin <span class="pz">gefahren</span>?</div>
+      <div class="q-ar">هل سافرت إلى برلين؟</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:22px">الحالات الإعرابية لا تتغيّر في الماضي</div>
+  <div class="sent-list">
+    <div class="sent" style="border-color:rgba(111,164,148,.25)">
+      <div class="sent-de" style="color:var(--txt-d)">Ich kaufe <strong style="color:var(--teal)">den</strong> Apfel. <span style="color:var(--txt-d);font-size:12px">(مضارع)</span></div>
+      <div class="sent-de">Ich <span class="hv">habe</span> <strong style="color:var(--teal)">den</strong> Apfel <span class="pz">gekauft</span>. <span style="color:var(--txt-d);font-size:12px">(ماضي)</span></div>
+      <div class="sent-ar">اشتريتُ التفاحة — الأكوزاتيف (den) كما هو، لم يتأثر بتغيير الزمن</div>
+    </div>
+    <div class="sent" style="border-color:rgba(111,164,148,.25)">
+      <div class="sent-de" style="color:var(--txt-d)">Ich fahre <strong style="color:var(--teal)">mit dem</strong> Bus. <span style="color:var(--txt-d);font-size:12px">(مضارع)</span></div>
+      <div class="sent-de">Ich <span class="sv">bin</span> <strong style="color:var(--teal)">mit dem</strong> Bus <span class="pz">gefahren</span>. <span style="color:var(--txt-d);font-size:12px">(ماضي)</span></div>
+      <div class="sent-ar">ركبتُ الباص — mit تأخذ داتيف دائماً، في المضارع والماضي سواء</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--coral-d);border:1px solid rgba(196,122,90,.2);margin-top:16px">
+    <div class="ni">🎯</div>
+    <div><p><strong style="color:var(--coral)">خلاصة الدرس في سطرين:</strong><br>
+    ١. اختر المساعد: حركة أو تغيّر حالة → <strong style="color:var(--sky)">sein</strong> · غير ذلك → <strong style="color:#d9a85a">haben</strong> (+ استثناء bleiben → sein)<br>
+    ٢. ضع المساعد في الموقع الثاني (أو الأول للسؤال)، وارمِ الـ Partizip II في آخر الجملة — وكل ما تعلمته عن الحالات الإعرابية يبقى كما هو.</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
