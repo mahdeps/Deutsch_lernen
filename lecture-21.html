@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 21 — الداتيف والملابس والتسوق</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── Perfekt mini-recap strip ─── */
+.recap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin-top:14px}
+.recap-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
+.recap-card::before{content:'';position:absolute;right:0;top:0;bottom:0;width:3px}
+.recap-card:hover{transform:translateY(-2px)}
+.recap-rule{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;direction:ltr;margin-bottom:7px;padding:3px 9px;border-radius:100px;display:inline-block}
+.recap-ex{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;direction:ltr;line-height:1.7}
+.recap-ex .gx{color:#e088b0}
+.recap-ar{font-size:11.5px;color:var(--txt-d);margin-top:5px}
+
+/* ─── Pronoun conversion table ─── */
+.pron-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:14px;border:1px solid var(--bdr);border-radius:14px;overflow:hidden}
+.pron-table th{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:800;padding:13px;background:rgba(224,136,176,.08);color:#e088b0;text-align:center;border-bottom:1px solid var(--bdr)}
+.pron-table td{padding:0;border-bottom:1px solid var(--bdr)}
+.pron-table tr:last-child td{border-bottom:none}
+.pron-cell{display:flex;align-items:center;justify-content:center;gap:14px;padding:13px 16px;transition:background .2s}
+.pron-table tr:hover .pron-cell{background:rgba(224,136,176,.04)}
+.pron-nom{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;color:var(--txt-d);direction:ltr;min-width:56px;text-align:center}
+.pron-arr{color:#e088b0;font-size:14px}
+.pron-dat{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:800;color:#e088b0;direction:ltr;min-width:56px;text-align:center}
+.pron-ar-c{font-size:12px;color:var(--txt-d);border-right:1px solid var(--bdr);text-align:center;font-family:'Noto Naskh Arabic',serif}
+
+/* ─── Dativ verbs ─── */
+.dverb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-top:14px}
+.dverb-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.dverb-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.dverb-head{padding:12px 16px;border-bottom:1px solid var(--bdr);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dverb-de{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:800;direction:ltr}
+.dverb-mean{font-size:12px;color:var(--txt-d)}
+.dverb-body{padding:13px 16px}
+.dverb-eg{font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;line-height:1.7;margin-bottom:4px}
+.dverb-eg .dt{font-weight:800;background:rgba(224,136,176,.12);padding:1px 6px;border-radius:5px}
+.dverb-eg-ar{font-size:11.5px;color:var(--txt-d)}
+
+/* ─── mit + Dativ note box ─── */
+.prep-box{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid rgba(224,136,176,.25);border-radius:14px;padding:18px;margin-top:14px;flex-wrap:wrap}
+.prep-sym{font-family:'JetBrains Mono',monospace;font-size:34px;font-weight:800;color:#e088b0;direction:ltr}
+.prep-eq{display:flex;flex-direction:column;gap:4px}
+.prep-good{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--green);direction:ltr}
+.prep-bad{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--red);direction:ltr;text-decoration:line-through;opacity:.7}
+
+/* ─── Welch / Dies declension table ─── */
+.dec-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:14px;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;direction:rtl}
+.dec-table th,.dec-table td{padding:12px 10px;text-align:center;border-bottom:1px solid var(--bdr);border-left:1px solid var(--bdr)}
+.dec-table th:last-child,.dec-table td:last-child{border-left:none}
+.dec-table tr:last-child td{border-bottom:none}
+.dec-table thead th{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:800;background:rgba(255,255,255,.025)}
+.dec-gender{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:800;background:rgba(255,255,255,.02)}
+.dec-art{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);display:block;margin-bottom:5px;direction:ltr}
+.dec-w{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:800;direction:ltr;display:block}
+.dec-change{background:rgba(224,136,176,.07)}
+.dec-change .dec-w{color:#e088b0}
+.dec-end{color:#e088b0;text-decoration:underline;text-underline-offset:2px}
+
+/* ─── Clothing verbs ─── */
+.cverb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:14px}
+.cverb-card{background:var(--card);border:1px solid var(--bdr);border-radius:13px;padding:14px 16px;transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
+.cverb-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px}
+.cverb-card:hover{transform:translateY(-2px)}
+.cverb-de{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;direction:ltr;margin-bottom:5px}
+.cverb-tag{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:700;padding:2px 8px;border-radius:100px;margin-right:7px;vertical-align:middle}
+.cverb-mean{font-size:12.5px;color:var(--txt-d);margin-bottom:8px}
+.cverb-eg{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--txt-d);direction:ltr;border-top:1px dashed var(--bdr);padding-top:7px}
+
+/* ─── in + color/size ─── */
+.insize-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.insize-pill{display:flex;align-items:center;gap:9px;background:var(--card);border:1px solid var(--bdr);border-radius:100px;padding:8px 16px 8px 8px;transition:transform .15s,border-color .2s}
+.insize-pill:hover{transform:translateY(-2px)}
+.insize-swatch{width:24px;height:24px;border-radius:50%;flex-shrink:0}
+.insize-txt{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;direction:ltr}
+.insize-ar{font-size:11px;color:var(--txt-d)}
+
+/* ─── Shopping places ─── */
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:14px}
+.shop-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px;text-align:center;transition:transform .2s,box-shadow .2s}
+.shop-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.shop-ic{font-size:30px;margin-bottom:10px}
+.shop-de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;direction:ltr;margin-bottom:5px}
+.shop-ar{font-size:12px;color:var(--txt-d)}
+
+@media(max-width:640px){
+  .dec-table{font-size:11px}
+  .dec-table th,.dec-table td{padding:9px 5px}
+  .pron-ar-c{display:none}
+  .insize-pill{padding:6px 13px 6px 6px}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#e088b0">المحاضرة 21 — Dativ, Kleidung &amp; Einkaufen</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 21 — المحاضرة الحادية والعشرون · A1.2</div>
+  <h1>الداتيف، الملابس <em>والتسوق</em></h1>
+  <p class="hero-sub">مراجعة الماضي، ضمائر الداتيف وأفعاله، أدوات welch-/dies-، ومفردات الملابس وأماكن التسوق</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: PERFEKT RECAP ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#e088b0,#b04878)">١</div>
+    <div>
+      <div class="sec-t">مراجعة سريعة للماضي</div>
+      <div class="sec-td">Perfekt — Wiederholung</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(224,136,176,.06);border:1px solid rgba(224,136,176,.2)">
+    <h4 style="color:#e088b0">🔁 تذكير</h4>
+    <p>جملة الماضي = <strong style="color:#e088b0">فعل مساعد (haben/sein) في الموقع الثاني</strong> + <strong style="color:#e088b0">Partizip II في النهاية</strong>. المساعد يُصرّف مع الفاعل، والتصريف الثالث يبقى ثابتاً لا يتغيّر.</p>
+  </div>
+
+  <div class="sub" style="margin-top:18px">قواعد Partizip II الخمس — في بطاقة واحدة</div>
+  <div class="recap-grid">
+    <div class="recap-card" style="border-color:rgba(124,168,120,.25)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--green)"></span>
+      <div class="recap-rule" style="background:rgba(124,168,120,.12);color:var(--green)">منتظم · ge…t</div>
+      <div class="recap-ex"><span class="gx" style="color:var(--green)">ge</span>kauf<span class="gx" style="color:var(--green)">t</span></div>
+      <div class="recap-ar">kaufen ← اشترى</div>
+    </div>
+    <div class="recap-card" style="border-color:rgba(112,149,192,.25)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--sky)"></span>
+      <div class="recap-rule" style="background:rgba(112,149,192,.12);color:var(--sky)">غير منتظم · ge…en</div>
+      <div class="recap-ex"><span class="gx" style="color:var(--sky)">ge</span>les<span class="gx" style="color:var(--sky)">en</span></div>
+      <div class="recap-ar">lesen ← قرأ</div>
+    </div>
+    <div class="recap-card" style="border-color:rgba(217,168,90,.25)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:#d9a85a"></span>
+      <div class="recap-rule" style="background:rgba(217,168,90,.12);color:#d9a85a">‎-ieren · بدون ge</div>
+      <div class="recap-ex">telefonier<span class="gx" style="color:#d9a85a">t</span></div>
+      <div class="recap-ar">telefonieren ← اتصل · passieren ← passiert</div>
+    </div>
+    <div class="recap-card" style="border-color:rgba(176,104,112,.25)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--red)"></span>
+      <div class="recap-rule" style="background:rgba(176,104,112,.12);color:var(--red)">بادئة غير منفصلة · بدون ge</div>
+      <div class="recap-ex">verstand<span class="gx" style="color:var(--red)">en</span></div>
+      <div class="recap-ar">verstehen ← فهم · erzählen ← erzählt</div>
+    </div>
+    <div class="recap-card" style="border-color:rgba(154,133,184,.25)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--violet)"></span>
+      <div class="recap-rule" style="background:rgba(154,133,184,.12);color:var(--violet)">منفصل · ge في الوسط</div>
+      <div class="recap-ex">auf<span class="gx" style="color:var(--violet)">ge</span>standen</div>
+      <div class="recap-ar">aufstehen ← نهض · einkaufen ← eingekauft</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.18);margin-top:14px">
+    <div class="ni">⚖️</div>
+    <div><p><strong style="color:var(--sky)">اختيار المساعد:</strong> فعل حركة أو تغيّر حالة → <strong style="color:var(--sky)">sein</strong> (مع استثناء bleiben) · الباقي → <strong style="color:#e088b0">haben</strong>.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 2: DATIV PRONOMEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#2a7060)">٢</div>
+    <div>
+      <div class="sec-t">ضمائر الداتيف</div>
+      <div class="sec-td">Personalpronomen im Dativ</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.2)">
+    <h4 style="color:var(--teal)">📖 ما هي حالة الداتيف؟</h4>
+    <p>حالة الجر التي يقع فيها الاسم أو الضمير بسبب <strong style="color:var(--teal)">حرف جر معيّن</strong> (مثل mit) أو <strong style="color:var(--teal)">فعل يفرضها</strong> (مثل helfen). الضمائر تتغيّر شكلها — احفظ هذا الجدول.</p>
+  </div>
+
+  <table class="pron-table">
+    <thead>
+      <tr>
+        <th>Nominativ (الرفع)</th>
+        <th>الترجمة</th>
+        <th>Dativ (الجر)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><div class="pron-cell"><span class="pron-nom">ich</span></div></td><td><div class="pron-ar-c">أنا</div></td><td><div class="pron-cell"><span class="pron-arr">←</span><span class="pron-dat">mir</span></div></td></tr>
+      <tr><td><div class="pron-cell"><span class="pron-nom">du</span></div></td><td><div class="pron-ar-c">أنت</div></td><td><div class="pron-cell"><span class="pron-arr">←</span><span class="pron-dat">dir</span></div></td></tr>
+      <tr><td><div class="pron-cell"><span class="pron-nom">er / es</span></div></td><td><div class="pron-ar-c">هو / محايد</div></td><td><div class="pron-cell"><span class="pron-arr">←</span><span class="pron-dat">ihm</span></div></td></tr>
+      <tr><td><div class="pron-cell"><span class="pron-nom">sie</span></div></td><td><div class="pron-ar-c">هي</div></td><td><div class="pron-cell"><span class="pron-arr">←</span><span class="pron-dat">ihr</span></div></td></tr>
+      <tr><td><div class="pron-cell"><span class="pron-nom">wir</span></div></td><td><div class="pron-ar-c">نحن</div></td><td><div class="pron-cell"><span class="pron-arr">←</span><span class="pron-dat">uns</span></div></td></tr>
+      <tr><td><div class="pron-cell"><span class="pron-nom">ihr</span></div></td><td><div class="pron-ar-c">أنتم</div></td><td><div class="pron-cell"><span class="pron-arr">←</span><span class="pron-dat">euch</span></div></td></tr>
+      <tr><td><div class="pron-cell"><span class="pron-nom">sie / Sie</span></div></td><td><div class="pron-ar-c">هم / حضرتك</div></td><td><div class="pron-cell"><span class="pron-arr">←</span><span class="pron-dat">ihnen / Ihnen</span></div></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══ 3: DATIV VERBEN & mit ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6040a0)">٣</div>
+    <div>
+      <div class="sec-t">أفعال وحروف تفرض الداتيف</div>
+      <div class="sec-td">Dativ-Verben &amp; die Präposition „mit“</div>
+    </div>
+  </div>
+
+  <div class="sub">أفعال يتبعها الداتيف دائماً</div>
+  <div class="dverb-grid">
+    <div class="dverb-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="dverb-head" style="background:rgba(154,133,184,.05)">
+        <div class="dverb-de" style="color:var(--violet)">helfen</div>
+        <div class="dverb-mean">يساعد</div>
+      </div>
+      <div class="dverb-body">
+        <div class="dverb-eg" style="color:var(--violet)">Ich helfe <span class="dt" style="color:var(--violet)">dir</span>.</div>
+        <div class="dverb-eg-ar">أنا أساعدك — dir وليس dich</div>
+      </div>
+    </div>
+    <div class="dverb-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="dverb-head" style="background:rgba(154,133,184,.05)">
+        <div class="dverb-de" style="color:var(--violet)">passen</div>
+        <div class="dverb-mean">يناسب (للمقاس)</div>
+      </div>
+      <div class="dverb-body">
+        <div class="dverb-eg" style="color:var(--violet)">Die Hose passt <span class="dt" style="color:var(--violet)">mir</span>.</div>
+        <div class="dverb-eg-ar">البنطال يناسب مقاسي</div>
+      </div>
+    </div>
+    <div class="dverb-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="dverb-head" style="background:rgba(154,133,184,.05)">
+        <div class="dverb-de" style="color:var(--violet)">gefallen</div>
+        <div class="dverb-mean">يعجب (للذوق)</div>
+      </div>
+      <div class="dverb-body">
+        <div class="dverb-eg" style="color:var(--violet)">Das Kleid gefällt <span class="dt" style="color:var(--violet)">mir</span>.</div>
+        <div class="dverb-eg-ar">الفستان يعجبني</div>
+      </div>
+    </div>
+    <div class="dverb-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="dverb-head" style="background:rgba(154,133,184,.05)">
+        <div class="dverb-de" style="color:var(--violet)">stehen</div>
+        <div class="dverb-mean">يليق (للمظهر)</div>
+      </div>
+      <div class="dverb-body">
+        <div class="dverb-eg" style="color:var(--violet)">Das Hemd steht <span class="dt" style="color:var(--violet)">mir</span> gut.</div>
+        <div class="dverb-eg-ar">القميص يليق بي جيداً</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">حرف الجر mit — داتيف إجباري</div>
+  <div class="prep-box">
+    <div class="prep-sym">mit</div>
+    <div class="prep-eq">
+      <div class="prep-good">✅ mit dir · mit mir · mit uns</div>
+      <div class="prep-bad">❌ mit dich · mit ich</div>
+    </div>
+    <div style="font-size:13px;color:var(--txt-d);flex:1;min-width:160px;line-height:1.8">حرف الجر <span style="font-family:'JetBrains Mono',monospace;color:#e088b0">mit</span> = "مع" يفرض الداتيف <strong>دائماً</strong> بلا استثناء، فلا نقول أبداً mit dich.</div>
+  </div>
+</div>
+
+<!-- ═══ 4: WELCH & DIES ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3060b0)">٤</div>
+    <div>
+      <div class="sec-t">أدوات الاستفهام والإشارة</div>
+      <div class="sec-td">Welch- (أيّ؟) &amp; Dies- (هذا)</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.18)">
+    <h4 style="color:var(--sky)">🔑 الفكرة</h4>
+    <p><strong style="color:var(--sky)">Welch-</strong> للسؤال بمعنى "أيّ؟"، و<strong style="color:var(--sky)">Dies-</strong> للإشارة بمعنى "هذا". كلاهما يأخذ <strong>نفس نهايات أداة التعريف</strong> (der/die/das) حسب جنس الاسم وحالته الإعرابية.</p>
+  </div>
+
+  <div class="sub" style="margin-top:16px">جدول النهايات — Nominativ &amp; Akkusativ</div>
+  <table class="dec-table">
+    <thead>
+      <tr>
+        <th>الجنس</th>
+        <th>Nominativ (الرفع)</th>
+        <th>Akkusativ (النصب)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dec-gender" style="color:var(--sky)">مذكر<br><span style="font-size:10px;color:var(--txt-d)">der</span></td>
+        <td><span class="dec-art">der</span><span class="dec-w" style="color:var(--sky)">welch<span class="dec-end">er</span> / dies<span class="dec-end">er</span></span></td>
+        <td class="dec-change"><span class="dec-art">den</span><span class="dec-w">welch<span class="dec-end">en</span> / dies<span class="dec-end">en</span></span></td>
+      </tr>
+      <tr>
+        <td class="dec-gender" style="color:var(--rose)">مؤنث<br><span style="font-size:10px;color:var(--txt-d)">die</span></td>
+        <td><span class="dec-art">die</span><span class="dec-w" style="color:var(--rose)">welch<span class="dec-end">e</span> / dies<span class="dec-end">e</span></span></td>
+        <td><span class="dec-art">die</span><span class="dec-w" style="color:var(--rose)">welch<span class="dec-end">e</span> / dies<span class="dec-end">e</span></span></td>
+      </tr>
+      <tr>
+        <td class="dec-gender" style="color:var(--green)">محايد<br><span style="font-size:10px;color:var(--txt-d)">das</span></td>
+        <td><span class="dec-art">das</span><span class="dec-w" style="color:var(--green)">welch<span class="dec-end">es</span> / dies<span class="dec-end">es</span></span></td>
+        <td><span class="dec-art">das</span><span class="dec-w" style="color:var(--green)">welch<span class="dec-end">es</span> / dies<span class="dec-end">es</span></span></td>
+      </tr>
+      <tr>
+        <td class="dec-gender" style="color:var(--amber)">جمع<br><span style="font-size:10px;color:var(--txt-d)">die</span></td>
+        <td><span class="dec-art">die</span><span class="dec-w" style="color:var(--amber)">welch<span class="dec-end">e</span> / dies<span class="dec-end">e</span></span></td>
+        <td><span class="dec-art">die</span><span class="dec-w" style="color:var(--amber)">welch<span class="dec-end">e</span> / dies<span class="dec-end">e</span></span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(200,152,88,.18);margin-top:14px">
+    <div class="ni">💡</div>
+    <div><p><strong style="color:var(--amber)">القاعدة الذهبية:</strong> فقط <strong style="color:var(--sky)">المذكر</strong> يتغيّر بين الرفع والنصب (er ← en). المؤنث والمحايد والجمع يبقون كما هم. ركّز على المذكر فقط!</p></div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">أمثلة في جملة</div>
+  <div class="sent-list" style="display:flex;flex-direction:column;gap:10px">
+    <div style="background:var(--card);border:1px solid rgba(112,149,192,.22);border-radius:12px;padding:14px 18px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;line-height:1.8"><strong style="color:var(--sky)">Welchen</strong> Pullover möchtest du? <span style="color:var(--txt-d);font-size:11px">(der → Akkusativ)</span></div>
+      <div style="font-size:12px;color:var(--txt-d);margin-top:4px">أيّ بلوفر تريد؟ — Pullover مذكر، مفعول به → welchen</div>
+    </div>
+    <div style="background:var(--card);border:1px solid rgba(224,136,176,.22);border-radius:12px;padding:14px 18px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;line-height:1.8"><strong style="color:#e088b0">Diese</strong> Jacke ist schön. <span style="color:var(--txt-d);font-size:11px">(die → Nominativ)</span></div>
+      <div style="font-size:12px;color:var(--txt-d);margin-top:4px">هذه السترة جميلة — Jacke مؤنث → diese</div>
+    </div>
+    <div style="background:var(--card);border:1px solid rgba(124,168,120,.22);border-radius:12px;padding:14px 18px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;line-height:1.8">Ich nehme <strong style="color:var(--green)">dieses</strong> T-Shirt. <span style="color:var(--txt-d);font-size:11px">(das → Akkusativ)</span></div>
+      <div style="font-size:12px;color:var(--txt-d);margin-top:4px">سآخذ هذا التيشيرت — T-Shirt محايد → dieses</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: KLEIDUNG & EINKAUFEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#e088b0,#b04878)">٥</div>
+    <div>
+      <div class="sec-t">الملابس والتسوق</div>
+      <div class="sec-td">Kleidung &amp; Einkaufen</div>
+    </div>
+  </div>
+
+  <div class="sub">أفعال الملابس</div>
+  <div class="cverb-grid">
+    <div class="cverb-card" style="border-color:rgba(224,136,176,.22)"><span style="position:absolute;bottom:0;left:0;right:0;height:2px;background:#e088b0"></span>
+      <div class="cverb-de" style="color:#e088b0">tragen<span class="cverb-tag" style="background:rgba(124,168,120,.15);color:var(--green)">عادي</span></div>
+      <div class="cverb-mean">يرتدي / يحمل</div>
+      <div class="cverb-eg">Ich trage eine Jacke. — أرتدي سترة</div>
+    </div>
+    <div class="cverb-card" style="border-color:rgba(224,136,176,.22)"><span style="position:absolute;bottom:0;left:0;right:0;height:2px;background:#e088b0"></span>
+      <div class="cverb-de" style="color:#e088b0">anziehen<span class="cverb-tag" style="background:rgba(154,133,184,.15);color:var(--violet)">منفصل</span></div>
+      <div class="cverb-mean">يرتدي / يلبس</div>
+      <div class="cverb-eg">Ich ziehe die Schuhe an. — ألبس الحذاء</div>
+    </div>
+    <div class="cverb-card" style="border-color:rgba(224,136,176,.22)"><span style="position:absolute;bottom:0;left:0;right:0;height:2px;background:#e088b0"></span>
+      <div class="cverb-de" style="color:#e088b0">aussehen<span class="cverb-tag" style="background:rgba(154,133,184,.15);color:var(--violet)">منفصل</span></div>
+      <div class="cverb-mean">يبدو / يظهر</div>
+      <div class="cverb-eg">Das sieht toll aus! — يبدو رائعاً!</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">حرف الجر in مع اللون والمقاس</div>
+  <div class="insize-grid">
+    <div class="insize-pill" style="border-color:rgba(192,56,56,.3)">
+      <div class="insize-swatch" style="background:#c03838"></div>
+      <div><div class="insize-txt" style="color:#d06868">in Rot</div><div class="insize-ar">باللون الأحمر</div></div>
+    </div>
+    <div class="insize-pill" style="border-color:rgba(44,104,176,.3)">
+      <div class="insize-swatch" style="background:#2c68b0"></div>
+      <div><div class="insize-txt" style="color:#6090d0">in Blau</div><div class="insize-ar">باللون الأزرق</div></div>
+    </div>
+    <div class="insize-pill" style="border-color:rgba(224,136,176,.3)">
+      <div class="insize-swatch" style="background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:800;color:#e088b0">XL</div>
+      <div><div class="insize-txt" style="color:#e088b0">in XL</div><div class="insize-ar">بمقاس إكس إل</div></div>
+    </div>
+    <div class="insize-pill" style="border-color:rgba(224,136,176,.3)">
+      <div class="insize-swatch" style="background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:800;color:#e088b0">38</div>
+      <div><div class="insize-txt" style="color:#e088b0">in Größe 38</div><div class="insize-ar">بمقاس 38</div></div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">أماكن التسوق</div>
+  <div class="shop-grid">
+    <div class="shop-card" style="border-color:rgba(224,136,176,.22)">
+      <div class="shop-ic">👗</div>
+      <div class="shop-de" style="color:#e088b0">im Bekleidungsgeschäft</div>
+      <div class="shop-ar">في محل الملابس</div>
+    </div>
+    <div class="shop-card" style="border-color:rgba(112,149,192,.22)">
+      <div class="shop-ic">💻</div>
+      <div class="shop-de" style="color:var(--sky)">im Internet</div>
+      <div class="shop-ar">على الإنترنت</div>
+    </div>
+    <div class="shop-card" style="border-color:rgba(124,168,120,.22)">
+      <div class="shop-ic">🛒</div>
+      <div class="shop-de" style="color:var(--green)">auf dem Markt</div>
+      <div class="shop-ar">في السوق</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 6: HÖREN TIP ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٦</div>
+    <div>
+      <div class="sec-t">نصيحة الدرس</div>
+      <div class="sec-td">Hören ist der Schlüssel</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--coral-d);border:1px solid rgba(196,122,90,.22);margin-top:4px">
+    <div class="ni">🎧</div>
+    <div><p><strong style="color:var(--coral)">الاستماع مفتاح تطوير اللغة:</strong> استمع للمحادثة الواحدة <strong>أكثر من مرة</strong> لتعويد أذنك على الإيقاع والنطق. لا تحاول فهم كل كلمة من المرة الأولى — ركّز على الفكرة العامة أولاً، ثم التفاصيل في الإعادة.</p></div>
+  </div>
+
+  <div class="note" style="background:rgba(224,136,176,.06);border:1px solid rgba(224,136,176,.2);margin-top:12px">
+    <div class="ni">📝</div>
+    <div><p><strong style="color:#e088b0">خلاصة المحاضرة:</strong><br>
+    ١. الماضي = مساعد (موقع ٢) + Partizip II (النهاية) — راجع القواعد الخمس.<br>
+    ٢. الداتيف: احفظ تحويل الضمائر (ich→mir...)، وأفعاله (helfen/passen/gefallen/stehen)، وأن mit داتيف دائماً.<br>
+    ٣. welch-/dies- يأخذان نهايات أداة التعريف — المذكر فقط يتغيّر في النصب.<br>
+    ٤. الملابس: tragen/anziehen/aussehen، و in مع اللون والمقاس.</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

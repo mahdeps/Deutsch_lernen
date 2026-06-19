@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 22 — المتجر والطوابق والسفر</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── Time markers timeline ─── */
+.time-line{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+.time-item{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px 16px;transition:transform .2s,border-color .2s}
+.time-item:hover{transform:translateX(-3px);border-color:rgba(62,192,216,.4)}
+.time-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;box-shadow:0 0 10px rgba(62,192,216,.4)}
+.time-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;direction:ltr;min-width:140px;color:#3ec0d8}
+.time-ar{font-size:13px;color:var(--txt);flex:1}
+.time-eg{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--txt-d);direction:ltr;text-align:left}
+
+/* ─── Dativ verb / dialogue cards ─── */
+.dverb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:10px;margin-top:14px}
+.dverb-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.dverb-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.dverb-head{padding:11px 16px;border-bottom:1px solid var(--bdr);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.dverb-de{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;direction:ltr}
+.dverb-mean{font-size:12px;color:var(--txt-d)}
+.dverb-body{padding:13px 16px}
+.dverb-eg{font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;line-height:1.7;margin-bottom:4px}
+.dverb-eg .dt{font-weight:800;background:rgba(62,192,216,.14);padding:1px 6px;border-radius:5px;color:#3ec0d8}
+.dverb-eg-ar{font-size:11.5px;color:var(--txt-d)}
+
+/* ─── Shop phrases ─── */
+.phrase-list{display:flex;flex-direction:column;gap:9px;margin-top:12px}
+.phrase{display:flex;align-items:flex-start;gap:13px;background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:13px 16px;transition:transform .2s}
+.phrase:hover{transform:translateX(-3px)}
+.phrase-ic{font-size:18px;flex-shrink:0;margin-top:1px}
+.phrase-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;margin-bottom:3px}
+.phrase-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── Building / floors visual ─── */
+.building{display:flex;flex-direction:column;gap:5px;margin-top:16px;max-width:480px;margin-inline:auto}
+.floor{display:flex;align-items:center;gap:14px;border:1px solid var(--bdr);border-radius:12px;padding:14px 18px;transition:transform .2s,border-color .2s,background .2s;direction:ltr}
+.floor:hover{transform:scale(1.02);border-color:rgba(62,192,216,.5);background:rgba(62,192,216,.04)}
+.floor-num{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:800;width:46px;height:46px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.floor-info{flex:1}
+.floor-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;direction:ltr;margin-bottom:2px}
+.floor-ar{font-size:12px;color:var(--txt-d);direction:rtl}
+.floor-ord{font-family:'JetBrains Mono',monospace;font-size:12px;color:#3ec0d8;font-weight:700;direction:ltr;flex-shrink:0}
+
+/* ─── Question (Wo...) cards ─── */
+.wo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:14px}
+.wo-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;transition:transform .2s,border-color .2s}
+.wo-card:hover{transform:translateY(-2px)}
+.wo-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;direction:ltr;margin-bottom:5px;color:#3ec0d8}
+.wo-ar{font-size:12.5px;color:var(--txt-d)}
+
+/* ─── Concept cards (man / denn) ─── */
+.concept-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:14px;transition:transform .2s,box-shadow .2s}
+.concept-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.28)}
+.concept-head{padding:14px 18px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.concept-word{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:800;direction:ltr}
+.concept-mean{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:700;color:var(--txt-d)}
+.concept-body{padding:14px 18px}
+.concept-desc{font-size:13px;line-height:1.95;margin-bottom:12px}
+.concept-eg{font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:600;direction:ltr;padding:9px 13px;border-radius:9px;margin-bottom:4px}
+.concept-eg-ar{font-size:12px;color:var(--txt-d);margin-bottom:10px}
+
+/* ─── Position comparison (denn vs weil) ─── */
+.posbox{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.pos-card{border-radius:14px;padding:16px;position:relative;overflow:hidden}
+.pos-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.pos-denn::before{background:linear-gradient(90deg,#3ec0d8,#1c8898)}
+.pos-weil::before{background:linear-gradient(90deg,var(--violet),#6040a0)}
+.pos-name{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:800;direction:ltr;margin-bottom:8px}
+.pos-eg{font-family:'JetBrains Mono',monospace;font-size:12.5px;direction:ltr;line-height:1.8}
+.pos-eg .vb{font-weight:800;padding:1px 5px;border-radius:4px}
+.pos-note{font-size:11.5px;color:var(--txt-d);margin-top:8px;padding-top:8px;border-top:1px dashed var(--bdr)}
+
+/* ─── Temporal prepositions ─── */
+.tprep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px;margin-top:14px}
+.tprep-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px;text-align:center;transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
+.tprep-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:#3ec0d8}
+.tprep-card:hover{transform:translateY(-3px);border-color:rgba(62,192,216,.4)}
+.tprep-word{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:800;direction:ltr;color:#3ec0d8;margin-bottom:3px}
+.tprep-mean{font-size:12px;color:var(--txt);margin-bottom:8px}
+.tprep-eg{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d);direction:ltr;background:rgba(62,192,216,.06);padding:5px 8px;border-radius:7px}
+
+/* ─── Wer/Wen/Wem ─── */
+.wfrage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.wfrage-card{border-radius:14px;padding:18px 14px;text-align:center;position:relative;overflow:hidden;transition:transform .2s}
+.wfrage-card:hover{transform:translateY(-3px)}
+.wfrage-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.wfrage-w{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;direction:ltr;margin-bottom:5px}
+.wfrage-case{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:800;margin-bottom:4px}
+.wfrage-ar{font-size:12px;color:var(--txt-d);margin-bottom:10px}
+.wfrage-eg{font-family:'JetBrains Mono',monospace;font-size:11.5px;direction:ltr;padding:7px;border-radius:8px;line-height:1.5}
+
+/* ─── einpacken visual ─── */
+.pack-card{background:var(--card);border:1px solid rgba(62,192,216,.25);border-radius:16px;padding:18px;margin-top:14px}
+.pack-split{display:flex;align-items:center;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:14px}
+.pack-piece{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;padding:8px 16px;border-radius:10px}
+.pack-op{font-size:14px;color:var(--txt-d)}
+.pack-formula{font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;text-align:center;color:var(--txt);background:rgba(62,192,216,.06);padding:12px;border-radius:10px;line-height:1.8}
+.pack-formula .ak{color:#3ec0d8;font-weight:800}
+
+/* ─── Travel vocab ─── */
+.travel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin-top:14px}
+.travel-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px;transition:transform .2s,border-color .2s}
+.travel-card:hover{transform:translateY(-2px);border-color:rgba(62,192,216,.4)}
+.travel-ic{font-size:24px;flex-shrink:0}
+.travel-de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;direction:ltr;margin-bottom:2px}
+.travel-ar{font-size:11.5px;color:var(--txt-d)}
+
+@media(max-width:640px){
+  .posbox{grid-template-columns:1fr}
+  .wfrage-grid{grid-template-columns:1fr}
+  .time-item{flex-wrap:wrap}
+  .time-eg{width:100%}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#3ec0d8">المحاضرة 22 — Im Geschäft &amp; Reisen</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 22 — المحاضرة الثانية والعشرون · A1.2</div>
+  <h1>المتجر، الطوابق <em>والتخطيط للسفر</em></h1>
+  <p class="hero-sub">مراجعة الماضي وأفعال الداتيف، الأرقام الترتيبية والطوابق، ثم وحدة السفر: man · denn · حروف الجر الزمنية · Wer/Wen/Wem · einpacken</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: PERFEKT + ZEITMARKER ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#3ec0d8,#1c8898)">١</div>
+    <div>
+      <div class="sec-t">مراجعة الماضي والعلامات الزمنية</div>
+      <div class="sec-td">Perfekt &amp; Zeitmarker</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(62,192,216,.06);border:1px solid rgba(62,192,216,.2)">
+    <h4 style="color:#3ec0d8">🗣️ تذكير</h4>
+    <p>في الكلام نستخدم <strong style="color:#3ec0d8">الماضي التام (Perfekt)</strong> لا الماضي البسيط — مساعد في الموقع الثاني + Partizip II في النهاية. هذه الكلمات الزمنية تُشير فوراً للماضي.</p>
+  </div>
+
+  <div class="time-line">
+    <div class="time-item">
+      <div class="time-dot" style="background:#5cd0e0"></div>
+      <div class="time-de">heute</div>
+      <div class="time-ar">اليوم (لما حدث سابقاً اليوم)</div>
+      <div class="time-eg">Ich habe heute Morgen Kaffee getrunken.</div>
+    </div>
+    <div class="time-item">
+      <div class="time-dot" style="background:#3ec0d8"></div>
+      <div class="time-de">gestern</div>
+      <div class="time-ar">البارحة / أمس</div>
+      <div class="time-eg">Gestern habe ich eingekauft.</div>
+    </div>
+    <div class="time-item">
+      <div class="time-dot" style="background:#36aec4"></div>
+      <div class="time-de">vorgestern</div>
+      <div class="time-ar">أول أمس</div>
+      <div class="time-eg">Vorgestern bin ich nach Köln gefahren.</div>
+    </div>
+    <div class="time-item">
+      <div class="time-dot" style="background:#2e9cb0"></div>
+      <div class="time-de">vor drei Tagen</div>
+      <div class="time-ar">قبل ثلاثة أيام</div>
+      <div class="time-eg">Vor drei Tagen habe ich telefoniert.</div>
+    </div>
+    <div class="time-item">
+      <div class="time-dot" style="background:#268a9c"></div>
+      <div class="time-de">letzte Woche</div>
+      <div class="time-ar">الأسبوع الماضي</div>
+      <div class="time-eg">Letzte Woche habe ich gearbeitet.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: DATIV VERBEN IM GESCHÄFT ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6040a0)">٢</div>
+    <div>
+      <div class="sec-t">أفعال الداتيف في المتجر</div>
+      <div class="sec-td">Dativ-Verben im Geschäft</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.2)">
+    <h4 style="color:var(--violet)">📖 القاعدة</h4>
+    <p>هذه الأفعال تفرض حالة <strong style="color:var(--violet)">الداتيف</strong> على الاسم أو الضمير الذي يليها — احفظها كمجموعة لأنها كثيرة الاستخدام في التسوق.</p>
+  </div>
+
+  <div class="dverb-grid">
+    <div class="dverb-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="dverb-head" style="background:rgba(154,133,184,.05)">
+        <div class="dverb-de" style="color:var(--violet)">helfen</div>
+        <div class="dverb-mean">يساعد</div>
+      </div>
+      <div class="dverb-body">
+        <div class="dverb-eg">Kann ich <span class="dt">Ihnen</span> helfen?</div>
+        <div class="dverb-eg-ar">هل أستطيع مساعدة حضرتك؟</div>
+      </div>
+    </div>
+    <div class="dverb-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="dverb-head" style="background:rgba(154,133,184,.05)">
+        <div class="dverb-de" style="color:var(--violet)">stehen</div>
+        <div class="dverb-mean">يليق بـ (المظهر)</div>
+      </div>
+      <div class="dverb-body">
+        <div class="dverb-eg">Grün steht <span class="dt">mir</span> nicht so gut.</div>
+        <div class="dverb-eg-ar">الأخضر لا يليق بي كثيراً</div>
+      </div>
+    </div>
+    <div class="dverb-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="dverb-head" style="background:rgba(154,133,184,.05)">
+        <div class="dverb-de" style="color:var(--violet)">passen</div>
+        <div class="dverb-mean">يناسب (المقاس)</div>
+      </div>
+      <div class="dverb-body">
+        <div class="dverb-eg">Passt <span class="dt">Ihnen</span> der Pullover?</div>
+        <div class="dverb-eg-ar">هل يناسبك البلوفر؟</div>
+      </div>
+    </div>
+    <div class="dverb-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="dverb-head" style="background:rgba(154,133,184,.05)">
+        <div class="dverb-de" style="color:var(--violet)">danken</div>
+        <div class="dverb-mean">يشكر</div>
+      </div>
+      <div class="dverb-body">
+        <div class="dverb-eg">Ich danke <span class="dt">Ihnen</span>.</div>
+        <div class="dverb-eg-ar">أنا أشكر حضرتك</div>
+      </div>
+    </div>
+    <div class="dverb-card" style="border-color:rgba(154,133,184,.22)">
+      <div class="dverb-head" style="background:rgba(154,133,184,.05)">
+        <div class="dverb-de" style="color:var(--violet)">gefallen</div>
+        <div class="dverb-mean">يعجب (الذوق)</div>
+      </div>
+      <div class="dverb-body">
+        <div class="dverb-eg">Wie gefällt <span class="dt">Ihnen</span> der?</div>
+        <div class="dverb-eg-ar">كيف يعجبك هذا؟</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">عبارات أساسية في المتجر</div>
+  <div class="phrase-list">
+    <div class="phrase" style="border-color:rgba(62,192,216,.2)">
+      <div class="phrase-ic">📏</div>
+      <div>
+        <div class="phrase-de" style="color:#3ec0d8">Welche Größe brauchen Sie?</div>
+        <div class="phrase-ar">ما المقاس الذي تحتاجه؟</div>
+      </div>
+    </div>
+    <div class="phrase" style="border-color:rgba(62,192,216,.2)">
+      <div class="phrase-ic">💶</div>
+      <div>
+        <div class="phrase-de" style="color:#3ec0d8">Wie viel kostet er?</div>
+        <div class="phrase-ar">كم ثمنه؟</div>
+      </div>
+    </div>
+    <div class="phrase" style="border-color:rgba(62,192,216,.2)">
+      <div class="phrase-ic">👕</div>
+      <div>
+        <div class="phrase-de" style="color:#3ec0d8">Probieren Sie ihn doch mal an!</div>
+        <div class="phrase-ar">جرّبه / قِسْه!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: STÖCKE / ETAGEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--amber),#a07020)">٣</div>
+    <div>
+      <div class="sec-t">الطوابق والأرقام الترتيبية</div>
+      <div class="sec-td">Stöcke / Etagen &amp; Ordinalzahlen</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--amber-d);border:1px solid rgba(200,152,88,.2)">
+    <h4 style="color:var(--amber)">🏬 التعبير عن الطابق</h4>
+    <p>للتعبير عن طابق نستخدم <strong style="color:var(--amber)">am + الرقم الترتيبي</strong> منتهياً بـ <strong style="color:var(--amber)">-ten</strong>. لاحظ المبنى من الأعلى للأسفل:</p>
+  </div>
+
+  <div class="building">
+    <div class="floor" style="background:rgba(154,133,184,.04)">
+      <div class="floor-num" style="background:rgba(154,133,184,.15);color:var(--violet)">3</div>
+      <div class="floor-info">
+        <div class="floor-de" style="color:var(--violet)">am dritten Stock</div>
+        <div class="floor-ar">في الطابق الثالث</div>
+      </div>
+      <div class="floor-ord">3. → dritten</div>
+    </div>
+    <div class="floor" style="background:rgba(112,149,192,.04)">
+      <div class="floor-num" style="background:rgba(112,149,192,.15);color:var(--sky)">2</div>
+      <div class="floor-info">
+        <div class="floor-de" style="color:var(--sky)">am zweiten Stock</div>
+        <div class="floor-ar">في الطابق الثاني</div>
+      </div>
+      <div class="floor-ord">2. → zweiten</div>
+    </div>
+    <div class="floor" style="background:rgba(62,192,216,.04)">
+      <div class="floor-num" style="background:rgba(62,192,216,.15);color:#3ec0d8">1</div>
+      <div class="floor-info">
+        <div class="floor-de" style="color:#3ec0d8">am ersten Stock</div>
+        <div class="floor-ar">في الطابق الأول</div>
+      </div>
+      <div class="floor-ord">1. → ersten</div>
+    </div>
+    <div class="floor" style="background:rgba(124,168,120,.05)">
+      <div class="floor-num" style="background:rgba(124,168,120,.15);color:var(--green)">EG</div>
+      <div class="floor-info">
+        <div class="floor-de" style="color:var(--green)">Erdgeschoss</div>
+        <div class="floor-ar">الطابق الأرضي</div>
+      </div>
+      <div class="floor-ord">📍 0</div>
+    </div>
+    <div class="floor" style="background:rgba(176,104,112,.05)">
+      <div class="floor-num" style="background:rgba(176,104,112,.15);color:var(--red)">UG</div>
+      <div class="floor-info">
+        <div class="floor-de" style="color:var(--red)">Untergeschoss</div>
+        <div class="floor-ar">التسوية (الطابق السفلي)</div>
+      </div>
+      <div class="floor-ord">⬇ −1</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:22px">أدوات السؤال عن المكان</div>
+  <div class="wo-grid">
+    <div class="wo-card" style="border-color:rgba(62,192,216,.22)">
+      <div class="wo-de">Wo finde ich …?</div>
+      <div class="wo-ar">أين أجد …؟</div>
+    </div>
+    <div class="wo-card" style="border-color:rgba(62,192,216,.22)">
+      <div class="wo-de">Wo kriege ich …?</div>
+      <div class="wo-ar">أين أحصل على …؟</div>
+    </div>
+    <div class="wo-card" style="border-color:rgba(62,192,216,.22)">
+      <div class="wo-de">Wo gibt es …?</div>
+      <div class="wo-ar">أين يوجد …؟</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--red-d);border:1px solid rgba(176,104,112,.2);margin-top:14px">
+    <div class="ni">⚠️</div>
+    <div><p><strong style="color:var(--red)">قاعدة مهمة:</strong> التعبير <span style="font-family:'JetBrains Mono',monospace;color:var(--red)">Es gibt</span> (يوجد) يأتي بعده <strong style="color:var(--red)">حالة Akkusativ دائماً</strong>:<br>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;display:inline-block;margin-top:4px;color:var(--red)">Gibt es hier <strong>einen</strong> Aufzug?</span> &nbsp;<span style="font-size:12px;color:var(--txt-d)">— هل يوجد مصعد هنا؟ (einen = أكوزاتيف)</span></p></div>
+  </div>
+</div>
+
+<!-- ═══ 4: man & denn ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--green),#207840)">٤</div>
+    <div>
+      <div class="sec-t">الضمير man وأداة الربط denn</div>
+      <div class="sec-td">Das Pronomen „man“ &amp; Konnektor „denn“</div>
+    </div>
+  </div>
+
+  <!-- man -->
+  <div class="concept-card" style="border-color:rgba(124,168,120,.25)">
+    <div class="concept-head" style="background:rgba(124,168,120,.05)">
+      <div class="concept-word" style="color:var(--green)">man</div>
+      <div class="concept-mean">المرء / الشخص / الواحد (للعموم)</div>
+    </div>
+    <div class="concept-body">
+      <div class="concept-desc">يُستخدم للحديث عن <strong style="color:var(--green)">شيء عام</strong> لا يخص شخصاً بعينه. يُصرّف مع الفعل مثل ضمير الغائب المفرد (er/es/sie).</div>
+      <div class="concept-eg" style="background:rgba(124,168,120,.07);color:var(--green)">Hier <strong>kann man</strong> gut einkaufen.</div>
+      <div class="concept-eg-ar">يمكن للمرء التسوّق هنا جيداً — man kann مثل er kann</div>
+      <div class="concept-eg" style="background:rgba(124,168,120,.07);color:var(--green)">Wie sagt <strong>man</strong> das auf Deutsch?</div>
+      <div class="concept-eg-ar">كيف يُقال هذا بالألمانية؟</div>
+    </div>
+  </div>
+
+  <!-- denn -->
+  <div class="concept-card" style="border-color:rgba(62,192,216,.25)">
+    <div class="concept-head" style="background:rgba(62,192,216,.05)">
+      <div class="concept-word" style="color:#3ec0d8">denn</div>
+      <div class="concept-mean">لأنّ (لذكر السبب)</div>
+    </div>
+    <div class="concept-body">
+      <div class="concept-desc">أداة ربط تذكر <strong style="color:#3ec0d8">السبب (Grund)</strong>. ميزتها أنها في <strong style="color:#3ec0d8">"الموقع صفر"</strong> — لا تغيّر ترتيب الجملة، فيبقى الفعل في موقعه الثاني الطبيعي.</div>
+      <div class="concept-eg" style="background:rgba(62,192,216,.07);color:#3ec0d8">Ich bleibe zu Hause, <strong>denn</strong> ich <strong>bin</strong> krank.</div>
+      <div class="concept-eg-ar">أبقى في البيت، لأنني مريض — الفعل bin في موقعه الثاني الطبيعي</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:18px">denn مقابل weil — موقع الفعل</div>
+  <div class="posbox">
+    <div class="pos-card pos-denn" style="background:rgba(62,192,216,.07);border:1px solid rgba(62,192,216,.25)">
+      <div class="pos-name" style="color:#3ec0d8">denn</div>
+      <div class="pos-eg" style="color:#3ec0d8">…, denn ich <span class="vb" style="background:rgba(62,192,216,.18)">bin</span> müde.</div>
+      <div class="pos-note">الفعل يبقى في <b style="color:#3ec0d8">الموقع الثاني</b> (ترتيب عادي)</div>
+    </div>
+    <div class="pos-card pos-weil" style="background:rgba(154,133,184,.07);border:1px solid rgba(154,133,184,.25)">
+      <div class="pos-name" style="color:var(--violet)">weil <span style="font-size:11px;color:var(--txt-d)">(لاحقاً)</span></div>
+      <div class="pos-eg" style="color:var(--violet)">…, weil ich müde <span class="vb" style="background:rgba(154,133,184,.18)">bin</span>.</div>
+      <div class="pos-note">الفعل يُرسَل إلى <b style="color:var(--violet)">آخر الجملة</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: TEMPORALE PRÄPOSITIONEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3060b0)">٥</div>
+    <div>
+      <div class="sec-t">حروف الجر الزمنية مع الداتيف</div>
+      <div class="sec-td">Temporale Präpositionen + Dativ</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.18)">
+    <h4 style="color:var(--sky)">⏳ قاعدة موحّدة</h4>
+    <p>كل هذه الحروف عند الدلالة على <strong style="color:var(--sky)">الوقت</strong> تأخذ بعدها <strong style="color:var(--sky)">حالة الداتيف</strong> — قاعدة واحدة تجمعها كلها.</p>
+  </div>
+
+  <div class="tprep-grid">
+    <div class="tprep-card">
+      <div class="tprep-word">ab</div>
+      <div class="tprep-mean">ابتداءً من</div>
+      <div class="tprep-eg">ab dem Moment</div>
+    </div>
+    <div class="tprep-card">
+      <div class="tprep-word">an</div>
+      <div class="tprep-mean">مع الأيام</div>
+      <div class="tprep-eg">am Montag</div>
+    </div>
+    <div class="tprep-card">
+      <div class="tprep-word">in</div>
+      <div class="tprep-mean">مع الشهور والفصول</div>
+      <div class="tprep-eg">im August</div>
+    </div>
+    <div class="tprep-card">
+      <div class="tprep-word">nach</div>
+      <div class="tprep-mean">بعد</div>
+      <div class="tprep-eg">nach dem Urlaub</div>
+    </div>
+    <div class="tprep-card">
+      <div class="tprep-word">seit</div>
+      <div class="tprep-mean">منذ</div>
+      <div class="tprep-eg">seit drei Tagen</div>
+    </div>
+    <div class="tprep-card">
+      <div class="tprep-word">vor</div>
+      <div class="tprep-mean">قبل</div>
+      <div class="tprep-eg">vor der Reise</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(200,152,88,.18);margin-top:14px">
+    <div class="ni">💡</div>
+    <div><p><strong style="color:var(--amber)">تذكّر الاختصارات:</strong> an + dem = <span style="font-family:'JetBrains Mono',monospace;color:var(--amber)">am</span> · in + dem = <span style="font-family:'JetBrains Mono',monospace;color:var(--amber)">im</span> — لهذا نقول am Montag وim August.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 6: WER / WEN / WEM ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#3ec0d8,#1c8898)">٦</div>
+    <div>
+      <div class="sec-t">أدوات السؤال عن الأشخاص</div>
+      <div class="sec-td">Wer / Wen / Wem</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(62,192,216,.06);border:1px solid rgba(62,192,216,.2)">
+    <h4 style="color:#3ec0d8">👥 أداة واحدة تتغيّر بالحالة</h4>
+    <p>عند السؤال عن شخص، تتغيّر الأداة حسب الحالة الإعرابية — تماماً كما تتغيّر der/den/dem.</p>
+  </div>
+
+  <div class="wfrage-grid">
+    <div class="wfrage-card" style="background:rgba(124,168,120,.07);border:1px solid rgba(124,168,120,.25)">
+      <span style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green)"></span>
+      <div class="wfrage-w" style="color:var(--green)">Wer?</div>
+      <div class="wfrage-case" style="color:var(--green)">Nominativ — الرفع</div>
+      <div class="wfrage-ar">مَن؟ (الفاعل)</div>
+      <div class="wfrage-eg" style="background:rgba(124,168,120,.1);color:var(--green)">Wer kommt mit?<br><span style="color:var(--txt-d)">من سيأتي معنا؟</span></div>
+    </div>
+    <div class="wfrage-card" style="background:rgba(200,152,88,.07);border:1px solid rgba(200,152,88,.25)">
+      <span style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--amber)"></span>
+      <div class="wfrage-w" style="color:var(--amber)">Wen?</div>
+      <div class="wfrage-case" style="color:var(--amber)">Akkusativ — النصب</div>
+      <div class="wfrage-ar">مَن؟ (المفعول به)</div>
+      <div class="wfrage-eg" style="background:rgba(200,152,88,.1);color:var(--amber)">Wen besuchst du?<br><span style="color:var(--txt-d)">من ستزور؟</span></div>
+    </div>
+    <div class="wfrage-card" style="background:rgba(62,192,216,.07);border:1px solid rgba(62,192,216,.25)">
+      <span style="position:absolute;top:0;left:0;right:0;height:3px;background:#3ec0d8"></span>
+      <div class="wfrage-w" style="color:#3ec0d8">Wem?</div>
+      <div class="wfrage-case" style="color:#3ec0d8">Dativ — الجر</div>
+      <div class="wfrage-ar">لِمَن؟ / مع مَن؟</div>
+      <div class="wfrage-eg" style="background:rgba(62,192,216,.1);color:#3ec0d8">Mit wem gehst du?<br><span style="color:var(--txt-d)">مع من ستذهب؟</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 7: KOFFER PACKEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٧</div>
+    <div>
+      <div class="sec-t">الاستعداد للسفر</div>
+      <div class="sec-td">Koffer packen — einpacken</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--coral-d);border:1px solid rgba(196,122,90,.22)">
+    <h4 style="color:var(--coral)">🧳 الفعل المنفصل einpacken</h4>
+    <p>einpacken (يوضّب / يحزم) فعل منفصل: تذهب <strong style="color:var(--coral)">ein</strong> إلى نهاية الجملة، والأشياء التي توضّبها تكون في <strong style="color:#3ec0d8">حالة Akkusativ</strong>.</p>
+  </div>
+
+  <div class="pack-card">
+    <div class="pack-split">
+      <div class="pack-piece" style="background:rgba(196,122,90,.12);color:var(--coral)">ein</div>
+      <div class="pack-op">+</div>
+      <div class="pack-piece" style="background:rgba(255,255,255,.04);color:var(--txt)">packen</div>
+      <div class="pack-op">→</div>
+      <div class="pack-piece" style="background:rgba(62,192,216,.12);color:#3ec0d8">ich packe … ein</div>
+    </div>
+    <div class="pack-formula">
+      Ich fahre in Urlaub und packe <span class="ak">[Akkusativ]</span> ein.<br>
+      <span style="color:var(--txt-d);font-size:12px">مثال: Ich packe <span class="ak">zwei Hemden</span> und <span class="ak">eine Hose</span> ein. — أوضّب قميصين وبنطالاً</span>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">مفردات السفر</div>
+  <div class="travel-grid">
+    <div class="travel-card">
+      <div class="travel-ic">🧳</div>
+      <div>
+        <div class="travel-de" style="color:#3ec0d8">der Koffer</div>
+        <div class="travel-ar">حقيبة السفر</div>
+      </div>
+    </div>
+    <div class="travel-card">
+      <div class="travel-ic">🩱</div>
+      <div>
+        <div class="travel-de" style="color:#3ec0d8">die Badesachen</div>
+        <div class="travel-ar">ملابس السباحة</div>
+      </div>
+    </div>
+    <div class="travel-card">
+      <div class="travel-ic">📕</div>
+      <div>
+        <div class="travel-de" style="color:#3ec0d8">der Reiseführer</div>
+        <div class="travel-ar">الدليل السياحي</div>
+      </div>
+    </div>
+    <div class="travel-card">
+      <div class="travel-ic">☂️</div>
+      <div>
+        <div class="travel-de" style="color:#3ec0d8">der Regenschirm</div>
+        <div class="travel-ar">المظلّة</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:rgba(62,192,216,.06);border:1px solid rgba(62,192,216,.2);margin-top:16px">
+    <div class="ni">🔗</div>
+    <div><p><strong style="color:#3ec0d8">نصيحة الأستاذ:</strong> اللغة مترابطة — قواعد المستوى الأول (A1) تظهر في امتحانات المستويات المتقدمة. لا تنسَ ما تعلّمته، فكل قاعدة تبني على ما قبلها.</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
