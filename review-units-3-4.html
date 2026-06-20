@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدتان ٣ و ٤ — ملف تفاعلي شامل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;700;800&family=Noto+Naskh+Arabic:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0b10; --card:#14161f; --card2:#0f1118; --bdr:#252837;
+  --txt:#ece6da; --txt-d:#8a857a; --txt-f:#5f5b52;
+  --blue:#7095c0; --green:#7ca878; --gold:#c9a154; --violet:#9a85b8;
+  --red:#b06870; --orange:#b88458; --cyan:#7aa8ac; --rose:#c898a8; --lime:#a8b478; --teal:#6fa494;
+  --f-ar:'Noto Kufi Arabic','Tajawal','Segoe UI',Tahoma,sans-serif;
+  --f-naskh:'Noto Naskh Arabic','Noto Kufi Arabic',serif;
+  --f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:var(--f-ar);line-height:1.7;
+  background-image:radial-gradient(800px 500px at 85% 0%,rgba(201,161,84,.05),transparent 70%),radial-gradient(700px 600px at 10% 10%,rgba(184,120,74,.03),transparent 70%);}
+.w{max-width:880px;margin:0 auto;padding:18px 18px 80px}
+
+/* ─── shared site chrome (topbar + footer) ─── */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 18px;background:rgba(10,11,16,.82);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid rgba(201,161,84,.12)}
+.topbar-home{font-family:var(--f-ar);font-size:13px;font-weight:700;color:#c9a154;text-decoration:none;padding:8px 16px;border-radius:10px;border:1px solid rgba(201,161,84,.25);background:linear-gradient(135deg,rgba(201,161,84,.08),rgba(201,161,84,.03));transition:all .3s ease;white-space:nowrap}
+.topbar-home:hover{background:linear-gradient(135deg,rgba(201,161,84,.15),rgba(201,161,84,.07));border-color:rgba(201,161,84,.45);transform:translateY(-1px)}
+.topbar-title{font-family:var(--f-ar);font-size:13px;font-weight:700;color:#c9a154;text-align:left;line-height:1.4}
+.page-footer{text-align:center;padding:34px 20px 10px;margin-top:24px;border-top:1px solid var(--bdr)}
+.pf-credit{font-family:var(--f-ar);font-size:14px;font-weight:700;color:var(--txt-d);margin-bottom:12px}
+.pf-back{display:inline-block;font-family:var(--f-ar);font-size:14px;font-weight:700;color:#7ca878;text-decoration:none;padding:8px 20px;border-radius:10px;border:1px solid rgba(124,168,120,.25);background:rgba(124,168,120,.07);transition:all .25s ease}
+.pf-back:hover{background:rgba(124,168,120,.14);transform:translateY(-2px)}
+.prog{position:sticky;top:0;z-index:50;background:rgba(10,11,16,.86);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--bdr);padding:12px 18px;display:flex;align-items:center;gap:14px}
+.prog .pinfo{display:flex;gap:18px;align-items:baseline;font-size:13px;color:var(--txt-d);white-space:nowrap}
+.prog .pinfo b{color:var(--txt);font-family:var(--f-mono);font-size:16px;font-weight:700}
+.ptrack{flex:1;height:9px;background:var(--card);border:1px solid var(--bdr);border-radius:99px;overflow:hidden}
+#pfill{height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--orange));transition:width .5s ease}
+.hero{text-align:center;padding:42px 14px 30px}
+.hero .pill{display:inline-block;font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.5px;
+  border:1px solid rgba(111,164,148,.3);border-radius:99px;padding:5px 14px;margin-bottom:16px}
+.hero h1{font-size:30px;font-weight:800;line-height:1.3}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p{color:var(--txt-d);font-size:15px;margin-top:10px;max-width:560px;margin-inline:auto}
+.hero .sep{width:60px;height:3px;background:linear-gradient(90deg,var(--teal),var(--orange));border-radius:3px;margin:22px auto 0}
+.udiv{display:flex;align-items:center;gap:14px;margin:38px 0 18px}
+.udiv .ub{font-size:13px;font-weight:800;padding:7px 16px;border-radius:10px}
+.udiv .line{flex:1;height:1px;background:var(--bdr)}
+.sec{background:var(--card);border:1px solid var(--bdr);border-radius:18px;padding:22px 22px 24px;margin-bottom:16px}
+.sec-h{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+.sec-n{width:34px;height:34px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-mono);font-weight:700;font-size:15px;color:#0a0b10}
+.sec-t{font-size:19px;font-weight:800}
+.sec-td{font-family:var(--f-mono);font-size:12px;color:var(--txt-d)}
+.de{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;display:inline-block}
+h4.blk{font-size:15px;font-weight:700;margin:18px 0 10px}
+.rule{border-radius:14px;padding:15px 18px;margin:14px 0;font-size:14.5px;line-height:1.8}
+.rule h5{font-size:14px;font-weight:700;margin-bottom:5px}
+.tw{overflow-x:auto;border-radius:12px;border:1px solid var(--bdr);margin:14px 0}
+table{width:100%;border-collapse:collapse;direction:ltr;text-align:center;min-width:340px}
+th{padding:11px 12px;font-family:var(--f-ar);font-size:13px;font-weight:700;border-bottom:2px solid var(--bdr);background:var(--card2)}
+td{padding:10px 12px;font-size:14px;border-bottom:1px solid rgba(37,40,55,.6)}
+tr:last-child td{border-bottom:none}
+td.pn,td.lbl{font-family:var(--f-mono);font-weight:700}
+.mono{font-family:var(--f-mono)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin:12px 0}
+.gi{background:var(--card2);border:1px solid var(--bdr);border-radius:11px;padding:11px 13px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.gi .d{font-family:var(--f-mono);font-size:14px;font-weight:600;direction:ltr}
+.gi .a{font-size:13px;color:var(--txt-d)}
+.gi .p{font-size:12px;color:var(--txt-f);font-family:var(--f-naskh)}
+.gi .em{font-size:18px}
+.a4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.ac{border-radius:13px;padding:16px 10px;text-align:center}
+.ac .art{font-family:var(--f-mono);font-size:24px;font-weight:700}
+.ac .gen{font-size:12px;font-weight:700;margin-top:3px}
+.ac .ex{font-family:var(--f-mono);font-size:11px;color:var(--txt-d);direction:ltr;margin-top:5px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.duo .box{border-radius:14px;padding:16px}
+.duo .box h5{font-size:14px;font-weight:700;margin-bottom:6px}
+.duo .box .kw{font-family:var(--f-mono);font-size:18px;font-weight:700;margin:4px 0}
+.duo .box .ex{font-family:var(--f-mono);font-size:12.5px;color:var(--txt-d);direction:ltr;background:rgba(255,255,255,.03);border-radius:8px;padding:6px 10px;margin-top:8px}
+.exl{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(37,40,55,.5)}
+.exl:last-child{border-bottom:none}
+.exl .tag{font-size:11px;font-weight:700;border-radius:7px;padding:3px 9px;white-space:nowrap;flex-shrink:0}
+.exl .dd{font-family:var(--f-mono);font-size:14.5px;direction:ltr;display:block}
+.exl .aa{font-size:13px;color:var(--txt-d);display:block;margin-top:2px}
+/* engine */
+.ex-wrap{background:var(--card2);border:1px solid var(--bdr);border-radius:14px;padding:16px 16px 18px;margin:16px 0 4px}
+.ex-label{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--gold);
+  background:rgba(201,161,84,.1);border:1px solid rgba(201,161,84,.22);border-radius:99px;padding:4px 12px;margin-bottom:12px}
+.ex-q{font-size:15px;line-height:1.7;margin-bottom:12px}
+.opt{display:flex;align-items:center;gap:9px;width:100%;text-align:right;justify-content:flex-start;
+  background:var(--card);border:1px solid var(--bdr);border-radius:11px;padding:11px 14px;margin:7px 0;
+  color:var(--txt);font-family:var(--f-ar);font-size:15px;cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover:not(:disabled){border-color:var(--txt-f)}
+.opt:disabled{cursor:default}
+.okb{background:rgba(124,168,120,.12)!important;border-color:var(--green)!important;color:#a6c8a2!important}
+.nob{background:rgba(176,104,112,.12)!important;border-color:var(--red)!important;color:#d2a2a8!important}
+.selref{outline:2px solid var(--blue);outline-offset:1px}
+.fin{width:100%;background:var(--card);border:1.5px solid var(--bdr);border-radius:11px;padding:11px 14px;
+  color:var(--txt);font-family:var(--f-mono);font-size:15px;direction:ltr;text-align:left;outline:none}
+.fin:focus{border-color:var(--blue)}
+.check{margin-top:11px;background:var(--blue);color:#0a0b10;border:none;border-radius:11px;padding:10px 22px;
+  font-family:var(--f-ar);font-weight:700;font-size:14.5px;cursor:pointer}
+.check:disabled{opacity:.5;cursor:default}
+.pool,.ans{display:flex;flex-wrap:wrap;gap:7px}
+.ans{min-height:48px;border:1.5px dashed var(--bdr);border-radius:11px;padding:9px;align-items:center;direction:ltr;margin-bottom:9px}
+.ans:empty::before{content:'اضغط الكلمات بالترتيب…';color:var(--txt-f);font-family:var(--f-ar);font-size:13px;direction:rtl}
+.chip{font-family:var(--f-mono);direction:ltr;font-size:15px;background:var(--card);border:1px solid var(--bdr);
+  border-radius:9px;padding:8px 13px;color:var(--txt);cursor:pointer}
+.chip:disabled{cursor:default}
+.mcol{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mc-col{display:flex;flex-direction:column;gap:8px}
+.m-l,.m-r{background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:11px;color:var(--txt);
+  font-family:var(--f-mono);direction:ltr;font-size:15px;cursor:pointer;text-align:center}
+.m-l:disabled,.m-r:disabled{cursor:default}
+.fb{margin-top:12px;border-radius:11px;padding:12px 14px;font-size:14px;line-height:1.75}
+.fb.OK{background:rgba(124,168,120,.08);border:1px solid rgba(124,168,120,.25)}
+.fb.NO{background:rgba(176,104,112,.07);border:1px solid rgba(176,104,112,.25)}
+.fb-h{font-weight:700;margin-bottom:5px}
+.t-ok{color:var(--green)} .t-no{color:var(--red)}
+.fb-x{color:#c8c4ba}
+.fb-sent{margin-top:6px;color:#c8c4ba}
+.pron{display:inline-block;margin-top:8px;font-size:13px;font-family:var(--f-naskh);
+  background:rgba(112,149,192,.1);border:1px solid rgba(112,149,192,.22);color:#9bb4d6;border-radius:8px;padding:3px 11px}
+/* dialogue */
+.dlg{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.dline{border:1px solid var(--bdr);border-radius:12px;padding:12px 14px;cursor:pointer;background:var(--card2);transition:border-color .15s}
+.dline:hover{border-color:var(--txt-f)}
+.dline .who{font-size:11px;font-weight:700;margin-bottom:4px}
+.dline .dde{font-family:var(--f-mono);font-size:15px;direction:ltr}
+.dline .dar{display:none;font-size:13.5px;color:var(--txt-d);margin-top:6px}
+.dline .dpr{display:none;font-size:12.5px;color:var(--txt-f);font-family:var(--f-naskh);margin-top:3px}
+.dline.show .dar,.dline.show .dpr{display:block}
+.dhint{font-size:12px;color:var(--txt-f);text-align:center;margin-bottom:8px}
+.finale{display:none;border-radius:16px;padding:20px;margin-top:8px;text-align:center}
+.finale h3{font-size:20px;font-weight:800;margin-bottom:6px}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s}
+.rv.v{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}#pfill{transition:none}}
+@media(max-width:620px){
+  .w{padding:14px 13px 70px} .hero h1{font-size:24px} .sec{padding:18px 15px 20px} .sec-t{font-size:17px}
+  .a4{grid-template-columns:repeat(2,1fr)} .duo{grid-template-columns:1fr} .grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title">مراجعة الوحدتين ٣ و ٤ — Wiederholung 3 &amp; 4</span>
+</nav>
+
+<div class="prog">
+  <div class="pinfo"><span>أُنجِز <b id="pdone">٠</b>/<span id="ptot">٠</span></span><span>صح <b id="pscore">٠</b></span></div>
+  <div class="ptrack"><div id="pfill"></div></div>
+</div>
+
+<div class="w">
+
+  <div class="hero">
+    <div class="pill">EINHEIT 3 + 4 · مرجع تفاعلي</div>
+    <h1>كل تفاصيل <em>الوحدتين ٣ و ٤</em></h1>
+    <p>الهوايات والطعام والمفعول به (Akkusativ) وضمائر الملكية · الوقت والأفعال الناقصة والروتين اليومي. شرح + ٣٥ تمرين + محادثة كاملة.</p>
+    <div class="sep"></div>
+  </div>
+
+  <!-- ════════════════ الوحدة الثالثة ════════════════ -->
+  <div class="udiv"><span class="ub" style="background:rgba(111,164,148,.12);color:#8ec8b8">الوحدة الثالثة · الهوايات والطعام والمفعول به</span><span class="line"></span></div>
+
+  <!-- 1 الهوايات -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#a06a80)">١</div><div><div class="sec-t">الأفعال والهوايات</div><div class="sec-td">Verben &amp; Hobbys</div></div></div>
+    <div class="grid">
+      <div class="gi"><span class="em">⚽</span><span class="d">spielen</span><span class="a">يلعب/يعزف</span></div>
+      <div class="gi"><span class="em">🏊</span><span class="d">schwimmen</span><span class="a">يسبح</span></div>
+      <div class="gi"><span class="em">👨‍🍳</span><span class="d">kochen</span><span class="a">يطبخ</span></div>
+      <div class="gi"><span class="em">🏃</span><span class="d">joggen</span><span class="a">يتريّض</span></div>
+      <div class="gi"><span class="em">💃</span><span class="d">tanzen</span><span class="a">يرقص</span></div>
+      <div class="gi"><span class="em">🎤</span><span class="d">singen</span><span class="a">يغنّي</span></div>
+      <div class="gi"><span class="em">📖</span><span class="d">lesen</span><span class="a">يقرأ</span></div>
+      <div class="gi"><span class="em">✈️</span><span class="d">reisen</span><span class="a">يسافر</span></div>
+      <div class="gi"><span class="em">📸</span><span class="d">fotografieren</span><span class="a">يصوّر</span></div>
+      <div class="gi"><span class="em">🎵</span><span class="d">Musik hören</span><span class="a">يسمع موسيقى</span></div>
+      <div class="gi"><span class="em">🎬</span><span class="d">ins Kino gehen</span><span class="a">يذهب للسينما</span></div>
+      <div class="gi"><span class="em">📺</span><span class="d">fernsehen</span><span class="a">يشاهد التلفاز</span></div>
+    </div>
+    <div data-ex="hob_match"></div>
+  </div>
+
+  <!-- 2 gern -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--lime),#788840)">٢</div><div><div class="sec-t">التعبير عن التفضيل</div><div class="sec-td">gern &amp; nicht gern</div></div></div>
+    <div class="rule" style="background:rgba(168,180,120,.06);border:1px solid rgba(168,180,120,.2)">
+      <h5 style="color:var(--lime)">القاعدة</h5>
+      <p>نضيف كلمة <span class="de">gern</span> (بسرور) <b>بعد الفعل</b> للتعبير عن الحب. وللنفي نستخدم <span class="de">nicht gern</span>.<br>
+      السؤال: <span class="de">Was machst du gern?</span> (ماذا تحب أن تفعل؟)</p>
+    </div>
+    <div class="duo">
+      <div class="box" style="background:rgba(124,168,120,.05);border:1px solid rgba(124,168,120,.2)">
+        <h5 style="color:var(--green)">❤️ الحب</h5>
+        <div class="kw" style="color:var(--green)"><span class="de">Ich koche gern.</span></div>
+        <div style="font-size:13px;color:var(--txt-d)">أطبخ بسرور</div>
+      </div>
+      <div class="box" style="background:rgba(176,104,112,.05);border:1px solid rgba(176,104,112,.2)">
+        <h5 style="color:var(--red)">🚫 النفي</h5>
+        <div class="kw" style="color:var(--red)"><span class="de">Ich tanze nicht gern.</span></div>
+        <div style="font-size:13px;color:var(--txt-d)">لا أحب الرقص</div>
+      </div>
+    </div>
+    <div data-ex="gern_order"></div>
+    <div data-ex="gern_mc"></div>
+  </div>
+
+  <!-- 3 أيام الأسبوع + شاذة -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#2a7060)">٣</div><div><div class="sec-t">أيام الأسبوع + أفعال شاذة الجذر</div><div class="sec-td">Wochentage &amp; Vokalwechsel</div></div></div>
+    <div class="rule" style="background:rgba(111,164,148,.06);border:1px solid rgba(111,164,148,.2)">
+      <p>أيام الأسبوع تأتي دائماً مع حرف الجر <span class="de">am</span> (مثل: <span class="de">am Montag</span> = يوم الاثنين).</p>
+    </div>
+    <div class="grid">
+      <div class="gi"><span class="d">am Montag</span><span class="a">الاثنين</span></div>
+      <div class="gi"><span class="d">am Dienstag</span><span class="a">الثلاثاء</span></div>
+      <div class="gi"><span class="d">am Mittwoch</span><span class="a">الأربعاء</span></div>
+      <div class="gi"><span class="d">am Donnerstag</span><span class="a">الخميس</span></div>
+      <div class="gi"><span class="d">am Freitag</span><span class="a">الجمعة</span></div>
+      <div class="gi"><span class="d">am Samstag</span><span class="a">السبت</span></div>
+      <div class="gi"><span class="d">am Sonntag</span><span class="a">الأحد</span></div>
+    </div>
+    <h4 class="blk" style="color:var(--gold)">أفعال تغيّر حرف العلّة مع du و er/sie/es</h4>
+    <div class="tw"><table>
+      <thead><tr><th>الفعل</th><th>المعنى</th><th>ich</th><th>du</th><th>er/sie/es</th></tr></thead>
+      <tbody>
+        <tr><td class="pn">lesen</td><td>يقرأ</td><td class="mono">lese</td><td class="mono" style="color:var(--gold)">liest</td><td class="mono" style="color:var(--gold)">liest</td></tr>
+        <tr><td class="pn">sprechen</td><td>يتحدث</td><td class="mono">spreche</td><td class="mono" style="color:var(--gold)">sprichst</td><td class="mono" style="color:var(--gold)">spricht</td></tr>
+        <tr><td class="pn">essen</td><td>يأكل</td><td class="mono">esse</td><td class="mono" style="color:var(--gold)">isst</td><td class="mono" style="color:var(--gold)">isst</td></tr>
+        <tr><td class="pn">fahren</td><td>يقود/يذهب</td><td class="mono">fahre</td><td class="mono" style="color:var(--gold)">fährst</td><td class="mono" style="color:var(--gold)">fährt</td></tr>
+        <tr><td class="pn">nehmen</td><td>يأخذ</td><td class="mono">nehme</td><td class="mono" style="color:var(--gold)">nimmst</td><td class="mono" style="color:var(--gold)">nimmt</td></tr>
+      </tbody>
+    </table></div>
+    <div data-ex="days_fill"></div>
+    <div data-ex="irr_lesen"></div>
+    <div data-ex="irr_fahren"></div>
+  </div>
+
+  <!-- 4 الطعام والتسوق -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--orange),#8c5e34)">٤</div><div><div class="sec-t">الطعام والتسوق</div><div class="sec-td">Essen &amp; Einkaufen</div></div></div>
+    <div class="grid">
+      <div class="gi"><span class="em">🍞</span><span class="d">das Brot</span><span class="a">الخبز</span></div>
+      <div class="gi"><span class="em">🥛</span><span class="d">die Milch</span><span class="a">الحليب</span></div>
+      <div class="gi"><span class="em">🍎</span><span class="d">der Apfel</span><span class="a">التفاحة</span></div>
+      <div class="gi"><span class="em">🥚</span><span class="d">das Ei</span><span class="a">البيضة</span></div>
+      <div class="gi"><span class="em">🧀</span><span class="d">der Käse</span><span class="a">الجبنة</span></div>
+      <div class="gi"><span class="em">🍅</span><span class="d">die Tomate</span><span class="a">البندورة</span></div>
+      <div class="gi"><span class="em">🥗</span><span class="d">der Salat</span><span class="a">السلطة</span></div>
+      <div class="gi"><span class="em">☕</span><span class="d">der Kaffee</span><span class="a">القهوة</span></div>
+    </div>
+    <h4 class="blk" style="color:var(--teal)">أماكن التسوق</h4>
+    <div class="grid">
+      <div class="gi"><span class="em">🛒</span><span class="d">der Supermarkt</span><span class="a">سوبر ماركت</span></div>
+      <div class="gi"><span class="em">🥖</span><span class="d">die Bäckerei</span><span class="a">المخبز</span></div>
+      <div class="gi"><span class="em">🥩</span><span class="d">die Metzgerei</span><span class="a">الملحمة</span></div>
+      <div class="gi"><span class="em">🥬</span><span class="d">der Markt</span><span class="a">سوق الخضار</span></div>
+    </div>
+    <div class="rule" style="background:rgba(111,164,148,.06);border:1px solid rgba(111,164,148,.2)">
+      <h5 style="color:var(--teal)">🔑 قاعدة</h5>
+      <p>أي كلمة تنتهي بـ <span class="de">-ei</span> أداتها دائماً <span class="de">die</span> (die Bäckerei, die Metzgerei).</p>
+    </div>
+    <div data-ex="food_match"></div>
+    <div data-ex="shop_mc"></div>
+  </div>
+
+  <!-- 5 الاكوزاتيف -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--red),#8a4850)">٥</div><div><div class="sec-t">حالة المفعول به (Akkusativ)</div><div class="sec-td">Der Akkusativ</div></div></div>
+    <div class="rule" style="background:rgba(176,104,112,.06);border:1px solid rgba(176,104,112,.2)">
+      <h5 style="color:var(--red)">📐 ما هي؟</h5>
+      <p>هي حالة الاسم عندما يكون <b>مفعولاً به</b> (وقع عليه فعل الفاعل). <b style="color:var(--red)">المذكر فقط هو الذي يتغيّر</b> — الباقي يبقى كما هو!</p>
+    </div>
+    <div class="tw"><table>
+      <thead><tr><th>الحالة</th><th style="color:var(--blue)">مذكر</th><th style="color:var(--green)">محايد</th><th style="color:var(--red)">مؤنث</th><th style="color:var(--violet)">جمع</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl" style="color:var(--gold)">Nominativ (رفع)</td><td class="mono" style="color:var(--blue)">der / ein</td><td class="mono" style="color:var(--green)">das / ein</td><td class="mono" style="color:var(--red)">die / eine</td><td class="mono" style="color:var(--violet)">die</td></tr>
+        <tr><td class="lbl" style="color:var(--red)">Akkusativ (نصب)</td><td class="mono" style="color:var(--red)">den / einen ⚡</td><td class="mono" style="color:var(--green)">das / ein ✓</td><td class="mono" style="color:var(--red)">die / eine ✓</td><td class="mono" style="color:var(--violet)">die ✓</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rule" style="background:rgba(184,132,88,.06);border:1px solid rgba(184,132,88,.2)">
+      <p>للنفي في النصب (مذكر): <span class="de">kein → keinen</span>.<br>
+      <span class="de">der → den</span> · <span class="de">ein → einen</span> · <span class="de">kein → keinen</span> (المذكر فقط).</p>
+    </div>
+    <h4 class="blk" style="color:var(--red)">أفعال تجرّ المفعول به</h4>
+    <div class="grid">
+      <div class="gi"><span class="d">essen</span><span class="a">يأكل</span></div>
+      <div class="gi"><span class="d">trinken</span><span class="a">يشرب</span></div>
+      <div class="gi"><span class="d">kaufen</span><span class="a">يشتري</span></div>
+      <div class="gi"><span class="d">brauchen</span><span class="a">يحتاج</span></div>
+      <div class="gi"><span class="d">haben</span><span class="a">يملك</span></div>
+      <div class="gi"><span class="d">nehmen</span><span class="a">يأخذ</span></div>
+      <div class="gi"><span class="d">finden</span><span class="a">يجد</span></div>
+      <div class="gi"><span class="d">kochen</span><span class="a">يطبخ</span></div>
+    </div>
+    <div style="margin-top:6px">
+      <div class="exl"><span class="tag" style="background:rgba(176,104,112,.12);color:#d2a2a8">مذكر</span><span><span class="dd">Ich kaufe einen Apfel.</span><span class="aa">أشتري تفاحة (der Apfel ← einen)</span></span></div>
+      <div class="exl"><span class="tag" style="background:rgba(176,104,112,.12);color:#d2a2a8">نفي مذكر</span><span><span class="dd">Wir haben keinen Käse.</span><span class="aa">ليس لدينا جبنة (kein ← keinen)</span></span></div>
+      <div class="exl"><span class="tag" style="background:rgba(124,168,120,.12);color:#a6c8a2">مؤنث ثابت</span><span><span class="dd">Ich esse eine Tomate.</span><span class="aa">آكل بندورة (لم تتغيّر)</span></span></div>
+    </div>
+    <div data-ex="akk_den"></div>
+    <div data-ex="akk_kaufen"></div>
+    <div data-ex="akk_keinen"></div>
+    <div data-ex="akk_order"></div>
+    <div data-ex="akk_tf"></div>
+  </div>
+
+  <!-- 6 ضمائر الملكية -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6a55a0)">٦</div><div><div class="sec-t">ضمائر الملكية</div><div class="sec-td">Possessivartikel</div></div></div>
+    <div class="tw"><table>
+      <thead><tr><th>الضمير</th><th>الملكية</th><th>المعنى</th><th>مثال</th></tr></thead>
+      <tbody>
+        <tr><td class="pn">ich</td><td class="mono" style="color:var(--violet)">mein</td><td>ـي</td><td class="mono">mein Vater</td></tr>
+        <tr><td class="pn">du</td><td class="mono" style="color:var(--violet)">dein</td><td>ـك</td><td class="mono">dein Buch</td></tr>
+        <tr><td class="pn">er/es</td><td class="mono" style="color:var(--violet)">sein</td><td>ـه</td><td class="mono">sein Auto</td></tr>
+        <tr><td class="pn">sie (هي)</td><td class="mono" style="color:var(--violet)">ihr</td><td>ـها</td><td class="mono">ihr Mann</td></tr>
+        <tr><td class="pn">wir</td><td class="mono" style="color:var(--violet)">unser</td><td>ـنا</td><td class="mono">unser Haus</td></tr>
+        <tr><td class="pn">Sie</td><td class="mono" style="color:var(--violet)">Ihr</td><td>ـكم (رسمي)</td><td class="mono">Ihr Name</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rule" style="background:rgba(154,133,184,.06);border:1px solid rgba(154,133,184,.2)">
+      <h5 style="color:var(--violet)">💡 قاعدتان مهمتان</h5>
+      <p>١) نضيف <span class="de">-e</span> مع المؤنث والجمع (مثل ein → eine): <span class="de">meine Mutter</span>.<br>
+      ٢) في النصب (Akkusativ)، المذكر يأخذ <span class="de">-en</span> (مثل der → den): <span class="de">Ich besuche meinen Vater</span> (أزور أبي).</p>
+    </div>
+    <div data-ex="poss_match"></div>
+    <div data-ex="poss_akk"></div>
+  </div>
+
+  <!-- ════════════════ الوحدة الرابعة ════════════════ -->
+  <div class="udiv"><span class="ub" style="background:rgba(184,132,88,.12);color:#c8a070">الوحدة الرابعة · الوقت والأفعال الناقصة</span><span class="line"></span></div>
+
+  <!-- 7 الساعة -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#a0802f)">٧</div><div><div class="sec-t">الساعة والوقت</div><div class="sec-td">Die Uhrzeit</div></div></div>
+    <div class="duo">
+      <div class="box" style="background:rgba(112,149,192,.05);border:1px solid rgba(112,149,192,.2)">
+        <h5 style="color:var(--blue)">🏢 رسمي (24 ساعة)</h5>
+        <div style="font-size:13px;color:var(--txt-d)">الساعات ثم الدقائق</div>
+        <div class="ex">13:45 = dreizehn Uhr fünfundvierzig</div>
+        <div class="ex">09:30 = neun Uhr dreißig</div>
+      </div>
+      <div class="box" style="background:rgba(201,161,84,.05);border:1px solid rgba(201,161,84,.2)">
+        <h5 style="color:var(--gold)">😊 غير رسمي</h5>
+        <div style="font-size:13px;color:var(--txt-d)">يستخدم vor / nach / Viertel / halb</div>
+        <div class="ex">1:45 = Viertel vor zwei</div>
+        <div class="ex">9:30 = halb zehn</div>
+      </div>
+    </div>
+    <div class="tw"><table>
+      <thead><tr><th>التعبير</th><th>المعنى</th><th>مثال</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl" style="color:var(--gold)">nach</td><td>بعد</td><td class="mono">10 nach 8 = 8:10</td></tr>
+        <tr><td class="lbl" style="color:var(--gold)">vor</td><td>قبل (إلّا)</td><td class="mono">10 vor 8 = 7:50</td></tr>
+        <tr><td class="lbl" style="color:var(--gold)">Viertel nach</td><td>الربع (وربع)</td><td class="mono">Viertel nach 8 = 8:15</td></tr>
+        <tr><td class="lbl" style="color:var(--gold)">Viertel vor</td><td>إلّا ربع</td><td class="mono">Viertel vor 8 = 7:45</td></tr>
+        <tr><td class="lbl" style="color:var(--gold)">halb</td><td>النصف</td><td class="mono">halb 8 = 7:30</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rule" style="background:rgba(176,104,112,.06);border:1px solid rgba(176,104,112,.2)">
+      <h5 style="color:var(--red)">⚠️ أهم نقطة: halb تشير للساعة القادمة!</h5>
+      <p><span class="de">halb sechs</span> = 5:30 (نصف الطريق <b>نحو</b> السادسة) — وليست 6:30!</p>
+    </div>
+    <div data-ex="clock_formal"></div>
+    <div data-ex="clock_halb"></div>
+    <div data-ex="clock_viertel"></div>
+  </div>
+
+  <!-- 8 ظروف الزمان -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--cyan),#4e8488)">٨</div><div><div class="sec-t">ظروف الزمان</div><div class="sec-td">Zeitadverbien</div></div></div>
+    <div class="grid">
+      <div class="gi"><span class="d">morgens</span><span class="a">صباحاً</span></div>
+      <div class="gi"><span class="d">mittags</span><span class="a">ظهراً</span></div>
+      <div class="gi"><span class="d">nachmittags</span><span class="a">بعد الظهر</span></div>
+      <div class="gi"><span class="d">abends</span><span class="a">مساءً</span></div>
+      <div class="gi"><span class="d">um 8 Uhr</span><span class="a">الساعة ٨</span></div>
+      <div class="gi"><span class="d">von … bis …</span><span class="a">من … حتى …</span></div>
+    </div>
+    <div class="rule" style="background:rgba(122,168,172,.06);border:1px solid rgba(122,168,172,.2)">
+      <p>للسؤال عن المدة: <span class="de">von Montag bis Freitag</span> (من الاثنين حتى الجمعة) · <span class="de">von 9 bis 17 Uhr</span> (من ٩ حتى ٥ مساءً).</p>
+    </div>
+    <div data-ex="time_match"></div>
+    <div data-ex="vonbis_order"></div>
+  </div>
+
+  <!-- 9 möchten mögen -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--green),#4e7e4a)">٩</div><div><div class="sec-t">möchten و mögen</div><div class="sec-td">Wünsche</div></div></div>
+    <div class="tw"><table>
+      <thead><tr><th>الضمير</th><th>möchten (يودّ)</th><th>mögen (يحبّ)</th></tr></thead>
+      <tbody>
+        <tr><td class="pn">ich</td><td class="mono" style="color:var(--green)">möchte</td><td class="mono" style="color:var(--green)">mag</td></tr>
+        <tr><td class="pn">du</td><td class="mono" style="color:var(--green)">möchtest</td><td class="mono" style="color:var(--green)">magst</td></tr>
+        <tr><td class="pn">er/sie/es</td><td class="mono" style="color:var(--green)">möchte</td><td class="mono" style="color:var(--green)">mag</td></tr>
+        <tr><td class="pn">wir/sie/Sie</td><td class="mono" style="color:var(--green)">möchten</td><td class="mono" style="color:var(--green)">mögen</td></tr>
+        <tr><td class="pn">ihr</td><td class="mono" style="color:var(--green)">möchtet</td><td class="mono" style="color:var(--green)">mögt</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rule" style="background:rgba(124,168,120,.06);border:1px solid rgba(124,168,120,.2)">
+      <p>لاحظ: <span class="de">ich</span> و <span class="de">er/sie/es</span> لهما نفس التصريف — وهذه سمة الأفعال الناقصة.<br>
+      <span class="de">Ich möchte Kaffee trinken.</span> (أودّ شرب قهوة) · <span class="de">Ich mag Pizza.</span> (أحب البيتزا).</p>
+    </div>
+    <div data-ex="moechten_mc"></div>
+    <div data-ex="moegen_mc"></div>
+  </div>
+
+  <!-- 10 الأفعال الناقصة -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--red),#8a4850)">١٠</div><div><div class="sec-t">الأفعال الناقصة</div><div class="sec-td">Modalverben</div></div></div>
+    <div class="rule" style="background:rgba(176,104,112,.06);border:1px solid rgba(176,104,112,.2)">
+      <h5 style="color:var(--red)">❓ لماذا «ناقصة»؟</h5>
+      <p>لأن معناها لا يكتمل وحدها — تحتاج دائماً <b>فعلاً آخر في المصدر</b> يُكمل المعنى.</p>
+    </div>
+    <div class="tw"><table>
+      <thead><tr><th>الضمير</th><th style="color:var(--red)">müssen (يجب)</th><th style="color:var(--blue)">können (يستطيع)</th><th style="color:var(--orange)">wollen (يريد)</th></tr></thead>
+      <tbody>
+        <tr><td class="pn">ich</td><td class="mono" style="color:var(--red)">muss</td><td class="mono" style="color:var(--blue)">kann</td><td class="mono" style="color:var(--orange)">will</td></tr>
+        <tr><td class="pn">du</td><td class="mono" style="color:var(--red)">musst</td><td class="mono" style="color:var(--blue)">kannst</td><td class="mono" style="color:var(--orange)">willst</td></tr>
+        <tr><td class="pn">er/sie/es</td><td class="mono" style="color:var(--red)">muss</td><td class="mono" style="color:var(--blue)">kann</td><td class="mono" style="color:var(--orange)">will</td></tr>
+        <tr><td class="pn">wir/sie/Sie</td><td class="mono" style="color:var(--red)">müssen</td><td class="mono" style="color:var(--blue)">können</td><td class="mono" style="color:var(--orange)">wollen</td></tr>
+        <tr><td class="pn">ihr</td><td class="mono" style="color:var(--red)">müsst</td><td class="mono" style="color:var(--blue)">könnt</td><td class="mono" style="color:var(--orange)">wollt</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rule" style="background:rgba(154,133,184,.06);border:1px solid rgba(154,133,184,.2)">
+      <h5 style="color:var(--violet)">⚡ القاعدة الذهبية: الفعل الناقص في المركز ٢، والمصدر في النهاية</h5>
+      <p><span class="de">Ich muss morgen arbeiten.</span> (يجب أن أعمل غداً) — muss ثاني عنصر، arbeiten بالنهاية.<br>
+      في السؤال يأتي الفعل الناقص أولاً: <span class="de">Kannst du mir helfen?</span> (هل تستطيع مساعدتي؟)</p>
+    </div>
+    <div class="rule" style="background:rgba(201,161,84,.06);border:1px solid rgba(201,161,84,.2)">
+      <h5 style="color:var(--gold)">⭐ حالة خاصة: sein</h5>
+      <p>إذا لم يكن في الجملة فعل حقيقي، نضع <span class="de">sein</span> بالنهاية: <span class="de">Ich muss morgen in Amman sein.</span> (يجب أن أكون في عمّان غداً).</p>
+    </div>
+    <div data-ex="modal_match"></div>
+    <div data-ex="modal_muss"></div>
+    <div data-ex="modal_kann"></div>
+    <div data-ex="modal_order"></div>
+    <div data-ex="modal_order2"></div>
+    <div data-ex="modal_sein"></div>
+  </div>
+
+  <!-- 11 الروتين واللباقة -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--blue),#4e6e94)">١١</div><div><div class="sec-t">الروتين اليومي واللباقة</div><div class="sec-td">Tagesablauf &amp; Höflichkeit</div></div></div>
+    <h4 class="blk" style="color:var(--blue)">أفعال الروتين (مع er/sie)</h4>
+    <div class="grid">
+      <div class="gi"><span class="em">⏰</span><span class="d">steht auf</span><span class="a">يستيقظ</span></div>
+      <div class="gi"><span class="em">🚿</span><span class="d">duscht</span><span class="a">يستحمّ</span></div>
+      <div class="gi"><span class="em">🍳</span><span class="d">frühstückt</span><span class="a">يفطر</span></div>
+      <div class="gi"><span class="em">🚗</span><span class="d">fährt</span><span class="a">يذهب/يقود</span></div>
+      <div class="gi"><span class="em">🍽️</span><span class="d">isst</span><span class="a">يأكل</span></div>
+      <div class="gi"><span class="em">🛏️</span><span class="d">geht schlafen</span><span class="a">ينام</span></div>
+    </div>
+    <div class="rule" style="background:rgba(176,104,112,.06);border:1px solid rgba(176,104,112,.2)">
+      <h5 style="color:var(--red)">⚠️ تذكير: الفعل ثاني دائماً</h5>
+      <p>لو بدأت بظرف زمان، الفاعل ينتقل بعد الفعل: <span class="de">Am Abend liest er.</span> (في المساء، هو يقرأ) — liest ثاني عنصر.</p>
+    </div>
+    <h4 class="blk" style="color:var(--green)">اللباقة وتحديد المواعيد</h4>
+    <div style="margin-top:4px">
+      <div class="exl"><span class="tag" style="background:rgba(124,168,120,.12);color:#a6c8a2">طلب مهذّب</span><span><span class="dd">Ich hätte gern einen Termin.</span><span class="aa">أودّ الحصول على موعد</span></span></div>
+      <div class="exl"><span class="tag" style="background:rgba(112,149,192,.12);color:#9bb4d6">سؤال مهذّب</span><span><span class="dd">Können Sie am Freitag kommen?</span><span class="aa">هل تستطيع المجيء يوم الجمعة؟</span></span></div>
+      <div class="exl"><span class="tag" style="background:rgba(176,104,112,.12);color:#d2a2a8">فظّ (تجنّبه للطلب)</span><span><span class="dd">Ich will Kaffee.</span><span class="aa">أريد قهوة (wollen للأمور الشخصية فقط)</span></span></div>
+    </div>
+    <div data-ex="routine_match"></div>
+    <div data-ex="termin_mc"></div>
+    <div data-ex="politeness_tf"></div>
+  </div>
+
+  <!-- 12 المحادثة -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#a06a80)">★</div><div><div class="sec-t">محادثة كاملة: نطبخ معاً</div><div class="sec-td">Dialog — Zusammen kochen</div></div></div>
+    <p class="dhint">👆 اضغط على أي سطر لإظهار الترجمة والنطق</p>
+    <div class="dlg">
+      <div class="dline"><div class="who" style="color:var(--rose)">Sara</div><div class="dde">Hallo Tarek! Was machst du gern in der Freizeit?</div><div class="dar">مرحباً طارق! ماذا تحب أن تفعل في وقت فراغك؟</div><div class="dpr">هالو طارق! فاس ماخست دو جيرن إن دير فرايتسايت؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Tarek</div><div class="dde">Ich koche sehr gern. Und du?</div><div class="dar">أحب الطبخ كثيراً. وأنتِ؟</div><div class="dpr">إش كوخه زيـر جيرن. أُند دو؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Sara</div><div class="dde">Ich spiele gern Fußball. Möchtest du heute zusammen kochen?</div><div class="dar">أحب لعب كرة القدم. هل تودّ أن نطبخ معاً اليوم؟</div><div class="dpr">إش شبيله جيرن فوسبال. موشتست دو هويته تسوزامن كوخن؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Tarek</div><div class="dde">Ja, gern! Aber ich muss zuerst einkaufen.</div><div class="dar">نعم، بكل سرور! لكن يجب أن أتسوّق أولاً.</div><div class="dpr">يا، جيرن! آبر إش موس تسوإيرست آينكاوفن.</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Sara</div><div class="dde">Was brauchst du?</div><div class="dar">ماذا تحتاج؟</div><div class="dpr">فاس براوخست دو؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Tarek</div><div class="dde">Ich brauche einen Salat, eine Tomate und ein Brot.</div><div class="dar">أحتاج سلطة وبندورة وخبزاً.</div><div class="dpr">إش براوخه آينِن زالات، آينه توماته أُند آين بروت.</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Sara</div><div class="dde">Wann können wir kochen?</div><div class="dar">متى نستطيع أن نطبخ؟</div><div class="dpr">فان كونن فير كوخن؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Tarek</div><div class="dde">Um halb sieben. Geht das?</div><div class="dar">الساعة السادسة والنصف. هل يناسبك؟</div><div class="dpr">أُم هالب زيبن. جيت داس؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Sara</div><div class="dde">Ja, das geht. Ich kann um 18:30 Uhr da sein.</div><div class="dar">نعم، يناسب. أستطيع أن أكون هناك الساعة ٦:٣٠ مساءً.</div><div class="dpr">يا، داس جيت. إش كان أُم أختتسين أوهر درايسيش دا زاين.</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Tarek</div><div class="dde">Super! Kannst du auch einen Kuchen mitbringen?</div><div class="dar">رائع! هل تستطيعين إحضار كعكة أيضاً؟</div><div class="dpr">زوبر! كانست دو آوخ آينِن كوخن مِتبرينجن؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Sara</div><div class="dde">Natürlich. Bis später, Tarek!</div><div class="dar">بالطبع. إلى اللقاء لاحقاً يا طارق!</div><div class="dpr">ناتورليش. بِس شبيتر، طارق!</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Tarek</div><div class="dde">Bis später! Tschüs!</div><div class="dar">إلى اللقاء لاحقاً! مع السلامة!</div><div class="dpr">بِس شبيتر! تشوس!</div></div>
+    </div>
+    <h4 class="blk" style="color:var(--rose)">أسئلة الفهم على المحادثة</h4>
+    <div data-ex="dlg_q1"></div>
+    <div data-ex="dlg_q2"></div>
+    <div data-ex="dlg_q3"></div>
+  </div>
+
+  <!-- 13 ترجمة المفردات -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--lime),#788840)">✦</div><div><div class="sec-t">تدريب ترجمة المفردات</div><div class="sec-td">Wortschatz</div></div></div>
+    <div data-ex="vocab_food"></div>
+    <div data-ex="vocab_modal"></div>
+    <div data-ex="vocab_mc1"></div>
+    <div data-ex="vocab_mc2"></div>
+  </div>
+
+  <div class="finale" id="finale"></div>
+
+  <p style="text-align:center;color:var(--txt-f);font-size:12.5px;margin-top:26px;line-height:1.9">
+    خلّصت كل التمارين؟ ممتاز! 🎉 ارجع لأي قسم متى ما حبيت.<br>صار معك ٤ وحدات — لما تكون جاهز نراجعهم كلهم بامتحان شامل، احكيلي.
+  </p>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var S={earn:0, totalPts:0, totalEx:0, comp:{}};
+  function ar(n){return String(n).replace(/[0-9]/g,function(d){return "٠١٢٣٤٥٦٧٨٩"[+d];});}
+  function el(t,c){var e=document.createElement(t); if(c)e.className=c; return e;}
+  function shuffle(a){a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var x=a[i];a[i]=a[j];a[j]=x;} return a;}
+  function norm(s){return (s||"").toLowerCase().trim().replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/ß/g,"ss").replace(/\s+/g," ");}
+  function bar(){
+    var ne=Object.keys(S.comp).length;
+    document.getElementById("pdone").textContent=ar(ne);
+    document.getElementById("ptot").textContent=ar(S.totalEx);
+    document.getElementById("pscore").textContent=ar(S.earn);
+    document.getElementById("pfill").style.width=(S.totalEx? Math.round(ne/S.totalEx*100):0)+"%";
+    if(ne===S.totalEx && S.totalEx>0) finale();
+  }
+  function pts(n){S.earn+=n; bar();}
+  function done(id){if(!S.comp[id]){S.comp[id]=1; bar();}}
+  function fbEl(ok,exp,pron,extra){
+    var d=el("div","fb "+(ok?"OK":"NO"));
+    var h='<div class="fb-h">'+(ok?'<span class="t-ok">✓ صحيح</span>':'<span class="t-no">✗ غير صحيح</span>')+'</div>';
+    var x=exp?('<div class="fb-x">'+exp+'</div>'):"";
+    var ex2=extra?('<div class="fb-sent">'+extra+'</div>'):"";
+    var p=pron?('<div class="pron">🔈 النطق: '+pron+'</div>'):"";
+    d.innerHTML=h+x+ex2+p; return d;
+  }
+  function label(txt){var e=el("div","ex-label"); e.innerHTML='<span>✏️</span> '+txt; return e;}
+  function qline(html){var e=el("div","ex-q"); e.innerHTML=html; return e;}
+
+  function mountMC(host,ex,id){
+    var card=el("div","ex-wrap");
+    card.appendChild(label(ex.tf?"تمرين · صح أم خطأ":"تمرين · اختر الإجابة"));
+    card.appendChild(qline(ex.q));
+    ex.options.forEach(function(o){
+      var b=el("button","opt");
+      b.innerHTML=(o.de?'<span class="de">'+o.de+'</span>':"")+(o.de&&o.ar?" — ":"")+(o.ar?o.ar:"")+(o.t?o.t:"");
+      b.addEventListener("click",function(){
+        if(card.dataset.done) return; card.dataset.done="1";
+        var btns=card.querySelectorAll(".opt");
+        for(var i=0;i<btns.length;i++){btns[i].disabled=true; if(ex.options[i].ok) btns[i].classList.add("okb");}
+        if(!o.ok) b.classList.add("nob");
+        pts(o.ok?1:0);
+        card.appendChild(fbEl(o.ok,ex.exp,ex.pron,null));
+        done(id);
+      });
+      card.appendChild(b);
+    });
+    host.appendChild(card); S.totalPts+=1; S.totalEx++;
+  }
+
+  function mountOrder(host,ex,id){
+    var card=el("div","ex-wrap");
+    card.appendChild(label("تمرين · رتّب الكلمات"));
+    card.appendChild(qline(ex.q));
+    var ans=el("div","ans"); var pool=el("div","pool");
+    shuffle(ex.words).forEach(function(w){
+      var b=el("button","chip"); b.textContent=w;
+      b.addEventListener("click",function(){ if(card.dataset.done) return; (b.parentNode===pool?ans:pool).appendChild(b); });
+      pool.appendChild(b);
+    });
+    var ck=el("button","check"); ck.innerHTML="✓ تحقق";
+    ck.addEventListener("click",function(){
+      if(card.dataset.done) return; card.dataset.done="1";
+      var ch=ans.querySelectorAll(".chip"); var arr=[];
+      for(var i=0;i<ch.length;i++) arr.push(ch[i].textContent.trim());
+      var ok=norm(arr.join(" ")).replace(/[.?!]/g,"")===norm(ex.answer).replace(/[.?!]/g,"");
+      ans.classList.add(ok?"okb":"nob");
+      var all=card.querySelectorAll(".chip"); for(var j=0;j<all.length;j++) all[j].disabled=true; ck.disabled=true;
+      pts(ok?1:0);
+      card.appendChild(fbEl(ok,ex.exp,ex.pron,'الجملة الصحيحة: <span class="de">'+ex.answer+'</span>'));
+      done(id);
+    });
+    card.appendChild(ans); card.appendChild(pool); card.appendChild(ck);
+    host.appendChild(card); S.totalPts+=1; S.totalEx++;
+  }
+
+  function mountMatch(host,ex,id){
+    var card=el("div","ex-wrap");
+    card.appendChild(label("تمرين · وصّل"));
+    card.appendChild(qline(ex.q));
+    var grid=el("div","mcol"); var L=el("div","mc-col"); var R=el("div","mc-col");
+    ex.pairs.forEach(function(p,i){ var b=el("button","m-l"); b.textContent=p.l; b.setAttribute("data-k",i); L.appendChild(b); });
+    var rs=shuffle(ex.pairs.map(function(p,i){return {r:p.r,k:i};}));
+    rs.forEach(function(o){ var b=el("button","m-r"); b.textContent=o.r; b.setAttribute("data-k",o.k); R.appendChild(b); });
+    var sel=null, paired=0, need=ex.pairs.length;
+    L.addEventListener("click",function(e){ var b=e.target.closest(".m-l"); if(!b||b.disabled) return; if(sel) sel.classList.remove("selref"); sel=b; b.classList.add("selref"); });
+    R.addEventListener("click",function(e){
+      var b=e.target.closest(".m-r"); if(!b||b.disabled||!sel) return;
+      if(b.getAttribute("data-k")===sel.getAttribute("data-k")){
+        b.classList.add("okb"); sel.classList.add("okb"); b.disabled=true; sel.disabled=true; sel.classList.remove("selref"); sel=null; paired++; pts(1);
+        if(paired===need){ card.appendChild(fbEl(true,ex.exp,ex.pron,null)); done(id); }
+      } else { var bb=b; bb.classList.add("nob"); setTimeout(function(){bb.classList.remove("nob");},450); sel.classList.remove("selref"); sel=null; }
+    });
+    grid.appendChild(L); grid.appendChild(R); card.appendChild(grid);
+    host.appendChild(card); S.totalPts+=need; S.totalEx++;
+  }
+
+  function mountFill(host,ex,id){
+    var card=el("div","ex-wrap");
+    card.appendChild(label("تمرين · اكتب الإجابة"));
+    card.appendChild(qline(ex.q));
+    var inp=el("input","fin"); inp.type="text"; inp.dir="ltr"; inp.setAttribute("placeholder",ex.ph||"اكتب بالألماني…");
+    var ck=el("button","check"); ck.innerHTML="✓ تحقق";
+    function submit(){
+      if(card.dataset.done) return; card.dataset.done="1";
+      var ok=ex.accept.map(norm).indexOf(norm(inp.value))>-1;
+      inp.disabled=true; ck.disabled=true; inp.classList.add(ok?"okb":"nob");
+      pts(ok?1:0);
+      card.appendChild(fbEl(ok,ex.exp,ex.pron, ok?null:('الإجابة الصحيحة: <span class="de">'+ex.show+'</span>')));
+      done(id);
+    }
+    ck.addEventListener("click",submit);
+    inp.addEventListener("keydown",function(e){ if(e.key==="Enter") submit(); });
+    card.appendChild(inp); card.appendChild(ck);
+    host.appendChild(card); S.totalPts+=1; S.totalEx++;
+  }
+
+  var EX={
+    /* ===== الوحدة الثالثة ===== */
+    hob_match:{type:"match",q:"وصّل كل فعل بمعناه.",pairs:[
+      {l:"spielen",r:"يلعب"},{l:"kochen",r:"يطبخ"},{l:"schwimmen",r:"يسبح"},{l:"reisen",r:"يسافر"}],
+      exp:"هاي أهم أفعال الهوايات.",pron:"شبيلن · كوخن · شفيمن · رايزن"},
+    gern_order:{type:"order",q:"رتّب: «أطبخ بسرور».",words:["Ich","koche","gern"],answer:"Ich koche gern",
+      exp:"كلمة gern تأتي بعد الفعل.",pron:"إش كوخه جيرن"},
+    gern_mc:{type:"mc",q:'كيف تقول «لا أحب الرقص»؟',options:[
+      {de:"Ich tanze kein.",ok:false},{de:"Ich tanze nicht gern.",ok:true},{de:"Ich nicht tanze gern.",ok:false}],
+      exp:"ننفي الفعل بـ nicht، وتأتي قبل gern.",pron:"إش تانتسه نِشت جيرن"},
+
+    days_fill:{type:"fill",q:'اكتب «يوم الجمعة» بالألماني (مع حرف الجر).',accept:["am Freitag"],show:"am Freitag",ph:"am …",
+      exp:"أيام الأسبوع تأتي مع am.",pron:"آم فرايتاج"},
+    irr_lesen:{type:"mc",q:'أكمل: <span class="de">Du ___ ein Buch.</span> (lesen)',options:[
+      {de:"lest",ok:false},{de:"liest",ok:true},{de:"lesst",ok:false}],
+      exp:"lesen شاذ: مع du/er تتحول e إلى ie ⇐ liest.",pron:"دو ليست"},
+    irr_fahren:{type:"mc",q:'أكمل: <span class="de">Er ___ nach Berlin.</span> (fahren)',options:[
+      {de:"fahre",ok:false},{de:"fahrt",ok:false},{de:"fährt",ok:true}],
+      exp:"fahren شاذ: مع er تتحول a إلى ä ⇐ fährt.",pron:"إيـر فيرت"},
+
+    food_match:{type:"match",q:"وصّل الطعام بمعناه.",pairs:[
+      {l:"das Brot",r:"الخبز"},{l:"die Milch",r:"الحليب"},{l:"der Apfel",r:"التفاحة"},{l:"das Ei",r:"البيضة"}],
+      exp:"احفظ كل اسم مع أداته.",pron:"بروت · مِلش · آبفل · آي"},
+    shop_mc:{type:"mc",q:'حسب القاعدة، ما أداة <span class="de">Bäckerei</span> (مخبز)؟',options:[
+      {de:"der",ok:false},{de:"die",ok:true},{de:"das",ok:false}],
+      exp:"الكلمات المنتهية بـ -ei دائماً die.",pron:"دي بيكَراي"},
+
+    akk_den:{type:"mc",q:'في حالة النصب (Akkusativ)، إلى ماذا تتحول <span class="de">der</span>؟',options:[
+      {de:"die",ok:false},{de:"das",ok:false},{de:"den",ok:true}],
+      exp:"المذكر فقط يتغير: der ⇐ den.",pron:"دِن"},
+    akk_kaufen:{type:"mc",q:'أكمل: <span class="de">Ich kaufe ___ Apfel.</span> (der Apfel، نكرة)',options:[
+      {de:"ein",ok:false},{de:"einen",ok:true},{de:"eine",ok:false}],
+      exp:"Apfel مذكر، ومفعول به ⇐ einen.",pron:"آينِن آبفل"},
+    akk_keinen:{type:"mc",q:'أكمل: <span class="de">Wir haben ___ Käse.</span> (نفي، der Käse)',options:[
+      {de:"kein",ok:false},{de:"keinen",ok:true},{de:"keine",ok:false}],
+      exp:"نفي مذكر في النصب ⇐ keinen.",pron:"كاينِن كيزه"},
+    akk_order:{type:"order",q:"رتّب: «آكل تفاحة».",words:["Ich","esse","einen","Apfel"],answer:"Ich esse einen Apfel",
+      exp:"essen ينصب، و der Apfel مذكر ⇐ einen.",pron:"إش إسه آينِن آبفل"},
+    akk_tf:{type:"mc",tf:true,q:"صح أم خطأ؟ في حالة النصب، الاسم المؤنث يتغيّر أيضاً.",options:[
+      {t:"✔ صح",ok:false},{t:"✗ خطأ",ok:true}],
+      exp:"المذكر فقط يتغير. المؤنث والمحايد والجمع تبقى كما هي.",pron:"داس · دي"},
+
+    poss_match:{type:"match",q:"وصّل ضمير الملكية بمعناه.",pairs:[
+      {l:"mein",r:"ـي (لي)"},{l:"dein",r:"ـك (لك)"},{l:"sein",r:"ـه (له)"},{l:"ihr",r:"ـها (لها)"}],
+      exp:"sein للمذكر (هو)، ihr للمؤنث (هي).",pron:"ماين · داين · زاين · إيـر"},
+    poss_akk:{type:"mc",q:'أكمل: <span class="de">Ich besuche ___ Vater.</span> (أزور أبي)',options:[
+      {de:"mein",ok:false},{de:"meinen",ok:true},{de:"meine",ok:false}],
+      exp:"Vater مذكر ومفعول به ⇐ meinen (مثل der → den).",pron:"ماينِن فاتر"},
+
+    /* ===== الوحدة الرابعة ===== */
+    clock_formal:{type:"mc",q:'بالطريقة الرسمية، كيف نقول <span class="de">13:45</span>؟',options:[
+      {de:"Viertel vor zwei",ok:false},{de:"dreizehn Uhr fünfundvierzig",ok:true},{de:"halb zwei",ok:false}],
+      exp:"الرسمي: الساعات Uhr ثم الدقائق.",pron:"درايتسين أوهر فونف-أُند-فيرتسيش"},
+    clock_halb:{type:"mc",q:'بالطريقة غير الرسمية، كيف نقول <span class="de">5:30</span>؟',options:[
+      {de:"halb fünf",ok:false},{de:"halb sechs",ok:true},{de:"Viertel nach fünf",ok:false}],
+      exp:"halb تشير للساعة القادمة: 5:30 = halb sechs (نصف نحو السادسة).",pron:"هالب زِكس"},
+    clock_viertel:{type:"mc",q:'كيف نقول <span class="de">1:45</span> بشكل غير رسمي؟',options:[
+      {de:"Viertel nach eins",ok:false},{de:"Viertel vor zwei",ok:true},{de:"halb zwei",ok:false}],
+      exp:"إلّا ربع = Viertel vor، والساعة القادمة (zwei).",pron:"فيرتل فور تسفاي"},
+
+    time_match:{type:"match",q:"وصّل ظرف الزمان بمعناه.",pairs:[
+      {l:"morgens",r:"صباحاً"},{l:"mittags",r:"ظهراً"},{l:"nachmittags",r:"بعد الظهر"},{l:"abends",r:"مساءً"}],
+      exp:"ظروف الزمان تنتهي غالباً بـ -s.",pron:"مورجنس · مِتاجس · ناخمِتاجس · آبنتس"},
+    vonbis_order:{type:"order",q:"رتّب: «من الاثنين حتى الجمعة».",words:["von","Montag","bis","Freitag"],answer:"von Montag bis Freitag",
+      exp:"للمدة نستخدم von … bis …",pron:"فون مونتاج بِس فرايتاج"},
+
+    moechten_mc:{type:"mc",q:'أكمل: <span class="de">Ich ___ Kaffee trinken.</span> (möchten)',options:[
+      {de:"möchtest",ok:false},{de:"möchte",ok:true},{de:"möchten",ok:false}],
+      exp:"مع ich: möchte (مثل er/sie/es).",pron:"إش موشته"},
+    moegen_mc:{type:"mc",q:'أكمل: <span class="de">Ich ___ Pizza.</span> (mögen)',options:[
+      {de:"mag",ok:true},{de:"magst",ok:false},{de:"mögen",ok:false}],
+      exp:"mögen مع ich = mag (شاذ).",pron:"إش ماج"},
+
+    modal_match:{type:"match",q:"وصّل الفعل الناقص بمعناه.",pairs:[
+      {l:"müssen",r:"يجب"},{l:"können",r:"يستطيع"},{l:"wollen",r:"يريد"},{l:"möchten",r:"يودّ"}],
+      exp:"كل فعل ناقص يحتاج مصدراً يكمل المعنى.",pron:"موسن · كونن · فولن · موشتن"},
+    modal_muss:{type:"mc",q:'أكمل: <span class="de">Ich ___ morgen arbeiten.</span> (müssen)',options:[
+      {de:"musst",ok:false},{de:"muss",ok:true},{de:"müssen",ok:false}],
+      exp:"مع ich: muss (بدون نهاية).",pron:"إش موس"},
+    modal_kann:{type:"mc",q:'أكمل: <span class="de">Er ___ gut schwimmen.</span> (können)',options:[
+      {de:"kann",ok:true},{de:"kannst",ok:false},{de:"können",ok:false}],
+      exp:"مع er: kann (مثل ich).",pron:"إيـر كان"},
+    modal_order:{type:"order",q:"رتّب: «يجب أن أعمل غداً».",words:["Ich","muss","morgen","arbeiten"],answer:"Ich muss morgen arbeiten",
+      exp:"الفعل الناقص (muss) ثاني، والمصدر (arbeiten) في النهاية.",pron:"إش موس مورجن آربايتن"},
+    modal_order2:{type:"order",q:"رتّب السؤال: «هل تستطيع مساعدتي؟»",words:["Kannst","du","mir","helfen"],answer:"Kannst du mir helfen",
+      exp:"في السؤال يأتي الفعل الناقص (Kannst) أولاً، والمصدر في النهاية.",pron:"كانست دو مير هِلفن؟"},
+    modal_sein:{type:"mc",q:'أكمل: <span class="de">Ich muss morgen in Amman ___.</span> (لا يوجد فعل حقيقي)',options:[
+      {de:"sein",ok:true},{de:"bin",ok:false},{de:"ist",ok:false}],
+      exp:"بدون فعل حقيقي نضع sein في النهاية.",pron:"زاين"},
+
+    routine_match:{type:"match",q:"وصّل فعل الروتين بمعناه.",pairs:[
+      {l:"steht auf",r:"يستيقظ"},{l:"duscht",r:"يستحمّ"},{l:"frühstückt",r:"يفطر"},{l:"geht schlafen",r:"ينام"}],
+      exp:"أفعال الروتين اليومي.",pron:"شتيت آوف · دوشت · فروشتوكت · جيت شلافن"},
+    termin_mc:{type:"mc",q:'كيف تطلب موعداً بأدب عند الطبيب؟',options:[
+      {de:"Ich will einen Termin.",ok:false},{de:"Ich hätte gern einen Termin.",ok:true},{de:"Gib mir einen Termin.",ok:false}],
+      exp:"الطلب المهذّب: Ich hätte gern …",pron:"إش هيته جيرن آينِن تيرمين"},
+    politeness_tf:{type:"mc",tf:true,q:'صح أم خطأ؟ <span class="de">Ich will …</span> مهذّبة وتصلح لطلب خدمة من الآخرين.',options:[
+      {t:"✔ صح",ok:false},{t:"✗ خطأ",ok:true}],
+      exp:"wollen فظّة للطلب؛ نستخدمها للأمور الشخصية فقط. للطلب: möchten / können.",pron:"إش فِل"},
+
+    /* المحادثة */
+    dlg_q1:{type:"mc",q:"ماذا يحب طارق أن يفعل؟",options:[
+      {de:"spielen",ar:"اللعب",ok:false},{de:"kochen",ar:"الطبخ",ok:true},{de:"reisen",ar:"السفر",ok:false}],
+      exp:"قال: Ich koche sehr gern.",pron:"إش كوخه زيـر جيرن"},
+    dlg_q2:{type:"mc",q:"ماذا يجب أن يفعل طارق قبل الطبخ؟",options:[
+      {de:"schlafen",ar:"ينام",ok:false},{de:"einkaufen",ar:"يتسوّق",ok:true},{de:"arbeiten",ar:"يعمل",ok:false}],
+      exp:"قال: Ich muss zuerst einkaufen.",pron:"موس آينكاوفن"},
+    dlg_q3:{type:"mc",q:'متى سيطبخان؟ (<span class="de">um halb sieben</span>)',options:[
+      {de:"6:30",ok:true},{de:"7:30",ok:false},{de:"5:30",ok:false}],
+      exp:"halb sieben = 6:30 (نصف نحو السابعة).",pron:"هالب زيبن"},
+
+    /* مفردات */
+    vocab_food:{type:"match",q:"وصّل الكلمة بمعناها.",pairs:[
+      {l:"kaufen",r:"يشتري"},{l:"brauchen",r:"يحتاج"},{l:"trinken",r:"يشرب"},{l:"der Salat",r:"السلطة"}],
+      exp:"مفردات الطعام والتسوق.",pron:"كاوفن · براوخن · ترينكن · زالات"},
+    vocab_modal:{type:"match",q:"وصّل الكلمة بمعناها.",pairs:[
+      {l:"die Freizeit",r:"وقت الفراغ"},{l:"der Termin",r:"الموعد"},{l:"zuerst",r:"أولاً"},{l:"zusammen",r:"معاً"}],
+      exp:"تعبيرات الوحدة الرابعة.",pron:"فرايتسايت · تيرمين · تسوإيرست · تسوزامن"},
+    vocab_mc1:{type:"mc",q:'ماذا تعني <span class="de">Ich muss zum Arzt gehen</span>؟',options:[
+      {ar:"يجب أن أذهب إلى الطبيب",ok:true},{ar:"أريد أن أرى الطبيب",ok:false},{ar:"أستطيع الذهاب للطبيب",ok:false}],
+      exp:"müssen = يجب، gehen مصدر في النهاية.",pron:"إش موس تسوم آرتست جيين"},
+    vocab_mc2:{type:"mc",q:'ماذا تعني <span class="de">Was machst du gern?</span>؟',options:[
+      {ar:"ماذا تفعل الآن؟",ok:false},{ar:"ماذا تحب أن تفعل؟",ok:true},{ar:"ماذا تريد أن تأكل؟",ok:false}],
+      exp:"machen + gern = السؤال عن الهوايات.",pron:"فاس ماخست دو جيرن؟"}
+  };
+
+  var hosts=document.querySelectorAll("[data-ex]");
+  for(var i=0;i<hosts.length;i++){
+    var host=hosts[i]; var id=host.getAttribute("data-ex"); var ex=EX[id]; if(!ex) continue;
+    if(ex.type==="mc") mountMC(host,ex,id);
+    else if(ex.type==="order") mountOrder(host,ex,id);
+    else if(ex.type==="match") mountMatch(host,ex,id);
+    else if(ex.type==="fill") mountFill(host,ex,id);
+  }
+  bar();
+
+  function finale(){
+    var f=document.getElementById("finale"); if(!f||f.dataset.shown) return; f.dataset.shown="1";
+    var pct=S.totalPts? Math.round(S.earn/S.totalPts*100):0;
+    var col,msg;
+    if(pct>=85){col="var(--green)";msg="ممتاز يا مهدي! تمكّنت من الوحدتين بشكل قوي.";}
+    else if(pct>=70){col="var(--gold)";msg="جيد جداً! راجِع النقاط القليلة اللي غلطت فيها وبتثبت.";}
+    else if(pct>=50){col="var(--orange)";msg="بداية كويسة. ارجع للأقسام اللي صعبت عليك وأعد تمارينها.";}
+    else{col="var(--red)";msg="ما تيأس — أعد قراءة الشرح وكرّر التمارين، وبتتحسّن بسرعة.";}
+    f.style.display="block"; f.style.background="rgba(255,255,255,.02)"; f.style.border="1px solid "+col;
+    f.innerHTML='<h3 style="color:'+col+'">انتهيت! '+ar(S.earn)+' / '+ar(S.totalPts)+' ('+ar(pct)+'٪)</h3><p style="color:var(--txt-d)">'+msg+'</p>';
+    f.scrollIntoView({behavior:"smooth",block:"center"});
+  }
+
+  var dl=document.querySelectorAll(".dline");
+  for(var k=0;k<dl.length;k++){ dl[k].addEventListener("click",function(){ this.classList.toggle("show"); }); }
+
+  var rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if("IntersectionObserver" in window && !rm){
+    var ob=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("v"); ob.unobserve(e.target);} }); },{threshold:.08});
+    document.querySelectorAll(".rv").forEach(function(x){ ob.observe(x); });
+  } else { document.querySelectorAll(".rv").forEach(function(x){ x.classList.add("v"); }); }
+})();
+</script>
+</body>
+</html>

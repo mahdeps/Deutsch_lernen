@@ -682,8 +682,14 @@ body::before{
   font-size:22px;font-weight:600;
   color:var(--gold);letter-spacing:.5px;
 }
+.lvl-tag.lvl-green{
+  background:linear-gradient(135deg,rgba(124,200,160,.1),rgba(124,200,160,.02));
+  border-color:rgba(124,200,160,.3);
+  box-shadow:0 4px 16px rgba(124,200,160,.08);
+}
 .lvl-purple .lvl-num{color:var(--plum)}
 .lvl-rose .lvl-num{color:var(--rose)}
+.lvl-green .lvl-num{color:#7cc8a0}
 .lvl-de{
   font-family:'Noto Kufi Arabic',sans-serif;
   font-size:12px;font-weight:700;
@@ -915,6 +921,99 @@ body::before{
 }
 
 /* ════════════════════════════════════
+   REVIEW CARDS — مراجعات تفاعلية
+   ════════════════════════════════════ */
+.review-card{
+  background:linear-gradient(180deg,var(--card),rgba(20,22,31,.7));
+  border:1px solid var(--bdr);
+  border-radius:18px;
+  padding:30px 26px;
+  text-decoration:none;color:var(--txt);
+  transition:transform .25s cubic-bezier(.23,1,.32,1), box-shadow .35s ease, border-color .35s ease;
+  display:flex;flex-direction:column;gap:16px;
+  position:relative;overflow:hidden;
+  transform-style:preserve-3d;
+  will-change:transform;
+}
+.review-card::before{
+  content:'';position:absolute;top:0;right:0;left:0;height:2px;
+  background:linear-gradient(90deg,#7cc8a0,#3aa0c8);
+  opacity:.7;transition:opacity .4s ease;
+}
+.review-card::after{
+  content:'';position:absolute;inset:0;border-radius:18px;pointer-events:none;
+  background:radial-gradient(450px circle at var(--mx,50%) var(--my,50%),rgba(124,200,160,.13),transparent 40%);
+  opacity:0;transition:opacity .3s ease;
+}
+.review-card:hover{
+  border-color:rgba(124,200,160,.4);
+  box-shadow:var(--shadow-3d),0 0 40px rgba(124,200,160,.16);
+}
+.review-card:hover::before,.review-card:hover::after{opacity:1}
+.review-card:hover::before{opacity:1;height:3px}
+
+.review-head{display:flex;align-items:center;gap:16px;transform:translateZ(20px)}
+.review-ic{
+  width:58px;height:58px;border-radius:15px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;flex-shrink:0;
+  background:linear-gradient(135deg,#7cc8a0,#3aa0c8);
+  box-shadow:0 8px 22px rgba(124,200,160,.3),inset 0 1px 0 rgba(255,255,255,.25);
+  transition:transform .4s cubic-bezier(.23,1,.32,1);
+}
+.review-card:hover .review-ic{transform:rotateY(360deg) scale(1.05)}
+.review-info{flex:1;min-width:0}
+.review-title{
+  font-family:'Noto Kufi Arabic',sans-serif;
+  font-size:18px;font-weight:800;
+  color:var(--txt-b);line-height:1.4;
+}
+.review-de{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;font-size:14px;
+  direction:ltr;text-align:right;
+  color:#7cc8a0;opacity:.9;
+  margin-top:3px;
+}
+.review-badge{
+  position:absolute;top:18px;left:18px;
+  font-family:'Noto Kufi Arabic',sans-serif;
+  font-size:10.5px;font-weight:800;letter-spacing:.4px;
+  padding:5px 12px;border-radius:99px;
+  background:rgba(124,200,160,.12);
+  color:#7cc8a0;
+  border:1px solid rgba(124,200,160,.3);
+  transform:translateZ(25px);
+}
+.review-tags{display:flex;flex-wrap:wrap;gap:6px;transform:translateZ(10px)}
+.review-tag{
+  font-family:'Noto Kufi Arabic',sans-serif;
+  font-size:11px;font-weight:700;
+  padding:5px 11px;border-radius:18px;
+  background:rgba(124,200,160,.08);
+  color:#7cc8a0;
+  border:1px solid rgba(124,200,160,.22);
+  letter-spacing:.2px;
+  transition:all .25s ease;
+}
+.review-card:hover .review-tag{background:rgba(124,200,160,.14);border-color:rgba(124,200,160,.34)}
+.review-foot{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:14px;border-top:1px solid var(--bdr);
+  transform:translateZ(15px);
+}
+.review-meta-l{
+  font-size:12px;color:var(--txt-d);
+  font-family:'Noto Kufi Arabic',sans-serif;
+  font-weight:700;letter-spacing:.3px;
+}
+.review-meta-r{
+  font-size:12.5px;color:#7cc8a0;
+  font-family:'Noto Kufi Arabic',sans-serif;
+  font-weight:800;letter-spacing:.3px;
+}
+
+/* ════════════════════════════════════
    FOOTER
    ════════════════════════════════════ */
 .footer{
@@ -1044,8 +1143,96 @@ body::before{
   .shape{display:none}
 }
 </style>
+<style>
+/* ═══════════════════════════════════════════════════════
+   LUXURY UPGRADE LAYER — طبقة الفخامة (overrides)
+   ═══════════════════════════════════════════════════════ */
+
+/* — Gold scroll-progress bar — */
+#scrollprog{
+  position:fixed;top:0;right:0;left:0;height:3px;width:0;z-index:10000;pointer-events:none;
+  background:linear-gradient(90deg,var(--bronze),var(--gold),var(--gold-l),var(--sun));
+  box-shadow:0 0 14px rgba(212,175,94,.6),0 0 4px rgba(232,200,120,.85);
+  transition:width .12s linear;
+}
+
+/* — Navbar: smooth + condensing scrolled state — */
+.nav{transition:background .45s ease,border-color .45s ease,box-shadow .45s ease}
+.nav-inner{transition:padding .4s cubic-bezier(.23,1,.32,1)}
+.nav.scrolled{
+  background:rgba(8,9,13,.94);
+  border-bottom-color:rgba(212,175,94,.24);
+  box-shadow:0 10px 34px rgba(0,0,0,.45);
+}
+.nav.scrolled .nav-inner{padding-top:10px;padding-bottom:10px}
+
+/* — Brand mark: living gold glow — */
+.brand-mark{
+  box-shadow:0 4px 14px rgba(212,175,94,.32),inset 0 1px 0 rgba(255,255,255,.25),0 0 0 1px rgba(232,200,120,.2);
+  animation:brandGlow 4.6s ease-in-out infinite;
+}
+@keyframes brandGlow{
+  0%,100%{box-shadow:0 4px 14px rgba(212,175,94,.3),inset 0 1px 0 rgba(255,255,255,.25),0 0 0 1px rgba(232,200,120,.16)}
+  50%{box-shadow:0 7px 24px rgba(212,175,94,.52),inset 0 1px 0 rgba(255,255,255,.32),0 0 0 1px rgba(232,200,120,.42)}
+}
+
+/* — Hero title: animated gold shimmer sweep — */
+.hero h1 em{
+  background-size:220% auto;
+  animation:goldSheen 7s ease-in-out 1.2s infinite;
+}
+@keyframes goldSheen{
+  0%,100%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+}
+
+/* — Hero eyebrow: refined glass pill — */
+.hero-eyebrow{
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  box-shadow:0 4px 18px rgba(212,175,94,.08);
+}
+
+/* — Stats: more premium presence — */
+.stats{animation:fadeU .8s ease .35s both}
+.stat{
+  padding:30px 20px;border-radius:18px;
+  background:linear-gradient(180deg,rgba(27,29,40,.92),rgba(16,18,26,.7));
+}
+.stat:hover{
+  transform:translateY(-7px);
+  border-color:rgba(212,175,94,.4);
+  box-shadow:0 24px 54px rgba(0,0,0,.5),0 0 34px rgba(212,175,94,.13);
+}
+.stat-num{
+  font-size:clamp(48px,7vw,60px);
+  filter:drop-shadow(0 5px 18px rgba(212,175,94,.28));
+}
+.stat:nth-child(2) .stat-num{filter:drop-shadow(0 5px 18px rgba(224,96,128,.28))}
+.stat:nth-child(3) .stat-num{filter:drop-shadow(0 5px 18px rgba(72,216,160,.26))}
+/* gold hairline between number and label */
+.stat-label{position:relative;padding-top:15px}
+.stat-label::before{
+  content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
+  width:36px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.75;
+}
+
+/* — Buttons: richer resting glow + ghost lift — */
+.btn-primary{box-shadow:0 8px 24px rgba(212,175,94,.34),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-ghost{transition:all .35s cubic-bezier(.23,1,.32,1)}
+.btn-ghost:hover{border-color:rgba(212,175,94,.4);box-shadow:0 10px 28px rgba(0,0,0,.35);transform:translateY(-3px)}
+
+/* — Active tab: soft gold glow — */
+.tab.active{box-shadow:0 6px 20px rgba(212,175,94,.16)}
+
+@media(prefers-reduced-motion:reduce){
+  #scrollprog,.brand-mark,.hero h1 em{animation:none}
+}
+</style>
 </head>
 <body>
+
+<div id="scrollprog"></div>
 
 <!-- ════════════════ ANIMATED 3D SCENE ════════════════ -->
 <div class="scene" aria-hidden="true">
@@ -1179,6 +1366,9 @@ body::before{
     </button>
     <button class="tab" data-tab="vocab" role="tab" aria-selected="false" type="button">
       <span class="ic">◆</span><span>كلمات الوحدات</span>
+    </button>
+    <button class="tab" data-tab="review" role="tab" aria-selected="false" type="button">
+      <span class="ic">◆</span><span>مراجعات الوحدات</span>
     </button>
   </div>
 </div>
@@ -1671,6 +1861,70 @@ body::before{
 
 </div>
 
+<!-- ════════════════ PANEL: REVIEW ════════════════ -->
+<div class="panel" id="panel-review" role="tabpanel">
+
+  <div class="lvl-sep" id="review">
+    <div class="lvl-line"></div>
+    <div class="lvl-tag lvl-green">
+      <span class="lvl-num">✦</span>
+      <span class="lvl-de">Wiederholung — مراجعات شاملة تفاعلية</span>
+    </div>
+    <div class="lvl-line"></div>
+  </div>
+
+  <p style="text-align:center;color:var(--txt-d);font-size:14px;margin:0 auto 32px;max-width:600px;line-height:1.85">ملفات مراجعة تفاعلية تجمع وحدتين معاً — قواعد ومفردات وتمارين بشريط تقدّم، مثالية للمراجعة قبل الامتحان.</p>
+
+  <div class="grid" id="reviewGrid">
+
+    <a href="review-units-1-2.html" class="review-card" data-tilt data-search="مراجعة وحدة 1 2 wiederholung einheit hallo hobbys berufe تفاعلي شامل قواعد مفردات تمارين">
+      <div class="review-badge">تفاعلي · Interaktiv</div>
+      <div class="review-head">
+        <div class="review-ic">📘</div>
+        <div class="review-info">
+          <div class="review-title">مراجعة الوحدتين ١ و ٢</div>
+          <div class="review-de">Wiederholung — Einheit 1 &amp; 2</div>
+        </div>
+      </div>
+      <div class="review-tags">
+        <span class="review-tag">التحيات</span>
+        <span class="review-tag">التعارف</span>
+        <span class="review-tag">الهوايات</span>
+        <span class="review-tag">المهن</span>
+        <span class="review-tag">التصريف</span>
+      </div>
+      <div class="review-foot">
+        <span class="review-meta-l">شامل · شريط تقدّم</span>
+        <span class="review-meta-r">ابدأ المراجعة ←</span>
+      </div>
+    </a>
+
+    <a href="review-units-3-4.html" class="review-card" data-tilt data-search="مراجعة وحدة 3 4 wiederholung einheit hamburg essen trinken مدن اتجاهات طعام شراب تفاعلي شامل قواعد مفردات تمارين">
+      <div class="review-badge">تفاعلي · Interaktiv</div>
+      <div class="review-head">
+        <div class="review-ic">📗</div>
+        <div class="review-info">
+          <div class="review-title">مراجعة الوحدتين ٣ و ٤</div>
+          <div class="review-de">Wiederholung — Einheit 3 &amp; 4</div>
+        </div>
+      </div>
+      <div class="review-tags">
+        <span class="review-tag">المدن</span>
+        <span class="review-tag">الاتجاهات</span>
+        <span class="review-tag">الطعام</span>
+        <span class="review-tag">الشراب</span>
+        <span class="review-tag">حالة النصب</span>
+      </div>
+      <div class="review-foot">
+        <span class="review-meta-l">شامل · شريط تقدّم</span>
+        <span class="review-meta-r">ابدأ المراجعة ←</span>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
 </div>
 
 <!-- ════════════════ FOOTER ════════════════ -->
@@ -1784,7 +2038,7 @@ body::before{
     searchBox.classList.toggle('has-value', q.length > 0);
 
     let visibleCount = 0;
-    const allCards = document.querySelectorAll('.lec-card[data-search], .unit-card[data-search]');
+    const allCards = document.querySelectorAll('.lec-card[data-search], .unit-card[data-search], .review-card[data-search]');
     allCards.forEach(card => {
       const text = (card.dataset.search + ' ' + card.textContent).toLowerCase();
       const match = q === '' || text.includes(q);
@@ -1903,6 +2157,67 @@ body::before{
     });
   }
 
+})();
+</script>
+
+<!-- ═══ LUXURY UPGRADE — interactions ═══ -->
+<script>
+(function(){
+  "use strict";
+  var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  /* (1) Gold scroll-progress bar */
+  var bar = document.getElementById('scrollprog');
+  var ticking = false;
+  function updateBar(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+    if (bar) bar.style.width = pct + '%';
+    ticking = false;
+  }
+
+  /* (2) Navbar condense on scroll */
+  var nav = document.querySelector('.nav');
+  function updateNav(){
+    if (!nav) return;
+    nav.classList.toggle('scrolled', (window.scrollY || document.documentElement.scrollTop) > 24);
+  }
+
+  window.addEventListener('scroll', function(){
+    updateNav();
+    if (!ticking){ ticking = true; requestAnimationFrame(updateBar); }
+  }, { passive:true });
+  window.addEventListener('resize', updateBar, { passive:true });
+  updateBar(); updateNav();
+
+  /* (3) Stat count-up when scrolled into view */
+  var stats = document.querySelectorAll('.stat-num');
+  function countUp(el){
+    var raw = el.textContent.trim();
+    if (!/^\d+$/.test(raw)) return;            // skip "A1" etc.
+    if (reduce) return;                         // honour reduced motion
+    var target = parseInt(raw, 10);
+    var pad = raw.length;
+    var dur = 1300, start = null;
+    function step(ts){
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = String(Math.round(eased * target)).padStart(pad, '0');
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = raw;
+    }
+    requestAnimationFrame(step);
+  }
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ countUp(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold:.5 });
+    stats.forEach(function(s){ io.observe(s); });
+  }
 })();
 </script>
 </body>

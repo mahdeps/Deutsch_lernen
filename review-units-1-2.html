@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الوحدتان ١ و ٢ — ملف تفاعلي شامل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;700;800&family=Noto+Naskh+Arabic:wght@400;500;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0b10; --card:#14161f; --card2:#0f1118; --bdr:#252837;
+  --txt:#ece6da; --txt-d:#8a857a; --txt-f:#5f5b52;
+  --blue:#7095c0; --green:#7ca878; --gold:#c9a154; --violet:#9a85b8;
+  --red:#b06870; --orange:#b88458; --cyan:#7aa8ac; --rose:#c898a8; --lime:#a8b478;
+  --f-ar:'Noto Kufi Arabic','Tajawal','Segoe UI',Tahoma,sans-serif;
+  --f-naskh:'Noto Naskh Arabic','Noto Kufi Arabic',serif;
+  --f-mono:'JetBrains Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:var(--f-ar);line-height:1.7;
+  background-image:radial-gradient(800px 500px at 85% 0%,rgba(201,161,84,.05),transparent 70%),radial-gradient(700px 600px at 10% 10%,rgba(184,120,74,.03),transparent 70%);}
+.w{max-width:880px;margin:0 auto;padding:18px 18px 80px}
+
+/* ─── shared site chrome (topbar + footer) ─── */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 18px;background:rgba(10,11,16,.82);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid rgba(201,161,84,.12)}
+.topbar-home{font-family:var(--f-ar);font-size:13px;font-weight:700;color:#c9a154;text-decoration:none;padding:8px 16px;border-radius:10px;border:1px solid rgba(201,161,84,.25);background:linear-gradient(135deg,rgba(201,161,84,.08),rgba(201,161,84,.03));transition:all .3s ease;white-space:nowrap}
+.topbar-home:hover{background:linear-gradient(135deg,rgba(201,161,84,.15),rgba(201,161,84,.07));border-color:rgba(201,161,84,.45);transform:translateY(-1px)}
+.topbar-title{font-family:var(--f-ar);font-size:13px;font-weight:700;color:#c9a154;text-align:left;line-height:1.4}
+.page-footer{text-align:center;padding:34px 20px 10px;margin-top:24px;border-top:1px solid var(--bdr)}
+.pf-credit{font-family:var(--f-ar);font-size:14px;font-weight:700;color:var(--txt-d);margin-bottom:12px}
+.pf-back{display:inline-block;font-family:var(--f-ar);font-size:14px;font-weight:700;color:#7ca878;text-decoration:none;padding:8px 20px;border-radius:10px;border:1px solid rgba(124,168,120,.25);background:rgba(124,168,120,.07);transition:all .25s ease}
+.pf-back:hover{background:rgba(124,168,120,.14);transform:translateY(-2px)}
+
+/* progress bar */
+.prog{position:sticky;top:0;z-index:50;background:rgba(10,11,16,.86);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--bdr);padding:12px 18px;display:flex;align-items:center;gap:14px}
+.prog .pinfo{display:flex;gap:18px;align-items:baseline;font-size:13px;color:var(--txt-d);white-space:nowrap}
+.prog .pinfo b{color:var(--txt);font-family:var(--f-mono);font-size:16px;font-weight:700}
+.ptrack{flex:1;height:9px;background:var(--card);border:1px solid var(--bdr);border-radius:99px;overflow:hidden}
+#pfill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));transition:width .5s ease}
+
+/* hero */
+.hero{text-align:center;padding:42px 14px 30px}
+.hero .pill{display:inline-block;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.5px;
+  border:1px solid rgba(201,161,84,.3);border-radius:99px;padding:5px 14px;margin-bottom:16px}
+.hero h1{font-size:30px;font-weight:800;line-height:1.3}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p{color:var(--txt-d);font-size:15px;margin-top:10px;max-width:560px;margin-inline:auto}
+.hero .sep{width:60px;height:3px;background:linear-gradient(90deg,var(--blue),var(--violet));border-radius:3px;margin:22px auto 0}
+
+/* unit divider */
+.udiv{display:flex;align-items:center;gap:14px;margin:38px 0 18px}
+.udiv .ub{font-size:13px;font-weight:800;padding:7px 16px;border-radius:10px}
+.udiv .line{flex:1;height:1px;background:var(--bdr)}
+
+/* section */
+.sec{background:var(--card);border:1px solid var(--bdr);border-radius:18px;padding:22px 22px 24px;margin-bottom:16px}
+.sec-h{display:flex;align-items:center;gap:13px;margin-bottom:16px}
+.sec-n{width:34px;height:34px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--f-mono);font-weight:700;font-size:15px;color:#0a0b10}
+.sec-t{font-size:19px;font-weight:800}
+.sec-td{font-family:var(--f-mono);font-size:12px;color:var(--txt-d)}
+
+.de{font-family:var(--f-mono);direction:ltr;unicode-bidi:isolate;display:inline-block}
+h4.blk{font-size:15px;font-weight:700;margin:18px 0 10px}
+
+/* callout */
+.rule{border-radius:14px;padding:15px 18px;margin:14px 0;font-size:14.5px;line-height:1.8}
+.rule h5{font-size:14px;font-weight:700;margin-bottom:5px}
+
+/* tables */
+.tw{overflow-x:auto;border-radius:12px;border:1px solid var(--bdr);margin:14px 0}
+table{width:100%;border-collapse:collapse;direction:ltr;text-align:center;min-width:340px}
+th{padding:11px 12px;font-family:var(--f-ar);font-size:13px;font-weight:700;border-bottom:2px solid var(--bdr);background:var(--card2)}
+td{padding:10px 12px;font-size:14px;border-bottom:1px solid rgba(37,40,55,.6)}
+tr:last-child td{border-bottom:none}
+td.pn,td.lbl{font-family:var(--f-mono);font-weight:700}
+.mono{font-family:var(--f-mono)}
+
+/* vocab/grid lists */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:9px;margin:12px 0}
+.gi{background:var(--card2);border:1px solid var(--bdr);border-radius:11px;padding:11px 13px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.gi .d{font-family:var(--f-mono);font-size:14px;font-weight:600;direction:ltr}
+.gi .a{font-size:13px;color:var(--txt-d)}
+.gi .p{font-size:12px;color:var(--txt-f);font-family:var(--f-naskh)}
+
+/* article cards */
+.a4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px 0}
+.ac{border-radius:13px;padding:16px 10px;text-align:center}
+.ac .art{font-family:var(--f-mono);font-size:26px;font-weight:700}
+.ac .gen{font-size:12px;font-weight:700;margin-top:3px}
+.ac .ex{font-family:var(--f-mono);font-size:11px;color:var(--txt-d);direction:ltr;margin-top:5px}
+
+/* two col */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.duo .box{border-radius:14px;padding:16px}
+.duo .box h5{font-size:14px;font-weight:700;margin-bottom:6px}
+.duo .box .kw{font-family:var(--f-mono);font-size:18px;font-weight:700;margin:4px 0}
+.duo .box .ex{font-family:var(--f-mono);font-size:12.5px;color:var(--txt-d);direction:ltr;background:rgba(255,255,255,.03);border-radius:8px;padding:6px 10px;margin-top:8px}
+
+/* example line */
+.exl{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid rgba(37,40,55,.5)}
+.exl:last-child{border-bottom:none}
+.exl .tag{font-size:11px;font-weight:700;border-radius:7px;padding:3px 9px;white-space:nowrap;flex-shrink:0}
+.exl .dd{font-family:var(--f-mono);font-size:14.5px;direction:ltr;display:block}
+.exl .aa{font-size:13px;color:var(--txt-d);display:block;margin-top:2px}
+
+/* ─── EXERCISE ENGINE ─── */
+.ex-wrap{background:var(--card2);border:1px solid var(--bdr);border-radius:14px;padding:16px 16px 18px;margin:16px 0 4px}
+.ex-label{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--gold);
+  background:rgba(201,161,84,.1);border:1px solid rgba(201,161,84,.22);border-radius:99px;padding:4px 12px;margin-bottom:12px}
+.ex-q{font-size:15px;line-height:1.7;margin-bottom:12px}
+.opt{display:flex;align-items:center;gap:9px;width:100%;text-align:right;justify-content:flex-start;
+  background:var(--card);border:1px solid var(--bdr);border-radius:11px;padding:11px 14px;margin:7px 0;
+  color:var(--txt);font-family:var(--f-ar);font-size:15px;cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover:not(:disabled){border-color:var(--txt-f)}
+.opt:disabled{cursor:default}
+.okb{background:rgba(124,168,120,.12)!important;border-color:var(--green)!important;color:#a6c8a2!important}
+.nob{background:rgba(176,104,112,.12)!important;border-color:var(--red)!important;color:#d2a2a8!important}
+.selref{outline:2px solid var(--blue);outline-offset:1px}
+.fin{width:100%;background:var(--card);border:1.5px solid var(--bdr);border-radius:11px;padding:11px 14px;
+  color:var(--txt);font-family:var(--f-mono);font-size:15px;direction:ltr;text-align:left;outline:none}
+.fin:focus{border-color:var(--blue)}
+.check{margin-top:11px;background:var(--blue);color:#0a0b10;border:none;border-radius:11px;padding:10px 22px;
+  font-family:var(--f-ar);font-weight:700;font-size:14.5px;cursor:pointer}
+.check:disabled{opacity:.5;cursor:default}
+.pool,.ans{display:flex;flex-wrap:wrap;gap:7px}
+.ans{min-height:48px;border:1.5px dashed var(--bdr);border-radius:11px;padding:9px;align-items:center;direction:ltr;margin-bottom:9px}
+.ans:empty::before{content:'اضغط الكلمات بالترتيب…';color:var(--txt-f);font-family:var(--f-ar);font-size:13px;direction:rtl}
+.chip{font-family:var(--f-mono);direction:ltr;font-size:15px;background:var(--card);border:1px solid var(--bdr);
+  border-radius:9px;padding:8px 13px;color:var(--txt);cursor:pointer}
+.chip:disabled{cursor:default}
+.mcol{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mc-col{display:flex;flex-direction:column;gap:8px}
+.m-l,.m-r{background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:11px;color:var(--txt);
+  font-family:var(--f-mono);direction:ltr;font-size:15px;cursor:pointer;text-align:center}
+.m-l:disabled,.m-r:disabled{cursor:default}
+.fb{margin-top:12px;border-radius:11px;padding:12px 14px;font-size:14px;line-height:1.75}
+.fb.OK{background:rgba(124,168,120,.08);border:1px solid rgba(124,168,120,.25)}
+.fb.NO{background:rgba(176,104,112,.07);border:1px solid rgba(176,104,112,.25)}
+.fb-h{font-weight:700;margin-bottom:5px}
+.t-ok{color:var(--green)} .t-no{color:var(--red)}
+.fb-x{color:#c8c4ba}
+.fb-sent{margin-top:6px;color:#c8c4ba}
+.pron{display:inline-block;margin-top:8px;font-size:13px;font-family:var(--f-naskh);
+  background:rgba(112,149,192,.1);border:1px solid rgba(112,149,192,.22);color:#9bb4d6;border-radius:8px;padding:3px 11px}
+
+/* dialogue */
+.dlg{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.dline{border:1px solid var(--bdr);border-radius:12px;padding:12px 14px;cursor:pointer;background:var(--card2);transition:border-color .15s}
+.dline:hover{border-color:var(--txt-f)}
+.dline .who{font-size:11px;font-weight:700;margin-bottom:4px}
+.dline .dde{font-family:var(--f-mono);font-size:15px;direction:ltr}
+.dline .dar{display:none;font-size:13.5px;color:var(--txt-d);margin-top:6px}
+.dline .dpr{display:none;font-size:12.5px;color:var(--txt-f);font-family:var(--f-naskh);margin-top:3px}
+.dline.show .dar,.dline.show .dpr{display:block}
+.dhint{font-size:12px;color:var(--txt-f);text-align:center;margin-bottom:8px}
+
+/* finale */
+.finale{display:none;border-radius:16px;padding:20px;margin-top:8px;text-align:center}
+.finale h3{font-size:20px;font-weight:800;margin-bottom:6px}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .5s,transform .5s}
+.rv.v{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}#pfill{transition:none}}
+@media(max-width:620px){
+  .w{padding:14px 13px 70px} .hero h1{font-size:24px} .sec{padding:18px 15px 20px} .sec-t{font-size:17px}
+  .a4{grid-template-columns:repeat(2,1fr)} .duo{grid-template-columns:1fr} .grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title">مراجعة الوحدتين ١ و ٢ — Wiederholung 1 &amp; 2</span>
+</nav>
+
+<div class="prog">
+  <div class="pinfo"><span>أُنجِز <b id="pdone">٠</b>/<span id="ptot">٠</span></span><span>صح <b id="pscore">٠</b></span></div>
+  <div class="ptrack"><div id="pfill"></div></div>
+</div>
+
+<div class="w">
+
+  <div class="hero">
+    <div class="pill">EINHEIT 1 + 2 · مرجع تفاعلي</div>
+    <h1>كل تفاصيل <em>الوحدتين</em></h1>
+    <p>الشرح + تمارين من كل نوع (ترتيب، ترجمة، أدوات، أرقام) + محادثة كاملة. اقرأ القاعدة، وبعدها طبّق فوراً. كل تمرين بيصحّح حالك ويعطيك النطق.</p>
+    <div class="sep"></div>
+  </div>
+
+  <!-- ════════════════ الوحدة الأولى ════════════════ -->
+  <div class="udiv"><span class="ub" style="background:rgba(112,149,192,.12);color:#9bb4d6">الوحدة الأولى · التعارف والأساسيات</span><span class="line"></span></div>
+
+  <!-- النطق -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--cyan),#4e8488)">٠</div><div><div class="sec-t">قبل ما نبدأ: أصوات لازم تعرفها</div><div class="sec-td">Aussprache</div></div></div>
+    <p style="color:var(--txt-d);font-size:14px;margin-bottom:4px">أغلب أخطاء الإملاء بتيجي من النطق. احفظ هاي الأصوات وبتختفي معظم الأخطاء:</p>
+    <div class="tw"><table>
+      <thead><tr><th>الحروف</th><th>الصوت</th><th>مثال</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl" style="color:var(--cyan)">ch</td><td>خ / ش</td><td class="mono">ich = «إش»</td></tr>
+        <tr><td class="lbl" style="color:var(--cyan)">ei</td><td>آيْ</td><td class="mono">eins = «آينس»</td></tr>
+        <tr><td class="lbl" style="color:var(--cyan)">ie</td><td>ييْ (ياء طويلة)</td><td class="mono">Sie = «زي»</td></tr>
+        <tr><td class="lbl" style="color:var(--cyan)">w</td><td>ف</td><td class="mono">wohnen = «فونِن»</td></tr>
+        <tr><td class="lbl" style="color:var(--cyan)">v</td><td>ف</td><td class="mono">vier = «فير»</td></tr>
+        <tr><td class="lbl" style="color:var(--cyan)">z</td><td>تس</td><td class="mono">zehn = «تسين»</td></tr>
+        <tr><td class="lbl" style="color:var(--cyan)">s + حرف علة</td><td>ز</td><td class="mono">sieben = «زيبن»</td></tr>
+        <tr><td class="lbl" style="color:var(--cyan)">sch</td><td>ش</td><td class="mono">sprechen = «شبرِشن»</td></tr>
+        <tr><td class="lbl" style="color:var(--cyan)">ß</td><td>س</td><td class="mono">heißen = «هايسن»</td></tr>
+        <tr><td class="lbl" style="color:var(--cyan)">au</td><td>آوْ</td><td class="mono">aus = «آوس»</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rule" style="background:rgba(176,104,112,.06);border:1px solid rgba(176,104,112,.2)">
+      <h5 style="color:var(--red)">⚠️ انتبه لهاي تحديداً</h5>
+      <p><span class="de">ich</span> = «إش» وليست «Ice» — و <span class="de">aus</span> = «آوس» وليست «aws». التهجئة بتتبع الصوت الألماني، مش الإنجليزي.</p>
+    </div>
+  </div>
+
+  <!-- 1 التحيات -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#a0802f)">١</div><div><div class="sec-t">التحيات والوداع</div><div class="sec-td">Begrüßung &amp; Verabschiedung</div></div></div>
+    <div class="tw"><table>
+      <thead><tr><th>بالألماني</th><th>النطق</th><th>المعنى ومتى تُستخدم</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl" style="color:var(--gold)">Hallo</td><td>هالو</td><td>مرحباً (في أي وقت، غير رسمي)</td></tr>
+        <tr><td class="lbl" style="color:var(--gold)">Guten Morgen</td><td>جوتن مورجن</td><td>صباح الخير (حتى ~الساعة 11)</td></tr>
+        <tr><td class="lbl" style="color:var(--gold)">Guten Tag</td><td>جوتن تاج</td><td>نهارك سعيد (من الظهر للمساء)</td></tr>
+        <tr><td class="lbl" style="color:var(--gold)">Guten Abend</td><td>جوتن آبِنت</td><td>مساء الخير (من ~6 مساءً)</td></tr>
+        <tr><td class="lbl" style="color:var(--gold)">Gute Nacht</td><td>جوته ناخت</td><td>تصبح على خير (قبل النوم)</td></tr>
+        <tr><td class="lbl" style="color:var(--gold)">Tschüs</td><td>تشوس</td><td>مع السلامة (غير رسمي)</td></tr>
+        <tr><td class="lbl" style="color:var(--gold)">Auf Wiedersehen</td><td>آوف فيدرزيين</td><td>إلى اللقاء (رسمي)</td></tr>
+      </tbody>
+    </table></div>
+    <div data-ex="greet_mc"></div>
+    <div data-ex="greet_match"></div>
+    <div data-ex="greet_tf"></div>
+  </div>
+
+  <!-- 2 التعريف بالنفس -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--blue),#4e6e94)">٢</div><div><div class="sec-t">التعريف بالنفس</div><div class="sec-td">Sich vorstellen</div></div></div>
+    <p style="color:var(--txt-d);font-size:14px">لكل سؤال بأداة استفهام (W-Frage) جواب ثابت. احفظ الزوج معاً:</p>
+    <div style="margin-top:10px">
+      <div class="exl"><span class="tag" style="background:rgba(112,149,192,.12);color:#9bb4d6">الاسم</span><span><span class="dd">Wie heißt du?  →  Ich heiße Omar.</span><span class="aa">ما اسمك؟ ← اسمي عمر. (النطق: فِي هايست دو ← إش هايسه عُمر)</span></span></div>
+      <div class="exl"><span class="tag" style="background:rgba(112,149,192,.12);color:#9bb4d6">البلد</span><span><span class="dd">Woher kommst du?  →  Ich komme aus Palästina.</span><span class="aa">من أين أنت؟ ← أنا من فلسطين. (فوهير كومست دو ← إش كومه آوس باليستينا)</span></span></div>
+      <div class="exl"><span class="tag" style="background:rgba(124,168,120,.12);color:#a6c8a2">السكن</span><span><span class="dd">Wo wohnst du?  →  Ich wohne in Nablus.</span><span class="aa">أين تسكن؟ ← أسكن في نابلس. (فو فونست دو ← إش فونه إن نابلس)</span></span></div>
+      <div class="exl"><span class="tag" style="background:rgba(154,133,184,.12);color:#c0b0d8">اللغات</span><span><span class="dd">Welche Sprachen sprichst du?  →  Ich spreche Arabisch.</span><span class="aa">أي اللغات تتحدث؟ ← أتحدث العربية. (فيلشه شبراخن شبرِشست دو ← إش شبرِشه عربيش)</span></span></div>
+      <div class="exl"><span class="tag" style="background:rgba(184,132,88,.12);color:#c8a070">العمر</span><span><span class="dd">Wie alt bist du?  →  Ich bin 25 Jahre alt.</span><span class="aa">كم عمرك؟ ← عمري 25 سنة. (فِي آلت بِست دو ← إش بِن فونف-أُند-تسفانتسيش يـاره آلت)</span></span></div>
+    </div>
+    <div class="rule" style="background:rgba(112,149,192,.06);border:1px solid rgba(112,149,192,.2)">
+      <h5 style="color:var(--blue)">💡 طرق إضافية للتعريف</h5>
+      <p><span class="de">Ich bin Omar.</span> = أنا عمر · <span class="de">Mein Name ist Omar.</span> = اسمي عمر · <span class="de">Das ist Herr/Frau ...</span> = هذا السيد / هذه السيدة (لتقديم شخص آخر).</p>
+    </div>
+    <div data-ex="intro_formal"></div>
+    <div data-ex="intro_order1"></div>
+    <div data-ex="intro_order2"></div>
+  </div>
+
+  <!-- 3 الضمائر والتصريف -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6a55a0)">٣</div><div><div class="sec-t">الضمائر وتصريف الأفعال</div><div class="sec-td">Pronomen &amp; Konjugation</div></div></div>
+    <h4 class="blk" style="color:var(--violet)">الضمائر الشخصية</h4>
+    <div class="grid">
+      <div class="gi"><span class="d">ich</span><span class="a">أنا</span><span class="p">إش</span></div>
+      <div class="gi"><span class="d">du</span><span class="a">أنت (غير رسمي)</span><span class="p">دو</span></div>
+      <div class="gi"><span class="d">er</span><span class="a">هو</span><span class="p">إيـر</span></div>
+      <div class="gi"><span class="d">sie</span><span class="a">هي</span><span class="p">زي</span></div>
+      <div class="gi"><span class="d">es</span><span class="a">هو/هي (للمحايد)</span><span class="p">إس</span></div>
+      <div class="gi"><span class="d">wir</span><span class="a">نحن</span><span class="p">فير</span></div>
+      <div class="gi"><span class="d">ihr</span><span class="a">أنتم</span><span class="p">إيـر</span></div>
+      <div class="gi"><span class="d">sie</span><span class="a">هم</span><span class="p">زي</span></div>
+      <div class="gi"><span class="d">Sie</span><span class="a">حضرتك (رسمي، S كبيرة)</span><span class="p">زي</span></div>
+    </div>
+    <h4 class="blk" style="color:var(--violet)">القاعدة: جذر الفعل + نهاية</h4>
+    <div class="tw"><table>
+      <thead><tr><th>الضمير</th><th>النهاية</th><th>kommen</th><th>wohnen</th><th>heißen</th></tr></thead>
+      <tbody>
+        <tr><td class="pn">ich</td><td style="color:var(--gold)">-e</td><td class="mono">komme</td><td class="mono">wohne</td><td class="mono">heiße</td></tr>
+        <tr><td class="pn">du</td><td style="color:var(--gold)">-st</td><td class="mono">kommst</td><td class="mono">wohnst</td><td class="mono">heißt</td></tr>
+        <tr><td class="pn">er/sie/es</td><td style="color:var(--gold)">-t</td><td class="mono">kommt</td><td class="mono">wohnt</td><td class="mono">heißt</td></tr>
+        <tr><td class="pn">wir/sie/Sie</td><td style="color:var(--gold)">-en</td><td class="mono">kommen</td><td class="mono">wohnen</td><td class="mono">heißen</td></tr>
+        <tr><td class="pn">ihr</td><td style="color:var(--gold)">-t</td><td class="mono">kommt</td><td class="mono">wohnt</td><td class="mono">heißt</td></tr>
+      </tbody>
+    </table></div>
+    <h4 class="blk" style="color:var(--red)">أفعال شاذة لازم تحفظها</h4>
+    <div class="tw"><table>
+      <thead><tr><th>الضمير</th><th>sein (يكون)</th><th>haben (يملك)</th><th>sprechen (e→i)</th></tr></thead>
+      <tbody>
+        <tr><td class="pn">ich</td><td class="mono" style="color:var(--red)">bin</td><td class="mono" style="color:var(--red)">habe</td><td class="mono" style="color:var(--red)">spreche</td></tr>
+        <tr><td class="pn">du</td><td class="mono" style="color:var(--red)">bist</td><td class="mono" style="color:var(--red)">hast</td><td class="mono" style="color:var(--red)">sprichst</td></tr>
+        <tr><td class="pn">er/sie/es</td><td class="mono" style="color:var(--red)">ist</td><td class="mono" style="color:var(--red)">hat</td><td class="mono" style="color:var(--red)">spricht</td></tr>
+        <tr><td class="pn">wir/sie/Sie</td><td class="mono" style="color:var(--red)">sind</td><td class="mono" style="color:var(--red)">haben</td><td class="mono" style="color:var(--red)">sprechen</td></tr>
+        <tr><td class="pn">ihr</td><td class="mono" style="color:var(--red)">seid</td><td class="mono" style="color:var(--red)">habt</td><td class="mono" style="color:var(--red)">sprecht</td></tr>
+      </tbody>
+    </table></div>
+    <div class="rule" style="background:rgba(176,104,112,.06);border:1px solid rgba(176,104,112,.2)">
+      <h5 style="color:var(--red)">القاعدة المهمة (e→i)</h5>
+      <p>أفعال مثل <span class="de">sprechen, essen, lesen, nehmen</span> بتغيّر حرف العلّة من <b>e إلى i</b> مع <b>du</b> و <b>er/sie/es</b> فقط:<br><span class="de">er spricht</span> (يتحدث) · <span class="de">er isst</span> (يأكل) · <span class="de">er liest</span> (يقرأ) · <span class="de">er nimmt</span> (يأخذ).</p>
+    </div>
+    <div data-ex="conj_sein"></div>
+    <div data-ex="conj_kommen"></div>
+    <div data-ex="conj_sprechen"></div>
+    <div data-ex="conj_haben"></div>
+  </div>
+
+  <!-- 4 الأرقام -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#a0802f)">٤</div><div><div class="sec-t">الأرقام</div><div class="sec-td">Die Zahlen</div></div></div>
+    <h4 class="blk" style="color:var(--gold)">من 0 إلى 20</h4>
+    <div class="grid">
+      <div class="gi"><span class="d">0 null</span><span class="p">نول</span></div>
+      <div class="gi"><span class="d">1 eins</span><span class="p">آينس</span></div>
+      <div class="gi"><span class="d">2 zwei</span><span class="p">تسفاي</span></div>
+      <div class="gi"><span class="d">3 drei</span><span class="p">دراي</span></div>
+      <div class="gi"><span class="d">4 vier</span><span class="p">فير</span></div>
+      <div class="gi"><span class="d">5 fünf</span><span class="p">فونف</span></div>
+      <div class="gi"><span class="d">6 sechs</span><span class="p">زِكس</span></div>
+      <div class="gi"><span class="d">7 sieben</span><span class="p">زيبن</span></div>
+      <div class="gi"><span class="d">8 acht</span><span class="p">أخت</span></div>
+      <div class="gi"><span class="d">9 neun</span><span class="p">نوين</span></div>
+      <div class="gi"><span class="d">10 zehn</span><span class="p">تسين</span></div>
+      <div class="gi"><span class="d">11 elf</span><span class="p">إلف</span></div>
+      <div class="gi"><span class="d">12 zwölf</span><span class="p">تسفولف</span></div>
+      <div class="gi"><span class="d">13 dreizehn</span><span class="p">درايتسين</span></div>
+      <div class="gi"><span class="d">14 vierzehn</span><span class="p">فيرتسين</span></div>
+      <div class="gi"><span class="d">15 fünfzehn</span><span class="p">فونفتسين</span></div>
+      <div class="gi"><span class="d">16 sechzehn</span><span class="p">زِشتسين</span></div>
+      <div class="gi"><span class="d">17 siebzehn</span><span class="p">زيبتسين</span></div>
+      <div class="gi"><span class="d">18 achtzehn</span><span class="p">أختتسين</span></div>
+      <div class="gi"><span class="d">19 neunzehn</span><span class="p">نوينتسين</span></div>
+      <div class="gi"><span class="d">20 zwanzig</span><span class="p">تسفانتسيش</span></div>
+    </div>
+    <div class="rule" style="background:rgba(201,161,84,.07);border:1px solid rgba(201,161,84,.2)">
+      <h5 style="color:var(--gold)">🔢 قاعدة ما بعد 20: الآحاد + und + العشرات</h5>
+      <p>نقرأ الرقم <b>بالمقلوب</b>: الواحدات أولاً ثم <span class="de">und</span> (و) ثم العشرات.<br>
+      21 = <span class="de">einundzwanzig</span> (واحد و عشرين) · 46 = <span class="de">sechsundvierzig</span> · 65 = <span class="de">fünfundsechzig</span>.<br>
+      العشرات: 30 <span class="de">dreißig</span> · 40 <span class="de">vierzig</span> · 50 <span class="de">fünfzig</span> · 60 <span class="de">sechzig</span> · 70 <span class="de">siebzig</span> · 80 <span class="de">achtzig</span> · 90 <span class="de">neunzig</span> · 100 <span class="de">hundert</span>.</p>
+    </div>
+    <div data-ex="num_mc"></div>
+    <div data-ex="num_match"></div>
+    <div data-ex="num_fill"></div>
+  </div>
+
+  <!-- 5 الحال + التواصل -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--green),#4e7e4a)">٥</div><div><div class="sec-t">السؤال عن الحال + معلومات التواصل</div><div class="sec-td">Befinden &amp; Kontakt</div></div></div>
+    <div class="duo">
+      <div class="box" style="background:rgba(201,161,84,.05);border:1px solid rgba(201,161,84,.18)">
+        <h5 style="color:var(--gold)">😊 غير رسمي</h5>
+        <div class="kw" style="color:var(--gold)"><span class="de">Wie geht's?</span></div>
+        <div style="font-size:13px;color:var(--txt-d)">كيف حالك؟</div>
+        <div class="ex">Und dir? — وأنت؟</div>
+      </div>
+      <div class="box" style="background:rgba(112,149,192,.05);border:1px solid rgba(112,149,192,.18)">
+        <h5 style="color:var(--blue)">🎩 رسمي</h5>
+        <div class="kw" style="color:var(--blue)"><span class="de">Wie geht es Ihnen?</span></div>
+        <div style="font-size:13px;color:var(--txt-d)">كيف حال حضرتك؟</div>
+        <div class="ex">Und Ihnen? — وحضرتك؟</div>
+      </div>
+    </div>
+    <p style="font-size:14px;margin-top:6px">الردود: <span class="de">Danke, sehr gut</span> (شكراً، جيد جداً) · <span class="de">Danke, gut</span> (شكراً، جيد) · <span class="de">Ganz gut</span> (جيد نوعاً ما).</p>
+    <h4 class="blk" style="color:var(--green)">معلومات التواصل</h4>
+    <div class="grid">
+      <div class="gi"><span class="d">die Telefonnummer</span><span class="a">رقم الهاتف</span></div>
+      <div class="gi"><span class="d">die Handynummer</span><span class="a">رقم الموبايل</span></div>
+      <div class="gi"><span class="d">die E-Mail-Adresse</span><span class="a">البريد الإلكتروني</span></div>
+      <div class="gi"><span class="d">der Vorname</span><span class="a">الاسم الأول</span></div>
+      <div class="gi"><span class="d">der Nachname</span><span class="a">اسم العائلة</span></div>
+      <div class="gi"><span class="d">der Buchstabe</span><span class="a">الحرف</span></div>
+    </div>
+    <div data-ex="wellbeing_mc"></div>
+  </div>
+
+  <!-- ════════════════ الوحدة الثانية ════════════════ -->
+  <div class="udiv"><span class="ub" style="background:rgba(184,132,88,.12);color:#c8a070">الوحدة الثانية · الأدوات والنفي</span><span class="line"></span></div>
+
+  <!-- 6 الأدوات -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--blue),#4e6e94)">٦</div><div><div class="sec-t">أدوات التعريف</div><div class="sec-td">Der bestimmte Artikel</div></div></div>
+    <p style="color:var(--txt-d);font-size:14px">كل اسم إله جنس، و<b>ما بينقاس بالعربي</b> — احفظ الكلمة مع أداتها دائماً.</p>
+    <div class="a4">
+      <div class="ac" style="background:rgba(112,149,192,.08);border:1px solid rgba(112,149,192,.25)"><div class="art" style="color:var(--blue)">der</div><div class="gen" style="color:var(--blue)">مذكر</div><div class="ex">der Mann</div></div>
+      <div class="ac" style="background:rgba(176,104,112,.08);border:1px solid rgba(176,104,112,.25)"><div class="art" style="color:var(--red)">die</div><div class="gen" style="color:var(--red)">مؤنث</div><div class="ex">die Frau</div></div>
+      <div class="ac" style="background:rgba(124,168,120,.08);border:1px solid rgba(124,168,120,.25)"><div class="art" style="color:var(--green)">das</div><div class="gen" style="color:var(--green)">محايد</div><div class="ex">das Kind</div></div>
+      <div class="ac" style="background:rgba(154,133,184,.08);border:1px solid rgba(154,133,184,.25)"><div class="art" style="color:var(--violet)">die</div><div class="gen" style="color:var(--violet)">جمع</div><div class="ex">die Autos</div></div>
+    </div>
+    <div class="rule" style="background:rgba(112,149,192,.06);border:1px solid rgba(112,149,192,.2)">
+      <h5 style="color:var(--blue)">🔑 قواعد تقريبية للأداة (حسب نهاية الكلمة)</h5>
+      <p><b>die</b> ← الكلمات المنتهية بـ <span class="de">-ung</span> (die Rechnung) · <span class="de">-ität</span> (die Universität) · غالباً <span class="de">-e</span> (die Straße).<br>
+      <b>der</b> ← غالباً <span class="de">-er</span> (der Computer) · <span class="de">-el</span> (der Schlüssel).<br>
+      <b>das</b> ← <span class="de">-o</span> (das Auto) · <span class="de">-ment</span> (das Medikament) · <span class="de">-chen</span> (das Mädchen).</p>
+    </div>
+    <div data-ex="art_frau"></div>
+    <div data-ex="art_auto"></div>
+    <div data-ex="art_match"></div>
+    <div data-ex="art_suffix"></div>
+  </div>
+
+  <!-- 7 النكرة والنفي -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--red),#8a4850)">٧</div><div><div class="sec-t">النكرة والنفي</div><div class="sec-td">ein / kein / nicht</div></div></div>
+    <div class="tw"><table>
+      <thead><tr><th>الحالة</th><th style="color:var(--blue)">مذكر</th><th style="color:var(--green)">محايد</th><th style="color:var(--red)">مؤنث</th><th style="color:var(--violet)">جمع</th></tr></thead>
+      <tbody>
+        <tr><td class="lbl" style="color:var(--gold)">معرفة (الـ)</td><td class="mono" style="color:var(--blue)">der</td><td class="mono" style="color:var(--green)">das</td><td class="mono" style="color:var(--red)">die</td><td class="mono" style="color:var(--violet)">die</td></tr>
+        <tr><td class="lbl" style="color:var(--gold)">نكرة (واحد)</td><td class="mono" style="color:var(--blue)">ein</td><td class="mono" style="color:var(--green)">ein</td><td class="mono" style="color:var(--red)">eine</td><td style="color:var(--txt-f)">—</td></tr>
+        <tr><td class="lbl" style="color:var(--red)">نفي (ليس)</td><td class="mono" style="color:var(--red)">kein</td><td class="mono" style="color:var(--red)">kein</td><td class="mono" style="color:var(--red)">keine</td><td class="mono" style="color:var(--red)">keine</td></tr>
+      </tbody>
+    </table></div>
+    <div class="duo">
+      <div class="box" style="background:rgba(176,104,112,.05);border:1px solid rgba(176,104,112,.18)">
+        <h5 style="color:var(--red)">kein / keine — لنفي الأسماء</h5>
+        <div style="font-size:13px;color:var(--txt-d)">هي ببساطة نفي «ein». تُستخدم مع الأسماء النكرة.</div>
+        <div class="ex" style="color:#d2a2a8">Das ist <b>kein</b> Mann. — هذا ليس رجلاً</div>
+      </div>
+      <div class="box" style="background:rgba(154,133,184,.05);border:1px solid rgba(154,133,184,.18)">
+        <h5 style="color:var(--violet)">nicht — لنفي الأفعال والصفات</h5>
+        <div style="font-size:13px;color:var(--txt-d)">تُستخدم مع الأفعال أو الصفات أو الأماكن.</div>
+        <div class="ex" style="color:#c0b0d8">Ich wohne <b>nicht</b> in Berlin. — لا أسكن في برلين</div>
+      </div>
+    </div>
+    <div class="rule" style="background:rgba(124,168,120,.06);border:1px solid rgba(124,168,120,.2)">
+      <h5 style="color:var(--green)">⚡ الخلاصة</h5>
+      <p>بتنفي <b>اسم نكرة</b>؟ ← <span class="de">kein/keine</span>. بتنفي <b>فعل أو صفة</b>؟ ← <span class="de">nicht</span>.</p>
+    </div>
+    <div data-ex="indef_mc"></div>
+    <div data-ex="neg_kein"></div>
+    <div data-ex="neg_nicht"></div>
+    <div data-ex="neg_tf"></div>
+  </div>
+
+  <!-- 8 المهن -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--cyan),#4e8488)">٨</div><div><div class="sec-t">المهن</div><div class="sec-td">Berufe</div></div></div>
+    <div class="rule" style="background:rgba(122,168,172,.06);border:1px solid rgba(122,168,172,.2)">
+      <p>المذكر غالباً ينتهي بـ <span class="de">-er</span>، والمؤنث نضيف له <span class="de">-in</span>.<br>السؤال: <span class="de">Was bist du von Beruf?</span> (ما مهنتك؟)</p>
+    </div>
+    <div class="tw"><table>
+      <thead><tr><th>مذكر</th><th>مؤنث</th><th>المعنى</th></tr></thead>
+      <tbody>
+        <tr><td class="mono" style="color:var(--blue)">Lehrer</td><td class="mono" style="color:var(--red)">Lehrerin</td><td>معلم / معلمة</td></tr>
+        <tr><td class="mono" style="color:var(--blue)">Student</td><td class="mono" style="color:var(--red)">Studentin</td><td>طالب / طالبة</td></tr>
+        <tr><td class="mono" style="color:var(--blue)">Arzt</td><td class="mono" style="color:var(--red)">Ärztin</td><td>طبيب / طبيبة</td></tr>
+        <tr><td class="mono" style="color:var(--blue)">Ingenieur</td><td class="mono" style="color:var(--red)">Ingenieurin</td><td>مهندس / مهندسة</td></tr>
+        <tr><td class="mono" style="color:var(--blue)">Verkäufer</td><td class="mono" style="color:var(--red)">Verkäuferin</td><td>بائع / بائعة</td></tr>
+      </tbody>
+    </table></div>
+    <div data-ex="beruf_fill"></div>
+  </div>
+
+  <!-- 9 الجمل والأسئلة -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6a55a0)">٩</div><div><div class="sec-t">تكوين الجمل والأسئلة</div><div class="sec-td">Satzbau &amp; Fragen</div></div></div>
+    <div class="rule" style="background:rgba(154,133,184,.06);border:1px solid rgba(154,133,184,.2)">
+      <h5 style="color:var(--violet)">⚡ القاعدة الذهبية: الفعل في المركز الثاني</h5>
+      <p>في الجملة الخبرية والسؤال بأداة استفهام، الفعل دائماً ثاني عنصر.</p>
+    </div>
+    <h4 class="blk" style="color:var(--violet)">١) جملة خبرية: الفاعل + الفعل + الباقي</h4>
+    <div class="exl"><span class="tag" style="background:rgba(154,133,184,.12);color:#c0b0d8">خبر</span><span><span class="dd">Ich (1) komme (2) aus Palästina.</span><span class="aa">أنا آتٍ من فلسطين</span></span></div>
+    <h4 class="blk" style="color:var(--violet)">٢) سؤال بأداة استفهام (W-Frage): الأداة + الفعل + الفاعل</h4>
+    <div class="grid">
+      <div class="gi"><span class="d">Wer?</span><span class="a">مَن؟</span></div>
+      <div class="gi"><span class="d">Was?</span><span class="a">ماذا؟</span></div>
+      <div class="gi"><span class="d">Wo?</span><span class="a">أين؟</span></div>
+      <div class="gi"><span class="d">Woher?</span><span class="a">من أين؟</span></div>
+      <div class="gi"><span class="d">Wann?</span><span class="a">متى؟</span></div>
+      <div class="gi"><span class="d">Wie?</span><span class="a">كيف/ما؟</span></div>
+      <div class="gi"><span class="d">Welche?</span><span class="a">أيّ؟</span></div>
+    </div>
+    <div class="exl"><span class="tag" style="background:rgba(122,168,172,.12);color:#a6cccf">W-Frage</span><span><span class="dd">Wo (1) wohnst (2) du (3)?</span><span class="aa">أين تسكن؟</span></span></div>
+    <h4 class="blk" style="color:var(--violet)">٣) سؤال نعم/لا (Ja/Nein): الفعل أولاً</h4>
+    <div class="exl"><span class="tag" style="background:rgba(124,168,120,.12);color:#a6c8a2">Ja/Nein</span><span><span class="dd">Kommst (1) du aus Syrien? → Ja / Nein</span><span class="aa">هل أنت من سوريا؟ ← نعم / لا</span></span></div>
+    <div class="rule" style="background:rgba(201,161,84,.06);border:1px solid rgba(201,161,84,.2)">
+      <h5 style="color:var(--gold)">رسمي مقابل غير رسمي</h5>
+      <p>غير رسمي (du): <span class="de">Wie heißt du? · Woher kommst du?</span><br>رسمي (Sie بحرف كبير): <span class="de">Wie heißen Sie? · Woher kommen Sie?</span></p>
+    </div>
+    <div data-ex="order_dassist"></div>
+    <div data-ex="order_wfrage"></div>
+    <div data-ex="janein_mc"></div>
+  </div>
+
+  <!-- 10 المحادثة -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#a06a80)">★</div><div><div class="sec-t">محادثة كاملة: أول لقاء</div><div class="sec-td">Dialog — Erstes Treffen</div></div></div>
+    <p class="dhint">👆 اضغط على أي سطر لإظهار الترجمة والنطق</p>
+    <div class="dlg">
+      <div class="dline"><div class="who" style="color:var(--rose)">Lena</div><div class="dde">Hallo! Guten Tag.</div><div class="dar">مرحباً! نهارك سعيد.</div><div class="dpr">هالو! جوتن تاج.</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Omar</div><div class="dde">Guten Tag! Wie heißt du?</div><div class="dar">نهارك سعيد! ما اسمك؟</div><div class="dpr">جوتن تاج! فِي هايست دو؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Lena</div><div class="dde">Ich heiße Lena. Und du? Wie ist dein Name?</div><div class="dar">اسمي لينا. وأنت؟ ما اسمك؟</div><div class="dpr">إش هايسه لينا. أُند دو؟ فِي إست داين نامه؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Omar</div><div class="dde">Mein Name ist Omar.</div><div class="dar">اسمي عمر.</div><div class="dpr">ماين نامه إست عُمر.</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Lena</div><div class="dde">Woher kommst du, Omar?</div><div class="dar">من أين أنت يا عمر؟</div><div class="dpr">فوهير كومست دو، عُمر؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Omar</div><div class="dde">Ich komme aus Palästina. Und du?</div><div class="dar">أنا من فلسطين. وأنتِ؟</div><div class="dpr">إش كومه آوس باليستينا. أُند دو؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Lena</div><div class="dde">Ich komme aus Deutschland. Wo wohnst du jetzt?</div><div class="dar">أنا من ألمانيا. أين تسكن الآن؟</div><div class="dpr">إش كومه آوس دويتشلاند. فو فونست دو يتست؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Omar</div><div class="dde">Ich wohne in Berlin. Und du?</div><div class="dar">أسكن في برلين. وأنتِ؟</div><div class="dpr">إش فونه إن برلين. أُند دو؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Lena</div><div class="dde">Ich wohne auch in Berlin! Welche Sprachen sprichst du?</div><div class="dar">أنا أيضاً أسكن في برلين! أي اللغات تتحدث؟</div><div class="dpr">إش فونه آوخ إن برلين! فيلشه شبراخن شبرِشست دو؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Omar</div><div class="dde">Ich spreche Arabisch, Englisch und ein bisschen Deutsch.</div><div class="dar">أتحدث العربية والإنجليزية وقليلاً من الألمانية.</div><div class="dpr">إش شبرِشه عربيش، إنجليش أُند آين بِسشن دويتش.</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Lena</div><div class="dde">Sehr gut! Wie geht es dir?</div><div class="dar">جيد جداً! كيف حالك؟</div><div class="dpr">زيـر جوت! فِي جيت إس دير؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Omar</div><div class="dde">Danke, sehr gut. Und dir?</div><div class="dar">شكراً، جيد جداً. وأنتِ؟</div><div class="dpr">دانكه، زيـر جوت. أُند دير؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Lena</div><div class="dde">Auch gut. Ist das dein Buch?</div><div class="dar">جيدة أيضاً. هل هذا كتابك؟</div><div class="dpr">آوخ جوت. إست داس داين بوخ؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Omar</div><div class="dde">Nein, das ist kein Buch. Das ist ein Heft.</div><div class="dar">لا، هذا ليس كتاباً. هذا دفتر.</div><div class="dpr">ناين، داس إست كاين بوخ. داس إست آين هفت.</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Lena</div><div class="dde">Und das? Ist das eure Lehrerin?</div><div class="dar">وهذه؟ هل هي معلّمتكم؟</div><div class="dpr">أُند داس؟ إست داس أويره ليـرِرين؟</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Omar</div><div class="dde">Ja, das ist die Lehrerin. Sie heißt Frau Müller.</div><div class="dar">نعم، هذه هي المعلّمة. اسمها السيدة مولر.</div><div class="dpr">يا، داس إست دي ليـرِرين. زي هايست فراو مولر.</div></div>
+      <div class="dline"><div class="who" style="color:var(--rose)">Lena</div><div class="dde">Tschüs, Omar! Bis bald.</div><div class="dar">مع السلامة يا عمر! إلى اللقاء قريباً.</div><div class="dpr">تشوس، عُمر! بِس بالد.</div></div>
+      <div class="dline"><div class="who" style="color:var(--blue)">Omar</div><div class="dde">Auf Wiedersehen, Lena!</div><div class="dar">إلى اللقاء يا لينا!</div><div class="dpr">آوف فيدرزيين، لينا!</div></div>
+    </div>
+    <h4 class="blk" style="color:var(--rose)">أسئلة الفهم على المحادثة</h4>
+    <div data-ex="dlg_q1"></div>
+    <div data-ex="dlg_q2"></div>
+    <div data-ex="dlg_q3"></div>
+  </div>
+
+  <!-- 11 ترجمة المفردات -->
+  <div class="sec rv">
+    <div class="sec-h"><div class="sec-n" style="background:linear-gradient(135deg,var(--lime),#788840)">✦</div><div><div class="sec-t">تدريب ترجمة المفردات</div><div class="sec-td">Wortschatz</div></div></div>
+    <div data-ex="vocab_verbs"></div>
+    <div data-ex="vocab_nouns"></div>
+    <div data-ex="vocab_mc1"></div>
+    <div data-ex="vocab_mc2"></div>
+  </div>
+
+  <div class="finale" id="finale"></div>
+
+  <p style="text-align:center;color:var(--txt-f);font-size:12.5px;margin-top:26px;line-height:1.9">
+    خلّصت كل التمارين؟ ممتاز! ارجع لأي قسم متى ما حبيت.<br>لما تكون جاهز للوحدة الثالثة، احكيلي.
+  </p>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var S={earn:0, totalPts:0, totalEx:0, comp:{}};
+  function ar(n){return String(n).replace(/[0-9]/g,function(d){return "٠١٢٣٤٥٦٧٨٩"[+d];});}
+  function el(t,c){var e=document.createElement(t); if(c)e.className=c; return e;}
+  function shuffle(a){a=a.slice(); for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var x=a[i];a[i]=a[j];a[j]=x;} return a;}
+  function norm(s){return (s||"").toLowerCase().trim().replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/ß/g,"ss").replace(/\s+/g," ");}
+  function bar(){
+    var ne=Object.keys(S.comp).length;
+    document.getElementById("pdone").textContent=ar(ne);
+    document.getElementById("ptot").textContent=ar(S.totalEx);
+    document.getElementById("pscore").textContent=ar(S.earn);
+    document.getElementById("pfill").style.width=(S.totalEx? Math.round(ne/S.totalEx*100):0)+"%";
+    if(ne===S.totalEx && S.totalEx>0) finale();
+  }
+  function pts(n){S.earn+=n; bar();}
+  function done(id){if(!S.comp[id]){S.comp[id]=1; bar();}}
+  function fbEl(ok,exp,pron,extra){
+    var d=el("div","fb "+(ok?"OK":"NO"));
+    var h='<div class="fb-h">'+(ok?'<span class="t-ok">✓ صحيح</span>':'<span class="t-no">✗ غير صحيح</span>')+'</div>';
+    var x=exp?('<div class="fb-x">'+exp+'</div>'):"";
+    var ex2=extra?('<div class="fb-sent">'+extra+'</div>'):"";
+    var p=pron?('<div class="pron">🔈 النطق: '+pron+'</div>'):"";
+    d.innerHTML=h+x+ex2+p; return d;
+  }
+  function label(txt){var e=el("div","ex-label"); e.innerHTML='<span>✏️</span> '+txt; return e;}
+  function qline(html){var e=el("div","ex-q"); e.innerHTML=html; return e;}
+
+  function mountMC(host,ex,id){
+    var card=el("div","ex-wrap");
+    card.appendChild(label(ex.tf?"تمرين · صح أم خطأ":"تمرين · اختر الإجابة"));
+    card.appendChild(qline(ex.q));
+    ex.options.forEach(function(o){
+      var b=el("button","opt");
+      b.innerHTML=(o.de?'<span class="de">'+o.de+'</span>':"")+(o.de&&o.ar?" — ":"")+(o.ar?o.ar:"")+(o.t?o.t:"");
+      b.addEventListener("click",function(){
+        if(card.dataset.done) return; card.dataset.done="1";
+        var btns=card.querySelectorAll(".opt");
+        for(var i=0;i<btns.length;i++){btns[i].disabled=true; if(ex.options[i].ok) btns[i].classList.add("okb");}
+        if(!o.ok) b.classList.add("nob");
+        pts(o.ok?1:0);
+        card.appendChild(fbEl(o.ok,ex.exp,ex.pron,null));
+        done(id);
+      });
+      card.appendChild(b);
+    });
+    host.appendChild(card); S.totalPts+=1; S.totalEx++;
+  }
+
+  function mountOrder(host,ex,id){
+    var card=el("div","ex-wrap");
+    card.appendChild(label("تمرين · رتّب الكلمات"));
+    card.appendChild(qline(ex.q));
+    var ans=el("div","ans"); var pool=el("div","pool");
+    shuffle(ex.words).forEach(function(w){
+      var b=el("button","chip"); b.textContent=w;
+      b.addEventListener("click",function(){ if(card.dataset.done) return; (b.parentNode===pool?ans:pool).appendChild(b); });
+      pool.appendChild(b);
+    });
+    var ck=el("button","check"); ck.innerHTML="✓ تحقق";
+    ck.addEventListener("click",function(){
+      if(card.dataset.done) return; card.dataset.done="1";
+      var ch=ans.querySelectorAll(".chip"); var arr=[];
+      for(var i=0;i<ch.length;i++) arr.push(ch[i].textContent.trim());
+      var ok=norm(arr.join(" ")).replace(/[.?!]/g,"")===norm(ex.answer).replace(/[.?!]/g,"");
+      ans.classList.add(ok?"okb":"nob");
+      var all=card.querySelectorAll(".chip"); for(var j=0;j<all.length;j++) all[j].disabled=true; ck.disabled=true;
+      pts(ok?1:0);
+      card.appendChild(fbEl(ok,ex.exp,ex.pron,'الجملة الصحيحة: <span class="de">'+ex.answer+'</span>'));
+      done(id);
+    });
+    card.appendChild(ans); card.appendChild(pool); card.appendChild(ck);
+    host.appendChild(card); S.totalPts+=1; S.totalEx++;
+  }
+
+  function mountMatch(host,ex,id){
+    var card=el("div","ex-wrap");
+    card.appendChild(label("تمرين · وصّل"));
+    card.appendChild(qline(ex.q));
+    var grid=el("div","mcol"); var L=el("div","mc-col"); var R=el("div","mc-col");
+    ex.pairs.forEach(function(p,i){ var b=el("button","m-l"); b.textContent=p.l; b.setAttribute("data-k",i); L.appendChild(b); });
+    var rs=shuffle(ex.pairs.map(function(p,i){return {r:p.r,k:i};}));
+    rs.forEach(function(o){ var b=el("button","m-r"); b.textContent=o.r; b.setAttribute("data-k",o.k); R.appendChild(b); });
+    var sel=null, paired=0, need=ex.pairs.length;
+    L.addEventListener("click",function(e){ var b=e.target.closest(".m-l"); if(!b||b.disabled) return; if(sel) sel.classList.remove("selref"); sel=b; b.classList.add("selref"); });
+    R.addEventListener("click",function(e){
+      var b=e.target.closest(".m-r"); if(!b||b.disabled||!sel) return;
+      if(b.getAttribute("data-k")===sel.getAttribute("data-k")){
+        b.classList.add("okb"); sel.classList.add("okb"); b.disabled=true; sel.disabled=true; sel.classList.remove("selref"); sel=null; paired++; pts(1);
+        if(paired===need){ card.appendChild(fbEl(true,ex.exp,ex.pron,null)); done(id); }
+      } else { var bb=b; bb.classList.add("nob"); setTimeout(function(){bb.classList.remove("nob");},450); sel.classList.remove("selref"); sel=null; }
+    });
+    grid.appendChild(L); grid.appendChild(R); card.appendChild(grid);
+    host.appendChild(card); S.totalPts+=need; S.totalEx++;
+  }
+
+  function mountFill(host,ex,id){
+    var card=el("div","ex-wrap");
+    card.appendChild(label("تمرين · اكتب الإجابة"));
+    card.appendChild(qline(ex.q));
+    var inp=el("input","fin"); inp.type="text"; inp.dir="ltr"; inp.setAttribute("placeholder",ex.ph||"اكتب بالألماني…");
+    var ck=el("button","check"); ck.innerHTML="✓ تحقق";
+    function submit(){
+      if(card.dataset.done) return; card.dataset.done="1";
+      var ok=ex.accept.map(norm).indexOf(norm(inp.value))>-1;
+      inp.disabled=true; ck.disabled=true; inp.classList.add(ok?"okb":"nob");
+      pts(ok?1:0);
+      card.appendChild(fbEl(ok,ex.exp,ex.pron, ok?null:('الإجابة الصحيحة: <span class="de">'+ex.show+'</span>')));
+      done(id);
+    }
+    ck.addEventListener("click",submit);
+    inp.addEventListener("keydown",function(e){ if(e.key==="Enter") submit(); });
+    card.appendChild(inp); card.appendChild(ck);
+    host.appendChild(card); S.totalPts+=1; S.totalEx++;
+  }
+
+  var EX={
+    greet_mc:{type:"mc",q:"أي تحية تناسب الساعة الثامنة مساءً؟",options:[
+      {de:"Guten Morgen",ar:"صباح الخير",ok:false},{de:"Guten Tag",ar:"نهارك سعيد",ok:false},
+      {de:"Guten Abend",ar:"مساء الخير",ok:true},{de:"Gute Nacht",ar:"تصبح على خير",ok:false}],
+      exp:"Guten Abend تُستخدم من حوالي الساعة السادسة مساءً.",pron:"جوتن آبِنت"},
+    greet_match:{type:"match",q:"وصّل كل كلمة ألمانية بمعناها العربي.",pairs:[
+      {l:"Hallo",r:"مرحباً"},{l:"Gute Nacht",r:"تصبح على خير"},{l:"Auf Wiedersehen",r:"إلى اللقاء (رسمي)"},{l:"Tschüs",r:"مع السلامة"}],
+      exp:"أحسنت! انتبه: Tschüs غير رسمية، و Auf Wiedersehen رسمية.",pron:"تشوس · آوف فيدرزيين"},
+    greet_tf:{type:"mc",tf:true,q:'صح أم خطأ؟ كلمة <span class="de">Tschüs</span> تُستخدم في المواقف الرسمية.',options:[
+      {t:"✔ صح",ok:false},{t:"✗ خطأ",ok:true}],
+      exp:"Tschüs وداع غير رسمي بين الأصدقاء. الرسمي هو Auf Wiedersehen.",pron:"تشوس"},
+
+    intro_formal:{type:"mc",q:"كيف تسأل عن الاسم بشكل رسمي (لحضرته)؟",options:[
+      {de:"Wie heißt du?",ok:false},{de:"Wie heißen Sie?",ok:true},{de:"Wer bist du?",ok:false},{de:"Woher kommst du?",ok:false}],
+      exp:"الصيغة الرسمية تستخدم Sie (بحرف كبير) مع التصريف heißen.",pron:"فِي هايسن زي؟"},
+    intro_order1:{type:"order",q:"رتّب: «اسمي عمر».",words:["Ich","heiße","Omar"],answer:"Ich heiße Omar",
+      exp:"الفعل (heiße) في المركز الثاني بعد الفاعل Ich.",pron:"إش هايسه عُمر"},
+    intro_order2:{type:"order",q:"رتّب السؤال: «من أين أنت؟» (غير رسمي).",words:["Woher","kommst","du"],answer:"Woher kommst du",
+      exp:"في سؤال W-Frage: الأداة (Woher) ثم الفعل (kommst) ثم الفاعل (du).",pron:"فوهير كومست دو؟"},
+
+    conj_sein:{type:"match",q:'صرّف الفعل <span class="de">sein</span> (يكون): وصّل الضمير بتصريفه.',pairs:[
+      {l:"ich",r:"bin"},{l:"du",r:"bist"},{l:"er",r:"ist"},{l:"wir",r:"sind"}],
+      exp:"sein فعل شاذ تماماً، احفظه غيباً فهو الأكثر استخداماً.",pron:"بِن · بِست · إست · زِنت"},
+    conj_kommen:{type:"mc",q:'أكمل: <span class="de">Du ___ aus Syrien.</span> (kommen)',options:[
+      {de:"komme",ok:false},{de:"kommst",ok:true},{de:"kommt",ok:false},{de:"kommen",ok:false}],
+      exp:"مع الضمير du نضيف النهاية ‑st.",pron:"دو كومست"},
+    conj_sprechen:{type:"mc",q:'أكمل: <span class="de">Er ___ Deutsch.</span> (sprechen)',options:[
+      {de:"spreche",ok:false},{de:"sprechst",ok:false},{de:"spricht",ok:true},{de:"sprechen",ok:false}],
+      exp:"sprechen شاذ: مع er تتحول e إلى i ⇐ spricht.",pron:"إيـر شبرِشت"},
+    conj_haben:{type:"mc",q:'أكمل: <span class="de">Ich ___ ein Buch.</span> (haben)',options:[
+      {de:"habe",ok:true},{de:"hast",ok:false},{de:"hat",ok:false},{de:"haben",ok:false}],
+      exp:"haben مع ich = habe (شاذ قليلاً).",pron:"إش هابه"},
+
+    num_mc:{type:"mc",q:"كيف نكتب الرقم 17؟",options:[
+      {de:"siebzig",ok:false},{de:"sechzehn",ok:false},{de:"siebzehn",ok:true},{de:"siebenzehn",ok:false}],
+      exp:"17 = sieben + zehn مع حذف en ⇐ siebzehn.",pron:"زيبتسين"},
+    num_match:{type:"match",q:"وصّل الرقم بكتابته الصحيحة.",pairs:[
+      {l:"3",r:"drei"},{l:"7",r:"sieben"},{l:"12",r:"zwölf"},{l:"20",r:"zwanzig"}],
+      exp:"أحسنت! تذكّر zwölf للرقم 12.",pron:"دراي · زيبن · تسفولف · تسفانتسيش"},
+    num_fill:{type:"fill",q:'اكتب الرقم <b>21</b> بالألماني (تذكّر: الآحاد + und + العشرات).',accept:["einundzwanzig"],show:"einundzwanzig",ph:"…",
+      exp:"21 = eins + und + zwanzig، وتُكتب ككلمة واحدة.",pron:"آين-أُند-تسفانتسيش"},
+
+    wellbeing_mc:{type:"mc",q:'شخص سألك <span class="de">Wie geht\'s?</span> — ما الرد المناسب؟',options:[
+      {de:"Danke, gut!",ar:"شكراً، جيد",ok:true},{de:"Ich heiße gut",ok:false},{de:"Aus Berlin",ok:false},{de:"Wie alt bist du?",ok:false}],
+      exp:"نرد بحالنا: Danke, gut / Danke, sehr gut.",pron:"دانكه، جوت"},
+
+    art_frau:{type:"mc",q:'ما أداة كلمة <span class="de">Frau</span> (امرأة)؟',options:[
+      {de:"der",ar:"مذكر",ok:false},{de:"die",ar:"مؤنث",ok:true},{de:"das",ar:"محايد",ok:false}],
+      exp:"Frau مؤنثة ⇐ die.",pron:"دي فراو"},
+    art_auto:{type:"mc",q:'ما أداة كلمة <span class="de">Auto</span> (سيارة)؟',options:[
+      {de:"der",ar:"مذكر",ok:false},{de:"die",ar:"مؤنث",ok:false},{de:"das",ar:"محايد",ok:true}],
+      exp:"Auto محايدة ⇐ das (والكلمات المنتهية بـ -o غالباً das).",pron:"داس آوتو"},
+    art_match:{type:"match",q:"وصّل كل اسم بأداته الصحيحة.",pairs:[
+      {l:"Mann",r:"der"},{l:"Frau",r:"die"},{l:"Kind",r:"das"},{l:"Schlüssel",r:"der"}],
+      exp:"تذكّر: الكلمات المنتهية بـ -el غالباً der (der Schlüssel).",pron:"دير · دي · داس"},
+    art_suffix:{type:"mc",q:'حسب القاعدة، ما أداة <span class="de">Rechnung</span> (فاتورة)؟',options:[
+      {de:"der",ok:false},{de:"die",ok:true},{de:"das",ok:false}],
+      exp:"الكلمات المنتهية بـ -ung دائماً die.",pron:"دي رِشنونغ"},
+
+    indef_mc:{type:"mc",q:'أكمل (نكرة): <span class="de">Das ist ___ Frau.</span>',options:[
+      {de:"ein",ok:false},{de:"eine",ok:true},{de:"kein",ok:false}],
+      exp:"النكرة للمؤنث = eine.",pron:"آينه فراو"},
+    neg_kein:{type:"mc",q:'أكمل: <span class="de">Das ist ___ Mann.</span> (هذا ليس رجلاً)',options:[
+      {de:"kein",ar:"نفي مذكر/محايد",ok:true},{de:"keine",ar:"نفي مؤنث/جمع",ok:false},{de:"nicht",ar:"نفي فعل/صفة",ok:false}],
+      exp:"ننفي اسماً مذكراً نكرة بـ kein.",pron:"كاين مان"},
+    neg_nicht:{type:"mc",q:'أكمل: <span class="de">Ich wohne ___ in Berlin.</span> (لا أسكن)',options:[
+      {de:"kein",ok:false},{de:"keine",ok:false},{de:"nicht",ok:true}],
+      exp:"ننفي الفعل wohnen بـ nicht.",pron:"نِشت"},
+    neg_tf:{type:"mc",tf:true,q:'صح أم خطأ؟ ننفي الأسماء النكرة باستخدام <span class="de">nicht</span>.',options:[
+      {t:"✔ صح",ok:false},{t:"✗ خطأ",ok:true}],
+      exp:"ننفي الأسماء بـ kein/keine، أما nicht فللأفعال والصفات.",pron:"كاين · نِشت"},
+
+    beruf_fill:{type:"fill",q:'مؤنث كلمة <span class="de">Lehrer</span> (معلّم) هو؟',accept:["Lehrerin"],show:"Lehrerin",ph:"…",
+      exp:"نؤنّث المهنة بإضافة -in ⇐ Lehrerin.",pron:"ليـرِرين"},
+
+    order_dassist:{type:"order",q:"رتّب: «هذه ليست امرأة».",words:["Das","ist","keine","Frau"],answer:"Das ist keine Frau",
+      exp:"نفي اسم مؤنث ⇐ keine.",pron:"داس إست كاينه فراو"},
+    order_wfrage:{type:"order",q:"رتّب السؤال: «أين تسكن؟» (غير رسمي).",words:["Wo","wohnst","du"],answer:"Wo wohnst du",
+      exp:"الأداة Wo ثم الفعل wohnst ثم الفاعل du.",pron:"فو فونست دو؟"},
+    janein_mc:{type:"mc",q:'أي جملة هي سؤال نعم/لا صحيح؟',options:[
+      {de:"Du kommst aus Syrien?",ok:false},{de:"Kommst du aus Syrien?",ok:true},{de:"Woher du kommst?",ok:false}],
+      exp:"في سؤال نعم/لا يأتي الفعل (Kommst) في أول الجملة.",pron:"كومست دو آوس زوريِن؟"},
+
+    dlg_q1:{type:"mc",q:"من أين عمر (Omar)؟",options:[
+      {de:"aus Deutschland",ar:"من ألمانيا",ok:false},{de:"aus Palästina",ar:"من فلسطين",ok:true},{de:"aus Berlin",ar:"من برلين",ok:false}],
+      exp:"قال: Ich komme aus Palästina.",pron:"آوس باليستينا"},
+    dlg_q2:{type:"mc",q:"أين يسكن عمر؟",options:[
+      {de:"in Nablus",ok:false},{de:"in Berlin",ok:true},{de:"in Syrien",ok:false}],
+      exp:"قال: Ich wohne in Berlin (ولينا أيضاً!).",pron:"إن برلين"},
+    dlg_q3:{type:"mc",q:'ماذا كان الشيء الذي ظنّته لينا كتاباً؟',options:[
+      {de:"ein Heft",ar:"دفتر",ok:true},{de:"ein Buch",ar:"كتاب",ok:false},{de:"eine Lehrerin",ar:"معلّمة",ok:false}],
+      exp:"عمر قال: Das ist kein Buch. Das ist ein Heft.",pron:"آين هفت"},
+
+    vocab_verbs:{type:"match",q:"وصّل الفعل بمعناه.",pairs:[
+      {l:"kommen",r:"يأتي"},{l:"wohnen",r:"يسكن"},{l:"sprechen",r:"يتحدث"},{l:"heißen",r:"يُسمّى"}],
+      exp:"هاي أهم أفعال الوحدة الأولى.",pron:"كومن · فونن · شبرِشن · هايسن"},
+    vocab_nouns:{type:"match",q:"وصّل الاسم بمعناه.",pairs:[
+      {l:"der Mann",r:"رجل"},{l:"die Frau",r:"امرأة"},{l:"das Kind",r:"طفل"},{l:"das Buch",r:"كتاب"}],
+      exp:"احفظ كل اسم مع أداته.",pron:"مان · فراو · كِنت · بوخ"},
+    vocab_mc1:{type:"mc",q:'ماذا تعني <span class="de">Ich spreche Deutsch</span>؟',options:[
+      {ar:"أنا أتحدث الألمانية",ok:true},{ar:"أنا أسكن في ألمانيا",ok:false},{ar:"أنا من ألمانيا",ok:false}],
+      exp:"sprechen = يتحدث ⇐ أتحدث الألمانية.",pron:"إش شبرِشه دويتش"},
+    vocab_mc2:{type:"mc",q:'ماذا تعني <span class="de">Woher kommen Sie?</span>؟',options:[
+      {ar:"أين تسكن حضرتك؟",ok:false},{ar:"من أين أنت حضرتك؟",ok:true},{ar:"ما اسم حضرتك؟",ok:false}],
+      exp:"Woher = من أين، بصيغة رسمية (Sie).",pron:"فوهير كومن زي؟"}
+  };
+
+  var hosts=document.querySelectorAll("[data-ex]");
+  for(var i=0;i<hosts.length;i++){
+    var host=hosts[i]; var id=host.getAttribute("data-ex"); var ex=EX[id]; if(!ex) continue;
+    if(ex.type==="mc") mountMC(host,ex,id);
+    else if(ex.type==="order") mountOrder(host,ex,id);
+    else if(ex.type==="match") mountMatch(host,ex,id);
+    else if(ex.type==="fill") mountFill(host,ex,id);
+  }
+  bar();
+
+  function finale(){
+    var f=document.getElementById("finale"); if(!f||f.dataset.shown) return; f.dataset.shown="1";
+    var pct=S.totalPts? Math.round(S.earn/S.totalPts*100):0;
+    var col,msg;
+    if(pct>=85){col="var(--green)";msg="ممتاز يا مهدي! أساسك في الوحدتين قوي جداً.";}
+    else if(pct>=70){col="var(--gold)";msg="جيد جداً! راجِع النقاط القليلة اللي غلطت فيها وبتثبت.";}
+    else if(pct>=50){col="var(--orange)";msg="بداية كويسة. ارجع للأقسام اللي صعبت عليك وأعد تمارينها.";}
+    else{col="var(--red)";msg="ما تيأس — أعد قراءة الشرح وكرّر التمارين، وبتتحسّن بسرعة.";}
+    f.style.display="block"; f.style.background="rgba(255,255,255,.02)"; f.style.border="1px solid "+col;
+    f.innerHTML='<h3 style="color:'+col+'">انتهيت! '+ar(S.earn)+' / '+ar(S.totalPts)+' ('+ar(pct)+'٪)</h3><p style="color:var(--txt-d)">'+msg+'</p>';
+    f.scrollIntoView({behavior:"smooth",block:"center"});
+  }
+
+  var dl=document.querySelectorAll(".dline");
+  for(var k=0;k<dl.length;k++){ dl[k].addEventListener("click",function(){ this.classList.toggle("show"); }); }
+
+  var rm=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if("IntersectionObserver" in window && !rm){
+    var ob=new IntersectionObserver(function(en){ en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("v"); ob.unobserve(e.target);} }); },{threshold:.08});
+    document.querySelectorAll(".rv").forEach(function(x){ ob.observe(x); });
+  } else { document.querySelectorAll(".rv").forEach(function(x){ x.classList.add("v"); }); }
+})();
+</script>
+</body>
+</html>
