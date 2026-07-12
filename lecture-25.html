@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 25 — الحواس، التدريب المهني والأفعال الناقصة في الماضي</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── Story / restaurant card ─── */
+.story-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:14px}
+.story-head{padding:16px 18px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,rgba(28,32,48,.6),transparent)}
+.story-ic{font-size:32px;flex-shrink:0}
+.story-name{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;direction:ltr;color:#5c9ce0}
+.story-tag{font-size:12px;color:var(--txt-d)}
+.story-body{padding:8px 18px 16px}
+.story-point{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--bdr)}
+.story-point:last-child{border-bottom:none}
+.story-p-ic{font-size:18px;flex-shrink:0;margin-top:1px}
+.story-p-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:13.5px;font-weight:800;margin-bottom:2px}
+.story-p-d{font-size:12.5px;color:var(--txt-d);line-height:1.8}
+
+/* ─── Senses grid ─── */
+.sinne-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px}
+.sinne-card{border-radius:14px;padding:18px 12px;text-align:center;border:1px solid var(--bdr);background:var(--card);transition:transform .2s,box-shadow .2s}
+.sinne-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.28)}
+.sinne-ic{font-size:34px;margin-bottom:8px}
+.sinne-de{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;direction:ltr;margin-bottom:3px}
+.sinne-ar{font-size:12.5px;color:var(--txt-d)}
+
+/* ─── Game box ─── */
+.game-box{background:linear-gradient(135deg,rgba(92,156,224,.07),rgba(154,133,184,.04));border:1px solid rgba(92,156,224,.25);border-radius:14px;padding:16px 18px;margin-top:14px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.game-ic{font-size:32px;flex-shrink:0}
+.game-t{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;color:#5c9ce0;margin-bottom:3px}
+.game-d{font-size:12.5px;color:var(--txt-d);line-height:1.8}
+
+/* ─── Vocab chips (Ausbildung / school) ─── */
+.voc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:9px;margin-top:14px}
+.voc-card{background:var(--card);border:1px solid var(--bdr);border-radius:11px;padding:12px 14px;transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
+.voc-card::before{content:'';position:absolute;right:0;top:0;bottom:0;width:3px}
+.voc-card:hover{transform:translateY(-2px)}
+.voc-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;direction:ltr;margin-bottom:3px}
+.voc-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── nach + Dativ note ─── */
+.prep-box{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid rgba(111,164,148,.25);border-radius:14px;padding:18px;margin-top:14px;flex-wrap:wrap}
+.prep-sym{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:800;color:var(--teal);direction:ltr}
+.prep-eg{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--teal);direction:ltr}
+.prep-txt{font-size:13px;color:var(--txt-d);flex:1;min-width:180px;line-height:1.8}
+
+/* ─── Modalverben Präteritum table ─── */
+.modtab{width:100%;border-collapse:separate;border-spacing:0;margin-top:14px;border:1px solid var(--bdr);border-radius:14px;overflow:hidden}
+.modtab th{font-family:'Noto Kufi Arabic',sans-serif;font-size:12.5px;font-weight:800;padding:13px;background:rgba(92,156,224,.08);color:#5c9ce0;border-bottom:1px solid var(--bdr)}
+.modtab td{padding:0;border-bottom:1px solid var(--bdr)}
+.modtab tr:last-child td{border-bottom:none}
+.mod-cell{display:flex;align-items:center;justify-content:center;gap:14px;padding:13px 16px;transition:background .2s}
+.modtab tr:hover .mod-cell{background:rgba(92,156,224,.04)}
+.mod-pres{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--txt-d);direction:ltr;min-width:64px;text-align:center}
+.mod-arr{color:#5c9ce0;font-size:14px}
+.mod-past{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;color:#5c9ce0;direction:ltr;min-width:74px;text-align:center}
+.mod-ar-c{font-size:12px;color:var(--txt-d);text-align:center;border-right:1px solid var(--bdr);font-family:'Noto Naskh Arabic',serif}
+
+/* ─── Modal sentence anatomy ─── */
+.msent{display:flex;align-items:stretch;gap:0;margin-top:16px;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;direction:ltr}
+.msent-slot{flex:1;padding:14px 10px;text-align:center}
+.msent-slot + .msent-slot{border-left:1px dashed var(--bdr)}
+.msent-pos{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.5px;color:var(--txt-d);margin-bottom:7px}
+.msent-w{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;margin-bottom:5px}
+.msent-r{font-size:10.5px;color:var(--txt-d);font-family:'Noto Kufi Arabic',sans-serif;direction:rtl}
+
+/* ─── denn vs weil ─── */
+.posbox{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.pos-card{border-radius:14px;padding:16px;position:relative;overflow:hidden}
+.pos-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.pos-denn::before{background:linear-gradient(90deg,#5c9ce0,#3060b0)}
+.pos-weil::before{background:linear-gradient(90deg,var(--violet),#6040a0)}
+.pos-name{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:800;direction:ltr;margin-bottom:8px}
+.pos-eg{font-family:'JetBrains Mono',monospace;font-size:12.5px;direction:ltr;line-height:1.8}
+.pos-eg .vb{font-weight:800;padding:1px 5px;border-radius:4px}
+.pos-note{font-size:11.5px;color:var(--txt-d);margin-top:8px;padding-top:8px;border-top:1px dashed var(--bdr)}
+
+/* ─── Artikel Dativ table ─── */
+.art-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:14px;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;direction:rtl}
+.art-table th,.art-table td{padding:12px 8px;text-align:center;border-bottom:1px solid var(--bdr);border-left:1px solid var(--bdr)}
+.art-table th:last-child,.art-table td:last-child{border-left:none}
+.art-table tr:last-child td{border-bottom:none}
+.art-table thead th{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:800;background:rgba(92,156,224,.06)}
+.art-gender{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:800;background:rgba(255,255,255,.02)}
+.art-w{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;direction:ltr}
+
+/* ─── Self-intro checklist ─── */
+.vlist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:14px}
+.vlist-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:13px 16px;display:flex;align-items:center;gap:12px;transition:transform .2s,border-color .2s}
+.vlist-card:hover{transform:translateY(-2px);border-color:rgba(92,156,224,.4)}
+.vlist-ic{font-size:22px;flex-shrink:0}
+.vlist-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:700;margin-bottom:2px}
+.vlist-de{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);direction:ltr}
+
+@media(max-width:640px){
+  .posbox{grid-template-columns:1fr}
+  .msent{flex-direction:column;direction:rtl}
+  .msent-slot + .msent-slot{border-left:none;border-top:1px dashed var(--bdr)}
+  .art-table{font-size:11px}
+  .art-table th,.art-table td{padding:9px 5px}
+  .mod-ar-c{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#8ecbff">المحاضرة 25 — Sinne, Ausbildung &amp; Modalverben</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 25 — المحاضرة الخامسة والعشرون · A2.1</div>
+  <h1>الحواس، التدريب المهني <em>والأفعال الناقصة في الماضي</em></h1>
+  <p class="hero-sub">مطعم بلا ضوء، التعلّم بالحواس، مسارات ما بعد المدرسة، الأفعال الناقصة في الماضي، denn/weil، وأدوات الداتيف</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: RESTAURANT LICHTLOS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#5c9ce0,#3060b0)">١</div>
+    <div>
+      <div class="sec-t">تدريب سماعي — مطعم بلا ضوء</div>
+      <div class="sec-td">Hörtext — Restaurant „Lichtlos“</div>
+    </div>
+  </div>
+
+  <div class="story-card">
+    <div class="story-head">
+      <div class="story-ic">🌑</div>
+      <div>
+        <div class="story-name">Lichtlos</div>
+        <div class="story-tag">مطعم لتناول الطعام والقهوة في ظلام دامس</div>
+      </div>
+    </div>
+    <div class="story-body">
+      <div class="story-point">
+        <div class="story-p-ic">🤝</div>
+        <div>
+          <div class="story-p-t">الوصول إلى الطاولة</div>
+          <div class="story-p-d">النادل/النادلة يأخذ الزبائن من أيديهم لإيصالهم إلى طاولاتهم لأنهم لا يرون شيئاً.</div>
+        </div>
+      </div>
+      <div class="story-point">
+        <div class="story-p-ic">🧾</div>
+        <div>
+          <div class="story-p-t">الطلب والدفع</div>
+          <div class="story-p-d">لا يمكن قراءة قائمة الطعام بالداخل — لذا يتم الطلب والدفع عند الاستقبال (Rezeption) في المدخل.</div>
+        </div>
+      </div>
+      <div class="story-point">
+        <div class="story-p-ic">👃</div>
+        <div>
+          <div class="story-p-t">التجربة الحسية</div>
+          <div class="story-p-d">يعتمد الشخص على حواسه الأخرى غير النظر — تجربة وصفها الطلاب بأنها <span style="font-family:'JetBrains Mono',monospace;color:#5c9ce0">interessant</span> (مثيرة للاهتمام) رغم غرابتها.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: LERNEN MIT ALLEN SINNEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--amber),#906820)">٢</div>
+    <div>
+      <div class="sec-t">التعلّم بكافة الحواس</div>
+      <div class="sec-td">Lernen mit allen Sinnen — الحواس الخمس</div>
+    </div>
+  </div>
+
+  <div class="sinne-grid">
+    <div class="sinne-card" style="border-color:rgba(112,149,192,.25)">
+      <div class="sinne-ic">👂</div>
+      <div class="sinne-de" style="color:var(--sky)">hören</div>
+      <div class="sinne-ar">السمع</div>
+    </div>
+    <div class="sinne-card" style="border-color:rgba(200,152,88,.25)">
+      <div class="sinne-ic">👃</div>
+      <div class="sinne-de" style="color:var(--amber)">riechen</div>
+      <div class="sinne-ar">الشمّ</div>
+    </div>
+    <div class="sinne-card" style="border-color:rgba(200,152,168,.25)">
+      <div class="sinne-ic">✋</div>
+      <div class="sinne-de" style="color:var(--rose)">fühlen / tasten</div>
+      <div class="sinne-ar">اللمس</div>
+    </div>
+    <div class="sinne-card" style="border-color:rgba(124,168,120,.25)">
+      <div class="sinne-ic">👅</div>
+      <div class="sinne-de" style="color:var(--green)">schmecken</div>
+      <div class="sinne-ar">التذوّق</div>
+    </div>
+    <div class="sinne-card" style="border-color:rgba(92,156,224,.25)">
+      <div class="sinne-ic">👁️</div>
+      <div class="sinne-de" style="color:#5c9ce0">sehen</div>
+      <div class="sinne-ar">النظر</div>
+    </div>
+  </div>
+
+  <div class="game-box">
+    <div class="game-ic">🎲</div>
+    <div>
+      <div class="game-t">Ich sehe etwas …</div>
+      <div class="game-d">لعبة "أنا أرى شيئاً": يصف الطالب شيئاً في الغرفة (لونه أو حجمه) وعلى الآخرين تخمينه — <span style="font-family:'JetBrains Mono',monospace;color:#5c9ce0">raten</span> (يخمّن).</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: AUSBILDUNG & NACH DER SCHULE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#2a7060)">٣</div>
+    <div>
+      <div class="sec-t">التدريب المهني وما بعد المدرسة</div>
+      <div class="sec-td">Ausbildung &amp; nach der Schule</div>
+    </div>
+  </div>
+
+  <div class="sub">المصطلحات الرئيسية</div>
+  <div class="voc-grid">
+    <div class="voc-card" style="border-color:rgba(111,164,148,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--teal)"></span>
+      <div class="voc-de" style="color:var(--teal)">die Ausbildung</div>
+      <div class="voc-ar">التدريب المهني</div>
+    </div>
+    <div class="voc-card" style="border-color:rgba(111,164,148,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--teal)"></span>
+      <div class="voc-de" style="color:var(--teal)">das Praktikum</div>
+      <div class="voc-ar">تدريب عملي</div>
+    </div>
+    <div class="voc-card" style="border-color:rgba(111,164,148,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--teal)"></span>
+      <div class="voc-de" style="color:var(--teal)">das Abitur</div>
+      <div class="voc-ar">الثانوية العامة</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">القاعدة — nach + Dativ</div>
+  <div class="prep-box">
+    <div class="prep-sym">nach</div>
+    <div>
+      <div class="prep-eg">nach der Schule</div>
+      <div style="font-size:11.5px;color:var(--txt-d);margin-top:3px">بعد المدرسة</div>
+    </div>
+    <div class="prep-txt">حرف الجر <span style="font-family:'JetBrains Mono',monospace;color:var(--teal)">nach</span> (بعد) يأتي <strong style="color:var(--teal)">دائماً مع الداتيف</strong> — لذا die Schule → der Schule.</div>
+  </div>
+
+  <div class="note" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.2);margin-top:14px">
+    <div class="ni">🎯</div>
+    <div><p><strong style="color:var(--sky)">التعبير عن المهنة المستقبلية:</strong><br>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--sky)">Ausbildung als …</span> أو <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--sky)">Ausbildung zum / zur …</span><br>
+    <span style="font-size:12px;color:var(--txt-d)">مثال: Ich mache eine Ausbildung als Krankenpfleger — أتدرّب لأصبح ممرّضاً</span></p></div>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(200,152,88,.2);margin-top:12px">
+    <div class="ni">✍️</div>
+    <div><p><strong style="color:var(--amber)">الواجب:</strong> اكتب فقرة عن مدرستك، متى أنهيت دراستك، وماذا فعلت بعدها (تدريب أم دراسة جامعية)، وماذا تفعل حالياً — بالماضي (Perfekt) مع الربط بين الجمل.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 4: MODALVERBEN IM PRÄTERITUM ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#5c9ce0,#3060b0)">٤</div>
+    <div>
+      <div class="sec-t">الأفعال الناقصة في الماضي</div>
+      <div class="sec-td">Modalverben im Präteritum ⭐</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(92,156,224,.06);border:1px solid rgba(92,156,224,.2)">
+    <h4 style="color:#5c9ce0">📖 القاعدة</h4>
+    <p>الأفعال الناقصة في الماضي تُستخدم بصيغة <strong style="color:#5c9ce0">الماضي البسيط (Präteritum)</strong> لا الـ Perfekt — لاحظ أنها تفقد الـ Umlaut وتأخذ <strong style="color:#5c9ce0">t</strong>.</p>
+  </div>
+
+  <table class="modtab">
+    <thead>
+      <tr><th>المضارع (Präsens)</th><th>المعنى</th><th>الماضي (Präteritum)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><div class="mod-cell"><span class="mod-pres">müssen</span></div></td><td><div class="mod-ar-c">يجب</div></td><td><div class="mod-cell"><span class="mod-arr">←</span><span class="mod-past">musste</span></div></td></tr>
+      <tr><td><div class="mod-cell"><span class="mod-pres">können</span></div></td><td><div class="mod-ar-c">يستطيع</div></td><td><div class="mod-cell"><span class="mod-arr">←</span><span class="mod-past">konnte</span></div></td></tr>
+      <tr><td><div class="mod-cell"><span class="mod-pres">wollen</span></div></td><td><div class="mod-ar-c">يريد</div></td><td><div class="mod-cell"><span class="mod-arr">←</span><span class="mod-past">wollte</span></div></td></tr>
+      <tr><td><div class="mod-cell"><span class="mod-pres">dürfen</span></div></td><td><div class="mod-ar-c">يُسمح له</div></td><td><div class="mod-cell"><span class="mod-arr">←</span><span class="mod-past">durfte</span></div></td></tr>
+      <tr><td><div class="mod-cell"><span class="mod-pres">sollen</span></div></td><td><div class="mod-ar-c">ينبغي</div></td><td><div class="mod-cell"><span class="mod-arr">←</span><span class="mod-past">sollte</span></div></td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub" style="margin-top:20px">بناء الجملة — القوس مرة أخرى</div>
+  <div class="msent" style="background:var(--card)">
+    <div class="msent-slot">
+      <div class="msent-pos">POS 1</div>
+      <div class="msent-w" style="color:var(--txt)">Ich</div>
+      <div class="msent-r">الفاعل</div>
+    </div>
+    <div class="msent-slot" style="background:rgba(92,156,224,.08)">
+      <div class="msent-pos" style="color:#5c9ce0">POS 2 🔒</div>
+      <div class="msent-w" style="color:#5c9ce0">musste</div>
+      <div class="msent-r">الناقص (مُصرّف)</div>
+    </div>
+    <div class="msent-slot">
+      <div class="msent-pos">MITTE</div>
+      <div class="msent-w" style="color:var(--txt-d)">ins Kino</div>
+      <div class="msent-r">باقي الجملة</div>
+    </div>
+    <div class="msent-slot" style="background:rgba(111,164,148,.08)">
+      <div class="msent-pos" style="color:var(--teal)">ENDE 🔒</div>
+      <div class="msent-w" style="color:var(--teal)">gehen</div>
+      <div class="msent-r">مصدر (Infinitiv)</div>
+    </div>
+  </div>
+  <div style="text-align:center;font-size:12.5px;color:var(--txt-d);margin-top:10px;font-family:'Noto Naskh Arabic',serif">
+    <span style="font-family:'JetBrains Mono',monospace;color:#5c9ce0">Ich musste ins Kino gehen.</span> — كان يجب عليّ الذهاب إلى السينما
+  </div>
+</div>
+
+<!-- ═══ 5: denn vs weil + Artikel Dativ ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6040a0)">٥</div>
+    <div>
+      <div class="sec-t">الروابط والأدوات في الحالات</div>
+      <div class="sec-td">denn / weil &amp; Artikel im Dativ</div>
+    </div>
+  </div>
+
+  <div class="sub">denn مقابل weil — موقع الفعل</div>
+  <div class="posbox">
+    <div class="pos-card pos-denn" style="background:rgba(92,156,224,.07);border:1px solid rgba(92,156,224,.25)">
+      <div class="pos-name" style="color:#5c9ce0">denn</div>
+      <div class="pos-eg" style="color:#5c9ce0">…, denn ich <span class="vb" style="background:rgba(92,156,224,.18)">bin</span> müde.</div>
+      <div class="pos-note">لا تغيّر الترتيب — الفاعل ثم الفعل <b style="color:#5c9ce0">في المرتبة الثانية</b></div>
+    </div>
+    <div class="pos-card pos-weil" style="background:rgba(154,133,184,.07);border:1px solid rgba(154,133,184,.25)">
+      <div class="pos-name" style="color:var(--violet)">weil</div>
+      <div class="pos-eg" style="color:var(--violet)">…, weil ich müde <span class="vb" style="background:rgba(154,133,184,.18)">bin</span>.</div>
+      <div class="pos-note">تُرسل الفعل المُصرّف إلى <b style="color:var(--violet)">آخر الجملة</b></div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:22px">أدوات الداتيف — Akkusativ ← Dativ</div>
+  <table class="art-table">
+    <thead>
+      <tr><th>الجنس</th><th>معرفة</th><th>نكرة</th><th>ملكية</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="art-gender" style="color:var(--sky)">مذكر / محايد<br><span style="font-size:10px;color:var(--txt-d)">der · das</span></td>
+        <td><span class="art-w" style="color:var(--sky)">dem</span></td>
+        <td><span class="art-w" style="color:var(--sky)">einem</span></td>
+        <td><span class="art-w" style="color:var(--sky)">meinem</span></td>
+      </tr>
+      <tr>
+        <td class="art-gender" style="color:var(--rose)">مؤنث<br><span style="font-size:10px;color:var(--txt-d)">die</span></td>
+        <td><span class="art-w" style="color:var(--rose)">der</span></td>
+        <td><span class="art-w" style="color:var(--rose)">einer</span></td>
+        <td><span class="art-w" style="color:var(--rose)">meiner</span></td>
+      </tr>
+      <tr>
+        <td class="art-gender" style="color:var(--amber)">جمع<br><span style="font-size:10px;color:var(--txt-d)">die (Pl.)</span></td>
+        <td><span class="art-w" style="color:var(--amber)">den</span> <span style="font-size:10px;color:var(--txt-d)">+n</span></td>
+        <td><span class="art-w" style="color:var(--txt-d)">—</span></td>
+        <td><span class="art-w" style="color:var(--amber)">meinen</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="note" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.2);margin-top:12px">
+    <div class="ni">💡</div>
+    <div><p><strong style="color:var(--teal)">تذكّر:</strong> في الداتيف المذكر والمحايد يتّحدان في <span style="font-family:'JetBrains Mono',monospace;color:var(--sky)">-em</span>، والمؤنث يأخذ <span style="font-family:'JetBrains Mono',monospace;color:var(--rose)">-er</span>. مثال: <span style="font-family:'JetBrains Mono',monospace;color:var(--teal)">mit dem Bus · mit der Bahn</span>.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 6: SCHULVOKABELN + VORSTELLUNG ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٦</div>
+    <div>
+      <div class="sec-t">مفردات مدرسية والتعريف بالنفس</div>
+      <div class="sec-td">Schulvokabeln &amp; Vorstellung</div>
+    </div>
+  </div>
+
+  <div class="sub">مفردات الحياة المدرسية</div>
+  <div class="voc-grid">
+    <div class="voc-card" style="border-color:rgba(196,122,90,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--coral)"></span>
+      <div class="voc-de" style="color:var(--coral)">die Fächer</div>
+      <div class="voc-ar">المواد الدراسية</div>
+    </div>
+    <div class="voc-card" style="border-color:rgba(196,122,90,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--coral)"></span>
+      <div class="voc-de" style="color:var(--coral)">die Noten</div>
+      <div class="voc-ar">العلامات / الدرجات</div>
+    </div>
+    <div class="voc-card" style="border-color:rgba(196,122,90,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--coral)"></span>
+      <div class="voc-de" style="color:var(--coral)">die Prüfungen</div>
+      <div class="voc-ar">الامتحانات</div>
+    </div>
+    <div class="voc-card" style="border-color:rgba(196,122,90,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--coral)"></span>
+      <div class="voc-de" style="color:var(--coral)">die Klassenfahrten</div>
+      <div class="voc-ar">الرحلات المدرسية</div>
+    </div>
+    <div class="voc-card" style="border-color:rgba(196,122,90,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--coral)"></span>
+      <div class="voc-de" style="color:var(--coral)">die Projekte</div>
+      <div class="voc-ar">المشاريع</div>
+    </div>
+    <div class="voc-card" style="border-color:rgba(196,122,90,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--coral)"></span>
+      <div class="voc-de" style="color:var(--coral)">der Schulweg</div>
+      <div class="voc-ar">الطريق إلى المدرسة</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:22px">عناصر التعريف بالنفس</div>
+  <div class="vlist-grid">
+    <div class="vlist-card"><span class="vlist-ic">🪪</span><div><div class="vlist-t">الاسم والعمر والسكن</div><div class="vlist-de">Name · Alter · Wohnort</div></div></div>
+    <div class="vlist-card"><span class="vlist-ic">💍</span><div><div class="vlist-t">الحالة الاجتماعية والأطفال</div><div class="vlist-de">Familienstand · Kinder</div></div></div>
+    <div class="vlist-card"><span class="vlist-ic">🎓</span><div><div class="vlist-t">المؤهلات والمهنة</div><div class="vlist-de">Beruf · Studium</div></div></div>
+    <div class="vlist-card"><span class="vlist-ic">⚽</span><div><div class="vlist-t">الهوايات</div><div class="vlist-de">Hobbys</div></div></div>
+    <div class="vlist-card"><span class="vlist-ic">🗣️</span><div><div class="vlist-t">اللغات</div><div class="vlist-de">Sprachen</div></div></div>
+  </div>
+
+  <div class="note" style="background:var(--gold-d);border:1px solid rgba(201,161,84,.2);margin-top:16px">
+    <div class="ni">🔊</div>
+    <div><p><strong style="color:var(--gold)">ملاحظة النطق:</strong> انتبه لنطق حروف العلة والحروف المركبة — خاصةً الفرق بين <span style="font-family:'JetBrains Mono',monospace;color:var(--gold)">ei</span> (تُنطق "آيْ": mein) و<span style="font-family:'JetBrains Mono',monospace;color:var(--gold)">ie</span> (تُنطق "ييْ": Sie) لضمان دقة الكلمات.</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

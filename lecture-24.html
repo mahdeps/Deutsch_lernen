@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 24 — التعريف الموسّع والماضي والملكية (بداية A2.1)</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── A2 welcome banner ─── */
+.a2-banner{position:relative;overflow:hidden;border:1px solid rgba(106,168,232,.3);border-radius:18px;padding:22px 24px;margin-top:4px;
+  background:linear-gradient(135deg,rgba(106,168,232,.1),rgba(154,133,184,.05));display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.a2-banner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#6aa8e8,#8ecbff,#6aa8e8,transparent)}
+.a2-ic{font-size:38px;flex-shrink:0}
+.a2-txt{flex:1;min-width:200px}
+.a2-title{font-family:'Noto Kufi Arabic',sans-serif;font-size:17px;font-weight:800;color:#8ecbff;margin-bottom:5px}
+.a2-desc{font-size:13.5px;color:var(--txt-d);line-height:1.85}
+
+/* ─── Self-intro expansion cards ─── */
+.intro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-top:14px}
+.intro-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.intro-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.intro-head{padding:13px 16px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:10px;font-family:'Noto Kufi Arabic',sans-serif;font-size:13.5px;font-weight:800}
+.intro-body{padding:13px 16px}
+.intro-eg{font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;line-height:1.7;margin-bottom:4px}
+.intro-eg-ar{font-size:12px;color:var(--txt-d);margin-bottom:9px}
+.intro-eg-ar:last-child{margin-bottom:0}
+
+/* ─── Perfekt anatomy (arch) ─── */
+.arch{display:flex;align-items:stretch;gap:0;margin-top:16px;border:1px solid var(--bdr);border-radius:16px;overflow:hidden;direction:ltr}
+.arch-slot{flex:1;padding:16px 12px;text-align:center}
+.arch-slot + .arch-slot{border-left:1px dashed var(--bdr)}
+.arch-pos{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;letter-spacing:1px;color:var(--txt-d);margin-bottom:8px;text-transform:uppercase}
+.arch-word{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;margin-bottom:6px}
+.arch-role{font-size:11px;color:var(--txt-d);font-family:'Noto Kufi Arabic',sans-serif;font-weight:600;direction:rtl}
+.arch-hilfs{background:rgba(106,168,232,.08)}
+.arch-part{background:rgba(111,164,148,.08)}
+
+.sent-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.sent{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px;transition:transform .2s}
+.sent:hover{transform:translateX(-3px)}
+.sent-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;direction:ltr;line-height:1.9;margin-bottom:5px}
+.sent-de .hv{color:#6aa8e8;font-weight:800;background:rgba(106,168,232,.12);padding:2px 7px;border-radius:6px}
+.sent-de .pz{color:var(--teal);font-weight:800;background:rgba(111,164,148,.1);padding:2px 7px;border-radius:6px}
+.sent-ar{font-size:12.5px;color:var(--txt-d)}
+.sent-note{font-size:11.5px;color:var(--txt-d);margin-top:6px;padding-top:6px;border-top:1px dashed var(--bdr)}
+.sent-note b{color:#6aa8e8}
+
+/* ─── haben / sein ─── */
+.hs-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.hs-box{border-radius:16px;padding:20px 18px;position:relative;overflow:hidden;transition:transform .2s}
+.hs-box:hover{transform:translateY(-3px)}
+.hs-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.hs-haben::before{background:linear-gradient(90deg,var(--teal),#2a7060)}
+.hs-sein::before{background:linear-gradient(90deg,#6aa8e8,#3060b0)}
+.hs-verb{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:800;direction:ltr;margin-bottom:4px}
+.hs-when{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:800;margin-bottom:12px}
+.hs-verbs{display:flex;flex-wrap:wrap;gap:7px}
+.hs-chip{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;padding:6px 12px;border-radius:8px;direction:ltr;transition:transform .15s}
+.hs-chip:hover{transform:scale(1.06)}
+.hs-chip span{font-family:'Noto Naskh Arabic',serif;font-size:11px;opacity:.75;margin-left:5px}
+
+/* ─── ieren note ─── */
+.ieren-box{display:flex;align-items:center;flex-wrap:wrap;gap:10px;justify-content:center;background:var(--card);border:1px solid rgba(217,168,90,.25);border-radius:14px;padding:16px;margin-top:14px}
+.ieren-piece{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;padding:8px 14px;border-radius:10px}
+.ieren-op{font-size:14px;color:var(--txt-d)}
+
+/* ─── Genitiv ─── */
+.gen-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 18px;margin-top:14px;transition:transform .2s}
+.gen-card:hover{transform:translateY(-2px)}
+.gen-formula{display:flex;align-items:center;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:12px}
+.gen-name{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;direction:ltr;padding:7px 14px;border-radius:10px}
+.gen-plus{font-size:20px;color:#6aa8e8;font-weight:800}
+.gen-eg{font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr;text-align:center;color:var(--txt-d);line-height:1.8}
+.gen-eg b{color:#6aa8e8}
+.gen-vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.gen-vs-box{border-radius:12px;padding:12px 14px;text-align:center}
+.gen-good{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;color:var(--green);direction:ltr}
+.gen-bad{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--red);direction:ltr;text-decoration:line-through;opacity:.75}
+
+/* ─── denn vs weil ─── */
+.posbox{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.pos-card{border-radius:14px;padding:16px;position:relative;overflow:hidden}
+.pos-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.pos-denn::before{background:linear-gradient(90deg,#6aa8e8,#3060b0)}
+.pos-weil::before{background:linear-gradient(90deg,var(--violet),#6040a0)}
+.pos-name{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:800;direction:ltr;margin-bottom:8px}
+.pos-tag{font-family:'Noto Kufi Arabic',sans-serif;font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:10px}
+.pos-eg{font-family:'JetBrains Mono',monospace;font-size:12.5px;direction:ltr;line-height:1.8}
+.pos-eg .vb{font-weight:800;padding:1px 5px;border-radius:4px}
+.pos-note{font-size:11.5px;color:var(--txt-d);margin-top:8px;padding-top:8px;border-top:1px dashed var(--bdr)}
+
+/* ─── Social interaction verbs ─── */
+.social-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin-top:14px}
+.social-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:15px;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.social-card::before{content:'';position:absolute;top:0;right:0;bottom:0;width:3px}
+.social-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.24)}
+.social-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.social-ic{font-size:22px}
+.social-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr}
+.social-mean{font-size:12.5px;color:var(--txt);margin-bottom:7px}
+.social-eg{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--txt-d);direction:ltr;background:rgba(255,255,255,.03);border-radius:7px;padding:6px 9px}
+
+/* ─── Listening timeline ─── */
+.hoer-flow{display:flex;flex-direction:column;gap:0;margin-top:14px}
+.hoer-step{display:flex;gap:14px}
+.hoer-rail{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.hoer-dot{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:rgba(106,168,232,.15);z-index:1}
+.hoer-line{width:2px;flex:1;background:linear-gradient(180deg,rgba(106,168,232,.5),rgba(106,168,232,.15));min-height:12px}
+.hoer-body{flex:1;padding-bottom:16px}
+.hoer-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;direction:ltr;color:#6aa8e8;margin-bottom:2px}
+.hoer-ar{font-size:12.5px;color:var(--txt-d)}
+
+/* ─── Homework ─── */
+.hw-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.hw-page{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid rgba(217,168,90,.25);border-radius:12px;padding:11px 18px;transition:transform .15s}
+.hw-page:hover{transform:translateY(-2px)}
+.hw-page-n{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;color:var(--gold)}
+.hw-page-l{font-size:12px;color:var(--txt-d)}
+
+@media(max-width:640px){
+  .hs-duo,.posbox,.gen-vs{grid-template-columns:1fr}
+  .arch{flex-direction:column;direction:rtl}
+  .arch-slot + .arch-slot{border-left:none;border-top:1px dashed var(--bdr)}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#8ecbff">المحاضرة 24 — بداية A2.1 · Der Anfang</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 24 — المحاضرة الرابعة والعشرون · بداية A2.1</div>
+  <h1>التعريف الموسّع، الماضي <em>والملكية</em></h1>
+  <p class="hero-sub">أول محاضرة في المستوى الثاني — تعريف أعمق بالنفس، إتقان الـ Perfekt، الملكية بالـ Genitiv، denn مقابل weil، وأفعال التفاعل الاجتماعي</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 0: A2 WELCOME ═══ -->
+<div class="sec rv">
+  <div class="a2-banner">
+    <div class="a2-ic">🚀</div>
+    <div class="a2-txt">
+      <div class="a2-title">أهلاً بك في المستوى الثاني A2.1!</div>
+      <div class="a2-desc">أنهيت A1 كاملاً، والآن ننتقل لمرحلة أعمق: تفاصيل أكثر في التعبير، جُمل مترابطة، وقواعد جديدة تبني على أساسك. تذكّر — اللغة تراكمية، فراجع ما سبق باستمرار.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 1: SICH VORSTELLEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#6aa8e8,#3060b0)">١</div>
+    <div>
+      <div class="sec-t">التعريف بالنفس بشكل موسّع</div>
+      <div class="sec-td">Sich ausführlich vorstellen</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(106,168,232,.06);border:1px solid rgba(106,168,232,.2)">
+    <h4 style="color:#6aa8e8">📖 تجاوز الصيغ البسيطة</h4>
+    <p>في A2 لا نكتفي بـ "اسمي… وأسكن في…" — نضيف تفاصيل أعمق: أصول العائلة، الحالة العائلية المفصّلة، واللغات الأم.</p>
+  </div>
+
+  <div class="intro-grid">
+    <div class="intro-card" style="border-color:rgba(106,168,232,.22)">
+      <div class="intro-head" style="background:rgba(106,168,232,.05);color:#6aa8e8"><span>🌍</span> أصول الوالدين</div>
+      <div class="intro-body">
+        <div class="intro-eg" style="color:#6aa8e8">Meine Mutter kommt aus Österreich.</div>
+        <div class="intro-eg-ar">والدتي من النمسا</div>
+        <div class="intro-eg" style="color:#6aa8e8">Mein Vater ist in Italien geboren.</div>
+        <div class="intro-eg-ar">والدي وُلد في إيطاليا</div>
+      </div>
+    </div>
+    <div class="intro-card" style="border-color:rgba(200,152,168,.22)">
+      <div class="intro-head" style="background:rgba(200,152,168,.05);color:var(--rose)"><span>👨‍👩‍👧</span> الحالة العائلية</div>
+      <div class="intro-body">
+        <div class="intro-eg" style="color:var(--rose)">Ich bin verheiratet und habe zwei Kinder.</div>
+        <div class="intro-eg-ar">أنا متزوج ولديّ طفلان</div>
+        <div class="intro-eg" style="color:var(--rose)">Ich habe einen Bruder und eine Schwester.</div>
+        <div class="intro-eg-ar">لديّ أخ وأخت (لمن ليس لديه أطفال)</div>
+      </div>
+    </div>
+    <div class="intro-card" style="border-color:rgba(124,168,120,.22)">
+      <div class="intro-head" style="background:rgba(124,168,120,.05);color:var(--green)"><span>🗣️</span> اللغات الأم</div>
+      <div class="intro-body">
+        <div class="intro-eg" style="color:var(--green)">Meine Muttersprachen sind Arabisch und Kurdisch.</div>
+        <div class="intro-eg-ar">لغاتي الأم هي العربية والكردية</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: PERFEKT ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#906820)">٢</div>
+    <div>
+      <div class="sec-t">صيغة الماضي — Perfekt</div>
+      <div class="sec-td">Wiederholung &amp; Vertiefung</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--gold-d);border:1px solid rgba(201,161,84,.2)">
+    <h4 style="color:var(--gold)">🏛️ مبدأ القوس</h4>
+    <p>الفعل المساعد (<strong style="color:#6aa8e8">haben/sein</strong>) في المرتبة الثانية، والتصريف الثالث (<strong style="color:var(--teal)">Partizip II</strong>) في نهاية الجملة تماماً "ليغلق القوس".</p>
+  </div>
+
+  <div class="arch" style="background:var(--card)">
+    <div class="arch-slot">
+      <div class="arch-pos">Position 1</div>
+      <div class="arch-word" style="color:var(--txt)">Ich</div>
+      <div class="arch-role">الفاعل</div>
+    </div>
+    <div class="arch-slot arch-hilfs">
+      <div class="arch-pos" style="color:#6aa8e8">Position 2 🔒</div>
+      <div class="arch-word" style="color:#6aa8e8">habe</div>
+      <div class="arch-role">الفعل المساعد</div>
+    </div>
+    <div class="arch-slot">
+      <div class="arch-pos">Mitte</div>
+      <div class="arch-word" style="color:var(--txt-d)">gestern viel</div>
+      <div class="arch-role">باقي الجملة</div>
+    </div>
+    <div class="arch-slot arch-part">
+      <div class="arch-pos" style="color:var(--teal)">Ende 🔒</div>
+      <div class="arch-word" style="color:var(--teal)">gelernt</div>
+      <div class="arch-role">Partizip II</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">اختيار الفعل المساعد</div>
+  <div class="hs-duo">
+    <div class="hs-box hs-haben" style="background:rgba(111,164,148,.07);border:1px solid rgba(111,164,148,.25)">
+      <div class="hs-verb" style="color:var(--teal)">haben</div>
+      <div class="hs-when" style="color:var(--teal)">🪨 الأفعال الأخرى (الأغلبية)</div>
+      <div class="hs-verbs">
+        <div class="hs-chip" style="background:rgba(111,164,148,.1);color:var(--teal)">gekocht<span>طبخ</span></div>
+        <div class="hs-chip" style="background:rgba(111,164,148,.1);color:var(--teal)">gelernt<span>تعلّم</span></div>
+        <div class="hs-chip" style="background:rgba(111,164,148,.1);color:var(--teal)">geheiratet<span>تزوّج</span></div>
+        <div class="hs-chip" style="background:rgba(111,164,148,.1);color:var(--teal)">gemacht<span>فعل</span></div>
+        <div class="hs-chip" style="background:rgba(111,164,148,.1);color:var(--teal)">gegessen<span>أكل</span></div>
+      </div>
+    </div>
+    <div class="hs-box hs-sein" style="background:rgba(106,168,232,.07);border:1px solid rgba(106,168,232,.25)">
+      <div class="hs-verb" style="color:#6aa8e8">sein</div>
+      <div class="hs-when" style="color:#6aa8e8">🏃 أفعال الحركة والانتقال</div>
+      <div class="hs-verbs">
+        <div class="hs-chip" style="background:rgba(106,168,232,.1);color:#6aa8e8">gegangen<span>ذهب</span></div>
+        <div class="hs-chip" style="background:rgba(106,168,232,.1);color:#6aa8e8">gefahren<span>سافر</span></div>
+        <div class="hs-chip" style="background:rgba(106,168,232,.1);color:#6aa8e8">umgezogen<span>انتقل للسكن</span></div>
+        <div class="hs-chip" style="background:rgba(106,168,232,.1);color:#6aa8e8">gekommen<span>أتى</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">استثناء أفعال ‎-ieren</div>
+  <div class="ieren-box">
+    <div class="ieren-piece" style="background:rgba(217,168,90,.12);color:var(--gold)">telefonieren</div>
+    <div class="ieren-op">→ بدون <b style="color:var(--red)">ge</b> →</div>
+    <div class="ieren-piece" style="background:rgba(217,168,90,.12);color:var(--gold)">telefoniert</div>
+    <div style="width:100%;text-align:center;font-size:12.5px;color:var(--txt-d);margin-top:4px">الأفعال المنتهية بـ ‎-ieren لا تأخذ السابقة ge · مثل: studieren → studiert</div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">أمثلة محلولة — لاحظ القوس</div>
+  <div class="sent-list">
+    <div class="sent" style="border-color:rgba(111,164,148,.25)">
+      <div class="sent-de">Ich <span class="hv">habe</span> gestern Deutsch <span class="pz">gelernt</span>.</div>
+      <div class="sent-ar">تعلّمتُ الألمانية البارحة</div>
+      <div class="sent-note">فعل ثابت → <b>haben</b> · lernen → gelernt</div>
+    </div>
+    <div class="sent" style="border-color:rgba(106,168,232,.25)">
+      <div class="sent-de">Wir <span class="hv" style="color:#6aa8e8;background:rgba(106,168,232,.12)">sind</span> nach Berlin <span class="pz">gefahren</span>.</div>
+      <div class="sent-ar">سافرنا إلى برلين</div>
+      <div class="sent-note">فعل حركة → <b style="color:#6aa8e8">sein</b> · fahren → gefahren</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:rgba(106,168,232,.06);border:1px solid rgba(106,168,232,.2);margin-top:14px">
+    <div class="ni">✍️</div>
+    <div><p><strong style="color:#6aa8e8">تطبيق عملي:</strong> اكتب فقرة عن <span style="font-family:'JetBrains Mono',monospace;color:#6aa8e8">Was hast du gestern gemacht?</span> (ماذا فعلت البارحة؟) — واربط الجمل بـ zuerst · dann · danach · und.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 3: GENITIV ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#a05070)">٣</div>
+    <div>
+      <div class="sec-t">الملكية — Genitiv</div>
+      <div class="sec-td">Der Genitiv mit „-s“</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(200,152,168,.06);border:1px solid rgba(200,152,168,.22)">
+    <h4 style="color:var(--rose)">📖 مثل الإنجليزية</h4>
+    <p>للتعبير عن الملكية نضيف <strong style="color:var(--rose)">s</strong> للاسم مباشرةً بدل استخدام von — تماماً مثل الـ 's في الإنجليزية.</p>
+  </div>
+
+  <div class="gen-card" style="border-color:rgba(200,152,168,.25)">
+    <div class="gen-formula">
+      <div class="gen-name" style="background:rgba(200,152,168,.1);color:var(--rose)">Julia</div>
+      <div class="gen-plus">+ s →</div>
+      <div class="gen-name" style="background:rgba(200,152,168,.14);color:var(--rose)">Julias Schwester</div>
+    </div>
+    <div class="gen-eg">أخت جوليا — <b>Julias</b> Schwester &nbsp;(بدل: die Schwester <b style="color:var(--txt-d)">von</b> Julia)</div>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(200,152,88,.2);margin-top:14px">
+    <div class="ni">⚠️</div>
+    <div><p><strong style="color:var(--amber)">استثناء الأسماء المنتهية بـ s · ß · x · z:</strong> لا نضيف s إضافية، بل نكتفي بفاصلة عليا (Apostroph) في النهاية.</p></div>
+  </div>
+
+  <div class="gen-vs">
+    <div class="gen-vs-box" style="background:rgba(124,168,120,.06);border:1px solid rgba(124,168,120,.22)">
+      <div class="gen-good">Jonas' Freund ✓</div>
+      <div style="font-size:11.5px;color:var(--txt-d);margin-top:5px">صديق يوناس — فاصلة عليا فقط</div>
+    </div>
+    <div class="gen-vs-box" style="background:rgba(176,104,112,.06);border:1px solid rgba(176,104,112,.22)">
+      <div class="gen-bad">Jonass Freund ✗</div>
+      <div style="font-size:11.5px;color:var(--txt-d);margin-top:5px">خطأ — لا نضيف s ثانية</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 4: denn vs weil ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6040a0)">٤</div>
+    <div>
+      <div class="sec-t">الروابط denn و weil</div>
+      <div class="sec-td">Kausale Konnektoren — كلاهما "لأنّ"</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.2)">
+    <h4 style="color:var(--violet)">🔑 الفرق الجوهري</h4>
+    <p>كلاهما يعني "لأنّ"، لكن الفرق في <strong>موقع الفعل</strong>: denn لا تغيّر الترتيب، وweil ترسل الفعل إلى النهاية (جملة جانبية Nebensatz).</p>
+  </div>
+
+  <div class="posbox">
+    <div class="pos-card pos-denn" style="background:rgba(106,168,232,.07);border:1px solid rgba(106,168,232,.25)">
+      <div class="pos-name" style="color:#6aa8e8">denn</div>
+      <div class="pos-tag" style="background:rgba(106,168,232,.12);color:#6aa8e8">المرتبة صفر · ترتيب عادي</div>
+      <div class="pos-eg" style="color:#6aa8e8">Ich bleibe zu Hause, denn ich <span class="vb" style="background:rgba(106,168,232,.18)">bin</span> krank.</div>
+      <div class="pos-note">الفعل <b style="color:#6aa8e8">bin</b> يبقى في المرتبة الثانية</div>
+    </div>
+    <div class="pos-card pos-weil" style="background:rgba(154,133,184,.07);border:1px solid rgba(154,133,184,.25)">
+      <div class="pos-name" style="color:var(--violet)">weil</div>
+      <div class="pos-tag" style="background:rgba(154,133,184,.12);color:var(--violet)">جملة جانبية · الفعل للنهاية</div>
+      <div class="pos-eg" style="color:var(--violet)">Ich bleibe zu Hause, weil ich krank <span class="vb" style="background:rgba(154,133,184,.18)">bin</span>.</div>
+      <div class="pos-note">الفعل <b style="color:var(--violet)">bin</b> يُدفع إلى آخر الجملة</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.2);margin-top:14px">
+    <div class="ni">💡</div>
+    <div><p><strong style="color:var(--teal)">نصيحة المعلم:</strong> للإجابة على سؤال <span style="font-family:'JetBrains Mono',monospace;color:var(--teal)">Warum?</span> (لماذا؟) استخدم <strong style="color:var(--violet)">weil</strong> — هي الأنسب لتبرير الأفعال والإجابة على التساؤلات.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 5: SOZIALE INTERAKTION ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#2a7060)">٥</div>
+    <div>
+      <div class="sec-t">التفاعل الاجتماعي والاقتراحات</div>
+      <div class="sec-td">Vorschläge machen — trennbare Verben</div>
+    </div>
+  </div>
+
+  <div class="social-grid">
+    <div class="social-card" style="border-color:rgba(124,168,120,.22)"><span style="position:absolute;top:0;right:0;bottom:0;width:3px;background:var(--green)"></span>
+      <div class="social-head"><span class="social-ic">💡</span><span class="social-de" style="color:var(--green)">vorschlagen</span></div>
+      <div class="social-mean">يقترح</div>
+      <div class="social-eg">Hast du Lust? Hast du Zeit?</div>
+    </div>
+    <div class="social-card" style="border-color:rgba(106,168,232,.22)"><span style="position:absolute;top:0;right:0;bottom:0;width:3px;background:#6aa8e8"></span>
+      <div class="social-head"><span class="social-ic">✅</span><span class="social-de" style="color:#6aa8e8">zusagen / zustimmen</span></div>
+      <div class="social-mean">يوافق على اقتراح</div>
+      <div class="social-eg">Gute Idee! Ich bin dabei.</div>
+    </div>
+    <div class="social-card" style="border-color:rgba(176,104,112,.22)"><span style="position:absolute;top:0;right:0;bottom:0;width:3px;background:var(--red)"></span>
+      <div class="social-head"><span class="social-ic">❌</span><span class="social-de" style="color:var(--red)">absagen</span></div>
+      <div class="social-mean">يرفض / يلغي موعداً</div>
+      <div class="social-eg">Tut mir leid, ich kann nicht.</div>
+    </div>
+    <div class="social-card" style="border-color:rgba(200,152,88,.22)"><span style="position:absolute;top:0;right:0;bottom:0;width:3px;background:var(--amber)"></span>
+      <div class="social-head"><span class="social-ic">❓</span><span class="social-de" style="color:var(--amber)">nachfragen</span></div>
+      <div class="social-mean">يستفسر عن تفاصيل</div>
+      <div class="social-eg">Wann? Wo treffen wir uns?</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 6: NOTES + LISTENING + HW ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٦</div>
+    <div>
+      <div class="sec-t">ملاحظات، استماع وواجبات</div>
+      <div class="sec-td">Aussprache · Hören · Hausaufgaben</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--coral-d);border:1px solid rgba(196,122,90,.22)">
+    <div class="ni">🔊</div>
+    <div><p><strong style="color:var(--coral)">النطق:</strong> مقطع <span style="font-family:'JetBrains Mono',monospace;color:var(--coral)">ch</span> يُنطق <strong>"خ"</strong> إذا سبقه <strong style="color:var(--coral)">a · o · u</strong>.<br>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d)">Nacht · noch · Buch · auch</span></p></div>
+  </div>
+
+  <div class="note" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.2);margin-top:12px">
+    <div class="ni">💬</div>
+    <div><p><strong style="color:var(--violet)">لغة الدردشة:</strong> هناك اختصارات شائعة في الرسائل الألمانية اليومية — لكن <strong>لا تستخدمها في الامتحانات الرسمية</strong>.</p></div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">تدريب سماعي — ترتيب أحداث الماضي</div>
+  <div class="hoer-flow">
+    <div class="hoer-step">
+      <div class="hoer-rail"><div class="hoer-dot">🎉</div><div class="hoer-line"></div></div>
+      <div class="hoer-body">
+        <div class="hoer-de">Auf einer Party jemanden kennengelernt</div>
+        <div class="hoer-ar">التعرّف على صديق في حفلة</div>
+      </div>
+    </div>
+    <div class="hoer-step">
+      <div class="hoer-rail"><div class="hoer-dot">🥾</div><div class="hoer-line"></div></div>
+      <div class="hoer-body">
+        <div class="hoer-de">In den Bergen gewandert</div>
+        <div class="hoer-ar">المشي في الجبال</div>
+      </div>
+    </div>
+    <div class="hoer-step">
+      <div class="hoer-rail"><div class="hoer-dot">🏃</div><div class="hoer-line"></div></div>
+      <div class="hoer-body">
+        <div class="hoer-de">Einen Marathon gelaufen</div>
+        <div class="hoer-ar">الجري في ماراثون</div>
+      </div>
+    </div>
+    <div class="hoer-step">
+      <div class="hoer-rail"><div class="hoer-dot">🏙️</div></div>
+      <div class="hoer-body">
+        <div class="hoer-de">Berlin besucht</div>
+        <div class="hoer-ar">زيارة برلين</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">الواجبات — Hausaufgaben</div>
+  <div class="hw-strip">
+    <div class="hw-page"><span class="hw-page-n">09</span><span class="hw-page-l">Seite 9</span></div>
+    <div class="hw-page"><span class="hw-page-n">12</span><span class="hw-page-l">Seite 12</span></div>
+    <div class="hw-page"><span class="hw-page-n">13</span><span class="hw-page-l">Seite 13</span></div>
+  </div>
+  <div class="note" style="background:rgba(106,168,232,.06);border:1px solid rgba(106,168,232,.2);margin-top:14px">
+    <div class="ni">📌</div>
+    <div><p><strong style="color:#6aa8e8">تذكير المعلم:</strong> حمّل الكتاب، وواظب على حلّ الواجبات في الصفحات <strong style="color:var(--gold)">9 · 12 · 13</strong> استعداداً للحصة القادمة.</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

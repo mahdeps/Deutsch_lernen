@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 23 — الربط والحركة والطقس (ختام A1.2)</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── Final-lecture banner ─── */
+.final-banner{
+  position:relative;overflow:hidden;
+  border:1px solid rgba(217,168,90,.3);
+  border-radius:18px;
+  padding:22px 24px;
+  margin-top:4px;
+  background:linear-gradient(135deg,rgba(217,168,90,.09),rgba(196,122,90,.05));
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap
+}
+.final-banner::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#d9a85a,#e8b878,#d9a85a,transparent)
+}
+.fb-ic{font-size:38px;flex-shrink:0}
+.fb-txt{flex:1;min-width:200px}
+.fb-title{font-family:'Noto Kufi Arabic',sans-serif;font-size:17px;font-weight:800;color:#e8b878;margin-bottom:5px}
+.fb-desc{font-size:13.5px;color:var(--txt-d);line-height:1.85}
+
+/* ─── Exam note ─── */
+.exam-note{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid rgba(176,104,112,.28);border-radius:14px;padding:16px 18px;margin-top:14px}
+.exam-ic{font-size:26px;flex-shrink:0}
+.exam-txt{font-size:13.5px;line-height:1.9}
+
+/* ─── Sequence connectors (paragraph flow) ─── */
+.seq-flow{display:flex;flex-direction:column;gap:0;margin-top:14px;position:relative}
+.seq-step{display:flex;align-items:stretch;gap:14px}
+.seq-rail{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.seq-dot{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;flex-shrink:0;z-index:1}
+.seq-line{width:2px;flex:1;background:linear-gradient(180deg,rgba(217,168,90,.5),rgba(217,168,90,.15));min-height:14px}
+.seq-body{flex:1;padding-bottom:16px}
+.seq-de{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;direction:ltr;color:#d9a85a;margin-bottom:2px}
+.seq-ar{font-size:13px;color:var(--txt);margin-bottom:6px}
+.seq-eg{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d);direction:ltr;background:rgba(217,168,90,.06);border-radius:8px;padding:6px 10px;display:inline-block}
+
+/* ─── man concept ─── */
+.concept-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:14px;transition:transform .2s,box-shadow .2s}
+.concept-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.28)}
+.concept-head{padding:14px 18px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.concept-word{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:800;direction:ltr}
+.concept-mean{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:700;color:var(--txt-d)}
+.concept-body{padding:14px 18px}
+.concept-desc{font-size:13px;line-height:1.95;margin-bottom:12px}
+.concept-eg{font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:600;direction:ltr;padding:9px 13px;border-radius:9px;margin-bottom:4px}
+.concept-eg-ar{font-size:12px;color:var(--txt-d);margin-bottom:10px}
+
+/* ─── Movement verbs ─── */
+.move-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:10px;margin-top:14px}
+.move-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px;text-align:center;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.move-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--sky)}
+.move-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.move-ic{font-size:30px;margin-bottom:8px}
+.move-de{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;direction:ltr;color:var(--sky);margin-bottom:4px}
+.move-ar{font-size:12.5px;color:var(--txt-d);margin-bottom:8px}
+.move-split{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);direction:ltr;background:rgba(112,149,192,.08);border-radius:7px;padding:4px 8px}
+.move-split b{color:var(--sky)}
+
+/* ─── Transport ─── */
+.trans-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.trans-pill{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--bdr);border-radius:100px;padding:9px 18px 9px 10px;transition:transform .15s,border-color .2s}
+.trans-pill:hover{transform:translateY(-2px);border-color:rgba(112,149,192,.4)}
+.trans-ic{font-size:22px}
+.trans-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;direction:ltr;color:var(--sky)}
+.trans-ar{font-size:11.5px;color:var(--txt-d)}
+
+/* ─── denn vs weil position ─── */
+.posbox{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.pos-card{border-radius:14px;padding:16px;position:relative;overflow:hidden}
+.pos-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.pos-denn::before{background:linear-gradient(90deg,#d9a85a,#a87828)}
+.pos-weil::before{background:linear-gradient(90deg,var(--violet),#6040a0)}
+.pos-name{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:800;direction:ltr;margin-bottom:8px}
+.pos-eg{font-family:'JetBrains Mono',monospace;font-size:12.5px;direction:ltr;line-height:1.8}
+.pos-eg .vb{font-weight:800;padding:1px 5px;border-radius:4px}
+.pos-note{font-size:11.5px;color:var(--txt-d);margin-top:8px;padding-top:8px;border-top:1px dashed var(--bdr)}
+
+/* ─── W-Fragen ─── */
+.wf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px}
+.wf-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px;text-align:center;transition:transform .2s,border-color .2s}
+.wf-card:hover{transform:translateY(-2px)}
+.wf-w{font-family:'JetBrains Mono',monospace;font-size:19px;font-weight:800;direction:ltr;margin-bottom:4px}
+.wf-ar{font-size:12px;color:var(--txt);margin-bottom:4px}
+.wf-case{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;padding:2px 9px;border-radius:100px;display:inline-block}
+
+/* ─── Time package ─── */
+.pkg-list{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+.pkg{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid rgba(201,161,84,.2);border-radius:12px;padding:13px 16px;transition:transform .2s}
+.pkg:hover{transform:translateX(-3px)}
+.pkg-ic{font-size:20px;flex-shrink:0}
+.pkg-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;direction:ltr;color:var(--gold);flex:1}
+.pkg-ar{font-size:12.5px;color:var(--txt-d);text-align:left}
+
+/* ─── Weather ─── */
+.wthr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin-top:14px}
+.wthr-card{border-radius:14px;padding:16px 12px;text-align:center;border:1px solid var(--bdr);background:var(--card);transition:transform .2s,box-shadow .2s}
+.wthr-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.22)}
+.wthr-ic{font-size:32px;margin-bottom:8px}
+.wthr-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;margin-bottom:3px}
+.wthr-ar{font-size:12px;color:var(--txt-d)}
+.wthr-verbs{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.wv{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px 16px;transition:transform .2s}
+.wv:hover{transform:translateX(-3px)}
+.wv-ic{font-size:22px;flex-shrink:0}
+.wv-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;min-width:150px}
+.wv-ar{font-size:13px;color:var(--txt-d);flex:1}
+.slang-box{background:rgba(196,122,90,.06);border:1px solid rgba(196,122,90,.22);border-radius:12px;padding:14px 16px;margin-top:14px}
+.slang-item{font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;padding:5px 0;color:var(--coral)}
+.slang-item span{font-family:'Noto Naskh Arabic',serif;color:var(--txt-d);font-size:12px;direction:rtl;margin-right:8px}
+
+/* ─── Basel activities ─── */
+.basel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-top:14px}
+.basel-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:15px;display:flex;align-items:center;gap:12px;transition:transform .2s,border-color .2s}
+.basel-card:hover{transform:translateY(-2px);border-color:rgba(72,192,216,.4)}
+.basel-ic{font-size:26px;flex-shrink:0}
+.basel-de{font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:700;direction:ltr;color:#48c0d8;margin-bottom:2px}
+.basel-ar{font-size:12px;color:var(--txt-d)}
+.basel-card.skip{opacity:.6;border-style:dashed}
+.basel-card.skip .basel-de{color:var(--txt-d);text-decoration:line-through}
+
+/* ─── Farewell ─── */
+.farewell{position:relative;overflow:hidden;border-radius:18px;padding:28px 24px;margin-top:16px;text-align:center;
+  background:linear-gradient(135deg,rgba(217,168,90,.1),rgba(154,133,184,.06));border:1px solid rgba(217,168,90,.28)}
+.farewell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#e8b878,transparent)}
+.farewell-ic{font-size:44px;margin-bottom:10px}
+.farewell-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:20px;font-weight:800;color:#e8b878;margin-bottom:8px}
+.farewell-d{font-size:14px;color:var(--txt);line-height:1.95;max-width:520px;margin:0 auto}
+
+@media(max-width:640px){
+  .posbox{grid-template-columns:1fr}
+  .pkg{flex-wrap:wrap}
+  .pkg-ar{width:100%;text-align:right}
+  .wv-de{min-width:120px}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#e8b878">المحاضرة 23 — ختام A1.2 · Der Abschluss</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 23 — المحاضرة الثالثة والعشرون · ختام A1.2</div>
+  <h1>الربط، الحركة <em>والطقس</em></h1>
+  <p class="hero-sub">المحاضرة الأخيرة في A1.2 — كلمات الترتيب، ضمير man، أفعال الحركة، denn، أدوات السؤال، رزم الزمن، ووصف الطقس</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 0: FINALE BANNER + EXAM ═══ -->
+<div class="sec rv">
+  <div class="final-banner">
+    <div class="fb-ic">🎓</div>
+    <div class="fb-txt">
+      <div class="fb-title">هذه آخر محاضرة في المستوى A1.2 — مبروك الوصول!</div>
+      <div class="fb-desc">أكملت رحلة A1 كاملة. القادم هو الامتحان، فراجع كل شيء بترابط — اللغة تراكمية، ولا يمكن فصل أجزائها عن بعضها.</div>
+    </div>
+  </div>
+
+  <div class="exam-note">
+    <div class="exam-ic">📝</div>
+    <div class="exam-txt"><strong style="color:var(--red)">تنويه عن الامتحان:</strong> الامتحان في <strong>نفس موعد الحصة القادمة</strong>. ادرس الكتاب كاملاً ولا تُهمل المستويات السابقة — قد تظهر قواعد A1.1 في أسئلة A1.2.</div>
+  </div>
+</div>
+
+<!-- ═══ 1: SEQUENCE CONNECTORS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#d9a85a,#a87828)">١</div>
+    <div>
+      <div class="sec-t">كلمات الربط والتسلسل الزمني</div>
+      <div class="sec-td">Textverknüpfung — Ein Absatz bilden</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(217,168,90,.06);border:1px solid rgba(217,168,90,.2)">
+    <h4 style="color:#d9a85a">📖 لماذا نحتاجها؟</h4>
+    <p>هذه الكلمات تحوّل الجمل المنفصلة إلى <strong style="color:#d9a85a">فقرة متماسكة ومنطقية</strong> — ضرورية للتعبير عن نشاطاتك اليومية أو خططك في الكتابة والمحادثة.</p>
+  </div>
+
+  <div class="seq-flow">
+    <div class="seq-step">
+      <div class="seq-rail"><div class="seq-dot" style="background:rgba(217,168,90,.15);color:#d9a85a">1</div><div class="seq-line"></div></div>
+      <div class="seq-body">
+        <div class="seq-de">Zuerst</div>
+        <div class="seq-ar">في البداية</div>
+        <div class="seq-eg">Zuerst stehe ich auf.</div>
+      </div>
+    </div>
+    <div class="seq-step">
+      <div class="seq-rail"><div class="seq-dot" style="background:rgba(217,168,90,.15);color:#d9a85a">2</div><div class="seq-line"></div></div>
+      <div class="seq-body">
+        <div class="seq-de">Dann</div>
+        <div class="seq-ar">ثمّ</div>
+        <div class="seq-eg">Dann frühstücke ich.</div>
+      </div>
+    </div>
+    <div class="seq-step">
+      <div class="seq-rail"><div class="seq-dot" style="background:rgba(217,168,90,.15);color:#d9a85a">3</div><div class="seq-line"></div></div>
+      <div class="seq-body">
+        <div class="seq-de">Danach</div>
+        <div class="seq-ar">بعد ذلك</div>
+        <div class="seq-eg">Danach gehe ich zur Arbeit.</div>
+      </div>
+    </div>
+    <div class="seq-step">
+      <div class="seq-rail"><div class="seq-dot" style="background:rgba(217,168,90,.15);color:#d9a85a">4</div><div class="seq-line"></div></div>
+      <div class="seq-body">
+        <div class="seq-de">Später</div>
+        <div class="seq-ar">لاحقاً</div>
+        <div class="seq-eg">Später treffe ich Freunde.</div>
+      </div>
+    </div>
+    <div class="seq-step">
+      <div class="seq-rail"><div class="seq-dot" style="background:rgba(232,184,120,.2);color:#e8b878">★</div></div>
+      <div class="seq-body">
+        <div class="seq-de" style="color:#e8b878">Zum Schluss</div>
+        <div class="seq-ar">في النهاية</div>
+        <div class="seq-eg" style="background:rgba(232,184,120,.08)">Zum Schluss gehe ich schlafen.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: man ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--green),#207840)">٢</div>
+    <div>
+      <div class="sec-t">الضمير غير المحدد man</div>
+      <div class="sec-td">Das Indefinitpronomen „man“</div>
+    </div>
+  </div>
+
+  <div class="concept-card" style="border-color:rgba(124,168,120,.25)">
+    <div class="concept-head" style="background:rgba(124,168,120,.05)">
+      <div class="concept-word" style="color:var(--green)">man</div>
+      <div class="concept-mean">المرء / الشخص / الواحد (للعموم)</div>
+    </div>
+    <div class="concept-body">
+      <div class="concept-desc">يُستخدم للحديث عن <strong style="color:var(--green)">الناس بشكل عام</strong> دون تحديد شخص. القاعدة: يُصرّف الفعل معه <strong style="color:var(--green)">مثل er/sie/es</strong> (مفرد غائب).</div>
+      <div class="concept-eg" style="background:rgba(124,168,120,.07);color:var(--green)">Hier <strong>kann man</strong> gut essen.</div>
+      <div class="concept-eg-ar">يستطيع المرء أن يأكل هنا جيداً — man kann مثل er kann</div>
+      <div class="concept-eg" style="background:rgba(124,168,120,.07);color:var(--green)">In Deutschland <strong>fährt man</strong> rechts.</div>
+      <div class="concept-eg-ar">في ألمانيا يقود المرء على اليمين</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: MOVEMENT VERBS & TRANSPORT ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3060b0)">٣</div>
+    <div>
+      <div class="sec-t">أفعال الحركة ووسائل النقل</div>
+      <div class="sec-td">Verkehrsmittel — einsteigen · aussteigen · umsteigen</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.2)">
+    <h4 style="color:var(--sky)">📖 قاعدة مهمة</h4>
+    <p>هذه الأفعال <strong style="color:var(--sky)">منفصلة</strong>، وتأخذ الفعل المساعد <strong style="color:var(--sky)">sein</strong> في الماضي (Perfekt) لأنها تعبّر عن انتقال وحركة.</p>
+  </div>
+
+  <div class="move-grid">
+    <div class="move-card">
+      <div class="move-ic">🚪⬆️</div>
+      <div class="move-de">einsteigen</div>
+      <div class="move-ar">يصعد (إلى وسيلة نقل)</div>
+      <div class="move-split">ein<b>ge</b>stiegen · <b>ist</b> eingestiegen</div>
+    </div>
+    <div class="move-card">
+      <div class="move-ic">🚪⬇️</div>
+      <div class="move-de">aussteigen</div>
+      <div class="move-ar">ينزل (من وسيلة نقل)</div>
+      <div class="move-split">aus<b>ge</b>stiegen · <b>ist</b> ausgestiegen</div>
+    </div>
+    <div class="move-card">
+      <div class="move-ic">🔄</div>
+      <div class="move-de">umsteigen</div>
+      <div class="move-ar">يبدّل (ترانزيت / تغيير حافلة)</div>
+      <div class="move-split">um<b>ge</b>stiegen · <b>ist</b> umgestiegen</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">وسائل النقل — mit + Dativ + fahren</div>
+  <div class="note" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.2);margin-bottom:12px">
+    <div class="ni">🚌</div>
+    <div><p>نستخدم حرف الجر <span style="font-family:'JetBrains Mono',monospace;color:var(--teal)">mit</span> للتعبير عن الوسيلة، وهو يجرّ الاسم بعده (<strong style="color:var(--teal)">Dativ</strong>)، والفعل هو <span style="font-family:'JetBrains Mono',monospace;color:var(--sky)">fahren</span>.<br>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:13px;direction:ltr;color:var(--txt-d)">Ich fahre <strong style="color:var(--teal)">mit dem</strong> Bus zur Arbeit.</span></p></div>
+  </div>
+  <div class="trans-grid">
+    <div class="trans-pill"><span class="trans-ic">🚌</span><div><div class="trans-de">mit dem Bus</div><div class="trans-ar">بالحافلة</div></div></div>
+    <div class="trans-pill"><span class="trans-ic">🚗</span><div><div class="trans-de">mit dem Auto</div><div class="trans-ar">بالسيارة</div></div></div>
+    <div class="trans-pill"><span class="trans-ic">🚆</span><div><div class="trans-de">mit dem Zug</div><div class="trans-ar">بالقطار</div></div></div>
+    <div class="trans-pill"><span class="trans-ic">🚲</span><div><div class="trans-de">mit dem Fahrrad</div><div class="trans-ar">بالدراجة</div></div></div>
+    <div class="trans-pill"><span class="trans-ic">🚊</span><div><div class="trans-de">mit der Tram</div><div class="trans-ar">بالترام</div></div></div>
+  </div>
+</div>
+
+<!-- ═══ 4: denn ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6040a0)">٤</div>
+    <div>
+      <div class="sec-t">أداة الربط denn</div>
+      <div class="sec-td">Der Konnektor „denn“ (لأنّ)</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.2)">
+    <h4 style="color:var(--violet)">📖 القاعدة</h4>
+    <p><strong style="color:var(--violet)">denn</strong> تعني "لأنّ" وتربط جملتين لتوضيح السبب. ميزتها أنها <strong>لا تؤثّر على ترتيب الجملة</strong> — الفعل يبقى في موقعه الثاني الطبيعي.</p>
+  </div>
+
+  <div class="posbox">
+    <div class="pos-card pos-denn" style="background:rgba(217,168,90,.07);border:1px solid rgba(217,168,90,.25)">
+      <div class="pos-name" style="color:#d9a85a">denn</div>
+      <div class="pos-eg" style="color:#d9a85a">Ich bleibe zu Hause, denn ich <span class="vb" style="background:rgba(217,168,90,.18)">bin</span> krank.</div>
+      <div class="pos-note">الفعل <b style="color:#d9a85a">bin</b> يبقى في الموقع الثاني (ترتيب عادي)</div>
+    </div>
+    <div class="pos-card pos-weil" style="background:rgba(154,133,184,.07);border:1px solid rgba(154,133,184,.25)">
+      <div class="pos-name" style="color:var(--violet)">weil</div>
+      <div class="pos-eg" style="color:var(--violet)">Ich bleibe zu Hause, weil ich krank <span class="vb" style="background:rgba(154,133,184,.18)">bin</span>.</div>
+      <div class="pos-note">الفعل <b style="color:var(--violet)">bin</b> يُرسَل إلى آخر الجملة</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--red-d);border:1px solid rgba(176,104,112,.2);margin-top:14px">
+    <div class="ni">⚠️</div>
+    <div><p><strong style="color:var(--red)">انتبه:</strong> لا يمكن البدء بـ denn مباشرةً كإجابة على سؤال Warum؟ — يجب ذكر <strong>السبب والمُسبَّب معاً</strong> في جملة واحدة. (للإجابة المباشرة نستخدم weil).</p></div>
+  </div>
+</div>
+
+<!-- ═══ 5: W-FRAGEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#2a7060)">٥</div>
+    <div>
+      <div class="sec-t">أدوات السؤال</div>
+      <div class="sec-td">W-Fragen — Wer / Wen / Wem …</div>
+    </div>
+  </div>
+
+  <div class="wf-grid">
+    <div class="wf-card" style="border-color:rgba(124,168,120,.25)">
+      <div class="wf-w" style="color:var(--green)">Wer?</div>
+      <div class="wf-ar">مَن؟</div>
+      <div class="wf-case" style="background:rgba(124,168,120,.12);color:var(--green)">Nominativ</div>
+    </div>
+    <div class="wf-card" style="border-color:rgba(200,152,88,.25)">
+      <div class="wf-w" style="color:var(--amber)">Wen?</div>
+      <div class="wf-ar">مَن؟ (مفعول به)</div>
+      <div class="wf-case" style="background:rgba(200,152,88,.12);color:var(--amber)">Akkusativ</div>
+    </div>
+    <div class="wf-card" style="border-color:rgba(62,192,216,.25)">
+      <div class="wf-w" style="color:#3ec0d8">Wem?</div>
+      <div class="wf-ar">لِمَن؟ / مع مَن؟</div>
+      <div class="wf-case" style="background:rgba(62,192,216,.12);color:#3ec0d8">Dativ</div>
+    </div>
+    <div class="wf-card" style="border-color:rgba(154,133,184,.25)">
+      <div class="wf-w" style="color:var(--violet)">Was?</div>
+      <div class="wf-ar">ماذا؟</div>
+      <div class="wf-case" style="background:rgba(154,133,184,.12);color:var(--violet)">Sache</div>
+    </div>
+    <div class="wf-card" style="border-color:rgba(217,168,90,.25)">
+      <div class="wf-w" style="color:#d9a85a">Wie lange?</div>
+      <div class="wf-ar">كم المدّة؟</div>
+      <div class="wf-case" style="background:rgba(217,168,90,.12);color:#d9a85a">Dauer</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 6: TIME PACKAGE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#906820)">٦</div>
+    <div>
+      <div class="sec-t">مصطلحات الزمن — الرزمة الجاهزة</div>
+      <div class="sec-td">Feste Zeitausdrücke</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--gold-d);border:1px solid rgba(201,161,84,.2)">
+    <h4 style="color:var(--gold)">📦 احفظها كرزمة واحدة</h4>
+    <p>هذه التعابير تُحفظ كوحدة كاملة (chunk) لتسهيل استخدامها فوراً دون تفكير في الإعراب.</p>
+  </div>
+
+  <div class="pkg-list">
+    <div class="pkg">
+      <span class="pkg-ic">🛬</span>
+      <span class="pkg-de">Nach der Ankunft</span>
+      <span class="pkg-ar">بعد الوصول</span>
+    </div>
+    <div class="pkg">
+      <span class="pkg-ic">🧳</span>
+      <span class="pkg-de">Vor der nächsten Reise</span>
+      <span class="pkg-ar">قبل الرحلة القادمة</span>
+    </div>
+    <div class="pkg">
+      <span class="pkg-ic">⏱️</span>
+      <span class="pkg-de">Ab dem Moment</span>
+      <span class="pkg-ar">انطلاقاً من هذه اللحظة</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 7: WEATHER ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#48c0d8,#1c8898)">٧</div>
+    <div>
+      <div class="sec-t">وصف الطقس</div>
+      <div class="sec-td">Das Wetter beschreiben</div>
+    </div>
+  </div>
+
+  <div class="sub">الصفات — Adjektive</div>
+  <div class="wthr-grid">
+    <div class="wthr-card" style="border-color:rgba(217,168,90,.25)">
+      <div class="wthr-ic">☀️</div>
+      <div class="wthr-de" style="color:#d9a85a">sonnig</div>
+      <div class="wthr-ar">مشمس</div>
+    </div>
+    <div class="wthr-card" style="border-color:rgba(224,120,88,.25)">
+      <div class="wthr-ic">🌡️</div>
+      <div class="wthr-de" style="color:var(--coral)">warm</div>
+      <div class="wthr-ar">دافئ</div>
+    </div>
+    <div class="wthr-card" style="border-color:rgba(112,149,192,.25)">
+      <div class="wthr-ic">💨</div>
+      <div class="wthr-de" style="color:var(--sky)">windig</div>
+      <div class="wthr-ar">عاصف / رياح</div>
+    </div>
+    <div class="wthr-card" style="border-color:rgba(62,192,216,.25)">
+      <div class="wthr-ic">❄️</div>
+      <div class="wthr-de" style="color:#3ec0d8">kalt</div>
+      <div class="wthr-ar">بارد</div>
+    </div>
+    <div class="wthr-card" style="border-color:rgba(154,133,184,.25)">
+      <div class="wthr-ic">☁️</div>
+      <div class="wthr-de" style="color:var(--violet)">bewölkt</div>
+      <div class="wthr-ar">غائم (Wolken)</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">الأفعال — Verben</div>
+  <div class="wthr-verbs">
+    <div class="wv" style="border-color:rgba(112,149,192,.22)">
+      <span class="wv-ic">🌧️</span>
+      <span class="wv-de" style="color:var(--sky)">Es regnet.</span>
+      <span class="wv-ar">إنها تمطر — الفعل regnen</span>
+    </div>
+    <div class="wv" style="border-color:rgba(62,192,216,.22)">
+      <span class="wv-ic">🌨️</span>
+      <span class="wv-de" style="color:#3ec0d8">Es schneit.</span>
+      <span class="wv-ar">إنها تثلج — الفعل schneien</span>
+    </div>
+    <div class="wv" style="border-color:rgba(217,168,90,.22)">
+      <span class="wv-ic">🌞</span>
+      <span class="wv-de" style="color:#d9a85a">Die Sonne scheint.</span>
+      <span class="wv-ar">الشمس تشرق</span>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">تعبيرات عامية — Umgangssprache</div>
+  <div class="slang-box">
+    <div class="slang-item">Es ist eine Hitze!<span>الجو "حريقة" — حار جداً</span></div>
+    <div class="slang-item">Es schüttet!<span>المطر ينهمر بغزارة</span></div>
+  </div>
+</div>
+
+<!-- ═══ 8: BASEL LISTENING ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٨</div>
+    <div>
+      <div class="sec-t">تمرين سماعي — رحلة إلى بازل</div>
+      <div class="sec-td">Hörübung — Ein Tag in Basel 🇨🇭</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--coral-d);border:1px solid rgba(196,122,90,.22)">
+    <h4 style="color:var(--coral)">🎧 السياق</h4>
+    <p>سيّاح في مدينة بازل السويسرية يخطّطون ليومهم — إليك الأنشطة المقترحة بالترتيب.</p>
+  </div>
+
+  <div class="basel-grid">
+    <div class="basel-card">
+      <span class="basel-ic">🏛️</span>
+      <div><div class="basel-de">die Altstadt</div><div class="basel-ar">تنزّه في المدينة القديمة</div></div>
+    </div>
+    <div class="basel-card">
+      <span class="basel-ic">🚊</span>
+      <div><div class="basel-de">Oldtimer Tram</div><div class="basel-ar">جولة بالترام القديم</div></div>
+    </div>
+    <div class="basel-card">
+      <span class="basel-ic">🖼️</span>
+      <div><div class="basel-de">Kunstmuseum</div><div class="basel-ar">زيارة متحف الفنون</div></div>
+    </div>
+    <div class="basel-card">
+      <span class="basel-ic">🪑</span>
+      <div><div class="basel-de">Vitra Design Museum</div><div class="basel-ar">متحف فيترا للتصميم</div></div>
+    </div>
+    <div class="basel-card">
+      <span class="basel-ic">🍽️</span>
+      <div><div class="basel-de">Restaurant Löwenzorn</div><div class="basel-ar">تناول الطعام</div></div>
+    </div>
+    <div class="basel-card skip">
+      <span class="basel-ic">🎭</span>
+      <div><div class="basel-de">das Theater</div><div class="basel-ar">اقتُرح لكن رُفض</div></div>
+    </div>
+    <div class="basel-card">
+      <span class="basel-ic">🎶</span>
+      <div><div class="basel-de">der Club</div><div class="basel-ar">نادٍ في النهاية (بدل المسرح)</div></div>
+    </div>
+  </div>
+
+  <div class="note" style="background:rgba(62,192,216,.06);border:1px solid rgba(62,192,216,.2);margin-top:14px">
+    <div class="ni">💡</div>
+    <div><p>لاحظ ترتيب الأنشطة — طبّق كلمات الربط من القسم الأول: <span style="font-family:'JetBrains Mono',monospace;color:#48c0d8">Zuerst</span> die Altstadt, <span style="font-family:'JetBrains Mono',monospace;color:#48c0d8">dann</span> das Museum, und <span style="font-family:'JetBrains Mono',monospace;color:#48c0d8">zum Schluss</span> der Club.</p></div>
+  </div>
+</div>
+
+<!-- ═══ FAREWELL ═══ -->
+<div class="sec rv">
+  <div class="farewell">
+    <div class="farewell-ic">🏆</div>
+    <div class="farewell-t">أنهيت المستوى A1 كاملاً!</div>
+    <div class="farewell-d">من الحروف والتحيات في المحاضرة الثانية، إلى الماضي وحروف الجر والطقس هنا — بنيتَ أساساً متيناً. راجع كل شيء بترابط استعداداً للامتحان، وتذكّر: <strong style="color:#e8b878">اللغة تراكمية، وكل قاعدة تبني على ما قبلها.</strong> بالتوفيق يا بطل! 🎉</div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

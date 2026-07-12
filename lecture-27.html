@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 27 — قاعدة dass، الأفلام والمشاعر</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── Homework recap ─── */
+.recap{display:flex;align-items:flex-start;gap:14px;background:var(--card);border:1px solid rgba(224,104,124,.25);border-radius:14px;padding:16px 18px;margin-top:14px;transition:transform .2s}
+.recap:hover{transform:translateX(-3px)}
+.recap-ic{font-size:26px;flex-shrink:0}
+.recap-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;direction:ltr;color:#e0687c;margin-bottom:4px}
+.recap-ar{font-size:12.5px;color:var(--txt-d);line-height:1.8}
+
+/* ─── dass — sentence transformation ─── */
+.dass-flow{margin-top:16px}
+.dass-row{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 18px;margin-bottom:10px;transition:transform .2s}
+.dass-row:hover{transform:translateY(-2px)}
+.dass-label{font-family:'Noto Kufi Arabic',sans-serif;font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:9px}
+.dass-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;direction:ltr;line-height:1.9}
+.dass-de .vb{font-weight:800;padding:2px 7px;border-radius:6px}
+.dass-de .kw{color:#e0687c;font-weight:800;background:rgba(224,104,124,.12);padding:2px 7px;border-radius:6px}
+.dass-ar{font-size:12.5px;color:var(--txt-d);margin-top:6px}
+.dass-arrow{text-align:center;font-size:22px;color:#e0687c;margin:2px 0 10px}
+
+/* ─── glaube/finde/meine/denke ─── */
+.believe-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:14px}
+.bel-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
+.bel-card::before{content:'';position:absolute;right:0;top:0;bottom:0;width:3px;background:#e0687c}
+.bel-card:hover{transform:translateY(-2px);border-color:rgba(224,104,124,.4)}
+.bel-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;direction:ltr;color:#e0687c;margin-bottom:4px}
+.bel-ar{font-size:12.5px;color:var(--txt-d)}
+
+/* ─── Film genres ─── */
+.genre-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px}
+.genre-card{border-radius:14px;padding:16px 12px;text-align:center;border:1px solid var(--bdr);background:var(--card);transition:transform .2s,box-shadow .2s}
+.genre-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.genre-ic{font-size:30px;margin-bottom:8px}
+.genre-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;direction:ltr;margin-bottom:3px}
+.genre-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── Film description phrases ─── */
+.phrase-list{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+.phrase{display:flex;align-items:center;gap:13px;background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:13px 16px;transition:transform .2s}
+.phrase:hover{transform:translateX(-3px)}
+.phrase-ic{font-size:19px;flex-shrink:0}
+.phrase-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;direction:ltr;color:#e0687c;flex:1}
+.phrase-ar{font-size:12.5px;color:var(--txt-d);text-align:left}
+
+/* ─── Dialogue opinions ─── */
+.dlg-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.dlg-box{border-radius:14px;padding:16px;text-align:center}
+.dlg-ic{font-size:30px;margin-bottom:8px}
+.dlg-word{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:800;direction:ltr;margin-bottom:4px}
+.dlg-ar{font-size:12.5px;color:var(--txt-d)}
+
+/* ─── Traditions ─── */
+.trad-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-top:14px;transition:transform .2s,box-shadow .2s}
+.trad-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.26)}
+.trad-head{padding:14px 18px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:12px}
+.trad-ic{font-size:26px}
+.trad-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:800}
+.trad-body{padding:14px 18px}
+.trad-words{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.trad-word{font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:700;direction:ltr;padding:6px 12px;border-radius:9px}
+.trad-desc{font-size:13px;color:var(--txt-d);line-height:1.9}
+
+/* ─── Speaking chain ─── */
+.chain{display:flex;flex-direction:column;gap:0;margin-top:14px}
+.chain-step{display:flex;gap:14px}
+.chain-rail{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.chain-dot{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;flex-shrink:0;background:rgba(224,104,124,.15);color:#e0687c;z-index:1}
+.chain-line{width:2px;flex:1;background:linear-gradient(180deg,rgba(224,104,124,.5),rgba(224,104,124,.15));min-height:12px}
+.chain-body{flex:1;padding-bottom:14px}
+.chain-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;direction:ltr;color:#e0687c;margin-bottom:2px}
+.chain-ar{font-size:12.5px;color:var(--txt-d)}
+
+/* ─── Homework checklist ─── */
+.hw-check{background:var(--card);border:1px solid rgba(201,161,84,.25);border-radius:16px;padding:18px;margin-top:14px}
+.hw-title{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:800;color:var(--gold);margin-bottom:12px;display:flex;align-items:center;gap:9px}
+.hw-item{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid var(--bdr);font-size:13px}
+.hw-item:last-child{border-bottom:none}
+.hw-box{width:18px;height:18px;border-radius:5px;border:2px solid rgba(201,161,84,.4);flex-shrink:0}
+.hw-de{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d);direction:ltr;margin-right:auto}
+
+@media(max-width:640px){
+  .dlg-duo{grid-template-columns:1fr}
+  .phrase{flex-wrap:wrap}
+  .phrase-ar{width:100%;text-align:right}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#e0687c">المحاضرة 27 — dass, Filme &amp; Gefühle</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 27 — المحاضرة السابعة والعشرون · A2.1</div>
+  <h1>قاعدة dass، الأفلام <em>والمشاعر</em></h1>
+  <p class="hero-sub">الجمل التابعة بـ dass، أنواع الأفلام ووصفها، التقاليد والمناسبات، والتحدث عن الماضي بطلاقة</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: HOMEWORK RECAP ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#e0687c,#a03050)">١</div>
+    <div>
+      <div class="sec-t">مراجعة الواجب — المسيرة الدراسية</div>
+      <div class="sec-td">Wiederholung — Der Bildungsweg</div>
+    </div>
+  </div>
+
+  <div class="recap">
+    <div class="recap-ic">🎨</div>
+    <div>
+      <div class="recap-de">Sie ist Tätowiererin. Ihr Beruf ist am spannendsten, weil er kreativ ist.</div>
+      <div class="recap-ar">مثال من نصوص الطلاب: طالبة درست لتصبح <strong>فنّانة وشم</strong> — وصفت مهنتها بأنها <strong>الأكثر إثارة</strong> (am spannendsten) لأنها مبدعة. لاحظ استخدام <strong>Superlativ</strong> من المحاضرة السابقة.</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:rgba(224,104,124,.06);border:1px solid rgba(224,104,124,.2);margin-top:14px">
+    <div class="ni">📌</div>
+    <div><p><strong style="color:#e0687c">تأكيد المدرس:</strong> لازم تتقن كتابة <strong>السيرة الذاتية الدراسية</strong> ووصف <strong>المواد الدراسية المفضّلة</strong> — هذا يتكرّر في الامتحانات والمقابلات.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 2: DASS ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6040a0)">٢</div>
+    <div>
+      <div class="sec-t">الجمل التابعة بـ dass</div>
+      <div class="sec-td">Nebensatz mit „dass" ⭐ الأهم</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.2)">
+    <h4 style="color:var(--violet)">📖 القاعدة</h4>
+    <p><strong style="color:var(--violet)">dass</strong> تعني "أنَّ"، وهي رابط يُنشئ <strong>جملة تابعة (Nebensatz)</strong> — أي أنها تنقل الفعل المصرّف إلى <strong style="color:#e0687c">نهاية الجملة</strong>، تماماً مثل weil.</p>
+  </div>
+
+  <div class="sub" style="margin-top:16px">التحويل خطوة بخطوة</div>
+  <div class="dass-flow">
+    <div class="dass-row" style="border-color:rgba(112,149,192,.25)">
+      <div class="dass-label" style="background:rgba(112,149,192,.12);color:var(--sky)">جملة عادية · Hauptsatz</div>
+      <div class="dass-de" style="color:var(--sky)">Handys <span class="vb" style="background:rgba(112,149,192,.18)">sind</span> praktisch.</div>
+      <div class="dass-ar">الهواتف المحمولة عملية — الفعل <strong>sind</strong> في المرتبة الثانية</div>
+    </div>
+
+    <div class="dass-arrow">↓ نضيفها بعد dass ↓</div>
+
+    <div class="dass-row" style="border-color:rgba(224,104,124,.3)">
+      <div class="dass-label" style="background:rgba(224,104,124,.12);color:#e0687c">جملة تابعة · Nebensatz</div>
+      <div class="dass-de">Carla sagt, <span class="kw">dass</span> Handys praktisch <span class="vb" style="background:rgba(224,104,124,.2);color:#e0687c">sind</span>.</div>
+      <div class="dass-ar">كارلا تقول أنّ الهواتف المحمولة عملية — الفعل <strong style="color:#e0687c">sind</strong> انتقل إلى النهاية</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:22px">تعبيرات الرأي والاعتقاد مع dass</div>
+  <div class="believe-grid">
+    <div class="bel-card">
+      <div class="bel-de">Ich glaube, dass …</div>
+      <div class="bel-ar">أعتقد أنَّ…</div>
+    </div>
+    <div class="bel-card">
+      <div class="bel-de">Ich finde, dass …</div>
+      <div class="bel-ar">أجد أنَّ…</div>
+    </div>
+    <div class="bel-card">
+      <div class="bel-de">Ich meine, dass …</div>
+      <div class="bel-ar">أظنّ / في رأيي أنَّ…</div>
+    </div>
+    <div class="bel-card">
+      <div class="bel-de">Ich denke, dass …</div>
+      <div class="bel-ar">أفكّر / أرى أنَّ…</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.2);margin-top:14px">
+    <div class="ni">⚡</div>
+    <div><p><strong style="color:var(--teal)">تذكّر:</strong> كل رابط يُنشئ جملة تابعة (<span style="font-family:'JetBrains Mono',monospace;color:var(--violet)">dass</span> · <span style="font-family:'JetBrains Mono',monospace;color:var(--violet)">weil</span>) يرسل الفعل للنهاية. أما <span style="font-family:'JetBrains Mono',monospace;color:var(--sky)">denn</span> فلا تغيّر شيئاً.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 3: FILME ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#906820)">٣</div>
+    <div>
+      <div class="sec-t">الوسائط والأفلام</div>
+      <div class="sec-td">Filme — Genres &amp; Beschreibung</div>
+    </div>
+  </div>
+
+  <div class="sub">أنواع الأفلام</div>
+  <div class="genre-grid">
+    <div class="genre-card" style="border-color:rgba(176,104,112,.25)">
+      <div class="genre-ic">🔍</div>
+      <div class="genre-de" style="color:var(--red)">der Krimi</div>
+      <div class="genre-ar">فيلم جريمة</div>
+    </div>
+    <div class="genre-card" style="border-color:rgba(154,133,184,.25)">
+      <div class="genre-ic">🐉</div>
+      <div class="genre-de" style="color:var(--violet)">der Fantasyfilm</div>
+      <div class="genre-ar">فيلم خيال</div>
+    </div>
+    <div class="genre-card" style="border-color:rgba(196,122,90,.25)">
+      <div class="genre-ic">💥</div>
+      <div class="genre-de" style="color:var(--coral)">der Actionfilm</div>
+      <div class="genre-ar">فيلم أكشن</div>
+    </div>
+    <div class="genre-card" style="border-color:rgba(200,152,88,.25)">
+      <div class="genre-ic">😂</div>
+      <div class="genre-de" style="color:var(--amber)">die Komödie</div>
+      <div class="genre-ar">كوميديا</div>
+    </div>
+    <div class="genre-card" style="border-color:rgba(112,149,192,.25)">
+      <div class="genre-ic">🎭</div>
+      <div class="genre-de" style="color:var(--sky)">das Drama</div>
+      <div class="genre-ar">دراما (Pl. Dramen)</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">تعبيرات لوصف الفيلم</div>
+  <div class="phrase-list">
+    <div class="phrase" style="border-color:rgba(224,104,124,.22)">
+      <span class="phrase-ic">🎬</span>
+      <span class="phrase-de">Der Film heißt …</span>
+      <span class="phrase-ar">الفيلم يُسمّى…</span>
+    </div>
+    <div class="phrase" style="border-color:rgba(224,104,124,.22)">
+      <span class="phrase-ic">📖</span>
+      <span class="phrase-de">Er erzählt die Geschichte von …</span>
+      <span class="phrase-ar">يروي قصة…</span>
+    </div>
+    <div class="phrase" style="border-color:rgba(224,104,124,.22)">
+      <span class="phrase-ic">📍</span>
+      <span class="phrase-de">Er spielt in …</span>
+      <span class="phrase-ar">تدور أحداثه في…</span>
+    </div>
+    <div class="phrase" style="border-color:rgba(224,104,124,.22)">
+      <span class="phrase-ic">💡</span>
+      <span class="phrase-de">Es geht um …</span>
+      <span class="phrase-ar">الفيلم يدور حول…</span>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">نشاط الاستماع — رأيان متعارضان</div>
+  <div class="dlg-duo">
+    <div class="dlg-box" style="background:rgba(176,104,112,.06);border:1px solid rgba(176,104,112,.25)">
+      <div class="dlg-ic">🥱</div>
+      <div class="dlg-word" style="color:var(--red)">langweilig</div>
+      <div class="dlg-ar">الشخص الأول رأى الفيلم مملاً</div>
+    </div>
+    <div class="dlg-box" style="background:rgba(124,168,120,.06);border:1px solid rgba(124,168,120,.25)">
+      <div class="dlg-ic">🤩</div>
+      <div class="dlg-word" style="color:var(--green)">interessant</div>
+      <div class="dlg-ar">الثاني وجده ممتعاً</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--gold-d);border:1px solid rgba(201,161,84,.2);margin-top:14px">
+    <div class="ni">🎞️</div>
+    <div><p>تطرّق الحوار إلى <span style="font-family:'JetBrains Mono',monospace;color:var(--gold)">Autobiografien</span> (الأفلام التي تتناول السيرة الذاتية) وأداء <span style="font-family:'JetBrains Mono',monospace;color:var(--gold)">Schauspieler</span> (الممثلين).</p></div>
+  </div>
+</div>
+
+<!-- ═══ 4: TRADITIONEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#a05070)">٤</div>
+    <div>
+      <div class="sec-t">التقاليد والمشاعر</div>
+      <div class="sec-td">Große und kleine Gefühle</div>
+    </div>
+  </div>
+
+  <div class="trad-card" style="border-color:rgba(200,152,88,.25)">
+    <div class="trad-head" style="background:rgba(200,152,88,.05)">
+      <span class="trad-ic">🎒</span>
+      <span class="trad-t" style="color:var(--amber)">بداية المدرسة — Schulanfang</span>
+    </div>
+    <div class="trad-body">
+      <div class="trad-words">
+        <div class="trad-word" style="background:rgba(200,152,88,.1);color:var(--amber)">die Schultüte</div>
+        <div class="trad-word" style="background:rgba(200,152,88,.1);color:var(--amber)">der Schulranzen</div>
+      </div>
+      <div class="trad-desc">وصف صورة طفل يحمل <strong>Schultüte</strong> (مخروط الحلوى التقليدي) و<strong>Schulranzen</strong> (الحقيبة المدرسية) تعبيراً عن فرحته ببدء المدرسة — تقليد ألماني أصيل.</div>
+    </div>
+  </div>
+
+  <div class="trad-card" style="border-color:rgba(200,152,168,.25)">
+    <div class="trad-head" style="background:rgba(200,152,168,.05)">
+      <span class="trad-ic">💍</span>
+      <span class="trad-t" style="color:var(--rose)">حفلات الزفاف — die Hochzeit</span>
+    </div>
+    <div class="trad-body">
+      <div class="trad-words">
+        <div class="trad-word" style="background:rgba(200,152,168,.1);color:var(--rose)">die Hochzeit</div>
+        <div class="trad-word" style="background:rgba(200,152,168,.1);color:var(--rose)">die Henna-Party</div>
+        <div class="trad-word" style="background:rgba(200,152,168,.1);color:var(--rose)">Dabke (Volkstanz)</div>
+        <div class="trad-word" style="background:rgba(200,152,168,.1);color:var(--rose)">Mansaf</div>
+      </div>
+      <div class="trad-desc">ناقش الطلاب تقاليد الزفاف في <strong>فلسطين والأردن</strong>: العرس قد يستمر <strong>عدة أيام</strong>، ويتضمن <strong>حفلة الحناء</strong> و<strong>الدبكة</strong>، وتقديم طعام شعبي مثل <strong>المنسف</strong> (اللحم مع الأرز).</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: SPRECHEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#2a7060)">٥</div>
+    <div>
+      <div class="sec-t">مهارة التحدث — ماذا فعلت بالأمس؟</div>
+      <div class="sec-td">Was hast du gestern gemacht?</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.2)">
+    <h4 style="color:var(--teal)">🗣️ الهدف: الإجابة التلقائية</h4>
+    <p>استخدم <strong style="color:var(--teal)">الماضي (Perfekt)</strong> + <strong style="color:#e0687c">أدوات الربط</strong> (und danach · dann · später) لضمان تدفّق الكلام بشكل مترابط بدون تلعثم.</p>
+  </div>
+
+  <div class="chain">
+    <div class="chain-step">
+      <div class="chain-rail"><div class="chain-dot">1</div><div class="chain-line"></div></div>
+      <div class="chain-body">
+        <div class="chain-de">Ich habe die Wohnung geputzt …</div>
+        <div class="chain-ar">نظّفتُ المنزل…</div>
+      </div>
+    </div>
+    <div class="chain-step">
+      <div class="chain-rail"><div class="chain-dot">2</div><div class="chain-line"></div></div>
+      <div class="chain-body">
+        <div class="chain-de">… und danach habe ich eine Serie gesehen.</div>
+        <div class="chain-ar">…وبعد ذلك شاهدتُ مسلسلاً</div>
+      </div>
+    </div>
+    <div class="chain-step">
+      <div class="chain-rail"><div class="chain-dot">3</div><div class="chain-line"></div></div>
+      <div class="chain-body">
+        <div class="chain-de">Ich habe Deutsch gelernt …</div>
+        <div class="chain-ar">درستُ الألمانية…</div>
+      </div>
+    </div>
+    <div class="chain-step">
+      <div class="chain-rail"><div class="chain-dot">4</div></div>
+      <div class="chain-body">
+        <div class="chain-de">… dann habe ich Kaffee getrunken.</div>
+        <div class="chain-ar">…ثم شربتُ القهوة</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 6: HAUSAUFGABE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٦</div>
+    <div>
+      <div class="sec-t">الواجب المنزلي</div>
+      <div class="sec-td">Hausaufgabe — Mein Lieblingsfilm</div>
+    </div>
+  </div>
+
+  <div class="hw-check">
+    <div class="hw-title"><span>✍️</span> اكتب نصاً (~80 كلمة) عن فيلمك المفضّل — يجب أن يتضمّن:</div>
+    <div class="hw-item">
+      <div class="hw-box"></div>
+      <span>اسم الفيلم</span>
+      <span class="hw-de">Der Film heißt …</span>
+    </div>
+    <div class="hw-item">
+      <div class="hw-box"></div>
+      <span>قصّته</span>
+      <span class="hw-de">Es geht um … / Er erzählt …</span>
+    </div>
+    <div class="hw-item">
+      <div class="hw-box"></div>
+      <span>الممثّلون</span>
+      <span class="hw-de">die Schauspieler</span>
+    </div>
+    <div class="hw-item">
+      <div class="hw-box"></div>
+      <span>نوع الفيلم (كوميدي، دراما…)</span>
+      <span class="hw-de">Es ist eine Komödie / ein Drama</span>
+    </div>
+    <div class="hw-item">
+      <div class="hw-box"></div>
+      <span>أين تفضّل مشاهدته — في السينما أم المنزل؟</span>
+      <span class="hw-de">im Kino oder zu Hause</span>
+    </div>
+  </div>
+
+  <div class="note" style="background:rgba(224,104,124,.06);border:1px solid rgba(224,104,124,.2);margin-top:14px">
+    <div class="ni">💡</div>
+    <div><p><strong style="color:#e0687c">نصيحة:</strong> وظّف قاعدة <span style="font-family:'JetBrains Mono',monospace;color:var(--violet)">dass</span> في نصّك — مثل: <span style="font-family:'JetBrains Mono',monospace;color:var(--txt-d);direction:ltr;display:inline-block">Ich finde, dass der Film sehr spannend <strong>ist</strong>.</span></p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

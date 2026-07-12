@@ -687,9 +687,15 @@ body::before{
   border-color:rgba(124,200,160,.3);
   box-shadow:0 4px 16px rgba(124,200,160,.08);
 }
+.lvl-tag.lvl-blue{
+  background:linear-gradient(135deg,rgba(106,168,232,.12),rgba(106,168,232,.02));
+  border-color:rgba(106,168,232,.32);
+  box-shadow:0 4px 16px rgba(106,168,232,.1);
+}
 .lvl-purple .lvl-num{color:var(--plum)}
 .lvl-rose .lvl-num{color:var(--rose)}
 .lvl-green .lvl-num{color:#7cc8a0}
+.lvl-blue .lvl-num{color:#6aa8e8}
 .lvl-de{
   font-family:'Noto Kufi Arabic',sans-serif;
   font-size:12px;font-weight:700;
@@ -1228,6 +1234,93 @@ body::before{
 @media(prefers-reduced-motion:reduce){
   #scrollprog,.brand-mark,.hero h1 em{animation:none}
 }
+
+/* ═══════════════════════════════════════════════════════
+   LEVEL PICKER (A1 / A2) — اختيار المستوى
+   ═══════════════════════════════════════════════════════ */
+.level-picker{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  max-width:720px;margin:0 auto 34px;
+}
+.level-eyebrow{
+  text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:15px;color:var(--gold);letter-spacing:1px;margin:0 0 14px;
+}
+.level-btn{
+  flex:1;min-width:230px;
+  display:flex;align-items:center;gap:16px;
+  padding:20px 22px;border-radius:18px;cursor:pointer;
+  background:linear-gradient(180deg,var(--card),rgba(20,22,31,.6));
+  border:1px solid var(--bdr);
+  transition:all .35s cubic-bezier(.23,1,.32,1);
+  text-align:right;position:relative;overflow:hidden;
+  font-family:'Noto Kufi Arabic',sans-serif;color:var(--txt);
+}
+.level-btn::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--lv-accent);opacity:.35;transition:opacity .3s,height .3s;
+}
+.level-btn::after{
+  content:'';position:absolute;inset:0;border-radius:18px;pointer-events:none;
+  background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),var(--lv-glow),transparent 42%);
+  opacity:0;transition:opacity .3s ease;
+}
+.level-btn:hover::after{opacity:1}
+.level-btn:hover{transform:translateY(-4px);border-color:var(--lv-accent);box-shadow:0 18px 44px rgba(0,0,0,.42)}
+.level-btn.active{
+  border-color:var(--lv-accent);
+  background:linear-gradient(180deg,var(--lv-tint),rgba(20,22,31,.72));
+  box-shadow:0 14px 40px rgba(0,0,0,.42),0 0 34px var(--lv-glow);
+}
+.level-btn.active::before{opacity:1;height:3px}
+.lv-badge{
+  width:58px;height:58px;border-radius:16px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-weight:700;font-size:27px;
+  color:#0a0b10;background:var(--lv-grad);
+  box-shadow:0 8px 22px var(--lv-glow),inset 0 1px 0 rgba(255,255,255,.28);
+  transition:transform .45s cubic-bezier(.23,1,.32,1);
+}
+.level-btn:hover .lv-badge{transform:scale(1.07) rotate(-4deg)}
+.lv-info{flex:1;min-width:0}
+.lv-name{font-size:17px;font-weight:800;color:var(--txt-b);line-height:1.3}
+.lv-meta{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--lv-accent);direction:ltr;text-align:right;margin-top:2px}
+.lv-count{font-size:11.5px;color:var(--txt-d);margin-top:6px;font-weight:700;letter-spacing:.2px}
+.lv-check{
+  width:26px;height:26px;border-radius:50%;flex-shrink:0;
+  border:2px solid var(--bdr);display:flex;align-items:center;justify-content:center;
+  color:#0a0b10;font-size:13px;font-weight:800;transition:all .3s;
+}
+.level-btn.active .lv-check{background:var(--lv-accent);border-color:var(--lv-accent)}
+.level-btn:not(.active) .lv-check span{opacity:0}
+.level-btn[data-level="a1"]{--lv-accent:#d4af5e;--lv-grad:linear-gradient(135deg,#e8c878,#c47a4a);--lv-glow:rgba(212,175,94,.2);--lv-tint:rgba(212,175,94,.06)}
+.level-btn[data-level="a2"]{--lv-accent:#6aa8e8;--lv-grad:linear-gradient(135deg,#8ecbff,#5a78d8);--lv-glow:rgba(106,168,232,.2);--lv-tint:rgba(106,168,232,.06)}
+
+/* level content groups — only the chosen level shows */
+.level-group{display:none}
+.level-group.active{display:block;animation:fadeU .5s ease}
+
+/* coming-soon state for A2 vocab / reviews */
+.lv-empty{
+  text-align:center;max-width:480px;margin:24px auto;
+  padding:48px 30px;border-radius:20px;
+  border:1px dashed rgba(106,168,232,.32);
+  background:linear-gradient(135deg,rgba(106,168,232,.05),rgba(154,133,184,.04));
+  position:relative;overflow:hidden;
+}
+.lv-empty::before{
+  content:'';position:absolute;top:-30%;left:-20%;width:70%;height:160%;
+  background:radial-gradient(circle,rgba(106,168,232,.1),transparent 60%);
+  animation:soonGlow 6s ease-in-out infinite;
+}
+.lv-empty-ic{font-size:46px;margin-bottom:12px;position:relative;z-index:1}
+.lv-empty-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:18px;font-weight:800;color:#6aa8e8;margin-bottom:8px;position:relative;z-index:1}
+.lv-empty-d{font-size:13.5px;color:var(--txt-d);line-height:1.9;position:relative;z-index:1;max-width:360px;margin:0 auto}
+
+@media(max-width:560px){
+  .level-btn{min-width:100%;padding:16px 18px}
+  .lv-badge{width:50px;height:50px;font-size:23px}
+}
 </style>
 </head>
 <body>
@@ -1317,7 +1410,7 @@ body::before{
 <!-- ════════════════ STATS ════════════════ -->
 <div class="stats">
   <div class="stat" data-tilt>
-    <div class="stat-num">21</div>
+    <div class="stat-num">26</div>
     <div class="stat-label">محاضرة شاملة</div>
     <div class="stat-de">Lektionen</div>
   </div>
@@ -1358,6 +1451,29 @@ body::before{
   </svg>
 </div>
 
+<!-- ════════════════ LEVEL PICKER (A1 / A2) ════════════════ -->
+<div class="level-eyebrow">— اختر مستواك · Wähle dein Niveau —</div>
+<div class="level-picker" role="tablist" aria-label="اختيار المستوى">
+  <button class="level-btn active" data-level="a1" type="button" data-tilt aria-selected="true">
+    <div class="lv-badge">A1</div>
+    <div class="lv-info">
+      <div class="lv-name">المستوى الأول</div>
+      <div class="lv-meta">Grundstufe</div>
+      <div class="lv-count">٢٢ محاضرة · ٦ وحدات كلمات · مراجعتان</div>
+    </div>
+    <div class="lv-check"><span>✓</span></div>
+  </button>
+  <button class="level-btn" data-level="a2" type="button" data-tilt aria-selected="false">
+    <div class="lv-badge">A2</div>
+    <div class="lv-info">
+      <div class="lv-name">المستوى الثاني</div>
+      <div class="lv-meta">Aufbaustufe</div>
+      <div class="lv-count">A2.1 · ٤ محاضرات · يتوسّع 🚀</div>
+    </div>
+    <div class="lv-check"><span>✓</span></div>
+  </button>
+</div>
+
 <!-- ════════════════ TABS ════════════════ -->
 <div class="tabs-wrap">
   <div class="tabs" role="tablist">
@@ -1378,6 +1494,9 @@ body::before{
 
 <!-- ════════════════ PANEL: LECTURES ════════════════ -->
 <div class="panel active" id="panel-lectures" role="tabpanel">
+
+  <!-- ═══ A1 lectures ═══ -->
+  <div class="level-group active" data-level="a1">
 
   <div class="lvl-sep" id="lectures">
     <div class="lvl-line"></div>
@@ -1716,12 +1835,108 @@ body::before{
         <span class="lec-arrow" style="color:#3ec0d8">افتح ←</span>
       </div>
     </a>
+
+    <a href="lecture-23.html" class="lec-card" data-tilt style="--c:#e8b878;--cd:rgba(232,184,120,.2)" data-search="ختام a1.2 abschluss ربط تسلسل zuerst dann danach man einsteigen aussteigen umsteigen denn weil wetter طقس بازل basel أفعال حركة نقل امتحان">
+      <div class="lec-num-row">
+        <div class="lec-num" style="background:linear-gradient(135deg,#f4d090,#b8862c)">23</div>
+        <div class="lec-info">
+          <div class="lec-title">الربط والحركة والطقس — ختام A1.2</div>
+          <div class="lec-de">Verknüpfung, Verkehr &amp; Wetter</div>
+        </div>
+      </div>
+      <div class="lec-desc">المحاضرة الأخيرة في A1.2: كلمات الترتيب، ضمير man، أفعال الحركة والنقل، denn مقابل weil، أدوات السؤال، رزم الزمن، ووصف الطقس</div>
+      <div class="lec-foot">
+        <span class="lec-meta">Lektion 23 · ختام A1.2 🎓</span>
+        <span class="lec-arrow" style="color:#e8b878">افتح ←</span>
+      </div>
+    </a>
   </div>
+
+  </div><!-- /level-group a1 -->
+
+  <!-- ═══ A2 lectures ═══ -->
+  <div class="level-group" data-level="a2">
+
+    <div class="lvl-sep">
+      <div class="lvl-line"></div>
+      <div class="lvl-tag lvl-blue">
+        <span class="lvl-num">A2.1</span>
+        <span class="lvl-de">Mittelstufe — بداية المستوى الثاني</span>
+      </div>
+      <div class="lvl-line"></div>
+    </div>
+
+    <div class="grid">
+      <a href="lecture-24.html" class="lec-card" data-tilt style="--c:#6aa8e8;--cd:rgba(106,168,232,.18)" data-search="تعريف موسع ماضي ملكية genitiv perfekt denn weil vorschlagen absagen sich vorstellen a2 sein haben ieren جينيتيف اقتراح رفض">
+        <div class="lec-num-row">
+          <div class="lec-num" style="background:linear-gradient(135deg,#8ecbff,#5a78d8)">24</div>
+          <div class="lec-info">
+            <div class="lec-title">التعريف الموسّع والماضي والملكية</div>
+            <div class="lec-de">Vorstellen, Perfekt &amp; Genitiv</div>
+          </div>
+        </div>
+        <div class="lec-desc">أول محاضرة في A2.1: تعريف أعمق بالنفس، إتقان الـ Perfekt، الملكية بالـ Genitiv، denn مقابل weil، وأفعال التفاعل الاجتماعي</div>
+        <div class="lec-foot">
+          <span class="lec-meta">Lektion 24 · بداية A2.1 🚀</span>
+          <span class="lec-arrow" style="color:#6aa8e8">افتح ←</span>
+        </div>
+      </a>
+
+      <a href="lecture-25.html" class="lec-card" data-tilt style="--c:#5c9ce0;--cd:rgba(92,156,224,.18)" data-search="حواس تدريب مهني ausbildung sinne modalverben präteritum musste konnte nach dativ lichtlos schule fächer noten prüfungen مطعم ظلام أفعال ناقصة ماضي">
+        <div class="lec-num-row">
+          <div class="lec-num" style="background:linear-gradient(135deg,#7cb4f0,#3868b8)">25</div>
+          <div class="lec-info">
+            <div class="lec-title">الحواس والتدريب المهني والأفعال الناقصة</div>
+            <div class="lec-de">Sinne, Ausbildung &amp; Modalverben</div>
+          </div>
+        </div>
+        <div class="lec-desc">مطعم بلا ضوء، التعلّم بالحواس الخمس، مسارات ما بعد المدرسة، الأفعال الناقصة في الماضي (Präteritum)، denn/weil، وأدوات الداتيف</div>
+        <div class="lec-foot">
+          <span class="lec-meta">Lektion 25 · A2.1</span>
+          <span class="lec-arrow" style="color:#5c9ce0">افتح ←</span>
+        </div>
+      </a>
+
+      <a href="lecture-26.html" class="lec-card" data-tilt style="--c:#a89ce8;--cd:rgba(168,156,232,.18)" data-search="نظام تعليم مقارنة مفاضلة komparativ superlativ schulsystem gymnasium abitur online posten besser größer am besten إنترنت وسائل تواصل رأي redemittel">
+        <div class="lec-num-row">
+          <div class="lec-num" style="background:linear-gradient(135deg,#c0b4ff,#5848b0)">26</div>
+          <div class="lec-info">
+            <div class="lec-title">نظام التعليم والإنترنت والمقارنة</div>
+            <div class="lec-de">Schulsystem, Online &amp; Komparativ</div>
+          </div>
+        </div>
+        <div class="lec-desc">النظام المدرسي الألماني، وسائل التعبير عن الرأي، أفعال الإنترنت وظروف التكرار، والمقارنة والمفاضلة (Komparativ &amp; Superlativ) مع الشواذ</div>
+        <div class="lec-foot">
+          <span class="lec-meta">Lektion 26 · A2.1</span>
+          <span class="lec-arrow" style="color:#a89ce8">افتح ←</span>
+        </div>
+      </a>
+
+      <a href="lecture-27.html" class="lec-card" data-tilt style="--c:#e0687c;--cd:rgba(224,104,124,.18)" data-search="dass جمل تابعة nebensatz أفلام filme krimi komödie drama تقاليد زفاف hochzeit schultüte مشاعر ich glaube finde meine denke schauspieler">
+        <div class="lec-num-row">
+          <div class="lec-num" style="background:linear-gradient(135deg,#ff90a8,#a03050)">27</div>
+          <div class="lec-info">
+            <div class="lec-title">قاعدة dass، الأفلام والمشاعر</div>
+            <div class="lec-de">dass, Filme &amp; Gefühle</div>
+          </div>
+        </div>
+        <div class="lec-desc">الجمل التابعة بـ dass ونقل الفعل للنهاية، أنواع الأفلام ووصفها، تقاليد الزفاف وبداية المدرسة، والتحدث عن الماضي بطلاقة</div>
+        <div class="lec-foot">
+          <span class="lec-meta">Lektion 27 · A2.1</span>
+          <span class="lec-arrow" style="color:#e0687c">افتح ←</span>
+        </div>
+      </a>
+    </div>
+
+  </div><!-- /level-group a2 -->
 
 </div>
 
 <!-- ════════════════ PANEL: VOCAB ════════════════ -->
 <div class="panel" id="panel-vocab" role="tabpanel">
+
+  <!-- ═══ A1 vocab ═══ -->
+  <div class="level-group active" data-level="a1">
 
   <div class="lvl-sep" id="vocab">
     <div class="lvl-line"></div>
@@ -1859,10 +2074,24 @@ body::before{
 
   </div>
 
+  </div><!-- /level-group a1 -->
+
+  <!-- ═══ A2 vocab (coming soon) ═══ -->
+  <div class="level-group" data-level="a2">
+    <div class="lv-empty">
+      <div class="lv-empty-ic">📖</div>
+      <div class="lv-empty-t">قواميس المستوى A2 — قريباً</div>
+      <div class="lv-empty-d">وحدات كلمات المستوى الثاني قيد التجهيز، وستُضاف تباعاً مع تقدّم المحاضرات.</div>
+    </div>
+  </div><!-- /level-group a2 -->
+
 </div>
 
 <!-- ════════════════ PANEL: REVIEW ════════════════ -->
 <div class="panel" id="panel-review" role="tabpanel">
+
+  <!-- ═══ A1 reviews ═══ -->
+  <div class="level-group active" data-level="a1">
 
   <div class="lvl-sep" id="review">
     <div class="lvl-line"></div>
@@ -1923,6 +2152,17 @@ body::before{
 
   </div>
 
+  </div><!-- /level-group a1 -->
+
+  <!-- ═══ A2 reviews (coming soon) ═══ -->
+  <div class="level-group" data-level="a2">
+    <div class="lv-empty">
+      <div class="lv-empty-ic">✦</div>
+      <div class="lv-empty-t">مراجعات المستوى A2 — قريباً</div>
+      <div class="lv-empty-d">ملفات المراجعة التفاعلية للمستوى الثاني ستُضاف بعد اكتمال وحداته.</div>
+    </div>
+  </div><!-- /level-group a2 -->
+
 </div>
 
 </div>
@@ -1951,8 +2191,8 @@ body::before{
     <div class="footer-col">
       <h5>المستويات</h5>
       <ul>
-        <li><a href="#lectures" data-scroll>A1.1 — الأساسي</a></li>
-        <li><a href="#lectures" data-scroll>A1.2 — قريباً</a></li>
+        <li><a href="#lectures" data-scroll>A1 — المستوى الأول</a></li>
+        <li><a href="#lectures" data-scroll>A2 — المستوى الثاني</a></li>
         <li><a href="#vocab" data-scroll>قاموس الكلمات</a></li>
       </ul>
     </div>
@@ -2003,6 +2243,30 @@ body::before{
     if (saved) switchTab(saved, false);
   } catch(e){}
 
+  /* ──────────── (2b) LEVEL SWITCHER (A1 / A2) ──────────── */
+  const levelBtns = document.querySelectorAll('.level-btn');
+  const levelGroups = document.querySelectorAll('.level-group');
+  let activeLevel = 'a1';
+  function switchLevel(lv){
+    if (lv !== 'a1' && lv !== 'a2') return;
+    activeLevel = lv;
+    levelBtns.forEach(b => {
+      const on = b.dataset.level === lv;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    levelGroups.forEach(g => g.classList.toggle('active', g.dataset.level === lv));
+    try { localStorage.setItem('activeLevel', lv); } catch(e){}
+  }
+  levelBtns.forEach(b => b.addEventListener('click', () => {
+    switchLevel(b.dataset.level);
+    if (typeof runSearch === 'function') runSearch();
+  }));
+  try {
+    const savedLv = localStorage.getItem('activeLevel');
+    if (savedLv) switchLevel(savedLv);
+  } catch(e){}
+
   /* ──────────── (3) SMOOTH SCROLL for any [data-scroll] anchor ──────────── */
   document.querySelectorAll('[data-scroll]').forEach(link => {
     link.addEventListener('click', (e) => {
@@ -2018,6 +2282,9 @@ body::before{
         const tabName = panel.id.replace('panel-','');
         if (tabName) switchTab(tabName, false);
       }
+      // If target lives inside a level group, switch to that level too
+      const grp = target.closest('.level-group');
+      if (grp && grp.dataset.level) switchLevel(grp.dataset.level);
 
       setTimeout(() => {
         const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 70;
@@ -2043,9 +2310,11 @@ body::before{
       const text = (card.dataset.search + ' ' + card.textContent).toLowerCase();
       const match = q === '' || text.includes(q);
       card.style.display = match ? '' : 'none';
-      // Count only cards in the active panel
+      // Count only cards in the active panel AND active level
       const panel = card.closest('.panel');
-      if (match && panel && panel.classList.contains('active')) visibleCount++;
+      const group = card.closest('.level-group');
+      const inLevel = !group || group.dataset.level === activeLevel;
+      if (match && panel && panel.classList.contains('active') && inLevel) visibleCount++;
     });
 
     // Show empty state if searching with no matches in active panel

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 26 — نظام التعليم، الإنترنت والمقارنة</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── QA (Bildungsweg) ─── */
+.qa-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.qa{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 18px;transition:transform .2s}
+.qa:hover{transform:translateX(-3px)}
+.qa-q{font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:700;direction:ltr;color:#8078d8;margin-bottom:4px}
+.qa-q::before{content:'❓ ';}
+.qa-a{font-family:'JetBrains Mono',monospace;font-size:13.5px;direction:ltr;color:var(--txt);margin-bottom:4px}
+.qa-a::before{content:'💬 ';}
+.qa-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── term compare (abschließen vs absolvieren) ─── */
+.term-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.term-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px;transition:transform .2s}
+.term-card:hover{transform:translateY(-3px)}
+.term-de{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:800;direction:ltr;margin-bottom:6px}
+.term-mean{font-size:13px;color:var(--txt);margin-bottom:8px}
+.term-eg{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--txt-d);direction:ltr;background:rgba(255,255,255,.03);border-radius:7px;padding:6px 9px}
+
+/* ─── School system pyramid ─── */
+.school-flow{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.school-tier{border:1px solid var(--bdr);border-radius:14px;padding:14px 18px;background:var(--card);transition:transform .2s,border-color .2s}
+.school-tier:hover{transform:translateX(-3px)}
+.school-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.school-ic{font-size:24px}
+.school-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:14.5px;font-weight:800}
+.school-badge{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;margin-right:auto}
+.school-schools{display:flex;flex-wrap:wrap;gap:8px}
+.school-chip{font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:700;direction:ltr;padding:6px 12px;border-radius:9px;border:1px solid var(--bdr)}
+.school-note{font-size:12px;color:var(--txt-d);margin-top:8px;line-height:1.7}
+
+/* ─── Redemittel (opinion) ─── */
+.opinion-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.op-card{border-radius:14px;padding:16px 14px;position:relative;overflow:hidden}
+.op-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.op-head{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.op-item{font-family:'JetBrains Mono',monospace;font-size:12px;direction:ltr;padding:5px 0;color:var(--txt-d);border-bottom:1px solid rgba(255,255,255,.05)}
+.op-item:last-child{border-bottom:none}
+
+/* ─── Online verbs ─── */
+.net-grid{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.net-chip{background:var(--card);border:1px solid var(--bdr);border-radius:10px;padding:9px 14px;transition:transform .15s,border-color .2s}
+.net-chip:hover{transform:translateY(-2px);border-color:rgba(128,120,216,.4)}
+.net-de{font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:700;direction:ltr}
+.net-ar{font-size:11px;color:var(--txt-d);margin-top:2px}
+.net-chip.loan .net-de{color:#8078d8}
+
+/* ─── Frequency scale ─── */
+.freq-scale{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.freq-item{flex:1;min-width:120px;border-radius:12px;padding:14px 12px;text-align:center;border:1px solid var(--bdr);position:relative;overflow:hidden}
+.freq-bar{position:absolute;bottom:0;left:0;right:0;height:4px}
+.freq-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;margin-bottom:3px}
+.freq-ar{font-size:12px;color:var(--txt-d)}
+.freq-pct{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--txt-d);margin-top:4px}
+
+/* ─── Comparison (star section) ─── */
+.comp-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:14px;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;direction:ltr}
+.comp-table th{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:800;padding:12px 8px;background:rgba(128,120,216,.08);color:#8078d8;border-bottom:1px solid var(--bdr)}
+.comp-table td{padding:11px 10px;text-align:center;border-bottom:1px solid var(--bdr);border-left:1px solid var(--bdr);font-family:'JetBrains Mono',monospace;font-size:14px;direction:ltr}
+.comp-table td:first-child{border-left:none}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-pos{color:var(--txt-d);font-weight:600}
+.comp-komp{color:var(--sky);font-weight:800}
+.comp-sup{color:#8078d8;font-weight:800}
+.comp-irr td{background:rgba(224,120,88,.05)}
+.comp-irr .comp-pos{color:var(--coral)}
+
+.rule-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:16px}
+.rc{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px;transition:transform .2s,box-shadow .2s}
+.rc:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.24)}
+.rc-tag{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:800;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:9px}
+.rc-formula{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;margin-bottom:8px}
+.rc-eg{font-family:'JetBrains Mono',monospace;font-size:12.5px;direction:ltr;color:var(--txt-d);line-height:1.7}
+.rc-eg b{color:var(--txt)}
+
+/* ─── Social media pros/cons ─── */
+.pc-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.pc-box{border-radius:16px;padding:18px;position:relative;overflow:hidden}
+.pc-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.pc-pro::before{background:linear-gradient(90deg,var(--green),#207840)}
+.pc-con::before{background:linear-gradient(90deg,var(--red),#902838)}
+.pc-head{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.pc-item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px;line-height:1.7}
+.pc-item:last-child{border-bottom:none}
+.pc-item-ic{flex-shrink:0}
+
+/* ─── Homework ─── */
+.hw-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.hw-page{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid rgba(201,161,84,.25);border-radius:12px;padding:11px 18px;transition:transform .15s}
+.hw-page:hover{transform:translateY(-2px)}
+.hw-page-n{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;color:var(--gold)}
+.hw-page-l{font-size:12px;color:var(--txt-d)}
+
+@media(max-width:640px){
+  .term-duo,.pc-duo{grid-template-columns:1fr}
+  .opinion-grid{grid-template-columns:1fr}
+  .comp-table{font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#a89ce8">المحاضرة 26 — Schulsystem, Online &amp; Komparativ</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 26 — المحاضرة السادسة والعشرون · A2.1</div>
+  <h1>نظام التعليم، الإنترنت <em>والمقارنة</em></h1>
+  <p class="hero-sub">المسار التعليمي، النظام المدرسي الألماني، وسائل التعبير عن الرأي، أفعال الإنترنت، والمقارنة والمفاضلة (Komparativ &amp; Superlativ)</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: BILDUNGSWEG ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#8078d8,#4838a0)">١</div>
+    <div>
+      <div class="sec-t">الحديث عن المسار التعليمي</div>
+      <div class="sec-td">Über den Bildungsweg sprechen</div>
+    </div>
+  </div>
+
+  <div class="qa-list">
+    <div class="qa">
+      <div class="qa-q">Wann hast du die Schule abgeschlossen?</div>
+      <div class="qa-a">Ich habe die Schule im Jahre 2013 abgeschlossen.</div>
+      <div class="qa-ar">متى أنهيت المدرسة؟ — أنهيتها عام 2013</div>
+    </div>
+    <div class="qa">
+      <div class="qa-q">Was hast du an der Universität studiert?</div>
+      <div class="qa-a">Ich habe an der Universität Englische Literatur studiert.</div>
+      <div class="qa-ar">ماذا درست في الجامعة؟ — درست أدب اللغة الإنجليزية</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">فرق مهم في المصطلحات</div>
+  <div class="term-duo">
+    <div class="term-card" style="border-color:rgba(128,120,216,.25)">
+      <div class="term-de" style="color:#8078d8">abschließen</div>
+      <div class="term-mean">أنهى مدرسة أو مرحلة دراسية</div>
+      <div class="term-eg">Ich habe die Schule abgeschlossen.</div>
+    </div>
+    <div class="term-card" style="border-color:rgba(111,164,148,.25)">
+      <div class="term-de" style="color:var(--teal)">absolvieren</div>
+      <div class="term-mean">أتمّ تدريباً مهنياً أو دراسة معيّنة</div>
+      <div class="term-eg">Ich habe ein Praktikum absolviert.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: SCHULSYSTEM ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3060b0)">٢</div>
+    <div>
+      <div class="sec-t">نظام التعليم في ألمانيا</div>
+      <div class="sec-td">Das Schulsystem in Deutschland</div>
+    </div>
+  </div>
+
+  <div class="school-flow">
+    <div class="school-tier" style="border-color:rgba(124,168,120,.25)">
+      <div class="school-head">
+        <span class="school-ic">🏫</span>
+        <span class="school-t" style="color:var(--green)">المرحلة الابتدائية</span>
+        <span class="school-badge" style="background:rgba(124,168,120,.12);color:var(--green)">4 سنوات</span>
+      </div>
+      <div class="school-schools">
+        <div class="school-chip" style="color:var(--green);border-color:rgba(124,168,120,.3)">Grundschule</div>
+      </div>
+    </div>
+
+    <div class="school-tier" style="border-color:rgba(200,152,88,.25)">
+      <div class="school-head">
+        <span class="school-ic">🔧</span>
+        <span class="school-t" style="color:var(--amber)">مسار التدريب المهني</span>
+        <span class="school-badge" style="background:rgba(200,152,88,.12);color:var(--amber)">→ Ausbildung</span>
+      </div>
+      <div class="school-schools">
+        <div class="school-chip" style="color:var(--amber);border-color:rgba(200,152,88,.3)">Hauptschule</div>
+        <div class="school-chip" style="color:var(--amber);border-color:rgba(200,152,88,.3)">Realschule</div>
+      </div>
+      <div class="school-note">للطلاب الذين يخططون غالباً للقيام بتدريب مهني.</div>
+    </div>
+
+    <div class="school-tier" style="border-color:rgba(128,120,216,.25)">
+      <div class="school-head">
+        <span class="school-ic">🎓</span>
+        <span class="school-t" style="color:#8078d8">مسار الجامعة</span>
+        <span class="school-badge" style="background:rgba(128,120,216,.12);color:#8078d8">→ Abitur</span>
+      </div>
+      <div class="school-schools">
+        <div class="school-chip" style="color:#8078d8;border-color:rgba(128,120,216,.3)">Gymnasium</div>
+        <div class="school-chip" style="color:#8078d8;border-color:rgba(128,120,216,.3)">Gesamtschule</div>
+      </div>
+      <div class="school-note">تنتهي بامتحانات الثانوية العامة (Abitur) المؤهِّلة لدخول الجامعات.</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.2);margin-top:14px">
+    <div class="ni">📅</div>
+    <div><p><strong style="color:var(--sky)">مدة الدراسة:</strong> نظام <span style="font-family:'JetBrains Mono',monospace;color:var(--sky)">12 سنة</span> (Fachabitur — لا يؤهّل لكل التخصصات)، ونظام <span style="font-family:'JetBrains Mono',monospace;color:#8078d8">13 سنة</span> (Abitur — يفتح المجال لكل التخصصات الجامعية).</p></div>
+  </div>
+</div>
+
+<!-- ═══ 3: REDEMITTEL ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#2a7060)">٣</div>
+    <div>
+      <div class="sec-t">وسائل التعبير عن الرأي</div>
+      <div class="sec-td">Redemittel — Meinung äußern</div>
+    </div>
+  </div>
+
+  <div class="opinion-grid">
+    <div class="op-card" style="background:rgba(112,149,192,.06);border:1px solid rgba(112,149,192,.22)">
+      <span style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--sky)"></span>
+      <div class="op-head" style="color:var(--sky)"><span>💭</span> إبداء الرأي</div>
+      <div class="op-item">Ich finde, …</div>
+      <div class="op-item">Das ist meine Meinung.</div>
+      <div class="op-item">Meiner Meinung nach …</div>
+    </div>
+    <div class="op-card" style="background:rgba(124,168,120,.06);border:1px solid rgba(124,168,120,.22)">
+      <span style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--green)"></span>
+      <div class="op-head" style="color:var(--green)"><span>✅</span> الموافقة</div>
+      <div class="op-item">Ich stimme zu.</div>
+      <div class="op-item">Das stimmt.</div>
+      <div class="op-item">Genau!</div>
+    </div>
+    <div class="op-card" style="background:rgba(176,104,112,.06);border:1px solid rgba(176,104,112,.22)">
+      <span style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--red)"></span>
+      <div class="op-head" style="color:var(--red)"><span>❌</span> الرفض</div>
+      <div class="op-item">Das stimmt nicht.</div>
+      <div class="op-item">Ich sehe das anders.</div>
+      <div class="op-item">Da bin ich anderer Meinung.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 4: ONLINE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#8078d8,#4838a0)">٤</div>
+    <div>
+      <div class="sec-t">عالم الإنترنت والاتصال</div>
+      <div class="sec-td">Online — Verben &amp; Häufigkeit</div>
+    </div>
+  </div>
+
+  <div class="sub">أفعال شائعة</div>
+  <div class="net-grid">
+    <div class="net-chip"><div class="net-de" style="color:var(--teal)">E-Mail checken</div><div class="net-ar">يتفقّد الإيميل</div></div>
+    <div class="net-chip"><div class="net-de" style="color:var(--teal)">Zeitung lesen</div><div class="net-ar">يقرأ الجريدة</div></div>
+    <div class="net-chip"><div class="net-de" style="color:var(--teal)">fernsehen</div><div class="net-ar">يشاهد التلفاز · ich sehe fern</div></div>
+  </div>
+
+  <div class="sub" style="margin-top:18px">أفعال مستعارة من الإنجليزية</div>
+  <div class="net-grid">
+    <div class="net-chip loan"><div class="net-de">posten</div><div class="net-ar">ينشر</div></div>
+    <div class="net-chip loan"><div class="net-de">bloggen</div><div class="net-ar">يدوّن</div></div>
+    <div class="net-chip loan"><div class="net-de">downloaden</div><div class="net-ar">يحمّل</div></div>
+    <div class="net-chip loan"><div class="net-de">mailen</div><div class="net-ar">يرسل إيميل</div></div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">ظروف التكرار — من الأكثر للأقل</div>
+  <div class="freq-scale">
+    <div class="freq-item" style="background:rgba(124,168,120,.06)">
+      <div class="freq-bar" style="background:var(--green)"></div>
+      <div class="freq-de" style="color:var(--green)">oft</div>
+      <div class="freq-ar">غالباً</div>
+      <div class="freq-pct">●●●●○</div>
+    </div>
+    <div class="freq-item" style="background:rgba(200,152,88,.06)">
+      <div class="freq-bar" style="background:var(--amber)"></div>
+      <div class="freq-de" style="color:var(--amber)">manchmal</div>
+      <div class="freq-ar">أحياناً</div>
+      <div class="freq-pct">●●●○○</div>
+    </div>
+    <div class="freq-item" style="background:rgba(196,122,90,.06)">
+      <div class="freq-bar" style="background:var(--coral)"></div>
+      <div class="freq-de" style="color:var(--coral)">selten</div>
+      <div class="freq-ar">نادراً</div>
+      <div class="freq-pct">●○○○○</div>
+    </div>
+    <div class="freq-item" style="background:rgba(176,104,112,.06)">
+      <div class="freq-bar" style="background:var(--red)"></div>
+      <div class="freq-de" style="color:var(--red)">nie</div>
+      <div class="freq-ar">أبداً</div>
+      <div class="freq-pct">○○○○○</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: KOMPARATIV & SUPERLATIV ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#906820)">٥</div>
+    <div>
+      <div class="sec-t">المقارنة والمفاضلة</div>
+      <div class="sec-td">Komparativ &amp; Superlativ ⭐ الأهم</div>
+    </div>
+  </div>
+
+  <div class="rule-cards">
+    <div class="rc" style="border-color:rgba(112,149,192,.25)">
+      <div class="rc-tag" style="background:rgba(112,149,192,.12);color:var(--sky)">Komparativ · المقارنة</div>
+      <div class="rc-formula" style="color:var(--sky)">Adj + er … als</div>
+      <div class="rc-eg"><b>leichter als</b> — أخف من<br>Das Buch ist <b>leichter als</b> die Tasche.</div>
+    </div>
+    <div class="rc" style="border-color:rgba(124,168,120,.25)">
+      <div class="rc-tag" style="background:rgba(124,168,120,.12);color:var(--green)">التشابه · Gleichheit</div>
+      <div class="rc-formula" style="color:var(--green)">genau so … wie</div>
+      <div class="rc-eg">تماماً مثل — الصفة <b>لا تتغيّر</b><br>Er ist <b>genau so groß wie</b> ich.</div>
+    </div>
+    <div class="rc" style="border-color:rgba(176,104,112,.25)">
+      <div class="rc-tag" style="background:rgba(176,104,112,.12);color:var(--red)">عدم التشابه</div>
+      <div class="rc-formula" style="color:var(--red)">nicht so … wie</div>
+      <div class="rc-eg">ليس مثل<br>Sie ist <b>nicht so alt wie</b> er.</div>
+    </div>
+    <div class="rc" style="border-color:rgba(128,120,216,.25)">
+      <div class="rc-tag" style="background:rgba(128,120,216,.12);color:#8078d8">Superlativ · المفاضلة</div>
+      <div class="rc-formula" style="color:#8078d8">am … sten</div>
+      <div class="rc-eg">الأعلى في الصفة<br>Das ist <b>am schönsten</b>.</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:22px">جدول الدرجات — عادية ومنتظمة وشاذة</div>
+  <table class="comp-table">
+    <thead>
+      <tr><th>Positiv</th><th>Komparativ (‎-er)</th><th>Superlativ (am …sten)</th><th>المعنى</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="comp-pos">leicht</td><td class="comp-komp">leichter</td><td class="comp-sup">am leichtesten</td><td style="color:var(--txt-d);font-family:'Noto Naskh Arabic',serif">خفيف</td></tr>
+      <tr><td class="comp-pos">groß <span style="font-size:10px">(Umlaut)</span></td><td class="comp-komp">größer</td><td class="comp-sup">am größten</td><td style="color:var(--txt-d);font-family:'Noto Naskh Arabic',serif">كبير</td></tr>
+      <tr class="comp-irr"><td class="comp-pos">gut</td><td class="comp-komp" style="color:var(--coral)">besser</td><td class="comp-sup" style="color:var(--coral)">am besten</td><td style="color:var(--txt-d);font-family:'Noto Naskh Arabic',serif">جيّد · شاذ</td></tr>
+      <tr class="comp-irr"><td class="comp-pos">gern</td><td class="comp-komp" style="color:var(--coral)">lieber</td><td class="comp-sup" style="color:var(--coral)">am liebsten</td><td style="color:var(--txt-d);font-family:'Noto Naskh Arabic',serif">بسرور · شاذ</td></tr>
+      <tr class="comp-irr"><td class="comp-pos">viel</td><td class="comp-komp" style="color:var(--coral)">mehr</td><td class="comp-sup" style="color:var(--coral)">am meisten</td><td style="color:var(--txt-d);font-family:'Noto Naskh Arabic',serif">كثير · شاذ</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note" style="background:var(--coral-d);border:1px solid rgba(196,122,90,.22);margin-top:14px">
+    <div class="ni">⚡</div>
+    <div><p><strong style="color:var(--coral)">احفظ الشواذ الثلاثة:</strong> <span style="font-family:'JetBrains Mono',monospace;color:var(--coral)">gut → besser → am besten</span> · <span style="font-family:'JetBrains Mono',monospace;color:var(--coral)">gern → lieber → am liebsten</span> · <span style="font-family:'JetBrains Mono',monospace;color:var(--coral)">viel → mehr → am meisten</span>. وبعض الصفات القصيرة تأخذ Umlaut (groß → größer).</p></div>
+  </div>
+</div>
+
+<!-- ═══ 6: SOCIAL MEDIA ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#a05070)">٦</div>
+    <div>
+      <div class="sec-t">قضايا وسائل التواصل</div>
+      <div class="sec-td">Soziale Medien — Vor- &amp; Nachteile</div>
+    </div>
+  </div>
+
+  <div class="pc-duo">
+    <div class="pc-box pc-pro" style="background:rgba(124,168,120,.06);border:1px solid rgba(124,168,120,.25)">
+      <div class="pc-head" style="color:var(--green)"><span>✅</span> الإيجابيات — Vorteile</div>
+      <div class="pc-item"><span class="pc-item-ic">⚡</span><span>سرعة التواصل مع الأصدقاء</span></div>
+      <div class="pc-item"><span class="pc-item-ic">👨‍👩‍👧</span><span>مشاركة الصور العائلية (كصور الأحفاد للجدة)</span></div>
+    </div>
+    <div class="pc-box pc-con" style="background:rgba(176,104,112,.06);border:1px solid rgba(176,104,112,.25)">
+      <div class="pc-head" style="color:var(--red)"><span>⚠️</span> السلبيات — Nachteile</div>
+      <div class="pc-item"><span class="pc-item-ic">🍽️</span><span>نشر صور الطعام والنشاطات بشكل مبالغ فيه قد يكون مزعجاً</span></div>
+      <div class="pc-item"><span class="pc-item-ic">💼</span><span>موظف نشر صورته في حفلة بينما ادّعى المرض → خسر وظيفته</span></div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--red-d);border:1px solid rgba(176,104,112,.22);margin-top:14px">
+    <div class="ni">🔒</div>
+    <div><p><strong style="color:var(--red)">الخصوصية:</strong> احذر نشر صور <strong>الأطفال</strong> (لا يستطيعون التعبير عن رفضهم)، وصور الأشخاص أثناء <strong>النوم</strong>.</p></div>
+  </div>
+</div>
+
+<!-- ═══ HOMEWORK ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٧</div>
+    <div>
+      <div class="sec-t">الواجبات للحصة القادمة</div>
+      <div class="sec-td">Hausaufgaben</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--coral-d);border:1px solid rgba(196,122,90,.22)">
+    <div class="ni">✍️</div>
+    <div><p><strong style="color:var(--coral)">موضوع كتابي:</strong> اكتب عن المدرسة والجامعة — أي المدارس ارتدتها وماذا درست (بالماضي Perfekt مع الربط بين الجمل).</p></div>
+  </div>
+
+  <div class="hw-strip">
+    <div class="hw-page"><span class="hw-page-n">23</span><span class="hw-page-l">Seite 23</span></div>
+    <div class="hw-page"><span class="hw-page-n">31</span><span class="hw-page-l">Seite 31</span></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
