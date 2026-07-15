@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 28 — المشاعر، wenn والأفعال الانعكاسية</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── sein vs haben feelings ─── */
+.feel-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.feel-box{border-radius:16px;padding:18px;position:relative;overflow:hidden}
+.feel-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.feel-sein::before{background:linear-gradient(90deg,#48c890,#209060)}
+.feel-haben::before{background:linear-gradient(90deg,var(--amber),#a07020)}
+.feel-verb{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:800;direction:ltr;margin-bottom:3px}
+.feel-hint{font-family:'Noto Kufi Arabic',sans-serif;font-size:12.5px;font-weight:700;color:var(--txt-d);margin-bottom:14px}
+.feel-chips{display:flex;flex-wrap:wrap;gap:7px}
+.feel-chip{font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:9px;direction:ltr;transition:transform .15s}
+.feel-chip:hover{transform:scale(1.05)}
+.feel-chip span{font-family:'Noto Naskh Arabic',serif;font-size:11px;opacity:.72;margin-left:5px}
+
+/* ─── wenn transformation ─── */
+.wenn-flow{margin-top:16px}
+.wenn-row{background:var(--card);border:1px solid var(--bdr);border-radius:14px;padding:16px 18px;margin-bottom:10px;transition:transform .2s}
+.wenn-row:hover{transform:translateY(-2px)}
+.wenn-label{font-family:'Noto Kufi Arabic',sans-serif;font-size:11.5px;font-weight:800;padding:3px 10px;border-radius:100px;display:inline-block;margin-bottom:9px}
+.wenn-de{font-family:'JetBrains Mono',monospace;font-size:14.5px;font-weight:600;direction:ltr;line-height:1.9}
+.wenn-de .kw{color:#48c890;font-weight:800;background:rgba(72,200,144,.14);padding:2px 7px;border-radius:6px}
+.wenn-de .vb{font-weight:800;background:rgba(72,200,144,.2);color:#48c890;padding:2px 7px;border-radius:6px}
+.wenn-de .dann{color:var(--amber);font-weight:800}
+.wenn-ar{font-size:12.5px;color:var(--txt-d);margin-top:6px}
+
+/* ─── reflexive pronoun table ─── */
+.refl-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:14px;border:1px solid var(--bdr);border-radius:14px;overflow:hidden}
+.refl-table th{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:800;padding:12px;background:rgba(72,200,144,.08);color:#48c890;border-bottom:1px solid var(--bdr)}
+.refl-table td{padding:0;border-bottom:1px solid var(--bdr)}
+.refl-table tr:last-child td{border-bottom:none}
+.refl-cell{display:flex;align-items:center;justify-content:center;gap:14px;padding:12px 16px;transition:background .2s}
+.refl-table tr:hover .refl-cell{background:rgba(72,200,144,.04)}
+.refl-pron{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:700;color:var(--txt-d);direction:ltr;min-width:70px;text-align:center}
+.refl-arr{color:#48c890;font-size:14px}
+.refl-refl{font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:800;color:#48c890;direction:ltr;min-width:60px;text-align:center}
+
+/* ─── reflexive verbs ─── */
+.rv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:14px}
+.rv-card{background:var(--card);border:1px solid var(--bdr);border-radius:13px;padding:14px 16px;transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
+.rv-card::before{content:'';position:absolute;right:0;top:0;bottom:0;width:3px;background:#48c890}
+.rv-card:hover{transform:translateY(-2px);border-color:rgba(72,200,144,.4)}
+.rv-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;color:#48c890;margin-bottom:4px}
+.rv-de .prep{color:var(--sky);font-size:12px}
+.rv-ar{font-size:12.5px;color:var(--txt-d)}
+
+/* ─── social expressions ─── */
+.soc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:14px}
+.soc-card{border-radius:13px;padding:14px 16px;border:1px solid var(--bdr);background:var(--card);transition:transform .2s}
+.soc-card:hover{transform:translateY(-2px)}
+.soc-de{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;margin-bottom:4px}
+.soc-ar{font-size:12.5px;color:var(--txt-d)}
+
+/* ─── Story (Tim & Alia) ─── */
+.story-card{background:var(--card);border:1px solid rgba(72,200,144,.25);border-radius:16px;overflow:hidden;margin-top:14px}
+.story-head{padding:14px 18px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:12px;background:rgba(72,200,144,.05)}
+.story-ic{font-size:26px}
+.story-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:800;color:#48c890}
+.story-body{padding:6px 18px 14px}
+.story-item{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--bdr)}
+.story-item:last-child{border-bottom:none}
+.story-num{width:26px;height:26px;border-radius:8px;background:rgba(72,200,144,.12);color:#48c890;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.story-de{font-family:'JetBrains Mono',monospace;font-size:12.5px;direction:ltr;color:#48c890;line-height:1.6;margin-bottom:3px}
+.story-ar{font-size:12.5px;color:var(--txt-d);line-height:1.7}
+
+@media(max-width:640px){
+  .feel-duo{grid-template-columns:1fr}
+  .rv-grid,.soc-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:460px){.rv-grid,.soc-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#48c890">المحاضرة 28 — Gefühle, wenn &amp; Reflexive Verben</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 28 — المحاضرة الثامنة والعشرون · A2.1</div>
+  <h1>المشاعر، wenn <em>والأفعال الانعكاسية</em></h1>
+  <p class="hero-sub">الصفات والمشاعر مع sein/haben، قاعدة wenn (عندما/إذا)، الأفعال الانعكاسية وضمائرها، وتعبيرات المواقف الاجتماعية</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: GEFÜHLE — sein vs haben ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#48c890,#209060)">١</div>
+    <div>
+      <div class="sec-t">الصفات والمشاعر</div>
+      <div class="sec-td">Gefühle — sein oder haben?</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(72,200,144,.06);border:1px solid rgba(72,200,144,.2)">
+    <h4 style="color:#48c890">📖 الفكرة</h4>
+    <p>المشاعر <strong style="color:#48c890">صفات</strong> تأخذ فعل الكينونة <strong>sein</strong>، أما المشاعر <strong style="color:var(--amber)">أسماء</strong> فتأخذ فعل الملكية <strong>haben</strong>.</p>
+  </div>
+
+  <div class="feel-duo">
+    <div class="feel-box feel-sein" style="background:rgba(72,200,144,.07);border:1px solid rgba(72,200,144,.25)">
+      <div class="feel-verb" style="color:#48c890">Ich bin …</div>
+      <div class="feel-hint">صفات (Adjektive) → sein</div>
+      <div class="feel-chips">
+        <div class="feel-chip" style="background:rgba(72,200,144,.1);color:#48c890">glücklich<span>سعيد</span></div>
+        <div class="feel-chip" style="background:rgba(72,200,144,.1);color:#48c890">traurig<span>حزين</span></div>
+        <div class="feel-chip" style="background:rgba(72,200,144,.1);color:#48c890">unglücklich<span>غير سعيد</span></div>
+        <div class="feel-chip" style="background:rgba(72,200,144,.1);color:#48c890">nervös<span>متوتر</span></div>
+        <div class="feel-chip" style="background:rgba(72,200,144,.1);color:#48c890">fröhlich<span>مبتهج</span></div>
+        <div class="feel-chip" style="background:rgba(72,200,144,.1);color:#48c890">verärgert<span>منزعج</span></div>
+        <div class="feel-chip" style="background:rgba(72,200,144,.1);color:#48c890">gestresst<span>مضغوط</span></div>
+      </div>
+    </div>
+    <div class="feel-box feel-haben" style="background:rgba(200,152,88,.07);border:1px solid rgba(200,152,88,.25)">
+      <div class="feel-verb" style="color:var(--amber)">Ich habe …</div>
+      <div class="feel-hint">أسماء (Nomen) → haben</div>
+      <div class="feel-chips">
+        <div class="feel-chip" style="background:rgba(200,152,88,.1);color:var(--amber)">Hunger<span>الجوع</span></div>
+        <div class="feel-chip" style="background:rgba(200,152,88,.1);color:var(--amber)">Durst<span>العطش</span></div>
+        <div class="feel-chip" style="background:rgba(200,152,88,.1);color:var(--amber)">Spaß<span>المتعة</span></div>
+        <div class="feel-chip" style="background:rgba(200,152,88,.1);color:var(--amber)">Angst<span>الخوف (die)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--amber-d);border:1px solid rgba(200,152,88,.2);margin-top:14px">
+    <div class="ni">⚠️</div>
+    <div><p><strong style="color:var(--amber)">انتبه:</strong> كلمة <span style="font-family:'JetBrains Mono',monospace;color:var(--amber)">Angst</span> (الخوف) أداتها <strong>die</strong> — die Angst. ونقول <span style="font-family:'JetBrains Mono',monospace;direction:ltr;display:inline-block">Ich habe Angst</span> وليس Ich bin Angst.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 2: WENN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6040a0)">٢</div>
+    <div>
+      <div class="sec-t">قاعدة wenn — عندما / إذا</div>
+      <div class="sec-td">Nebensatz mit „wenn"</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.2)">
+    <h4 style="color:var(--violet)">📖 القاعدة</h4>
+    <p><strong style="color:var(--violet)">wenn</strong> تربط جملتين بمعنى "عندما/إذا"، وتُنشئ <strong>جملة جانبية</strong> — الفعل المصرّف يذهب دائماً إلى <strong style="color:#48c890">نهاية الجملة</strong>.</p>
+  </div>
+
+  <div class="sub" style="margin-top:16px">الترتيبان الممكنان</div>
+  <div class="wenn-flow">
+    <div class="wenn-row" style="border-color:rgba(112,149,192,.25)">
+      <div class="wenn-label" style="background:rgba(112,149,192,.12);color:var(--sky)">① الجملة الأساسية أولاً</div>
+      <div class="wenn-de" style="color:var(--sky)">Ich bin nervös, <span class="kw">wenn</span> ich eine Prüfung <span class="vb">habe</span>.</div>
+      <div class="wenn-ar">أكون متوتراً عندما يكون لديّ امتحان — الفعل habe في النهاية</div>
+    </div>
+
+    <div class="wenn-row" style="border-color:rgba(72,200,144,.3)">
+      <div class="wenn-label" style="background:rgba(72,200,144,.12);color:#48c890">② جملة wenn أولاً → الجملة الثانية تبدأ بالفعل</div>
+      <div class="wenn-de"><span class="kw">Wenn</span> ich eine Prüfung <span class="vb">habe</span>, <span class="dann">(dann)</span> bin ich nervös.</div>
+      <div class="wenn-ar">عندما يكون لديّ امتحان، (عندها) أكون متوتراً — يمكن وضع dann أو حذفها</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:rgba(72,200,144,.06);border:1px solid rgba(72,200,144,.2);margin-top:14px">
+    <div class="ni">💡</div>
+    <div><p><strong style="color:#48c890">القاعدة الذهبية:</strong> لو بدأت الجملة بـ wenn، فالجملة الثانية <strong>تبدأ بالفعل مباشرة</strong> (قاعدة الموقع الثاني — الجملة الجانبية تحتلّ الموقع الأول كاملاً).</p></div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">مثال تطبيقي — سؤال وجواب</div>
+  <div class="wenn-flow">
+    <div class="wenn-row" style="border-color:rgba(154,133,184,.25)">
+      <div class="wenn-label" style="background:rgba(154,133,184,.12);color:var(--violet)">السؤال</div>
+      <div class="wenn-de" style="color:var(--violet)">Was machst du, <span class="kw" style="color:var(--violet);background:rgba(154,133,184,.16)">wenn</span> du Urlaub <span class="vb" style="color:var(--violet);background:rgba(154,133,184,.2)">hast</span>?</div>
+      <div class="wenn-ar">ماذا تفعل عندما يكون لديك عطلة؟</div>
+    </div>
+    <div class="wenn-row" style="border-color:rgba(72,200,144,.25)">
+      <div class="wenn-label" style="background:rgba(72,200,144,.12);color:#48c890">الجواب</div>
+      <div class="wenn-de"><span class="kw">Wenn</span> ich Urlaub <span class="vb">habe</span>, besuche ich meine Familie.</div>
+      <div class="wenn-ar">عندما يكون لديّ عطلة، أزور عائلتي</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: REFLEXIVE VERBEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#48c890,#209060)">٣</div>
+    <div>
+      <div class="sec-t">الأفعال الانعكاسية</div>
+      <div class="sec-td">Reflexive Verben ⭐ الأهم</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(72,200,144,.06);border:1px solid rgba(72,200,144,.2)">
+    <h4 style="color:#48c890">📖 ما هي؟</h4>
+    <p>أفعال يعود أثرها على <strong style="color:#48c890">الفاعل نفسه</strong>، ويرافقها <strong>ضمير انعكاسي</strong> (يشبه فكرة "يسعدني / يتذكّرني" في العربية). لكل ضمير فاعل ضميرٌ انعكاسيّ خاص.</p>
+  </div>
+
+  <div class="sub" style="margin-top:16px">تصريف الضمائر الانعكاسية</div>
+  <table class="refl-table">
+    <thead><tr><th>الفاعل</th><th>الضمير الانعكاسي</th></tr></thead>
+    <tbody>
+      <tr><td><div class="refl-cell"><span class="refl-pron">ich</span><span class="refl-arr">→</span><span class="refl-refl">mich</span></div></td><td><div class="refl-cell"><span class="refl-pron">wir</span><span class="refl-arr">→</span><span class="refl-refl">uns</span></div></td></tr>
+      <tr><td><div class="refl-cell"><span class="refl-pron">du</span><span class="refl-arr">→</span><span class="refl-refl">dich</span></div></td><td><div class="refl-cell"><span class="refl-pron">ihr</span><span class="refl-arr">→</span><span class="refl-refl">euch</span></div></td></tr>
+      <tr><td><div class="refl-cell"><span class="refl-pron">er/sie/es</span><span class="refl-arr">→</span><span class="refl-refl">sich</span></div></td><td><div class="refl-cell"><span class="refl-pron">sie/Sie</span><span class="refl-arr">→</span><span class="refl-refl">sich</span></div></td></tr>
+    </tbody>
+  </table>
+
+  <div class="sub" style="margin-top:20px">أهم الأفعال الانعكاسية</div>
+  <div class="rv-grid">
+    <div class="rv-card"><div class="rv-de">sich freuen <span class="prep">(über/auf)</span></div><div class="rv-ar">يفرح / يسعد</div></div>
+    <div class="rv-card"><div class="rv-de">sich entscheiden</div><div class="rv-ar">يقرّر</div></div>
+    <div class="rv-card"><div class="rv-de">sich entschuldigen</div><div class="rv-ar">يعتذر</div></div>
+    <div class="rv-card"><div class="rv-de">sich treffen <span class="prep">(mit)</span></div><div class="rv-ar">يلتقي (مع)</div></div>
+    <div class="rv-card"><div class="rv-de">sich unterhalten</div><div class="rv-ar">يتحدّث / يتسامر</div></div>
+    <div class="rv-card"><div class="rv-de">sich erinnern <span class="prep">(an)</span></div><div class="rv-ar">يتذكّر</div></div>
+    <div class="rv-card"><div class="rv-de">sich streiten <span class="prep">(mit)</span></div><div class="rv-ar">يتشاجر (مع)</div></div>
+    <div class="rv-card"><div class="rv-de">sich ausruhen</div><div class="rv-ar">يستريح</div></div>
+    <div class="rv-card"><div class="rv-de">sich langweilen</div><div class="rv-ar">يشعر بالملل</div></div>
+  </div>
+
+  <div class="note" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.2);margin-top:14px">
+    <div class="ni">🔗</div>
+    <div><p><strong style="color:var(--sky)">مرتبطة بحروف جر:</strong> معظمها يأتي مع حرف جر محدّد — احفظه مع الفعل: <span style="font-family:'JetBrains Mono',monospace;color:var(--sky)">sich erinnern <b>an</b></span> · <span style="font-family:'JetBrains Mono',monospace;color:var(--sky)">sich treffen <b>mit</b></span> · <span style="font-family:'JetBrains Mono',monospace;color:var(--sky)">sich freuen <b>auf</b></span>.<br>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d);direction:ltr;display:inline-block;margin-top:4px">Ich freue mich · Ich treffe mich mit Alia · Ich erinnere mich an dich</span></p></div>
+  </div>
+</div>
+
+<!-- ═══ 4: SOZIALE AUSDRÜCKE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٤</div>
+    <div>
+      <div class="sec-t">تعبيرات المواقف الاجتماعية</div>
+      <div class="sec-td">Soziale Ausdrücke</div>
+    </div>
+  </div>
+
+  <div class="soc-grid">
+    <div class="soc-card" style="border-color:rgba(124,168,120,.25)">
+      <div class="soc-de" style="color:var(--green)">angenehm</div>
+      <div class="soc-ar">مريح / لطيف</div>
+    </div>
+    <div class="soc-card" style="border-color:rgba(176,104,112,.25)">
+      <div class="soc-de" style="color:var(--red)">unangenehm</div>
+      <div class="soc-ar">غير مريح / مزعج</div>
+    </div>
+    <div class="soc-card" style="border-color:rgba(196,122,90,.25)">
+      <div class="soc-de" style="color:var(--coral)">peinlich</div>
+      <div class="soc-ar">محرج · Das ist mir peinlich</div>
+    </div>
+    <div class="soc-card" style="border-color:rgba(200,152,88,.25)">
+      <div class="soc-de" style="color:var(--amber);font-size:12.5px">Das tut mir schrecklich leid</div>
+      <div class="soc-ar">أنا آسف حقاً / يؤسفني بشدّة</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: STORY — Tim & Alia ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3060b0)">٥</div>
+    <div>
+      <div class="sec-t">تطبيق عملي — قصة تيم وعاليا</div>
+      <div class="sec-td">Hörübung — Tim plant eine Party</div>
+    </div>
+  </div>
+
+  <div class="story-card">
+    <div class="story-head">
+      <span class="story-ic">🎂</span>
+      <span class="story-t">تيم يخطّط لحفلة عيد ميلاده</span>
+    </div>
+    <div class="story-body">
+      <div class="story-item">
+        <div class="story-num">1</div>
+        <div>
+          <div class="story-de">Tim hat sich noch nicht entschieden.</div>
+          <div class="story-ar">تيم لم يقرّر بعد إن كان سيقيم حفلة — <strong>sich entscheiden</strong> (انعكاسي)</div>
+        </div>
+      </div>
+      <div class="story-item">
+        <div class="story-num">2</div>
+        <div>
+          <div class="story-de">Der Nachbar schimpft immer, dass wir so laut sind.</div>
+          <div class="story-ar">لديه مخاوف لأن جاره يتذمّر دائماً من الضجيج — لاحظ <strong>dass</strong> والفعل sind في النهاية</div>
+        </div>
+      </div>
+      <div class="story-item">
+        <div class="story-num">3</div>
+        <div>
+          <div class="story-de">Die Gäste sollen sich unterhalten und tanzen.</div>
+          <div class="story-ar">يريد أن يستمتع الضيوف ويتحدّثوا ويرقصوا — <strong>sich unterhalten</strong> (انعكاسي)</div>
+        </div>
+      </div>
+      <div class="story-item">
+        <div class="story-num">4</div>
+        <div>
+          <div class="story-de">Sie treffen sich um 7:30 im „Café Kosmos".</div>
+          <div class="story-ar">اتفق تيم وعاليا على الالتقاء في مقهى كوزموس الساعة 7:30 للتخطيط — <strong>sich treffen</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note" style="background:rgba(72,200,144,.06);border:1px solid rgba(72,200,144,.2);margin-top:14px">
+    <div class="ni">🎯</div>
+    <div><p><strong style="color:#48c890">لاحظ الترابط:</strong> القصة جمعت كل قواعد الدرس — الأفعال الانعكاسية (sich entschieden / unterhalten / treffen)، قاعدة dass، والمشاعر. هكذا تتكامل اللغة.</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
