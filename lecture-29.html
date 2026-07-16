@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 29 — الحياة في المدينة والمؤسسات</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── Review persons ─── */
+.per-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.per-card{background:var(--card);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.per-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.per-head{padding:13px 16px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:11px}
+.per-ic{font-size:24px}
+.per-name{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;direction:ltr}
+.per-body{padding:13px 16px;font-size:13px;color:var(--txt-d);line-height:1.9}
+
+/* ─── Vocab groups ─── */
+.v-head{display:flex;align-items:center;gap:10px;margin:20px 0 10px}
+.v-head-ic{font-size:18px}
+.v-head-title{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:800}
+.v-head-de{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--txt-d);margin-right:6px}
+.wrd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:9px}
+.wrd{background:var(--card);border:1px solid var(--bdr);border-radius:11px;padding:12px 14px;display:flex;align-items:center;gap:11px;transition:transform .2s,border-color .2s;position:relative;overflow:hidden}
+.wrd::before{content:'';position:absolute;right:0;top:0;bottom:0;width:3px}
+.wrd:hover{transform:translateY(-2px)}
+.wrd-ic{font-size:20px;flex-shrink:0}
+.wrd-de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;direction:ltr;margin-bottom:2px}
+.wrd-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── verbs ─── */
+.verb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:12px}
+.verb-card{background:var(--card);border:1px solid rgba(232,152,80,.22);border-radius:12px;padding:13px 15px;transition:transform .2s}
+.verb-card:hover{transform:translateY(-2px)}
+.verb-de{font-family:'JetBrains Mono',monospace;font-size:14.5px;font-weight:800;direction:ltr;color:#e89850;margin-bottom:3px}
+.verb-ar{font-size:12.5px;color:var(--txt-d)}
+
+/* ─── Job profile cards ─── */
+.job-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-bottom:12px;transition:transform .2s,box-shadow .2s}
+.job-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.26)}
+.job-head{padding:14px 18px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.job-ic{font-size:30px;flex-shrink:0}
+.job-de{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;direction:ltr;margin-bottom:2px}
+.job-ar{font-size:12.5px;color:var(--txt-d)}
+.job-city{font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 11px;border-radius:100px;margin-right:auto}
+.job-body{padding:6px 18px 14px}
+.job-row{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--bdr);font-size:12.5px;line-height:1.8}
+.job-row:last-child{border-bottom:none}
+.job-tag{font-family:'Noto Kufi Arabic',sans-serif;font-size:11px;font-weight:800;padding:3px 9px;border-radius:7px;flex-shrink:0;height:fit-content;white-space:nowrap}
+.job-txt{color:var(--txt-d)}
+.job-txt b{color:var(--txt)}
+
+/* ─── City needs ─── */
+.city-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:14px}
+.city-card{border-radius:14px;padding:16px 12px;text-align:center;border:1px solid rgba(232,152,80,.22);background:var(--card);transition:transform .2s,box-shadow .2s}
+.city-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.22)}
+.city-ic{font-size:30px;margin-bottom:8px}
+.city-de{font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:800;direction:ltr;color:#e89850;margin-bottom:3px}
+.city-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── Valentina blog ─── */
+.blog-card{background:var(--card);border:1px solid rgba(154,133,184,.25);border-radius:16px;overflow:hidden;margin-top:14px}
+.blog-head{padding:14px 18px;border-bottom:1px solid var(--bdr);background:rgba(154,133,184,.05);display:flex;align-items:center;gap:12px}
+.blog-ic{font-size:26px}
+.blog-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:800;color:var(--violet)}
+.blog-body{padding:6px 18px 14px}
+.blog-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--bdr)}
+.blog-item:last-child{border-bottom:none}
+.blog-dot{width:8px;height:8px;border-radius:50%;background:var(--violet);flex-shrink:0;margin-top:7px}
+.blog-de{font-family:'JetBrains Mono',monospace;font-size:12.5px;direction:ltr;color:var(--violet);margin-bottom:3px;line-height:1.6}
+.blog-ar{font-size:12.5px;color:var(--txt-d);line-height:1.7}
+
+/* ─── Homework ─── */
+.hw-page{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid rgba(201,161,84,.25);border-radius:12px;padding:14px 18px;margin-top:12px;transition:transform .15s}
+.hw-page:hover{transform:translateY(-2px)}
+.hw-page-n{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;color:var(--gold)}
+.hw-page-l{font-size:13px;color:var(--txt-d)}
+
+@media(max-width:640px){
+  .per-duo{grid-template-columns:1fr}
+  .job-city{margin-right:0;width:100%}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#e89850">المحاضرة 29 — Leben in der Stadt</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 29 — المحاضرة التاسعة والعشرون · A2.1</div>
+  <h1>الحياة في المدينة <em>والمؤسسات</em></h1>
+  <p class="hero-sub">الوحدة الخامسة — مفردات المدينة والمؤسسات الحكومية، ثلاث مهن حيوية، ما يجعل المدينة أفضل، ومدوّنة فالنتينا في فيينا</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: REVIEW ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#e89850,#a86020)">١</div>
+    <div>
+      <div class="sec-t">مراجعة — الحياة في ألمانيا والأرجنتين</div>
+      <div class="sec-td">Wiederholung — Chandan &amp; Paula</div>
+    </div>
+  </div>
+
+  <div class="per-duo">
+    <div class="per-card" style="border-color:rgba(112,149,192,.22)">
+      <div class="per-head" style="background:rgba(112,149,192,.05)">
+        <span class="per-ic">🎓</span>
+        <div>
+          <div class="per-name" style="color:var(--sky)">Chandan</div>
+          <div class="job-ar">طالب في ألمانيا</div>
+        </div>
+      </div>
+      <div class="per-body">
+        اعتاد على الحياة في ألمانيا، وجد أصدقاء جدداً، ويشعر بالراحة حالياً. لا يواجه صعوبات تُذكر في دراسته الجامعية.
+      </div>
+    </div>
+    <div class="per-card" style="border-color:rgba(200,152,168,.22)">
+      <div class="per-head" style="background:rgba(200,152,168,.05)">
+        <span class="per-ic">🌎</span>
+        <div>
+          <div class="per-name" style="color:var(--rose)">Paula</div>
+          <div class="job-ar">مدرّسة ألمانية</div>
+        </div>
+      </div>
+      <div class="per-body">
+        من ألمانيا، تعمل في معهد لغات وتدرّس اللغة الألمانية — مهنة ممتعة بالنسبة لها. سافرت إلى الأرجنتين والتقت بعائلات مضيفة هناك.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: WORTSCHATZ ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3060b0)">٢</div>
+    <div>
+      <div class="sec-t">الوحدة الخامسة — مفردات المدينة</div>
+      <div class="sec-td">Leben in der Stadt — Wortschatz</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(232,152,80,.06);border:1px solid rgba(232,152,80,.22)">
+    <h4 style="color:#e89850">⭐ وحدة مهمّة جداً</h4>
+    <p>أكّد المحاضر على أهميتها لأنها تجسّد <strong style="color:#e89850">الحياة اليومية والعملية في ألمانيا</strong> — كلمات تُستخدم بكثرة في الشارع والمؤسسات الحكومية.</p>
+  </div>
+
+  <!-- أماكن -->
+  <div class="v-head">
+    <span class="v-head-ic">🏙️</span>
+    <span class="v-head-title" style="color:var(--sky)">أماكن ومؤسسات</span>
+    <span class="v-head-de">Orte &amp; Institutionen</span>
+  </div>
+  <div class="wrd-grid">
+    <div class="wrd" style="border-color:rgba(112,149,192,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--sky)"></span>
+      <span class="wrd-ic">🏥</span><div><div class="wrd-de" style="color:var(--sky)">das Krankenhaus</div><div class="wrd-ar">المستشفى</div></div>
+    </div>
+    <div class="wrd" style="border-color:rgba(112,149,192,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--sky)"></span>
+      <span class="wrd-ic">🍽️</span><div><div class="wrd-de" style="color:var(--sky)">das Restaurant</div><div class="wrd-ar">المطعم</div></div>
+    </div>
+    <div class="wrd" style="border-color:rgba(112,149,192,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--sky)"></span>
+      <span class="wrd-ic">🏛️</span><div><div class="wrd-de" style="color:var(--sky)">die Behörde</div><div class="wrd-ar">مكتب حكومي / سلطة</div></div>
+    </div>
+    <div class="wrd" style="border-color:rgba(112,149,192,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--sky)"></span>
+      <span class="wrd-ic">📋</span><div><div class="wrd-de" style="color:var(--sky)">das Bürgeramt</div><div class="wrd-ar">مكتب شؤون المواطنين</div></div>
+    </div>
+  </div>
+
+  <!-- خدمات -->
+  <div class="v-head">
+    <span class="v-head-ic">🚛</span>
+    <span class="v-head-title" style="color:var(--green)">خدمات عامة</span>
+    <span class="v-head-de">Öffentliche Dienste</span>
+  </div>
+  <div class="wrd-grid">
+    <div class="wrd" style="border-color:rgba(124,168,120,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--green)"></span>
+      <span class="wrd-ic">🧹</span><div><div class="wrd-de" style="color:var(--green)">die Stadtreinigung</div><div class="wrd-ar">تنظيف الشوارع / جمع النفايات</div></div>
+    </div>
+    <div class="wrd" style="border-color:rgba(124,168,120,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--green)"></span>
+      <span class="wrd-ic">👮</span><div><div class="wrd-de" style="color:var(--green)">die Polizei</div><div class="wrd-ar">الشرطة</div></div>
+    </div>
+    <div class="wrd" style="border-color:rgba(124,168,120,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--green)"></span>
+      <span class="wrd-ic">🚌</span><div><div class="wrd-de" style="color:var(--green)">die Verkehrsmittel</div><div class="wrd-ar">وسائل النقل</div></div>
+    </div>
+  </div>
+
+  <!-- إدارية -->
+  <div class="v-head">
+    <span class="v-head-ic">📄</span>
+    <span class="v-head-title" style="color:var(--violet)">مصطلحات إدارية</span>
+    <span class="v-head-de">Verwaltung</span>
+  </div>
+  <div class="wrd-grid">
+    <div class="wrd" style="border-color:rgba(154,133,184,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--violet)"></span>
+      <span class="wrd-ic">📝</span><div><div class="wrd-de" style="color:var(--violet)">der Antrag</div><div class="wrd-ar">الطلب</div></div>
+    </div>
+    <div class="wrd" style="border-color:rgba(154,133,184,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--violet)"></span>
+      <span class="wrd-ic">🗂️</span><div><div class="wrd-de" style="color:var(--violet)">das Formular</div><div class="wrd-ar">الاستمارة / النموذج</div></div>
+    </div>
+    <div class="wrd" style="border-color:rgba(154,133,184,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--violet)"></span>
+      <span class="wrd-ic">📑</span><div><div class="wrd-de" style="color:var(--violet)">die Dokumente</div><div class="wrd-ar">الوثائق</div></div>
+    </div>
+    <div class="wrd" style="border-color:rgba(154,133,184,.22)"><span style="position:absolute;right:0;top:0;bottom:0;width:3px;background:var(--violet)"></span>
+      <span class="wrd-ic">👔</span><div><div class="wrd-de" style="color:var(--violet)">der Beamte / die Beamtin</div><div class="wrd-ar">موظف / موظفة حكومية</div></div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:22px">أفعال حيوية</div>
+  <div class="verb-grid">
+    <div class="verb-card">
+      <div class="verb-de">sich kümmern um</div>
+      <div class="verb-ar">يعتني بـ / يهتمّ بـ — انعكاسي</div>
+    </div>
+    <div class="verb-card">
+      <div class="verb-de">sammeln</div>
+      <div class="verb-ar">يجمع</div>
+    </div>
+    <div class="verb-card">
+      <div class="verb-de">ausfüllen</div>
+      <div class="verb-ar">يعبّئ استمارة — منفصل</div>
+    </div>
+    <div class="verb-card">
+      <div class="verb-de">beraten</div>
+      <div class="verb-ar">ينصح / يقدّم استشارة</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: DREI BERUFE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#2a7060)">٣</div>
+    <div>
+      <div class="sec-t">تدريب الاستماع — ثلاث مهن</div>
+      <div class="sec-td">Hörübung — Drei Berufe in der Stadt</div>
+    </div>
+  </div>
+
+  <!-- Fritz -->
+  <div class="job-card" style="border-color:rgba(112,149,192,.25)">
+    <div class="job-head" style="background:rgba(112,149,192,.05)">
+      <span class="job-ic">🧑‍⚕️</span>
+      <div>
+        <div class="job-de" style="color:var(--sky)">Fritz — Krankenpfleger</div>
+        <div class="job-ar">فيتز — ممرّض</div>
+      </div>
+      <span class="job-city" style="background:rgba(112,149,192,.12);color:var(--sky)">📍 Wien</span>
+    </div>
+    <div class="job-body">
+      <div class="job-row">
+        <span class="job-tag" style="background:rgba(112,149,192,.12);color:var(--sky)">الخبرة</span>
+        <span class="job-txt">يعمل منذ <b>4 سنوات</b>، يحبّ عمله رغم أنه ليس سهلاً ومرهق (<b>anstrengend</b>).</span>
+      </div>
+      <div class="job-row">
+        <span class="job-tag" style="background:rgba(200,152,88,.12);color:var(--amber)">الدوام</span>
+        <span class="job-txt">ساعات متغيّرة وغير منتظمة — نوبات صباحية، مسائية، أو ليلية.</span>
+      </div>
+      <div class="job-row">
+        <span class="job-tag" style="background:rgba(124,168,120,.12);color:var(--green)">إيجابية</span>
+        <span class="job-txt">في النوبة المسائية يقضي حوائجه صباحاً عندما تكون المحلات فارغة.</span>
+      </div>
+      <div class="job-row">
+        <span class="job-tag" style="background:rgba(154,133,184,.12);color:var(--violet)">الأهمية</span>
+        <span class="job-txt">مهنة ضرورية جداً في مدينة كبيرة كفيينا — لمساعدة الناس عند المرض أو الحوادث.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bürgeramt -->
+  <div class="job-card" style="border-color:rgba(154,133,184,.25)">
+    <div class="job-head" style="background:rgba(154,133,184,.05)">
+      <span class="job-ic">👩‍💼</span>
+      <div>
+        <div class="job-de" style="color:var(--violet)">Beamtin im Bürgeramt</div>
+        <div class="job-ar">موظّفة في مكتب شؤون المواطنين</div>
+      </div>
+    </div>
+    <div class="job-body">
+      <div class="job-row">
+        <span class="job-tag" style="background:rgba(154,133,184,.12);color:var(--violet)">النظرة</span>
+        <span class="job-txt">يعتقد كثيرون أن عملها <b>ممل</b>، لكنها تراه <b>ممتعاً ومليئاً بالمفاجآت</b> اليومية.</span>
+      </div>
+      <div class="job-row">
+        <span class="job-tag" style="background:rgba(112,149,192,.12);color:var(--sky)">المهام</span>
+        <span class="job-txt">التواصل مع الناس، مساعدتهم في الوثائق، وتقديم الاستشارات (<b>beraten</b>).</span>
+      </div>
+      <div class="job-row">
+        <span class="job-tag" style="background:rgba(124,168,120,.12);color:var(--green)">مثال</span>
+        <span class="job-txt">ساعدت سيدة الأسبوع الماضي في تجهيز جميع الاستمارات الخاصة بجواز سفرها.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Müllmann -->
+  <div class="job-card" style="border-color:rgba(232,152,80,.25)">
+    <div class="job-head" style="background:rgba(232,152,80,.05)">
+      <span class="job-ic">🚛</span>
+      <div>
+        <div class="job-de" style="color:#e89850">der Müllmann</div>
+        <div class="job-ar">عامل النظافة</div>
+      </div>
+    </div>
+    <div class="job-body">
+      <div class="job-row">
+        <span class="job-tag" style="background:rgba(232,152,80,.12);color:#e89850">النظرة</span>
+        <span class="job-txt">حلمٌ لكثير من الأطفال، لكن البالغين <b>نادراً</b> ما يختارونها.</span>
+      </div>
+      <div class="job-row">
+        <span class="job-tag" style="background:rgba(154,133,184,.12);color:var(--violet)">الأهمية</span>
+        <span class="job-txt">حيوية جداً للمدن الكبيرة — بدونها تحدث <b>مشاكل ضخمة</b>.</span>
+      </div>
+      <div class="job-row">
+        <span class="job-tag" style="background:rgba(124,168,120,.12);color:var(--green)">تغيّر اجتماعي</span>
+        <span class="job-txt">صار الناس يُبدون <b>احتراماً أكبر</b> لهذه المهنة بسبب الوعي بالبيئة والحملات الإعلامية.</span>
+      </div>
+      <div class="job-row">
+        <span class="job-tag" style="background:rgba(176,104,112,.12);color:var(--red)">الصعوبات</span>
+        <span class="job-txt">عمل شاق ويتطلّب البقاء في الخارج دائماً — في الشتاء والمطر يحلم أحياناً بالعمل في مكتب.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 4: WAS IST WICHTIG ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--green),#207840)">٤</div>
+    <div>
+      <div class="sec-t">ما المهم في المدينة؟</div>
+      <div class="sec-td">Was ist wichtig in der Stadt?</div>
+    </div>
+  </div>
+
+  <div class="city-grid">
+    <div class="city-card">
+      <div class="city-ic">🚇</div>
+      <div class="city-de">Verkehrsmittel</div>
+      <div class="city-ar">وسائل نقل جيدة</div>
+    </div>
+    <div class="city-card">
+      <div class="city-ic">🛍️</div>
+      <div class="city-de">Geschäfte</div>
+      <div class="city-ar">كثرة المحلات التجارية</div>
+    </div>
+    <div class="city-card">
+      <div class="city-ic">🌳</div>
+      <div class="city-de">Parks</div>
+      <div class="city-ar">المنتزهات</div>
+    </div>
+    <div class="city-card">
+      <div class="city-ic">🧸</div>
+      <div class="city-de">Kindergarten</div>
+      <div class="city-ar">رياض الأطفال</div>
+    </div>
+    <div class="city-card">
+      <div class="city-ic">🛝</div>
+      <div class="city-de">Kinderspielplatz</div>
+      <div class="city-ar">ملاعب الأطفال</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--green-d);border:1px solid rgba(124,168,120,.2);margin-top:14px">
+    <div class="ni">💡</div>
+    <div><p>هذه المرافق تجعل الحياة في المدينة <strong style="color:var(--green)">أسهل وأكثر متعة</strong>. وظّف المقارنة من المحاضرة 26: <span style="font-family:'JetBrains Mono',monospace;color:var(--green);direction:ltr;display:inline-block">Das Leben ist einfacher, wenn es gute Verkehrsmittel gibt.</span></p></div>
+  </div>
+</div>
+
+<!-- ═══ 5: VALENTINA ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6040a0)">٥</div>
+    <div>
+      <div class="sec-t">مدوّنة فالنتينا في فيينا</div>
+      <div class="sec-td">Valentinas Blog — Wien</div>
+    </div>
+  </div>
+
+  <div class="blog-card">
+    <div class="blog-head">
+      <span class="blog-ic">📔</span>
+      <span class="blog-t">Valentina ist in Wien</span>
+    </div>
+    <div class="blog-body">
+      <div class="blog-item">
+        <div class="blog-dot"></div>
+        <div>
+          <div class="blog-de">Ihr Zimmer ist hell und schön.</div>
+          <div class="blog-ar">غرفتها هناك مشرقة وجميلة</div>
+        </div>
+      </div>
+      <div class="blog-item">
+        <div class="blog-dot"></div>
+        <div>
+          <div class="blog-de">Gestern ist sie mit Stefan im Stadtzentrum spazieren gegangen.</div>
+          <div class="blog-ar">خرجت بالأمس في نزهة بمركز المدينة مع ستيفان — لاحظ الماضي مع sein (حركة)</div>
+        </div>
+      </div>
+      <div class="blog-item">
+        <div class="blog-dot"></div>
+        <div>
+          <div class="blog-de">Sie möchte in Wien studieren und sucht eine Aushilfe-Stelle.</div>
+          <div class="blog-ar">ترغب في الدراسة في فيينا وتبحث عن عمل كمساعِدة (Aushilfe)</div>
+        </div>
+      </div>
+      <div class="blog-item">
+        <div class="blog-dot"></div>
+        <div>
+          <div class="blog-de">Morgen hat sie einen Termin im Restaurant, danach geht sie zur Bank.</div>
+          <div class="blog-ar">لديها موعد غداً في مطعم، وبعد ذلك ستذهب إلى البنك</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 6: HAUSAUFGABE ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٦</div>
+    <div>
+      <div class="sec-t">الواجب المنزلي</div>
+      <div class="sec-td">Hausaufgabe</div>
+    </div>
+  </div>
+
+  <div class="hw-page">
+    <span class="hw-page-n">50</span>
+    <span class="hw-page-l">صفحة 50 — التعبير والكتابة عن <strong style="color:var(--txt)">حدث أو فعالية أو عيد معيّن</strong></span>
+  </div>
+
+  <div class="note" style="background:var(--red-d);border:1px solid rgba(176,104,112,.22);margin-top:14px">
+    <div class="ni">📢</div>
+    <div><p><strong style="color:var(--red)">ملاحظة ختامية من المحاضر:</strong> شدّد على ضرورة <strong>التفاعل والمشاركة</strong> في المحاضرات — محذّراً من أن قلّة التفاعل قد تؤدي إلى <strong>دمج الشُّعب الدراسية</strong>.</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
