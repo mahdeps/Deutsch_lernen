@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 30 — مقابلة العمل، نهايات الصفات والمعاملات</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── Job interview data sheet ─── */
+.iv-card{background:var(--card);border:1px solid rgba(60,192,176,.25);border-radius:16px;overflow:hidden;margin-top:14px}
+.iv-head{padding:14px 18px;border-bottom:1px solid var(--bdr);background:rgba(60,192,176,.05);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.iv-ic{font-size:28px}
+.iv-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:15px;font-weight:800;color:#3cc0b0}
+.iv-sub{font-size:12px;color:var(--txt-d)}
+.iv-body{padding:4px 18px 12px}
+.iv-row{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--bdr);align-items:flex-start}
+.iv-row:last-child{border-bottom:none}
+.iv-key{font-family:'Noto Kufi Arabic',sans-serif;font-size:11.5px;font-weight:800;padding:4px 10px;border-radius:7px;flex-shrink:0;white-space:nowrap;background:rgba(60,192,176,.12);color:#3cc0b0}
+.iv-val{font-size:12.5px;color:var(--txt-d);line-height:1.85}
+.iv-val b{color:var(--txt)}
+.iv-de{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#3cc0b0;direction:ltr}
+
+/* ─── Adjective declension table ─── */
+.adj-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:14px;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;direction:rtl}
+.adj-table th,.adj-table td{padding:12px 8px;text-align:center;border-bottom:1px solid var(--bdr);border-left:1px solid var(--bdr)}
+.adj-table th:last-child,.adj-table td:last-child{border-left:none}
+.adj-table tr:last-child td{border-bottom:none}
+.adj-table thead th{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:800;background:rgba(60,192,176,.08);color:#3cc0b0}
+.adj-case{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:800;background:rgba(255,255,255,.02)}
+.adj-art{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);display:block;margin-bottom:4px;direction:ltr}
+.adj-end{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;display:block}
+.adj-hl{background:rgba(224,120,88,.08)}
+.adj-hl .adj-end{color:var(--coral)}
+
+.adj-eg-list{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+.adj-eg{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:13px 16px;transition:transform .2s}
+.adj-eg:hover{transform:translateX(-3px)}
+.adj-eg-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;margin-bottom:4px}
+.adj-eg-de .en{color:#3cc0b0;font-weight:800;background:rgba(60,192,176,.12);padding:1px 6px;border-radius:5px}
+.adj-eg-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── mit / ohne ─── */
+.prep-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.prep-box{border-radius:16px;padding:20px 18px;position:relative;overflow:hidden;transition:transform .2s}
+.prep-box:hover{transform:translateY(-3px)}
+.prep-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.prep-ohne::before{background:linear-gradient(90deg,var(--amber),#a07020)}
+.prep-mit::before{background:linear-gradient(90deg,#3cc0b0,#1a8878)}
+.prep-w{font-family:'JetBrains Mono',monospace;font-size:26px;font-weight:800;direction:ltr;margin-bottom:3px}
+.prep-mean{font-size:12.5px;color:var(--txt-d);margin-bottom:10px}
+.prep-case{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:800;padding:4px 12px;border-radius:100px;display:inline-block;margin-bottom:12px}
+.prep-eg{font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:700;direction:ltr;padding:8px 12px;border-radius:8px}
+
+/* ─── könnten politeness ─── */
+.pol-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.pol-card{border-radius:14px;padding:16px;text-align:center}
+.pol-level{font-family:'Noto Kufi Arabic',sans-serif;font-size:11.5px;font-weight:800;padding:3px 11px;border-radius:100px;display:inline-block;margin-bottom:10px}
+.pol-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;direction:ltr;line-height:1.7;margin-bottom:5px}
+.pol-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── Amt vocabulary ─── */
+.amt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-top:14px}
+.amt-card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:13px 15px;display:flex;align-items:center;gap:11px;transition:transform .2s,border-color .2s}
+.amt-card:hover{transform:translateY(-2px);border-color:rgba(60,192,176,.4)}
+.amt-ic{font-size:21px;flex-shrink:0}
+.amt-de{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;direction:ltr;color:#3cc0b0;margin-bottom:2px}
+.amt-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── Situations ─── */
+.sit-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;margin-bottom:12px;transition:transform .2s,box-shadow .2s}
+.sit-card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.26)}
+.sit-head{padding:13px 18px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:12px}
+.sit-letter{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:800;flex-shrink:0}
+.sit-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:14px;font-weight:800}
+.sit-body{padding:13px 18px;font-size:13px;color:var(--txt-d);line-height:1.9}
+.sit-body b{color:var(--txt)}
+.price-duo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.price-box{border-radius:10px;padding:11px;text-align:center}
+.price-t{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;margin-bottom:4px}
+.price-v{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800}
+.price-d{font-size:11px;color:var(--txt-d);margin-top:2px}
+
+/* ─── Homework ─── */
+.hw-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.hw-page{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid rgba(201,161,84,.25);border-radius:12px;padding:11px 18px;transition:transform .15s}
+.hw-page:hover{transform:translateY(-2px)}
+.hw-page-n{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;color:var(--gold)}
+.hw-page-l{font-size:12px;color:var(--txt-d)}
+
+@media(max-width:640px){
+  .prep-duo,.pol-duo,.price-duo{grid-template-columns:1fr}
+  .adj-table{font-size:11px}
+  .adj-table th,.adj-table td{padding:9px 4px}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#3cc0b0">المحاضرة 30 — Bewerbung, Adjektive &amp; Ämter</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 30 — المحاضرة الثلاثون · A2.1</div>
+  <h1>مقابلة العمل، نهايات الصفات <em>والمعاملات</em></h1>
+  <p class="hero-sub">مقابلة عمل كاملة، جدول نهايات الصفات بعد أداة التعريف، mit وohne، أسلوب التأدب بـ könnten، ومفردات المعاملات الحكومية</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: VORSTELLUNGSGESPRÄCH ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#3cc0b0,#1a8878)">١</div>
+    <div>
+      <div class="sec-t">مقابلة العمل</div>
+      <div class="sec-td">Vorstellungsgespräch im Restaurant</div>
+    </div>
+  </div>
+
+  <div class="iv-card">
+    <div class="iv-head">
+      <span class="iv-ic">💼</span>
+      <div>
+        <div class="iv-t">Valentina &amp; Herr Padura</div>
+        <div class="iv-sub">مقابلة عمل في مطعم</div>
+      </div>
+    </div>
+    <div class="iv-body">
+      <div class="iv-row">
+        <span class="iv-key">الخبرة</span>
+        <span class="iv-val">عملت سابقاً في <b>مطعمين في الأرجنتين</b> — الأول <b>ثلاث سنوات</b> والثاني <b>سنة واحدة</b>.</span>
+      </div>
+      <div class="iv-row">
+        <span class="iv-key">أوقات العمل</span>
+        <span class="iv-val">مرنة — تفضّل <b>3 إلى 4 مرات أسبوعياً مساءً</b>، ومستعدّة للعمل بشكل مفاجئ عند الحاجة.<div class="iv-de">spontan arbeiten</div></span>
+      </div>
+      <div class="iv-row">
+        <span class="iv-key">فريق المطعم</span>
+        <span class="iv-val">مطعم صغير: <b>طبّاخان بالتناوب</b>، <b>مساعدان في المطبخ</b>، <b>شخص على البار</b>، و<b>2–3 موظفين في الخدمة</b>.</span>
+      </div>
+      <div class="iv-row">
+        <span class="iv-key">يوم التجربة</span>
+        <span class="iv-val">الخميس القادم من <b>17:00 حتى 22:00</b> تقريباً.<div class="iv-de">das Probearbeiten</div></span>
+      </div>
+      <div class="iv-row">
+        <span class="iv-key">اللباس</span>
+        <span class="iv-val">قميص أو بلوزة <b>بيضاء</b> + بنطال أو تنّورة <b>سوداء</b>.<div class="iv-de">weißes Hemd · schwarze Hose</div></span>
+      </div>
+      <div class="iv-row">
+        <span class="iv-key">الأجر</span>
+        <span class="iv-val"><b>12.50 يورو للساعة</b> + البقشيش.<div class="iv-de">12,50 € pro Stunde + Trinkgeld</div></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: ADJEKTIVDEKLINATION ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#906820)">٢</div>
+    <div>
+      <div class="sec-t">نهايات الصفات بعد أداة التعريف</div>
+      <div class="sec-td">Adjektivdeklination ⭐ الأهم</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--gold-d);border:1px solid rgba(201,161,84,.2)">
+    <h4 style="color:var(--gold)">📖 القاعدة</h4>
+    <p>عندما تأتي الصفة <strong>بين أداة التعريف والاسم</strong> (der/die/das)، تتغيّر نهايتها حسب الجنس والحالة. القاعدة أبسط مما تبدو — معظمها <strong style="color:#3cc0b0">‎-e</strong> أو <strong style="color:var(--coral)">‎-en</strong>.</p>
+  </div>
+
+  <table class="adj-table">
+    <thead>
+      <tr>
+        <th>الحالة</th>
+        <th>مذكر (der)</th>
+        <th>مؤنث (die)</th>
+        <th>محايد (das)</th>
+        <th>جمع (die)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="adj-case" style="color:var(--green)">Nominativ<br><span style="font-size:10px;color:var(--txt-d)">الرفع</span></td>
+        <td><span class="adj-art">der</span><span class="adj-end" style="color:#3cc0b0">-e</span></td>
+        <td><span class="adj-art">die</span><span class="adj-end" style="color:#3cc0b0">-e</span></td>
+        <td><span class="adj-art">das</span><span class="adj-end" style="color:#3cc0b0">-e</span></td>
+        <td><span class="adj-art">die</span><span class="adj-end" style="color:var(--coral)">-en</span></td>
+      </tr>
+      <tr>
+        <td class="adj-case" style="color:var(--amber)">Akkusativ<br><span style="font-size:10px;color:var(--txt-d)">النصب</span></td>
+        <td class="adj-hl"><span class="adj-art">den</span><span class="adj-end">-en</span></td>
+        <td><span class="adj-art">die</span><span class="adj-end" style="color:#3cc0b0">-e</span></td>
+        <td><span class="adj-art">das</span><span class="adj-end" style="color:#3cc0b0">-e</span></td>
+        <td><span class="adj-art">die</span><span class="adj-end" style="color:var(--coral)">-en</span></td>
+      </tr>
+      <tr>
+        <td class="adj-case" style="color:var(--sky)">Dativ<br><span style="font-size:10px;color:var(--txt-d)">الجر</span></td>
+        <td class="adj-hl"><span class="adj-art">dem</span><span class="adj-end">-en</span></td>
+        <td class="adj-hl"><span class="adj-art">der</span><span class="adj-end">-en</span></td>
+        <td class="adj-hl"><span class="adj-art">dem</span><span class="adj-end">-en</span></td>
+        <td class="adj-hl"><span class="adj-art">den</span><span class="adj-end">-en</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note" style="background:var(--coral-d);border:1px solid rgba(196,122,90,.22);margin-top:14px">
+    <div class="ni">⚡</div>
+    <div><p><strong style="color:var(--coral)">اختصر الحفظ في ثلاث نقاط:</strong><br>
+    ① في الرفع → كلها <strong style="color:#3cc0b0">‎-e</strong> (ما عدا الجمع ‎-en).<br>
+    ② في النصب → <strong>المذكر فقط</strong> يتغيّر إلى <strong style="color:var(--coral)">‎-en</strong> (لأن الأداة صارت den)، والباقي كما هو.<br>
+    ③ في الجر → <strong style="color:var(--coral)">كلها ‎-en</strong> بلا استثناء.</p></div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">أمثلة</div>
+  <div class="adj-eg-list">
+    <div class="adj-eg" style="border-color:rgba(124,168,120,.25)">
+      <div class="adj-eg-de" style="color:var(--green)">Das <span class="en">weiße</span> T-Shirt ist schön.</div>
+      <div class="adj-eg-ar">التيشيرت الأبيض جميل — محايد · رفع → ‎-e</div>
+    </div>
+    <div class="adj-eg" style="border-color:rgba(200,152,88,.25)">
+      <div class="adj-eg-de" style="color:var(--amber)">Ich trage den <span class="en" style="color:var(--coral);background:rgba(224,120,88,.12)">schwarzen</span> Rock.</div>
+      <div class="adj-eg-ar">أرتدي التنّورة السوداء — مذكر · نصب → ‎-en</div>
+    </div>
+    <div class="adj-eg" style="border-color:rgba(112,149,192,.25)">
+      <div class="adj-eg-de" style="color:var(--sky)">Ich arbeite in dem <span class="en" style="color:var(--coral);background:rgba(224,120,88,.12)">kleinen</span> Restaurant.</div>
+      <div class="adj-eg-ar">أعمل في المطعم الصغير — جر → ‎-en</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 3: mit / ohne ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--violet),#6040a0)">٣</div>
+    <div>
+      <div class="sec-t">حرفا الجر mit و ohne</div>
+      <div class="sec-td">Präpositionen — mit + Dativ · ohne + Akkusativ</div>
+    </div>
+  </div>
+
+  <div class="prep-duo">
+    <div class="prep-box prep-mit" style="background:rgba(60,192,176,.07);border:1px solid rgba(60,192,176,.25)">
+      <div class="prep-w" style="color:#3cc0b0">mit</div>
+      <div class="prep-mean">مع</div>
+      <div class="prep-case" style="background:rgba(60,192,176,.12);color:#3cc0b0">→ Dativ دائماً</div>
+      <div class="prep-eg" style="background:rgba(60,192,176,.1);color:#3cc0b0">mit mir · mit dir · mit dem Bus</div>
+    </div>
+    <div class="prep-box prep-ohne" style="background:rgba(200,152,88,.07);border:1px solid rgba(200,152,88,.25)">
+      <div class="prep-w" style="color:var(--amber)">ohne</div>
+      <div class="prep-mean">بدون</div>
+      <div class="prep-case" style="background:rgba(200,152,88,.12);color:var(--amber)">→ Akkusativ دائماً</div>
+      <div class="prep-eg" style="background:rgba(200,152,88,.1);color:var(--amber)">ohne mich · ohne dich · ohne den Pass</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.2);margin-top:14px">
+    <div class="ni">💡</div>
+    <div><p><strong style="color:var(--teal)">للحفظ:</strong> <span style="font-family:'JetBrains Mono',monospace;color:#3cc0b0">mit mir</span> وليس mit mich · <span style="font-family:'JetBrains Mono',monospace;color:var(--amber)">ohne mich</span> وليس ohne mir. القاعدة تنطبق على الأسماء والضمائر معاً.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 4: könnten ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--rose),#a05070)">٤</div>
+    <div>
+      <div class="sec-t">أسلوب التأدب بـ könnten</div>
+      <div class="sec-td">Höflichkeit — Konjunktiv II</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:rgba(200,152,168,.06);border:1px solid rgba(200,152,168,.22)">
+    <h4 style="color:var(--rose)">📖 القاعدة</h4>
+    <p><strong style="color:var(--rose)">könnten</strong> صيغة من Konjunktiv II تُستخدم لتقديم الطلبات بطريقة <strong>أكثر أدباً ومجاملة</strong> من können العادية.</p>
+  </div>
+
+  <div class="pol-duo">
+    <div class="pol-card" style="background:rgba(112,149,192,.06);border:1px solid rgba(112,149,192,.22)">
+      <div class="pol-level" style="background:rgba(112,149,192,.12);color:var(--sky)">عادي</div>
+      <div class="pol-de" style="color:var(--sky)">Können Sie bitte warten?</div>
+      <div class="pol-ar">هل يمكنك الانتظار؟</div>
+    </div>
+    <div class="pol-card" style="background:rgba(200,152,168,.07);border:1px solid rgba(200,152,168,.28)">
+      <div class="pol-level" style="background:rgba(200,152,168,.14);color:var(--rose)">✨ أكثر تأدّباً</div>
+      <div class="pol-de" style="color:var(--rose)">Könnten Sie bitte ein bisschen warten?</div>
+      <div class="pol-ar">هل يمكنك الانتظار قليلاً من فضلك؟</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: ÄMTER WORTSCHATZ ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3060b0)">٥</div>
+    <div>
+      <div class="sec-t">مفردات المعاملات الحكومية</div>
+      <div class="sec-td">Auf dem Amt — Wortschatz</div>
+    </div>
+  </div>
+
+  <div class="amt-grid">
+    <div class="amt-card"><span class="amt-ic">🪪</span><div><div class="amt-de">sich identifizieren</div><div class="amt-ar">تقديم إثبات شخصية</div></div></div>
+    <div class="amt-card"><span class="amt-ic">🏦</span><div><div class="amt-de">ein Konto eröffnen</div><div class="amt-ar">فتح حساب بنكي</div></div></div>
+    <div class="amt-card"><span class="amt-ic">🚗</span><div><div class="amt-de">der Führerschein</div><div class="amt-ar">رخصة القيادة</div></div></div>
+    <div class="amt-card"><span class="amt-ic">💰</span><div><div class="amt-de">einen Kredit beantragen</div><div class="amt-ar">تقديم طلب قرض</div></div></div>
+    <div class="amt-card"><span class="amt-ic">📅</span><div><div class="amt-de">verlängern</div><div class="amt-ar">تمديد (جواز السفر)</div></div></div>
+    <div class="amt-card"><span class="amt-ic">🚨</span><div><div class="amt-de">melden</div><div class="amt-ar">الإبلاغ · Diebstahl melden</div></div></div>
+    <div class="amt-card"><span class="amt-ic">🛂</span><div><div class="amt-de">einbürgern</div><div class="amt-ar">التجنّس</div></div></div>
+    <div class="amt-card"><span class="amt-ic">✅</span><div><div class="amt-de">gültig / ungültig</div><div class="amt-ar">صالح / غير صالح</div></div></div>
+  </div>
+</div>
+
+<!-- ═══ 6: SITUATIONEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٦</div>
+    <div>
+      <div class="sec-t">مواقف الاستماع</div>
+      <div class="sec-td">Hörsituationen — A · B · C</div>
+    </div>
+  </div>
+
+  <!-- A -->
+  <div class="sit-card" style="border-color:rgba(112,149,192,.25)">
+    <div class="sit-head" style="background:rgba(112,149,192,.05)">
+      <span class="sit-letter" style="background:rgba(112,149,192,.15);color:var(--sky)">A</span>
+      <span class="sit-t" style="color:var(--sky)">Frau Nowak — جواز سفر جديد</span>
+    </div>
+    <div class="sit-body">
+      السيدة نوفاك تطلب <b>جواز سفر جديد</b> — أمامها خياران:
+      <div class="price-duo">
+        <div class="price-box" style="background:rgba(112,149,192,.08);border:1px solid rgba(112,149,192,.22)">
+          <div class="price-t" style="color:var(--sky)">Normal</div>
+          <div class="price-v" style="color:var(--sky)">75,90 €</div>
+          <div class="price-d">يستغرق أسبوعاً</div>
+        </div>
+        <div class="price-box" style="background:rgba(224,120,88,.08);border:1px solid rgba(224,120,88,.22)">
+          <div class="price-t" style="color:var(--coral)">Express</div>
+          <div class="price-v" style="color:var(--coral)">100 €</div>
+          <div class="price-d">يستغرق يومين</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="sit-card" style="border-color:rgba(200,152,88,.25)">
+    <div class="sit-head" style="background:rgba(200,152,88,.05)">
+      <span class="sit-letter" style="background:rgba(200,152,88,.15);color:var(--amber)">B</span>
+      <span class="sit-t" style="color:var(--amber)">Herr Wagner — البطاقة البنكية</span>
+    </div>
+    <div class="sit-body">
+      فقد بطاقته البنكية لأن <b>الصرّاف سحبها</b> بعد إدخال الرمز السري (<b>PIN</b>) بشكل خاطئ <b>ثلاث مرات</b>.
+    </div>
+  </div>
+
+  <!-- C -->
+  <div class="sit-card" style="border-color:rgba(176,104,112,.25)">
+    <div class="sit-head" style="background:rgba(176,104,112,.05)">
+      <span class="sit-letter" style="background:rgba(176,104,112,.15);color:var(--red)">C</span>
+      <span class="sit-t" style="color:var(--red)">Herr Lars Ziegler — بلاغ سرقة</span>
+    </div>
+    <div class="sit-body">
+      يُبلّغ عن <b>سرقة محفظته</b> في محطة القطار (<b>U-Bahn</b>) — كانت تحتوي على <b>هويّته</b> و<b>رخصته</b> و<b>150 يورو</b>.
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--red);direction:ltr;margin-top:8px">einen Diebstahl melden</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 7: HAUSAUFGABEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--green),#207840)">٧</div>
+    <div>
+      <div class="sec-t">الواجبات</div>
+      <div class="sec-td">Hausaufgaben — Arbeitsbuch</div>
+    </div>
+  </div>
+
+  <div class="hw-strip">
+    <div class="hw-page"><span class="hw-page-n">57</span><span class="hw-page-l">Seite 57 — كتاب التمارين</span></div>
+    <div class="hw-page"><span class="hw-page-n">75</span><span class="hw-page-l">Seite 75 — كتاب التمارين</span></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
