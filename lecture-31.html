@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S8F87WM4BC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S8F87WM4BC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المحاضرة 31 — عالم العمل، تصريف الصفات وفعل werden</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800;900&family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ─── Scroll reveal ─── */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.rv.v{opacity:1;transform:none}
+
+/* ─── Weekday abbreviations ─── */
+.days-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}
+.day-card{border-radius:12px;padding:14px 6px;text-align:center;border:1px solid rgba(136,152,184,.22);background:var(--card);transition:transform .2s,border-color .2s}
+.day-card:hover{transform:translateY(-3px);border-color:rgba(136,152,184,.5)}
+.day-ab{font-family:'JetBrains Mono',monospace;font-size:19px;font-weight:800;color:#8898b8;direction:ltr}
+.day-de{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--txt-d);direction:ltr;margin-top:4px}
+.day-ar{font-size:11px;color:var(--txt-d);margin-top:3px}
+.day-card.we{border-color:rgba(224,120,88,.3);background:rgba(224,120,88,.05)}
+.day-card.we .day-ab{color:var(--coral)}
+
+/* ─── Tätigkeiten (Samuel & Ella) ─── */
+.taet-duo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.taet-card{background:var(--card);border:1px solid var(--bdr);border-radius:16px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.taet-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.taet-head{padding:14px 16px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:11px}
+.taet-ic{font-size:26px}
+.taet-name{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;direction:ltr}
+.taet-job{font-size:12px;color:var(--txt-d)}
+.taet-body{padding:6px 16px 12px}
+.taet-item{display:flex;gap:9px;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:12.5px;line-height:1.7;color:var(--txt-d)}
+.taet-item:last-child{border-bottom:none}
+.taet-mark{flex-shrink:0}
+
+/* ─── Train station ─── */
+.train-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:14px}
+.train-card{background:var(--card);border:1px solid var(--bdr);border-radius:13px;padding:14px;display:flex;align-items:center;gap:11px;transition:transform .2s,border-color .2s}
+.train-card:hover{transform:translateY(-2px);border-color:rgba(136,152,184,.4)}
+.train-ic{font-size:22px;flex-shrink:0}
+.train-de{font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:700;direction:ltr;color:#8898b8;margin-bottom:2px}
+.train-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── Adjective declension (indefinite) ─── */
+.adj-table{width:100%;border-collapse:separate;border-spacing:0;margin-top:14px;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;direction:rtl}
+.adj-table th,.adj-table td{padding:12px 8px;text-align:center;border-bottom:1px solid var(--bdr);border-left:1px solid var(--bdr)}
+.adj-table th:last-child,.adj-table td:last-child{border-left:none}
+.adj-table tr:last-child td{border-bottom:none}
+.adj-table thead th{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:800;background:rgba(136,152,184,.1);color:#8898b8}
+.adj-case{font-family:'Noto Kufi Arabic',sans-serif;font-size:12px;font-weight:800;background:rgba(255,255,255,.02)}
+.adj-art{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--txt-d);display:block;margin-bottom:4px;direction:ltr}
+.adj-end{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;direction:ltr;display:block}
+.adj-hl{background:rgba(224,120,88,.08)}
+.adj-hl .adj-end{color:var(--coral)}
+.adj-strong .adj-end{color:#8898b8}
+
+.adj-eg-list{display:flex;flex-direction:column;gap:9px;margin-top:14px}
+.adj-eg{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:13px 16px;transition:transform .2s}
+.adj-eg:hover{transform:translateX(-3px)}
+.adj-eg-de{font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:600;direction:ltr;margin-bottom:4px}
+.adj-eg-de .en{color:#8898b8;font-weight:800;background:rgba(136,152,184,.14);padding:1px 6px;border-radius:5px}
+.adj-eg-ar{font-size:12px;color:var(--txt-d)}
+
+/* ─── werden conjugation ─── */
+.werd-card{background:var(--card);border:1px solid rgba(136,152,184,.25);border-radius:16px;overflow:hidden;margin-top:14px}
+.werd-head{padding:14px 18px;border-bottom:1px solid var(--bdr);background:rgba(136,152,184,.05);display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.werd-verb{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:800;direction:ltr;color:#8898b8}
+.werd-mean{font-size:13px;color:var(--txt-d)}
+.werd-body{padding:8px 10px 10px}
+.werd-row{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px}
+.werd-row:nth-child(odd){background:rgba(255,255,255,.025)}
+.werd-pr{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--txt-d);width:80px;flex-shrink:0;direction:ltr}
+.werd-form{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:800;color:#8898b8;direction:ltr;flex:1}
+.werd-tr{font-size:11.5px;color:var(--txt-d);text-align:left}
+
+.tense-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.tense-chip{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px 16px;flex:1;min-width:150px}
+.tense-chip-l{font-family:'Noto Kufi Arabic',sans-serif;font-size:11px;font-weight:800;color:var(--txt-d);margin-bottom:5px}
+.tense-chip-v{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:800;direction:ltr}
+
+/* ─── werden uses ─── */
+.use-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:14px}
+.use-card{border-radius:13px;padding:15px;border:1px solid var(--bdr);background:var(--card);transition:transform .2s}
+.use-card:hover{transform:translateY(-2px)}
+.use-ic{font-size:24px;margin-bottom:8px}
+.use-t{font-family:'Noto Kufi Arabic',sans-serif;font-size:13px;font-weight:800;margin-bottom:6px}
+.use-eg{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;direction:ltr;color:#8898b8;margin-bottom:3px}
+.use-ar{font-size:12px;color:var(--txt-d)}
+
+@media(max-width:640px){
+  .taet-duo{grid-template-columns:1fr}
+  .days-grid{grid-template-columns:repeat(4,1fr)}
+  .adj-table{font-size:11px}
+  .adj-table th,.adj-table td{padding:9px 4px}
+}
+</style>
+</head>
+<body>
+
+<nav class="topbar">
+  <a href="index.html" class="topbar-home">🏠 الرئيسية</a>
+  <span class="topbar-title" style="color:#8898b8">المحاضرة 31 — Arbeitswelten, Adjektive &amp; werden</span>
+</nav>
+
+<div class="amb"></div>
+<div class="w">
+
+<div class="hero">
+  <div class="hero-pill"><b></b> Vorlesung 31 — المحاضرة الحادية والثلاثون · A2.1</div>
+  <h1>عالم العمل، تصريف الصفات <em>وفعل werden</em></h1>
+  <p class="hero-sub">الوحدة السادسة — اختصارات الأيام، مهام وظيفية، محادثات محطة القطار، تصريف الصفات بعد أدوات النكرة، وفعل «يصبح» werden</p>
+  <div class="hero-sep"></div>
+</div>
+
+<!-- ═══ 1: ARBEITSWELTEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,#8898b8,#4a5a7a)">١</div>
+    <div>
+      <div class="sec-t">مقدمة في عالم العمل</div>
+      <div class="sec-td">Arbeitswelten — الوحدة السادسة</div>
+    </div>
+  </div>
+
+  <div class="sub">اختصارات أيام الأسبوع — Wochentage</div>
+  <div class="days-grid">
+    <div class="day-card"><div class="day-ab">Mo</div><div class="day-de">Montag</div><div class="day-ar">الاثنين</div></div>
+    <div class="day-card"><div class="day-ab">Di</div><div class="day-de">Dienstag</div><div class="day-ar">الثلاثاء</div></div>
+    <div class="day-card"><div class="day-ab">Mi</div><div class="day-de">Mittwoch</div><div class="day-ar">الأربعاء</div></div>
+    <div class="day-card"><div class="day-ab">Do</div><div class="day-de">Donnerstag</div><div class="day-ar">الخميس</div></div>
+    <div class="day-card"><div class="day-ab">Fr</div><div class="day-de">Freitag</div><div class="day-ar">الجمعة</div></div>
+    <div class="day-card we"><div class="day-ab">Sa</div><div class="day-de">Samstag</div><div class="day-ar">السبت</div></div>
+    <div class="day-card we"><div class="day-ab">So</div><div class="day-de">Sonntag</div><div class="day-ar">الأحد</div></div>
+  </div>
+
+  <div class="sub" style="margin-top:22px">المهام الوظيفية — Tätigkeiten</div>
+  <div class="taet-duo">
+    <div class="taet-card" style="border-color:rgba(200,152,88,.25)">
+      <div class="taet-head" style="background:rgba(200,152,88,.05)">
+        <span class="taet-ic">👨‍🏫</span>
+        <div>
+          <div class="taet-name" style="color:var(--amber)">Samuel</div>
+          <div class="taet-job">معلّم — Lehrer</div>
+        </div>
+      </div>
+      <div class="taet-body">
+        <div class="taet-item"><span class="taet-mark">✅</span><span>يحب العمل مع الطلاب في مشاريع</span></div>
+        <div class="taet-item"><span class="taet-mark">✅</span><span>يفضّل التواجد في الفصل أو الخارج بدلاً من الأعمال التنظيمية</span></div>
+        <div class="taet-item"><span class="taet-mark">😕</span><span>يشتكي من بدء المدرسة مبكراً جداً — الساعة 8 صباحاً</span></div>
+      </div>
+    </div>
+    <div class="taet-card" style="border-color:rgba(136,152,184,.28)">
+      <div class="taet-head" style="background:rgba(136,152,184,.06)">
+        <span class="taet-ic">👷‍♀️</span>
+        <div>
+          <div class="taet-name" style="color:#8898b8">Ella</div>
+          <div class="taet-job">مهندسة في موقع بناء — Baustelle</div>
+        </div>
+      </div>
+      <div class="taet-body">
+        <div class="taet-item"><span class="taet-mark">⏰</span><span>ضغط الالتزام بالمواعيد — Termine einhalten</span></div>
+        <div class="taet-item"><span class="taet-mark">📅</span><span>تضطر أحياناً للعمل في عطلة نهاية الأسبوع</span></div>
+        <div class="taet-item"><span class="taet-mark">🤝</span><span>التفاوض مع السلطات (Behörden) ومراقبة عمل الآخرين</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 2: AM BAHNHOF ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--sky),#3060b0)">٢</div>
+    <div>
+      <div class="sec-t">محادثات محطة القطار</div>
+      <div class="sec-td">Am Bahnhof — Fahrkarten kaufen</div>
+    </div>
+  </div>
+
+  <div class="train-grid">
+    <div class="train-card"><span class="train-ic">🎫</span><div><div class="train-de">die Fahrkarten</div><div class="train-ar">تذاكر السفر</div></div></div>
+    <div class="train-card"><span class="train-ic">🪟</span><div><div class="train-de">der Schalter</div><div class="train-ar">شباك التذاكر</div></div></div>
+    <div class="train-card"><span class="train-ic">🤖</span><div><div class="train-de">der Automat</div><div class="train-ar">ماكينة التذاكر الآلية</div></div></div>
+    <div class="train-card"><span class="train-ic">🛤️</span><div><div class="train-de">das Gleis</div><div class="train-ar">الرصيف</div></div></div>
+    <div class="train-card"><span class="train-ic">↔️</span><div><div class="train-de">einfach / hin und zurück</div><div class="train-ar">ذهاب فقط / ذهاب وإياب</div></div></div>
+    <div class="train-card"><span class="train-ic">🔄</span><div><div class="train-de">umsteigen</div><div class="train-ar">تبديل القطار (تغيير الخط)</div></div></div>
+    <div class="train-card"><span class="train-ic">💺</span><div><div class="train-de">Sitzplätze reservieren</div><div class="train-ar">حجز مقاعد</div></div></div>
+  </div>
+
+  <div class="note" style="background:var(--sky-d);border:1px solid rgba(112,149,192,.2);margin-top:14px">
+    <div class="ni">💡</div>
+    <div><p>استخدم <span style="font-family:'JetBrains Mono',monospace;color:var(--sky)">der Schalter</span> (الشباك) عندما يكون هناك <strong>طابور طويل</strong> على الـ Automaten، أو للحصول على مساعدة شخصية.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 3: ADJEKTIVDEKLINATION (indefinite) ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--gold),#906820)">٣</div>
+    <div>
+      <div class="sec-t">تصريف الصفات بعد أدوات النكرة</div>
+      <div class="sec-td">Adjektivdeklination (ein-) ⭐ الأهم</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--gold-d);border:1px solid rgba(201,161,84,.2)">
+    <h4 style="color:var(--gold)">🔑 الفكرة الذهبية</h4>
+    <p>بعد أداة النكرة (ein)، تأخذ الصفة <strong style="color:#8898b8">نهاية أداة التعريف التي يفتقدها الاسم</strong> — لأن ein لا تُظهر الجنس بوضوح، فالصفة "تعوّض" عنها.</p>
+  </div>
+
+  <table class="adj-table">
+    <thead>
+      <tr>
+        <th>الحالة</th>
+        <th>مذكر (ein)</th>
+        <th>مؤنث (eine)</th>
+        <th>محايد (ein)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="adj-case" style="color:var(--green)">Nominativ<br><span style="font-size:10px;color:var(--txt-d)">الرفع</span></td>
+        <td class="adj-strong"><span class="adj-art">ein</span><span class="adj-end">-er</span></td>
+        <td><span class="adj-art">eine</span><span class="adj-end" style="color:#8898b8">-e</span></td>
+        <td class="adj-strong"><span class="adj-art">ein</span><span class="adj-end">-es</span></td>
+      </tr>
+      <tr>
+        <td class="adj-case" style="color:var(--amber)">Akkusativ<br><span style="font-size:10px;color:var(--txt-d)">النصب</span></td>
+        <td class="adj-hl"><span class="adj-art">einen</span><span class="adj-end">-en</span></td>
+        <td><span class="adj-art">eine</span><span class="adj-end" style="color:#8898b8">-e</span></td>
+        <td class="adj-strong"><span class="adj-art">ein</span><span class="adj-end">-es</span></td>
+      </tr>
+      <tr>
+        <td class="adj-case" style="color:var(--sky)">Dativ<br><span style="font-size:10px;color:var(--txt-d)">الجر</span></td>
+        <td class="adj-hl"><span class="adj-art">einem</span><span class="adj-end">-en</span></td>
+        <td class="adj-hl"><span class="adj-art">einer</span><span class="adj-end">-en</span></td>
+        <td class="adj-hl"><span class="adj-art">einem</span><span class="adj-end">-en</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sub" style="margin-top:20px">أمثلة</div>
+  <div class="adj-eg-list">
+    <div class="adj-eg" style="border-color:rgba(124,168,120,.25)">
+      <div class="adj-eg-de" style="color:var(--green)">Das ist ein <span class="en">schöner</span> Abend.</div>
+      <div class="adj-eg-ar">هذا مساء جميل — مذكر · رفع → ‎-er (لأن أصل الأداة der)</div>
+    </div>
+    <div class="adj-eg" style="border-color:rgba(124,168,120,.25)">
+      <div class="adj-eg-de" style="color:var(--green)">Das ist ein <span class="en">großes</span> Zimmer.</div>
+      <div class="adj-eg-ar">هذه غرفة كبيرة — محايد · رفع → ‎-es (لأن أصل الأداة das)</div>
+    </div>
+    <div class="adj-eg" style="border-color:rgba(200,152,88,.25)">
+      <div class="adj-eg-de" style="color:var(--amber)">Wir hatten einen <span class="en" style="color:var(--coral);background:rgba(224,120,88,.12)">schönen</span> Abend.</div>
+      <div class="adj-eg-ar">قضينا مساءً جميلاً — مذكر · نصب → ‎-en (الأداة صارت einen)</div>
+    </div>
+    <div class="adj-eg" style="border-color:rgba(112,149,192,.25)">
+      <div class="adj-eg-de" style="color:var(--sky)">Ich wohne in einem <span class="en" style="color:var(--coral);background:rgba(224,120,88,.12)">großen</span> Haus.</div>
+      <div class="adj-eg-ar">أسكن في بيت كبير — جر → ‎-en لجميع الأجناس</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--violet-d);border:1px solid rgba(154,133,184,.2);margin-top:14px">
+    <div class="ni">📌</div>
+    <div><p><strong style="color:var(--violet)">ملاحظة مهمة:</strong> نفس القواعد تنطبق تماماً على أداة النفي <span style="font-family:'JetBrains Mono',monospace;color:var(--violet)">kein</span> وضمائر الملكية <span style="font-family:'JetBrains Mono',monospace;color:var(--violet)">mein · dein · sein …</span> — لأنها كلها تُصرّف مثل ein.</p></div>
+  </div>
+</div>
+
+<!-- ═══ 4: WERDEN ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--teal),#2a7060)">٤</div>
+    <div>
+      <div class="sec-t">فعل «يصبح» — werden</div>
+      <div class="sec-td">Das Verb „werden"</div>
+    </div>
+  </div>
+
+  <div class="rule" style="background:var(--teal-d);border:1px solid rgba(111,164,148,.2)">
+    <h4 style="color:var(--teal)">📖 معناه هنا</h4>
+    <p>نستخدم <strong style="color:var(--teal)">werden</strong> كفعل أساسي بمعنى <strong>«يصبح»</strong> (وليس كفعل مساعد للمستقبل في هذا السياق) — للتعبير عن <strong>تغيّر الحالة</strong>.</p>
+  </div>
+
+  <div class="werd-card">
+    <div class="werd-head">
+      <span class="werd-verb">werden</span>
+      <span class="werd-mean">يصبح — تصريف المضارع</span>
+    </div>
+    <div class="werd-body">
+      <div class="werd-row"><span class="werd-pr">ich</span><span class="werd-form">werde</span><span class="werd-tr">أنا أصبح</span></div>
+      <div class="werd-row"><span class="werd-pr">du</span><span class="werd-form">wirst</span><span class="werd-tr">أنت تصبح</span></div>
+      <div class="werd-row"><span class="werd-pr">er/sie/es</span><span class="werd-form">wird</span><span class="werd-tr">هو/هي يصبح</span></div>
+      <div class="werd-row"><span class="werd-pr">wir</span><span class="werd-form">werden</span><span class="werd-tr">نحن نصبح</span></div>
+      <div class="werd-row"><span class="werd-pr">ihr</span><span class="werd-form">werdet</span><span class="werd-tr">أنتم تصبحون</span></div>
+      <div class="werd-row"><span class="werd-pr">sie/Sie</span><span class="werd-form">werden</span><span class="werd-tr">هم/حضرتك</span></div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:18px">في الماضي</div>
+  <div class="tense-chips">
+    <div class="tense-chip" style="border-color:rgba(154,133,184,.25)">
+      <div class="tense-chip-l" style="color:var(--violet)">Präteritum · الماضي البسيط</div>
+      <div class="tense-chip-v" style="color:var(--violet)">wurde</div>
+    </div>
+    <div class="tense-chip" style="border-color:rgba(217,168,90,.25)">
+      <div class="tense-chip-l" style="color:var(--gold)">Perfekt · الماضي التام</div>
+      <div class="tense-chip-v" style="color:var(--gold)">ist geworden</div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:20px">استخداماته</div>
+  <div class="use-grid">
+    <div class="use-card" style="border-color:rgba(112,149,192,.25)">
+      <div class="use-ic">🩺</div>
+      <div class="use-t" style="color:var(--sky)">مع الأسماء (مهنة)</div>
+      <div class="use-eg" style="color:var(--sky)">Er wird Arzt.</div>
+      <div class="use-ar">يصبح طبيباً</div>
+    </div>
+    <div class="use-card" style="border-color:rgba(124,168,120,.25)">
+      <div class="use-ic">🔄</div>
+      <div class="use-t" style="color:var(--green)">مع الصفات (تغيّر حالة)</div>
+      <div class="use-eg" style="color:var(--green)">Es wird kalt.</div>
+      <div class="use-ar">الجو يصبح بارداً</div>
+    </div>
+    <div class="use-card" style="border-color:rgba(200,152,88,.25)">
+      <div class="use-ic">🎂</div>
+      <div class="use-t" style="color:var(--amber)">مع العمر</div>
+      <div class="use-eg" style="color:var(--amber)">Sie wird 45.</div>
+      <div class="use-ar">ستصبح في الخامسة والأربعين</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 5: WICHTIG FÜR B1 ═══ -->
+<div class="sec rv">
+  <div class="sec-h">
+    <div class="sec-n" style="background:linear-gradient(135deg,var(--coral),#904030)">٥</div>
+    <div>
+      <div class="sec-t">لماذا هذا الدرس مهم؟</div>
+      <div class="sec-td">Grundlage für B1</div>
+    </div>
+  </div>
+
+  <div class="note" style="background:var(--coral-d);border:1px solid rgba(196,122,90,.22)">
+    <div class="ni">🎯</div>
+    <div><p><strong style="color:var(--coral)">تأكيد المعلم:</strong> فهم <strong>تصريف الصفات</strong> وفعل <strong>werden</strong> أساسيٌّ للمستويات المتقدمة مثل <strong style="color:var(--coral)">B1</strong> — راجعهما جيداً لأنهما يتكرّران كثيراً.</p></div>
+  </div>
+
+  <div class="note" style="background:rgba(136,152,184,.06);border:1px solid rgba(136,152,184,.22);margin-top:12px">
+    <div class="ni">📝</div>
+    <div><p><strong style="color:#8898b8">خلاصة الدرس:</strong><br>
+    ① بعد ein/kein/mein → الصفة تأخذ نهاية أداة التعريف المفقودة (der→er · das→es).<br>
+    ② في الجر → كل الصفات ‎-en.<br>
+    ③ werden = يصبح · wird / wurde / ist geworden.</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="page-footer">
+  <div class="pf-credit">إعداد وبرمجة وتصميم — م. مهدي</div>
+  <a href="index.html" class="pf-back">← العودة للفهرس</a>
+</div>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); }),
+  { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
